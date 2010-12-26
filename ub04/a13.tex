@@ -1,0 +1,139 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba13_drehimpulse_und_oszillatoren
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub04/a13.pdf
+
+\begin{document}
+\section*{Aufgabe 13: Drehimpulse und Oszillatoren}
+
+Wir untersuchen ein System von zwei unabhängigen harmonischen Oszillatoren (im folgenden durch +,- benannt) mit Erzeugungs- und Vernichtungsoperatoren \(a^\dagger_\pm,a_\pm\) die die üblichen Vertauschungsrelationen erfüllen. Damit definieren wir die Operatoren
+\[J_\pm = \hbar a^\dagger_\pm a_\mp, \qquad 
+J_z=\frac{\hbar}{2}( a^\dagger_+ a_+-a^\dagger_- a_-), \qquad 
+N=N_++N_-=a^\dagger_+ a_+ + a^\dagger_- a_-
+\]
+
+Zeigen Sie, dass die \(J_\pm,J_z\) eine Drehimpulsalgebra erfüllen, also
+
+\[ [J_z,J_\pm] = \pm \hbar J_\pm, \qquad
+[\vec J^2,J_z]=0 \qquad
+[J_+,J_-]=2\hbar J_z
+\]
+
+Zeigen Sie weiterhin, dass
+
+\[ \vec J^2 = \hbar \frac{N}{2}(\frac{N}{2}+1), \qquad (vec J^2 = J^2_x+J^2_y+J^2_z)\]
+
+Damit müsste es also eine Zusammenhang zwischen der Besetzungszahldarstellung \(|n_+,n_-\rangle\) und der Drehimpulsdarstellung \(|j,m\rangle\) von Zuständen dieses Systems geben. Wie lautet dieser Zusammenhang und wie lassen sich damit Drehimpulse ganz allgemein deuten?
+
+
+\subsection*{LSG}
+
+
+\begin{itemize}
+\item (1) \([a,a^\dagger]=1\)  \(a^\dagger_\pm a_\pm = N_\pm\)
+\item (2) \([N,a^\dagger]=a^\dagger\)  \(\rightarrow [N_+,a^\dagger_+ a_-]=[N_+,a^\dagger_+]a_-=a^\dagger_+a_-\)
+ \([N,a]=-a\)  \(\rightarrow [N_+,a^\dagger_- a_+]=a^\dagger_-[N_+, a_+]=-a^\dagger_-a_+\)
+\(\Rightarrow [N_+,a^\dagger_\pm a_\mp] = \pm a^\dagger_\pm a_\mp\)
+
+\([N,a]=-a\)  \(\rightarrow [N_-,a^\dagger_+ a_-]=a^\dagger_+[N_-,a_-]=-a^\dagger_+a_-\)
+ \([N,a^\dagger]=a^\dagger\)  \(\rightarrow [N_-,a^\dagger_-a_+]=[N_-,a^\dagger_-]a_+=a^\dagger_-a_+\)
+\(\Rightarrow [N_-,a^\dagger_\pm a_\mp] = \mp a^\dagger_\pm a_\mp\)
+\(\Rightarrow -[N_-,a^\dagger_\pm a_\mp] = - \mp a^\dagger_\pm a_\mp= \pm a^\dagger_\pm a_\mp \)
+
+
+\item (2)   \(a^\dagger_\pm a_\pm = N_\pm\)
+\item (3) \([N_+,a^\dagger_+]=a^\dagger_+\)
+\item (4) 
+
+\end{itemize}
+
+
+
+\begin{align}
+ [J_z,J_\pm]&=  [\frac{\hbar}{2}( a^\dagger_+ a_+-a^\dagger_- a_-), \hbar a^\dagger_\pm a_\mp] \\
+&= \frac{\hbar^2}{2} \left( [a^\dagger_+ a_+,a^\dagger_\pm a_\mp]-[a^\dagger_- a_-,a^\dagger_\pm a_\mp]  \right) \\
+^{(1)}&= \frac{\hbar^2}{2} \left( [N_+,a^\dagger_\pm a_\mp]-[N_-,a^\dagger_\pm a_\mp]  \right) \\
+^{(2)}&= \frac{\hbar^2}{2} \left( \pm a^\dagger_\pm a_\mp +  \pm a^\dagger_\pm a_\mp  \right) \\
+&= \frac{\hbar^2}{2} \left( 2 \pm a^\dagger_\pm a_\mp \right) \\
+&= \hbar \left( \hbar \pm a^\dagger_\pm a_\mp \right) \\
+&= \pm \hbar J_\pm
+\end{align}
+
+
+\begin{itemize}
+\item (1) \(J_x=\frac{1}{2}(J_++J_-)\),\(J_y=\frac{1}{2i}(J_+-J_-)\)  \(J_z=\frac{\hbar}{2}( a^\dagger_+ a_+-a^\dagger_- a_-)\)
+
+ \begin{align} \vec J^2 &= J_x+J_y+J^2_z \\
+&= \frac{1}{4}(J_++J_-)^2-\frac{1}{4}(J_+-J_-)^2+J^2_z \\
+&= \frac{1}{4}(J^2_++J^2_-+J_+J_-+J_-J_+-J^2_+-J^2_-+J_+J_-+J_-J_+) + J^2_z \\
+&= \frac{1}{4}(J_+J_-+J_-J_++J_+J_-+J_-J_+) + J^2_z \\
+&= \frac{1}{4}(2J_+J_-+2J_-J_+) + J^2_z \\
+&= \frac{1}{2}J_+J_-+  \frac{1}{2}J_-J_+ + J^2_z \\
+\end{align}
+\item (2) \([A,BC]=[A,B]C+B[A,C]\)
+\item (3) \([J_z,J_\pm] = \pm \hbar J_\pm\)
+\end{itemize}
+
+\begin{align}
+[\vec J^2,J_z]\stackrel{\mathrm{(1)}}=&[\frac{1}{2}J_+J_-+  \frac{1}{2}J_-J_+ + J^2_z,J_z] \\
+&=[\frac{1}{2}J_+J_-,J_z] +  [\frac{1}{2}J_-J_+,J_z] + \underbrace{[J^2_z,J_z]}_{=0} \\
+&=\frac{1}{2} ([J_+J_-,J_z] + [J_-J_+,J_z]) \\
+&=\frac{1}{2} (-[J_z,J_+J_-] - [J_z,J_-J_+]) \\
+^{(2)}&=\frac{1}{2} (-[J_z,J_+]J_--J_+[J_z,J_-] - [J_z,J_-]J_+- J_-[J_z,J_+]) \\
+^{(3)}&=\frac{1}{2} (-\hbar J_+J_-+\hbar J_+J_- + \hbar J_-J_+- \hbar J_-J_+) \\
+&=\frac{\hbar}{2} (-J_+J_-+ J_+J_- +J_-J_+- J_-J_+) \\
+&=0 
+\end{align}
+
+\begin{itemize}
+\item (1) \(J_\pm = \hbar a^\dagger_\pm a_\mp\)
+\item (2) \([A,BC]=[A,B]C+B[A,C]\)
+\item (3) \([a,a^\dagger]=1\)
+\end{itemize}
+
+\begin{align}
+[J_+,J_-]&=[\hbar a^\dagger_+ a_-,\hbar a^\dagger_- a_+] \\
+&=\hbar^2([a^\dagger_+ a_-,a^\dagger_- a_+]) \\
+^{(2)}&=\hbar^2([a^\dagger_+ a_-,a^\dagger_-] a_+ +a^\dagger_- [a^\dagger_+ a_-, a_+]) \\
+&=\hbar^2([a_-,a^\dagger_-]a^\dagger_+a_+ +a^\dagger_-a_-[a^\dagger_+, a_+]) \\
+^{(3)}&=\hbar^2(a^\dagger_+a_+ - a^\dagger_-a_-) \\
+&=2\hbar(\frac{\hbar}{2}(a^\dagger_+a_+ - a^\dagger_-a_-)) \\
+&=2\hbar J_z
+\end{align}
+
+
+\begin{itemize}
+\item (1) \([a,a^\dagger]=1=aa^\dagger-a^\dagger a \leftrightarrow aa^\dagger=1+a^\dagger a\)
+\end{itemize}
+
+
+\begin{align} \vec J^2 &= J_x+J_y+J^2_z = \frac{1}{2}J_+J_-+  \frac{1}{2}J_-J_+ + J^2_z \\
+&= \frac{1}{2}(J_+J_-+ J_-J_+) + J^2_z\\
+&= \frac{\hbar^2}{2}(a^\dagger_+a_-a^\dagger_-a_+ + a^\dagger_-a_+a^\dagger_+a_-)+ \frac{\hbar^2}{4}( a^\dagger_+ a_+-a^\dagger_- a_-)^2 \\
+&= \frac{\hbar^2}{2}(a^\dagger_+a_+a_-a^\dagger_- + a^\dagger_-a_-a_+a^\dagger_+)+ \frac{\hbar^2}{4}( a^\dagger_+ a_+-a^\dagger_- a_-)^2 \\
+&= \frac{\hbar^2}{2}(a^\dagger_+a_+(1+a^\dagger_-a_-) + a^\dagger_-a_-(1+a^\dagger_+a_+))+ \frac{\hbar^2}{4}( a^\dagger_+ a_+-a^\dagger_- a_-)^2 \\
+&= \frac{\hbar^2}{2}(N_+(1+N_-) + N_-(1+N_+))+ \frac{\hbar^2}{4}( N_+-N_-)^2 \\
+&= \frac{\hbar^2}{4}(2N_+(1+N_-) + 2N_-(1+N_+) + N^2_+-N^2_--N_+N_--N_-N_+) \\
+&= \frac{\hbar^2}{4}(2N_++2N_+N_- + 2N_-+2N_-N_+ + N^2_+-N^2_--N_+N_--N_-N_+) \\
+&= \frac{\hbar^2}{4}(2N_++N_+N_- + 2N_-+N_-N_+ + N^2_+-N^2_-) \\
+&= \frac{\hbar^2}{4}(2N_++  2N_- + N^2_+-N^2_- + N_+N_- +N_-N_+ ) \\
+&= \frac{\hbar^2}{4}(2N_++  2N_- + (N_++N_-)^2) \\
+&= \frac{\hbar^2}{4}(2N + (N)^2) \\
+&= \hbar^2(\frac{N^2}{2} + \frac{N}{2} ) \\
+\vec J^2 &= \hbar^2 \frac{N}{2}(\frac{N}{2}+1)
+\end{align}
+
+
+
+Zusammenhang mit \(|jm\rangle\)
+
+\(\vec J^2 = \hbar^2 \frac{N}{2}(\frac{N}{2}+1) \stackrel{\mathrm{!}}=\hbar^2 j(j+1)\)
+\[ \Rightarrow j=\frac{N_++N_-}{2} \]
+
+\(J_z=\frac{\hbar}{2}(N_+-N_-)  \stackrel{\mathrm{!}}= \hbar m \)
+
+\[ \Rightarrow m=\frac{N_+-N_-}{2} \]
+
+\end{document}

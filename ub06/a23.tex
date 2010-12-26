@@ -1,0 +1,131 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba23_Harmonischer_Oszillator_mit_Stoerung
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub06/a23.pdf
+
+\begin{document}
+\section*{Aufgabe 23: Harmonischer Oszillator mit Störung}
+
+Ein eindimensionaler harmonischer Oszillator mit Frequenz \(\omega\) bekommt einen Störterm
+
+\[V=\frac{1}{2}\epsilon m \omega^2x^2\]
+
+Bestimmen Sie den gestörten Grundzustand in erster und dessen Energieeigenwert in zweiter Ordnung der zeitunabhängigen Störungsrechnung. Sie können das Problem auch exakt lösen. Wie vergleicht sich Ihr Ergebnis für das gestörte Energieniveau mit dem exakten Ergebnis für \(\epsilon \rightarrow 0\)?
+
+\subsection*{LSG}
+
+\[ H_0 = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2 \]
+
+\begin{align}
+H &= H_0 + \lambda V \\
+& = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2 +  \frac{1}{2}\epsilon m \omega^2x^2  \\
+& = \frac{p^2}{2m} + \frac{1}{2}m\omega^2(1  + \epsilon ) x^2  \\
+& = \frac{p^2}{2m} + \frac{1}{2}m\Omega^2 x^2  \\
+\end{align}
+
+
+mit \(\Omega^2 = \omega^2(1  + \epsilon)\)
+
+\[ H = \hbar \Omega(n+\frac{1}{2})\]
+
+\(V=\frac{1}{2}\epsilon m \omega^2x^2\) mit \(x=\sqrt{\frac{\hbar}{2\omega m}}(a^\dagger+a)\) 
+
+\begin{align}
+V&=\frac{1}{2}\epsilon m \omega^2\frac{\hbar}{2\omega m}(a^\dagger+a)^2 \\
+&=\frac{1}{4}\epsilon \omega\hbar(a^\dagger+a)^2 \\
+&=\frac{1}{4}\epsilon \omega\hbar(a^{\dagger 2} + a^2+a^\dagger a+ aa^\dagger) \text{mit\quad} aa^\dagger=1+a^\dagger a\\
+&=\frac{1}{4}\epsilon \omega\hbar(a^{\dagger 2} + a^2+2a^\dagger a+ 1)
+\end{align}
+
+
+Berechnung des Eigenzustandes in erster Ordnung:
+
+\(|n\rangle =|n^{(0)}\rangle + (\lambda)\sum_{k\neq n}|k^{(0)}\rangle \frac{\langle k^{(0)}|V|n^{(0)}\rangle }{E_n^{(0)}-E_k^{(0)}}\)
+
+
+\begin{align}
+\langle k^{(0)}|V|n^{(0)}\rangle &=  \frac{1}{4}\epsilon \omega\hbar \langle k^{(0)}|(a^{\dagger 2} + a^2+2a^\dagger a+ 1)|n^{(0)}\rangle\\
+&=\frac{1}{4}\epsilon \omega\hbar( \langle k^{(0)}|a^{\dagger 2}|n^{(0)}\rangle +\langle k^{(0)}| a^2|n^{(0)}\rangle+ \\
+&+2\langle k^{(0)}|a^\dagger a|n^{(0)}\rangle+\langle k^{(0)}|1|n^{(0)}\rangle)\\
+&=\frac{1}{4}\epsilon \omega\hbar[\sqrt{n(n-1)}\delta_{k,n-2}+\sqrt{(n+1)(n+2)}\delta_{k,n+2}+\\
+&+2\sqrt{n\cdot n}\delta_{k,n}+\delta_{k,n}]\\
+&=\frac{1}{4}\epsilon \omega\hbar[\sqrt{n(n-1)}\delta_{k,n-2}+\sqrt{(n+1)(n+2)}\delta_{k,n+2}+\\
+&+(2n+1)\delta_{k,n}]
+\end{align}
+
+
+Berechnung der Gestörten Energie:
+
+(nichtgestörter Term) 0-Ordnung \(E^{(0)}_n = \hbar \omega(n+\frac{1}{2})\)
+
+Störungsterm 1-Ordnung: \(E^{(1)}_n = \langle \phi_n|V|\phi_n\rangle = \frac{1}{2}\epsilon \omega\hbar (n + \frac{1}{2}) \) 
+
+
+\begin{align}
+\rightarrow \langle \phi_n | V | \phi_n \rangle &= \frac{1}{4}\epsilon \omega\hbar \langle \phi_n |(a^{\dagger 2} + a^2+2a^\dagger a+ 1) | \phi_n \rangle \\
+&= \frac{1}{4}\epsilon \omega\hbar (\underbrace{\langle \phi_n |a^{\dagger 2}|\phi_n \rangle}_{=0} + \underbrace{\langle \phi_n|a^2|\phi_n \rangle}_{=0}+2\underbrace{\langle \phi_n|a^\dagger a|\phi_n \rangle}_{=n}+ \underbrace{\langle \phi_n|1| \phi_n \rangle}_{=1})\\
+&= \frac{1}{4}\epsilon \omega\hbar (2n + 1)\\
+&= \frac{1}{2}\epsilon \omega\hbar (n + \frac{1}{2})\\
+\end{align}
+
+Störungsterm 2-Ordnung:
+\[E^{(2)}_n = \sum_{n\neq m} \frac{|\langle \phi_m| V |\phi_n\rangle|^2}{E^{(0)}_n-E^{(0)}_m}\]
+
+Terme die übrig bleiben:
+
+mit \(a|n\rangle = \sqrt{n}|n-1\rangle\), \(a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle\)
+
+\begin{align}
+\langle \phi_{n+2}|V|\phi_n\rangle &=\frac{1}{4}\epsilon \omega\hbar \langle \phi_{n+2}|a^{\dagger 2}|\phi_n\rangle\\
+&= \frac{1}{4}\epsilon \omega\hbar \sqrt{n+1} \langle \phi_{n+2}|a^{\dagger}|\phi_{n+1}\rangle\\
+&=  \frac{1}{4}\epsilon \omega\hbar \sqrt{n+1} \sqrt{n+2} \langle \phi_{n+2}|\phi_{n+2}\rangle\\
+&=  \frac{1}{4}\epsilon \omega\hbar \sqrt{(n+1)(n+2)} \\
+\end{align}
+
+\begin{align}
+\langle \phi_{n-2}|V|\phi_n\rangle &=\frac{1}{4}\epsilon \omega\hbar \langle \phi_{n-2}|a^2|\phi_n\rangle\\
+&= \frac{1}{4}\epsilon \omega\hbar \sqrt{n} \langle \phi_{n-2}|a|\phi_{n-1}\rangle\\
+&=  \frac{1}{4}\epsilon \omega\hbar \sqrt{n} \sqrt{n-1} \langle \phi_{n-2}|\phi_{n-2}\rangle\\
+&=  \frac{1}{4}\epsilon \omega\hbar \sqrt{n(n-1)} \\
+\end{align}
+
+Beim Einsetzen beachten, dass die Indizies \(n,m\) im Nenner und Zähler genau gegenüber liegen.
+
+\begin{align}
+\rightarrow E^{(2)}_n &= \frac{|\langle \phi_{n+2}|V|\phi_n\rangle|^2}{E^{(0)}_n-E^{(0)}_{n+2}} + \frac{|\langle \phi_{n-2}|V|\phi_n\rangle|^2}{E^{(0)}_n-E^{(0)}_{n-2}}\\
+&=\frac{\frac{1}{16}\epsilon^2 \omega^2\hbar^2 (n+1)(n+2)}{\hbar \omega(n+\frac{1}{2})-\hbar \omega(n+2+\frac{1}{2})} + \frac{\frac{1}{16}\epsilon^2 \omega^2\hbar^2 n(n-1)}{\hbar \omega(n+\frac{1}{2})-\hbar \omega(n-2+\frac{1}{2})}\\
+&=\frac{1}{16}\epsilon^2 \omega\hbar \left[\frac{(n+1)(n+2)}{n+\frac{1}{2}-n-2-\frac{1}{2}} + \frac{n(n-1)}{n+\frac{1}{2}-n+2-\frac{1}{2}}\right]\\
+&=\frac{1}{16}\epsilon^2 \omega\hbar \left[-\frac{(n+1)(n+2)}{2} + \frac{n(n-1)}{2}\right]\\
+&=\frac{1}{16\cdot 2}\epsilon^2 \omega\hbar [-(n+1)(n+2) + n(n-1)]\\
+&=\frac{1}{16\cdot 2}\epsilon^2 \omega\hbar [-n^2-2n-n-2 + n^2-n]\\
+&=-\frac{1}{8}\epsilon^2 \omega\hbar [n+\frac{1}{2}]\\
+\end{align}
+
+Der Energiewert bis in die Störung 2-Ordnung lautet somit:
+
+\begin{align}
+\Rightarrow \tilde E_n &= E^{(0)}_n+E^{(1)}_n+E^{(2)}_n\\
+&= \hbar \omega(n+\frac{1}{2}) + \frac{1}{2}\epsilon \omega\hbar (n + \frac{1}{2})- \frac{1}{8}\epsilon^2 \omega\hbar [n+\frac{1}{2}]\\
+&=\hbar \omega(n+\frac{1}{2})(1+\frac{\epsilon}{2}-\frac{\epsilon^2}{4})
+\end{align}
+
+Exakte Rechnung, vermute mal nur möglich wenn man von hinten nach forne 'denkt'/'rechnet'. Falls man die Energie \(\tilde E_n\) mit \(E^{(0)}_n = \hbar\omega(n+\frac{1}{2})\) vergleicht, so muss \(\tilde \omega\) zunächst dem Term \((1+\frac{\epsilon}{2}--\frac{\epsilon^2}{4})\) gleich sein. Mit einem Supermanns-Röntgen-Blick sieht man sofort (oder man is so verwegen und hat sämtliche Taylor-Entwicklungen auf seinen Arm tätoviert) dass diese Klammer eine Wurzelentwicklung seien könnte, etwa derart:
+
+\[ \sqrt{1+\epsilon} = (1+\frac{\epsilon}{2}-\frac{\epsilon^2}{4}+\mathcal O(\epsilon^3)) \]
+
+Also setzt man den Hamiltonoperator mit der 'exakten' \(\tilde\omega=\omega\sqrt{1+\epsilon}\) Frequenz an:
+
+\[ H = \frac{p^2}{2m}+\frac{1}{2}m\tilde\omega^2x^2=\frac{p^2}{2m}+\frac{1}{2}m\omega(1+\epsilon)x^2 \]
+\[\rightarrow E_n = \hbar \omega(n+\frac{1}{2})(1+\frac{\epsilon}{2}-\frac{\epsilon^2}{4} +\mathcal O(\epsilon^3) )\]
+
+Exaktes Ergebnis entspicht dem Ergebnis der Störungsrechnung (zumindest in den führenden Potenzen). Für \(\epsilon \rightarrow 0\) kann \(E_n\) als exakt angesehen werden.
+
+
+
+
+
+
+
+\end{document}

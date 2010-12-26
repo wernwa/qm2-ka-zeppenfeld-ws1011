@@ -1,0 +1,118 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba15_clebsch-gordan-koeffizienten
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub04/a15.pdf
+
+\begin{document}
+\subsection*{Aufgabe 15: Clebsch-Gordan Koeffizienten}
+
+ein System sei aus zwei Spin-1 Systemen zusammengesetzt. Wie lauten die Eigenzustände des Gesamtdrehimpulses, \(|jm\rangle\), ausgedrückt als Linearkombinationen der gekoppelten \(|1m_1\rangle\) \(|1m_2\rangle\)-Zustände? Mit anderen Worten: bestimmen Sie die Clebsch-Gordan Koeffizienten für \(1\otimes 1=0\oplus 1\oplus 2\). Beachten Sie die Condon-Shortley Konvention. Sie können die Koeffizienten für \(|j-m\rangle\) aus denen für \(|jm\rangle\) durch bekannte Symmetrien bestimmen. Als letzen zustand werden Sie vermutlich \(|00\rangle\) berechnen. \(J_-\) auf deisen angewandt sollte 0 ergeben. Üerprüfen Sie das. (B ei der Gelegenheit lohnt es sich herauszufinden, was Alfred Clebsch mit dem Polytechnikum Karlsruhe zu tun hatte.)
+
+\subsection*{LSG}
+
+
+Die CGKs bilden eine vollständige orthonormale Basis für die gilt: \(\sum_{m_1,m_2}|j_1j_2;m_1m_2\rangle\langle j_1j_2;m_1m_2|=\mathbb 1\)
+\begin{align}
+|jm\rangle &= \left(\sum_{m_1,m_2}|j_1j_2;m_1m_2\rangle\langle j_1j_2;m_1m_2|\right)|jm\rangle \\
+&= \sum_{m_1,m_2} \underbrace{\langle j_1j_2;m_1m_2|jm\rangle}_{CGK}|j_1j_2;m_1m_2 \rangle
+\end{align}
+
+
+Aufgrund der Beziegung \(m=m_1+m_2 \rightarrow \langle j_1j_2;m_1m_2|j,m=m_1+m_2\rangle \neq 0 \) lassen sich zunächst die Gesamtbasis \(|jm\rangle\) in der anderen Basis \(|j_1j_2;m_1m_2 \rangle\) ausdrücken:
+
+\(j=0,1,2\), \(m=-2,-1,0,1,2\), \(m_1,m_2=\pm 1,0\)
+
+\begin{itemize}
+\item \(|00\rangle = \langle 11;-11|00\rangle|11;-11\rangle + \langle 11;1-1|00\rangle|11;1-1\rangle + \langle 11;00|00\rangle|11;00\rangle\)
+\item \(|1-1\rangle =\langle 11;-10|1-1\rangle| 11;-10\rangle +\langle 11;0-1 |1-1\rangle |11;0-1 \rangle\)
+\item \(|10\rangle = \langle 11;-11|10\rangle|11;-11\rangle +  \langle 11;1-1|10\rangle| 11;1-1\rangle+ \langle 11;00|10\rangle|11;00\rangle\)
+\item \(|11\rangle = \langle 11;10 |11\rangle|11;10\rangle + \langle 11;01 |11\rangle|11;01\rangle\)
+\item \(|2-2\rangle = \langle 11;-1-1|2-2\rangle|11;-1-1\rangle\)
+\item \(|2 -1\rangle = \langle 11;-1 0 |2-1\rangle|11;-1 0\rangle + \langle 11;0-1|2-1\rangle|11;0-1\rangle\)
+\item \(|2 0\rangle = \langle 11;-1 1 |20\rangle|11;-1 1\rangle+\langle11; 1-1 |20\rangle|11;1-1\rangle+\langle 11;00 |20\rangle|11;00\rangle\)
+\item \(|21\rangle = \langle 11;10 |21\rangle|11;10\rangle+\langle 11; 01 |21\rangle|11;01\rangle\)
+\item \(|22\rangle = \langle 11;11|22\rangle|11;111\rangle\)
+\end{itemize}
+
+\(\langle j'm'|jm\rangle = \delta_{j'j'}\delta_{m'm}\) \( \rightarrow\) \(\langle jm|jm\rangle = 1\)
+
+
+\begin{align}
+\langle jm |jm\rangle &= \langle jm|\left( \sum_{m_1m_2} |j_1j_2;m_1m_2\rangle \langle j_1j_2;m_1m_2|\right) |jm\rangle \\
+ &= \sum_{m_1m_2}\langle jm|j_1j_2;m_1m_2\rangle \langle j_1j_2;m_1m_2|jm\rangle \\
+&= \sum_{m_1m_2}\langle jm |j_1j_2;m_1m_2\rangle^2 \\
+&=1
+\end{align}
+
+(1) \(\Rightarrow \sum_{m_1m_2} \langle jm |j_1j_2;m_1m_2\rangle^2 = 1\)
+
+die Condon-Shortley Konvention (2): \(\langle jj|j_1j_1;m_1=j_2,m_2=j-j_1\rangle \equiv \text{positiv}\) (3) \(\langle j_1j_2;m_1m_2|jm\rangle = (-1)^{j-j_1-j_2}\langle j_2 j_1; m_2 m_1| j m\rangle\)
+ (4) \[\langle j_1j_2;m_1m_2|jm\rangle = (-1)^{j-j_1-j_2}\langle j_2 j_1; -m_1 -m_2| j -m\rangle = \langle j_2 j_1; -m_2 -m_1| j -m\rangle \]
+
+mit (1),(2) und (3) lassen sich die einfachen und zweifachen CGKs leicht finden:
+
+\begin{itemize}
+\item \(|00\rangle = \underbrace{\langle 11;-11|00\rangle}_{\equiv \text{positiv}}|11;-11\rangle + \underbrace{\langle 11;1-1|00\rangle}_{\equiv \text{positiv}}|11;1-1\rangle + \langle 11;00|00\rangle|11;00\rangle\)
+\item \(|1-1\rangle =\underbrace{\langle 11;-10|1-1\rangle}_{\equiv -\langle 11;0-1 |1-1\rangle}| 11;-10\rangle +\langle 11;0-1 |1-1\rangle |11;0-1 \rangle\)
+\item \(|10\rangle = \underbrace{\langle 11;-11|10\rangle}_{\equiv -\langle 11;1-1|10\rangle}|11;-11\rangle +  \langle 11;1-1|10\rangle| 11;1-1\rangle+ \langle 11;00|10\rangle|11;00\rangle\)
+\item \(|11\rangle = \underbrace{\langle 11;10 |11\rangle}_{\equiv \text{aus (2) positiv} \rightarrow\frac{1}{\sqrt 2}} |11;10\rangle + \underbrace{\langle 11;01 |11\rangle}_{\equiv \text{aus (3) negativ} \rightarrow -\frac{1}{\sqrt 2}} |11;01\rangle\)
+\item \(|2-2\rangle =\underbrace{ \langle 11;-1-1|2-2\rangle}_{\equiv 1\qquad \text{wegen (1)}}|11;-1-1\rangle\)
+\item \(|2 -1\rangle = \underbrace{\langle 11;-1 0|2-1\rangle}_{\frac{1}{\sqrt 2}} |11;-1 0\rangle + \underbrace{\langle 11;0-1|2-1\rangle}_{\frac{1}{\sqrt 2}} |11;0-1\rangle\)
+\item \(|2 0\rangle = \underbrace{\langle 11;-1 1 |20\rangle}_{\equiv \langle11; 1-1 |20\rangle}|11;-1 1\rangle+\langle11; 1-1 |20\rangle|11;1-1\rangle+\langle 11;00 |20\rangle|11;00\rangle\)
+\item \(|21\rangle = \underbrace{\langle 11;10|21\rangle}_{\frac{1}{\sqrt 2}} |11;10\rangle+\underbrace{\langle 11; 01 |21\rangle}_{\frac{1}{\sqrt 2}}|11;01\rangle\)
+\item \(|22\rangle = \underbrace{\langle 11;11|22\rangle}_{\equiv 1\quad \text{wegen (1) oder (2)}}|11;11\rangle\)
+\end{itemize}
+
+
+Aufgrund der Beziehung \(\langle j_1,j_2;m_1,m_2|J_{\pm}|jm\rangle=\langle j_1,j_2;m_1,m_2|J_{1\pm}+J_{2\pm}|jm\rangle\) und sich daraus ergebenden Gleichung:
+
+(5)
+\begin{align}
+\sqrt{(j\mp m)(j\pm m+1)}&\langle j_1,j_2; m_1,m_2 | j,m\pm 1\rangle =\\
+&=\sqrt{(j_1\pm m_1)(j_1\mp m_1 +1)}\langle j_1,j_2; m_1 \mp 1,m_2|jm\rangle \\
+&+ \sqrt{(j_2\pm m_2)(j_2\mp m_2 +1)}\langle j_1,j_2; m_1 ,m_2 \mp 1|jm\rangle
+\end{align}
+
+Kommt man auf die restlichen CGKs. 
+
+mit \(j=0,m=0; m_1=1; m_2=0\) eingesetzt in (5) ergibt \(- \langle 11;-11|00\rangle = \langle 11;00|00\rangle \) 
+aus (1) und dem schon bekeannten Teilergebniss für \(|00\rangle\) folgt: \( \frac{1}{\sqrt 3} = \langle 11;-11|00\rangle = |11;1-1\rangle= -\langle 11;00|00\rangle\)
+
+\(\Rightarrow |00\rangle =  \frac{1}{\sqrt 3}[|11;-11\rangle + |11;1-1\rangle - |00\rangle|11;00\rangle ]\)
+
+mit \(j=1;m=-1; m_1=m_2=0\) in (5)
+
+aus (3) und (4) \(\langle 11;10|11\rangle\equiv \text{positiv} \equiv \langle 11;0-1|1-1\rangle\)
+
+
+\(\Rightarrow |1 -1\rangle = \frac{1}{\sqrt 2}[ |11;0-1\rangle - |11;-10\rangle]\)
+
+mit \(j=2,m=1,m_1=-1, m_2=1\) in (5) \(\sqrt{3\cdot 2}\langle 11;-11|20\rangle = \sqrt{2} \underbrace{\langle 11;01|21\rangle}_{\frac 1 {\sqrt{2}}}\)
+\(\langle 11;-11|20\rangle = \langle 11;1-1|20\rangle= \frac 1 {\sqrt 6}\)
+
+aus (1) \(\frac{1}{6}+\frac{1}{6}+ \langle 11;00|20\rangle^2 = 1\) \(\rightarrow \langle 11;00|20\rangle=\pm 2 \frac{1}{\sqrt 6}\)
+
+mit \(j=2,m=-1; m_1=m_2=0\) in (5) \(\sqrt{3\cdot 2}\langle 11;00|20\rangle = \sqrt{2} \underbrace{\langle 11;-10|2-1\rangle}_{\frac 1 {\sqrt{2}}}+\sqrt{2}\underbrace{\langle 11;0-1|2-1\rangle}_{\frac 1 {\sqrt{2}}}\)
+\(\rightarrow \langle 11;00|20\rangle= 2 \frac{1}{\sqrt 6}\equiv \text{positiv}\)
+
+\(\Rightarrow |2 0\rangle = \frac{1}{\sqrt 6}[|11;-1 1\rangle+|11;1-1\rangle+2|11;00\rangle]\)
+
+Zusammenfassung der Ergebnisse:
+
+\begin{itemize}
+\item \(|00\rangle =  \frac{1}{\sqrt 3}[|11;-11\rangle + |11;1-1\rangle - |00\rangle|11;00\rangle ]\)
+\item \(|1 -1\rangle = \frac{1}{\sqrt 2}[ |11;0-1\rangle - |11;-10\rangle]\)
+\item \(|10\rangle = \frac{1}{\sqrt 2}[|11;-11\rangle + | 11;1-1\rangle]\) Rechnung TODO
+\item \(|11\rangle = \frac{1}{\sqrt 2}[ |11;10\rangle - |11;01\rangle]\)
+\item \(|2-2\rangle =|11;-1-1\rangle\)
+\item \(|2 -1\rangle = \frac{1}{\sqrt 2}[|11;-1 0\rangle + |11;0-1\rangle]\)
+\item \(|2 0\rangle = \frac{1}{\sqrt 6}[|11;-1 1\rangle+|11;1-1\rangle+2|11;00\rangle]\)
+\item \(|21\rangle =\frac{1}{\sqrt 2}[|11;10\rangle+|11;01\rangle]\)
+\item \(|22\rangle = |11;11\rangle\)
+\end{itemize}
+
+TODO Alernativ \(J_-\) auf den höchsten ket zum niedrigsten anwenden und somit ebenfalls die Werte erhalten.
+
+\end{document}

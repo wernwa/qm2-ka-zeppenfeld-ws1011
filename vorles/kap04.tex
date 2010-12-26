@@ -1,0 +1,219 @@
+\input{../headers/header_script.tex}
+
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+%couchdb db=physik
+%couchdb id=qm2vorles04_Identische_Teilchen
+%couchdb tags=qm2
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2/kap04.pdf
+
+\begin{document}
+\tableofcontents
+\setcounter{chapter}{3}
+\chapter{Identische Teilchen}
+
+\section{Fermionen \& Bosonen}
+
+1 Teilchenzustand \(|K'\rangle \) K als kollektiver Index
+
+2 Teilchenzustand \(|K'\rangle|K''\rangle \) oder \(|K''\rangle|K'\rangle \)
+
+ \(|K'\rangle\neq |K''\rangle \) Orthogonal \(\Rightarrow \) \(|K'\rangle|K''\rangle \bot |K''\rangle|K'\rangle \) beschreiben gleiche Situation \(\rightarrow\) Austausch-Entartung
+
+Lösung: Permutationssymmetrie unter Austausch identischer Teilchen. Permutationsoperator \(P_{ij}\)
+ 
+\(|K'\rangle|K''\rangle...|K^{(n)}\rangle \) oder \(|1\rangle|2\rangle...|n\rangle \)
+
+\begin{align}
+P_{ij}&|K'\rangle ...|K\rangle|K^{(i+1)}\rangle ...|K^{(j)}\rangle ...
+&=|K'\rangle ...|K^{i-1}\rangle|K^{(i)}\rangle|K^{(i+1)}\rangle ...|K^{(j)}\rangle ...
+\end{align}
+
+\[S_n = \{ P_\pi = \pi_{\{ij\}}P_{ij} \}\]
+
+\(n!\) Permutationen von \(n\) Elementen \(\rightarrow dim S_n = n! \)
+
+Eigenschaften: \(P^2_{ij}=1\), \(S_n\) nichtkommutativ für \(n\geq 3\)
+\[P_{12}P_{23}|K'\rangle|K''\rangle|K'''\rangle= P_{12}|K'\rangle|K'''\rangle|K''\rangle= |K'''\rangle|K'\rangle|K''\rangle\]
+\[P_{21}P_{12}|K'\rangle|K''\rangle|K'''\rangle= P_{23}|K''\rangle|K'\rangle|K'''\rangle= |K''\rangle|K'''\rangle|K'\rangle\]
+
+
+\(P_{ij}\) und Observablen
+
+\[A_1|a'\rangle |a''\rangle = a'|a'\rangle |a''\rangle\]
+\[A_2|a'\rangle |a''\rangle = a''|a'\rangle |a''\rangle\]
+
+
+Was ist \(P_{12}A_1P_{12}^{-1}\)
+
+\[P_{12}A_1P_{12}^{-1}|a'\rangle |a''\rangle = P_{12}A_1 |a''\rangle |a'\rangle =  P_{12}a''|a''\rangle |a'\rangle = a'' P_{12}|a''\rangle |a'\rangle  = a''|a'\rangle |a''\rangle\]
+
+\(P_{12}A_1 P_{12}^{-1} = A_2\), \(P_{ij}A_jP_{ij}^{-1}=A_i\)
+
+Pamiltonoperator invariant unter Permutation identischer Teilchen
+
+\[H= \frac{\vec p_1^2}{2m}+ \frac{\vec p_2^2}{2m} +V(\vec x_1)+ V(\vec x_2) + V_{pair}(|\vec x_1-\vec x_2|) \]
+
+\[\Rightarrow P_{12}HP_{12}^{-1} = H \Leftrightarrow [H,P_{12}]=0\]
+
+
+\(\Rightarrow \) Es gibt simultane Eigenzustände zu \(P_{12},H\)
+
+\(P_{12}\) hat Eigenwerte \(\pm 1\)
+
+\[+1: |K'K''\rangle_+=\frac{1}{\sqrt{2}}(|K'\rangle|K''\rangle + |K''\rangle|K'\rangle) \]
+\[-1: |K'K''\rangle_-=\frac{1}{\sqrt{2}}(|K'\rangle|K''\rangle - |K''\rangle|K'\rangle) \]
+
+Verallgemeinerung auf \(n\) Teilchen: irreduzible Darstellung  der \(S_n\). \(S_n\) hat 2 1-dimensionale Darstellungen. 
+
+\begin{enumerate}
+\item[a)] Symmetrische Darstellung \(\pi \to 1\)
+\[|K'...K'''\rangle_+ = N\sum_{\pi\in S_n}1\cdot P_\pi |K'\rangle|K''\rangle...|K^{(n)}\rangle \]
+Bosonen
+\item[b)] Antisymmetische Darstellung \(\pi \to \delta=\begin{cases}
+  +1 & \pi \text{ gerade,}\\
+  -1 & \pi \text{ ungerade.}
+\end{cases}\)
+\[|K'...K'''\rangle_- = \frac{1}{\sqrt{n!}}\sum_{\pi\in S_n}\delta_\pi\cdot P_\pi |K'\rangle|K''\rangle...|K^{(n)}\rangle \]
+Fermionen
+\end{enumerate}
+
+
+
+
+\underline{Bose-Einstein Statistik}
+
+\[P_{ij}\underbrace{|\text{n identische Teilchen}\rangle}_{|K^{(1)}...K^{(n)}\rangle_+} = +|\text{n id.Teilchen}\rangle \]
+
+\underline{Fermi-Dirac  Statistik}
+\[P_{ij}\underbrace{|\text{n identische Teilchen}\rangle}_{|K^{(1)}...K^{(n)}\rangle_-} = -|\text{n id.Teilchen}\rangle \]
+
+Bew.: 
+\begin{align}
+P_{ij}|K^{(1)}...K^{(n)}\rangle_-&=\frac{1}{\sqrt{n!}}\sum_{\pi\in S_n}\delta_\pi\underbrace{P_{ij}P_\pi}_{-P_{\pi_{ij}}} |K^{(1)}\rangle|K^{(2)}\rangle...|K^{(n)}\rangle \\
+&=-\frac{1}{\sqrt{n!}}\sum_{\pi\in S_n}\delta_\pi P_{\pi_{ij}} |K^{(1)}\rangle|K^{(2)}\rangle ...|K^{(n)}\rangle \\
+&=-|K^{(1)} ... K^{(n)}\rangle_{-}
+\end{align}
+
+
+
+Zusammenhang von Statistik und SpinTeilchen mit 
+\begin{itemize}
+\item Spin 0,1,2,... sind Bosonen
+\item Spin \(\frac{1}{2},\frac{3}{2},\frac{5}{2}\)... sind Fermionen
+\end{itemize}
+
+Innerhalb relativistischer quantenfeldtheorie: 
+\begin{itemize}
+\item Spin-Statistik Theorem Spin \(\frac{1}{2}\)... Fermionen und Spin 0,1,... Bosonen. 
+\item keine Para-Statistik, d.h. höhere irreduzible Darstellung der \(S_n\)
+\end{itemize}
+
+\subsection{2 Elektronen Systeme}
+
+2 \(e^-\) können nicht den gleichen Zustand besetzen. 
+
+\[(|K'\rangle |K'\rangle)_- = \frac{1}{\sqrt{2}}(1-P_{12})|K'\rangle |K'\rangle = 0\]
+
+\underline{Pauli-Prinzip}
+Basis Zustand: \(|\vec x_1\rangle |m_{s1}\rangle \otimes |\vec x_2\rangle |m_{s2}\rangle\)
+
+Annahme: \([H,\vec S_{tot}]=0\)
+
+\[\rightarrow |\psi\rangle = \phi (\vec x_1,\vec x_2)\chi (m_{s1},m_{s2})\]
+
+\[|\psi\rangle  = \int d^3\vec x_1d^3\vec x_2\sum_{m_{s1}m_{s2}}\phi(\vec x_1,\vec x_2)\chi (m_{s1},m_{s2})|\vec x_1\rangle |m_{s1}\rangle |\vec x_2\rangle |m_{s2}\rangle \]
+
+\(S^2_{tot}\) Eigenzustände
+
+\[\chi(m_{s1},m_{s2})=\begin{cases}
+  \chi_{++}(=\delta_{m_{s1}+\frac{1}{2}} \delta_{m_{s2}+\frac{1}{2}}) & S=1,\text{Triplett}\\
+  \frac{1}{\sqrt{2}}(\chi_{+-}+\chi_{-+}) & S=1,\text{Triplett}\\
+ \chi_{--} & S=1,\text{Triplett} \\
+ \frac{1}{\sqrt{2}}(\chi_{+-}-\chi_{-+}) & S=0, \text{Singulett}\\
+\end{cases}\]
+
+Unter Permutation von 1 \(\leftrightarrow \) 2
+
+\[P_{12}\chi_{\text{triplet}}= +\chi_{\text{triplet}} \Rightarrow \phi(\vec x_1,\vec x_2) = -\phi(\vec x_2,\vec x_1)\]
+\[P_{12}\chi_{\text{Singulett}}= -\chi_{\text{Signulet}} \Rightarrow \phi(\vec x_1,\vec x_2) = +\phi(\vec x_2,\vec x_1)\]
+
+Bsp:
+
+\[H = \underbrace{\frac{\vec p_1^2}{2m}+V(\vec x_1)}_{H_1}+ \underbrace{\frac{\vec p_2^2}{2m}+V(\vec x_2)}_{H_2} \]
+
+Mit \(H_{1}\omega_A(\vec x_1) = E_A\omega_A(\vec x_1)\)
+
+\(H_{2}\omega_A(\vec x_2) = E_A\omega_A(\vec x_2)\)
+
+folgen Lösungen für \(H|\psi\rangle =E|\psi\rangle \)
+
+\[\psi\rangle = \omega_A(\vec x_1) \omega_B(\vec x_2) \chi\]
+
+mit \(E= E_A+E_B\). Lösungen die Fermi-Dirac Statistik erfüllen
+
+\[\phi(\vec x_1,\vec x_2) = \frac{1}{\sqrt{2}}(\omega_A(\vec x_1) \omega_B(\vec x_2) \pm \omega_B(\vec x_1) \omega_A(\vec x_2)) \]
+
+\(+\) Für Singulett \(-\) für Triplett
+
+Wahrscheinlichkeit
+
+\begin{itemize}
+\item Teilchen 1 bei \(\vec x_1\) in \(d^3\vec x_1\) und
+\item Teilchen 2 bei \(\vec x_2\) in \(d^3\vec x_2\) zu finden
+\end{itemize}
+
+
+\begin{align}
+&|\phi(\vec x_1,\vec x_2)|^2 d^3\vec x_1 d^3\vec x_2 =\\
+&= \frac{1}{2}(|\omega_A(\vec x_1)|^2|\omega_B(\vec x_1)|^2+|\omega_B(\vec x_1)|^2|\omega_A(\vec x_1)|^2 \underbrace{ \pm 2Re\{\omega_A(\vec x_1) \omega_B(\vec x_2)\omega_A^*(\vec x_1) \omega_B^*(\vec x_2) \}}_{\text{Austausch-Dichte}}d^3\vec x_1d^3\vec x_2
+\end{align}
+
+\begin{enumerate}
+\item[a)] Klassische Situation für A und B ohne Überlapp (Austauschdichte = 0)
+\item[b)] Effekt der Statistik nur für starken Überlapp von A und B
+\end{enumerate}
+
+
+\subsection{He Atom}
+
+Kern mit \(Z=2\), 2 \(e^-\)
+
+\[H = \underbrace{\frac{\vec p_1^2}{2m}+ \frac{\vec p_2^2}{2m}-\frac{Ze^2}{4\pi \epsilon_0 r_1} -\frac{Ze^2}{4\pi \epsilon_0 r_2}}_{H_0}+\underbrace{\frac{e^2}{4\pi\epsilon_0 r_{12}}}_{V}\]
+
+\(r_{12}=|\vec x_1-\vec x_2|\)
+
+Eigenzustände von \(H_0\) sind Produkte von 'Wasserstoffzustände für \(Z=2\). z.B:
+
+\[|K'\rangle |K''\rangle \equiv |100\rangle |nlm\rangle \]
+
+\[\Rightarrow \phi(\vec x_1,\vec x_2) = \frac{1}{\sqrt{2}}(\psi_{100}(\vec x_1)\psi_{nlm}(\vec x_2)\pm \psi_{nlm}(\vec x_1)\psi_{100}(\vec x_2) ) \]
+
+\[E^{(1)} = E_1+E_n \]
+
+mit \(E_n = -Z^2\frac{e^2}{4\pi\epsilon_0 a_0}\frac{1}{2n^2}=-Z^2\cdot 13,6 eV\frac{1}{n^2}\)
+
+Energie Shift
+
+\[\Delta = \langle \frac{e^2}{4\pi\epsilon_0|\vec x_1-\vec x_2|} \rangle = I\pm J \]
+
+\[I = \int d^3\vec x_1 d^3\vec x_2 |\psi_{100}(\vec x_1)|^2 |\psi_{nlm}(\vec x_2)|^2 \frac{e^2}{4\pi\epsilon_0|\vec x_1-\vec x_2|} \geq 0\]
+
+
+\[J=\int d^3 \vec x_1 d^3 x_2\psi_{100}(\vec x_1)\psi_{nlm}(\vec x_2) \psi_{nlm}^*(\vec x_1)\psi_{100}(\vec x_2)\frac{e^2}{4\pi\epsilon_0|\vec x_1-\vec x_2|}\]
+
+Für die Berechnung
+
+\[\frac{1}{|\vec x_1-\vec x_2|}\approx \sum_{l,m}\frac{r^2_<}{r^{l+1}_>}Y_{lm}(\theta_1,\phi_1)Y_{lm}^*(\theta_2,\phi_2)\]
+
+Spektrum von He
+
+
+\includegraphics[width=0.75\textwidth]{kap04_01.png}
+
+Ohne \(\vec S_1\cdot \vec S_2\) Kopplung tritt Spin Aufspaltung auf.
+
+\(n=2,l=1\): \(I\approx 0.06eV\) und \(J\approx 0.13eV\)
+
+
+
+\end{document}

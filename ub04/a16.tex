@@ -1,0 +1,94 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba16_Wigner-Matrizen
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub04/a16.pdf
+
+\begin{document}
+\section*{Aufgabe 16: Wigner-Matrizen}
+
+Die Wigner-Matrizen \(d_{m'm}^{j}(\beta)\) lassen sich für beliebiges \(j\) sukzessiv aus den \(d_{m'm}^{\frac{1}{2}}(\beta)\) und den Clebsch-Gordan-Koeffizienten (CGKs) berechnen. Bestimmen Sie so die gesamte Wigner Matrix für \(j=1\) aus der Matrix für \(j=\frac{1}{2}\),
+
+\[d_{m'm}^{\frac{1}{2}}(\beta) =\begin{pmatrix} cos\frac{\beta}{2}&-sin\frac{\beta}{2}\\sin\frac{\beta}{2}&cos\frac{\beta}{2} 
+\end{pmatrix}\]
+
+
+
+
+und den dazugehörigen CGKs.
+
+
+\subsection*{LSG}
+
+Ein paar einleitende Worte (ausführlich in Zettile:Quantum Mechanics) die man auf die Wigner-Matrix kommt. Der Rotationsoperator \(\hat R(\alpha, \beta,\gamma)\) kann in der Basis \(|j,m\rangle\) des Drehimpules \(\vec J\) dargestellt werden. Der Rotationsoperator in exponentialform lautet:
+
+\[  \hat R(\alpha, \beta,\gamma) = e^{-\frac{i}{\hbar}\alpha J_z}  e^{-\frac{i}{\hbar}\beta J_y} e^{-\frac{i}{\hbar}\gamma J_z}\]
+
+Unter Ausnutzung des Kommutators \([\vec J^2,\hat R(\alpha, \beta,\gamma)]=0\), sieht man dass \(\vec J^2\) den Zustand unter beliebiger Rotation nicht verändert:
+
+\[ \vec J^2\hat R(\alpha, \beta,\gamma)|j,m\rangle = \hat R(\alpha, \beta,\gamma)J^2|j,m\rangle = j(j+1)\hat R(\alpha, \beta,\gamma)|j,m\rangle\]
+
+In den meisten Fällen verändert der Rotationsoperator den Zustandsvektor, weil sich die z-Komponente sich verändert (solange nicht um z-Achse rotiert wird) verändert sich auch \(m\rightarrow m'\). Allgemein lässt sich das so aufschreiben:
+
+\begin{align}
+\hat R(\alpha, \beta,\gamma)|j,m\rangle &= \mathbb 1 \cdot \hat R(\alpha, \beta,\gamma)|j,m\rangle \\
+&= \sum_{m'=-j}^j |j,m'\rangle\langle j,m'| \hat R(\alpha, \beta,\gamma)|j,m\rangle \\
+&= \sum_{m'=-j}^j \langle j,m'|  \hat R(\alpha, \beta,\gamma)|j,m\rangle |j,m'\rangle\\
+&= \sum_{m'=-j}^j D^{(j)}_{m'm}(\alpha, \beta,\gamma) |j,m'\rangle
+\end{align}
+
+
+\(D^{(j)}_{m'm}(\alpha, \beta,\gamma)\) sind die Matrixelemente des Rotationsoperators. Da der Rotationsoperator in der Exponentialdarstellung zweimal den \(J_Z\) Operator hat und \(|j,m\rangle \) auch seine Eigenzustandsvektoren sind kann die D matrix weiter vereinfacht werden:
+
+
+\[\boxed{D^{(j)}_{m'm}(\alpha, \beta,\gamma) = e^{-i(m'\alpha+m\gamma)}\underbrace{\langle j,m'|e^{-\frac{i}{\hbar}\beta J_y}|j,m\rangle}_{d_{m'm}^{j}(\beta)}}\]
+ 
+
+Wobei \(d_{m'm}^{j}(\beta)\)  die Wigner-Matrix ist. Schlussendlich muss noch eine Beziehung her zwischen \(j=1\) und \(j_1,j_2=\frac{1}{2}\). 
+
+\(|j,m\rangle = \sum_{m_1m_2}\langle j_j,j_2;m_1,m_2|j,m\rangle |j_1,j_2;m_1,m_2\rangle \), \(\langle  j,m'| = \sum_{m'_1m'_2}\langle j_j,j_2;m'_1,m'_2|j,m'\rangle \langle j_1,j_2;m_1,m_2| \) und \(d_{m'm}^{j}(\beta)=\langle j,m'|e^{-\frac{i}{\hbar}\beta J_y}|j,m\rangle\) ineinander einsetzen:
+
+\begin{align}
+d_{m'm}^{j}(\beta)&=  \sum_{m_1m_2} \sum_{m'_1m'_2}\langle j_j,j_2;m_1,m_2|j,m\rangle\langle j_j,j_2;m'_1,m'_2|j,m'\rangle \\
+ &\times \langle j_1,j_2;m_1,m_2|e^{-\frac{i}{\hbar}\beta J_y} |j_1,j_2;m_1,m_2\rangle
+\end{align}
+
+ 
+Da einzelne Drehimpulse aus verschiedenen Räumen bestehen: \(J_y = J_{1y}+J_{2y}\) und \(|j_1,j_2;m_1,m_2\rangle = |j_1,m_1\rangle |j_2,m_2\rangle\) lässt sich das ganze weiter schreiben:
+
+
+\begin{align}
+d_{m'm}^{j}(\beta)&=  \sum_{m_1m_2} \sum_{m'_1m'_2}\langle j_j,j_2;m_1,m_2|j,m\rangle\langle j_j,j_2;m'_1,m'_2|j,m'\rangle \\
+ &\times\underbrace{ \langle j_1,m'_1|e^{-\frac{i}{\hbar}\beta J_{1y}}|j_1,m_1\rangle}_{d_{m'm}^{j1}}\underbrace{\langle j_2,m'_2|e^{-\frac{i}{\hbar}\beta J_{2y}} |j_2,m_2\rangle}_{d_{m'm}^{j2}}
+\end{align}
+
+
+und somit:
+
+
+
+\begin{align}
+ &d_{m'm}^{(j)}(\beta)= \\
+&= \sum_{m_1,m_2}\sum_{m'_1,m'_2} \langle j_1,j_2;m_1,m_2|jm\rangle \langle j_1,j_2;m'_1,m'_2|jm'\rangle d_{m'_1m_1}^{(j_1)}(\beta)d_{m'_2m_2}^{(j_2)}(\beta)
+\end{align}
+
+
+
+\begin{align}
+  d_{11}^{(1)}(\beta)&= \underbrace{\langle \frac{1}{2},\frac{1}{2};\frac{1}{2},\frac{1}{2}|11\rangle}_{=1} \langle  \frac{1}{2},\frac{1}{2};\frac{1}{2},\frac{1}{2}|11\rangle \underbrace{d_{\frac{1}{2}\frac{1}{2}}^{(\frac{1}{2})}(\beta)}_{cos\frac{\beta}{2}}d_{\frac{1}{2}\frac{1}{2}}^{(\frac{1}{2})}(\beta)\\
+&= 1\cdot 1\cdot cos^2\frac{\beta}{2}
+\end{align}
+
+
+\begin{align}
+d_{1-1}^{(1)}(\beta)&=\underbrace{\langle \frac{1}{2},\frac{1}{2};\frac{1}{2},\frac{1}{2}|11\rangle}_{=1}\underbrace{ \langle  \frac{1}{2},\frac{1}{2};-\frac{1}{2},-\frac{1}{2}|1-1\rangle}_{=1} \underbrace{d_{\frac{1}{2}-\frac{1}{2}}^{(\frac{1}{2})}(\beta)}_{-sin\frac{\beta}{2}}d_{\frac{1}{2}-\frac{1}{2}}^{(\frac{1}{2})}(\beta)\\
+&= sin^2\frac{\beta}{2}
+\end{align}
+
+
+
+
+
+
+\end{document}

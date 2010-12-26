@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper,titlepage,oneside]{report}
+\usepackage[utf8]{inputenc}
+%\usepackage{ngerman}
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+\usepackage{amsfonts}                % brauche ich für die Mengensymbole
+\usepackage{graphicx}
+
+\begin{document}
+\section{Aufgabe 6: Translationsoperator}
+
+Untersuchen Sie den Translationsoperator
+
+$$ \mathcal T(\vec l) = exp\left( -\frac i \hbar \vec p\cdot \vec l
+\right) $$
+
+(a) Zeigen Sie für beliebige Funktionen $F$ und $G$, die durch eine
+Potenzreihe darstellbar sind, aufgrund der fundamentalen
+Vertauschungsrelation zwischen Ort und Impuls die beiden Relationen
+
+$$ [x_i, G(\vec p)]=i\hbar \frac{\partial G(\vec p)}{\partial p_i}, [p_i,F(\vec x)] = -i\hbar \frac{\partial F(\vec
+  x)}{\partial x_i} $$
+
+\underline{(LSG)}
+
+Die Funktion $G(\vec p)$ lässt sich, da $\vec p$ ein Vektor ist und
+dieser Funktion theoretisch alle mögliche mit dem Vektor passieren
+kann (in Sinne einer Potenzreihe),  als
+eine Summe von Kombination von Potenzen aus den Komponenten $p_i$ mit
+beliebigen konstanten vorfaktoren $c$ darstellen:
+
+$$  G(\vec p) = \sum_{\alpha,\beta,\gamma}
+c_{\alpha\beta\gamma}p^\alpha_1 p^\beta_2 p^\gamma_3$$
+Nun setzen wir die Potenzreihe in den Kommutator und versuchen die
+Relatio in der Aufgabe zu bekommen. Wir kennen den Kommutator
+zwischen Ort und Impuls $[x_i,p_i]=i\hbar\delta_{ij}$ und weitere
+Beziehung erstmal ohne Beweiß $[x_i,p_i^k]=i\hbar k p_i^{(k-1)}$ ist für
+die Aufgabe nützlich:
+
+$$ [x_i,\sum_{\alpha,\beta,\gamma}
+c_{\alpha\beta\gamma}p^\alpha_i p^\beta_j p^\gamma_k] = \sum_{\alpha,\beta,\gamma}
+c_{\alpha\beta\gamma}\underbrace{[x_i,p^\alpha_i]}_{i\hbar \alpha
+  p^{\alpha-1}_i} p^\beta_j p^\gamma_k$$
+$$=  \sum_{\alpha,\beta,\gamma}
+c_{\alpha\beta\gamma}i\hbar \alpha p^{\alpha-1}_i p^\beta_j
+p^\gamma_k$$
+Das sieht genau nach einer Ableitung von $p_i$ nach $\alpha$ aus
+
+$$\Rightarrow \sum_{\alpha,\beta,\gamma}
+c_{\alpha\beta\gamma}i\hbar \alpha p^{\alpha-1}_i p^\beta_j
+p^\gamma_k =i\hbar \frac{\partial G(\vec p)}{\partial p_i} =  [x_i,
+G(\vec p)]$$
+
+Beweiß der Beziehung $[x_i,p_i^k]=i\hbar k p_i^{(k-1)}$:
+
+1. Beweiß durch Induktion
+Erster Schritt wähle $k=1$, Einsetzen ergibt die bekannte Orts-Impuls Relation:
+$[x_i,p_i^k]=i\hbar k$;  Zweiter Schritt:
+
+\begin{align} [x_i,p_i^{k+1}] &= x_ip_i^{k+1}-p_i^{k+1}x_i \\
+&= x_ip_i^{k+1}-p_i\overbrace{(p_i^kx_i)}^{x_ip_i^k-i\hbar k p_i^{k-1}}\\
+&=x_ip_i^{k+1}-p_ix_ip_i^k+i\hbar k p_i^{k}\\
+&=x_ip_ip_i^{k}-p_ix_ip_i^k+i\hbar k p_i^{k}\\
+&=(\overbrace{x_ip_i-p_ix_i}^{=[x_i,p_i]=i\hbar}+i\hbar k )p_i^{k}\\
+&=i\hbar (k+1) p_i^{k} 
+\end{align}
+
+
+2. Beweiß durch die Kommutatorbeziehung 
+
+\begin{align} [A,BC]&=ABC-BCA-BAC+BAC\\
+&=(AB-BA)C+B(AC-CA)\\
+&=[A,B]C+B[A,C]
+\end{align}
+
+
+Hier sei zur Vereinfachung $x_i=x$ und $p_i=p$ angenommen:
+\begin{align} [x,p^k]&=[x,p\cdot p^{k-1}]\\
+&=[x,p]p^{k-1}+p[x,p^{k-1}]\\
+&=[x,p]p^{k-1}+p[x,p\cdot p^{k-2}]\\
+&=[x,p]p^{k-1}+p([x,p]p^{k-2}+p[x,p^{k-2}]) \\
+&=[x,p]p^{k-1}+[x,p]p^{k-1}+p^2[x,p^{k-2}]) \\
+&=\underbrace{[x,p]p^{k-1}+[x,p]p^{k-1}+...+[x,p]p^{k-1}}_{=\times
+  k}+\underbrace{p^k[x,p^{0}]}_{[x,1]=0}\\
+&=k[x,p]p^{k-1} \\
+&=i\hbar kp^{k-1}
+\end{align}
+
+
+
+
+
+
+
+
+\end{document}

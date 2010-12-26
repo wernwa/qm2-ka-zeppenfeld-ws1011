@@ -1,0 +1,172 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba14_SU(2)_und_SO(3)
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub04/a14.pdf
+
+\begin{document}
+\section*{Aufgabe 14: SU(2) und SO(3)}
+
+\begin{enumerate}
+\item[\textbf{a})] Zeigen Sie, dass jede hermitesche, spurlose \(2\times 2\)-Matrix \(P\) als \(P=\vec p \cdot \vec \sigma\) geschrieben werden kann. Darin sind \( \sigma_i\) die Pauli-Matrizen und \(\vec p \in \mathbb R^3\)
+
+\subsection*{LSG}
+
+\(P\) sei hermitesche \(2\times 2\) Matrix mit \(Spur(P)=0\) und \(P^\dagger=P\);
+
+\(\Rightarrow P=\begin{pmatrix} a&b\\c&d\end{pmatrix}\) mit \(a,b,c,d\in\mathbb C\) und \(a=-d\) und \(b^* = c\)
+
+Pauli Matritzen: \(\sigma_1=\begin{pmatrix} 0&1\\1&0\end{pmatrix}\),\(\sigma_2=\begin{pmatrix} 0&-i\\i&0\end{pmatrix}\),\(\sigma_3=\begin{pmatrix} 1&0\\0&-1\end{pmatrix}\)
+
+\(\Rightarrow P=\begin{pmatrix} a&b\\b^*&-a\end{pmatrix} =\begin{pmatrix} a&x+iy\\x-iy&-a\end{pmatrix} \); mit \(b = x+iy\)
+
+
+\(\Rightarrow P=a\cdot\sigma_3 + \begin{pmatrix} 0&x+iy\\x-iy&0\end{pmatrix}= a\cdot \sigma_3 +x\cdot\sigma_1-y\cdot\sigma_2 = a\cdot \sigma_3 +x\cdot\sigma_1+y'\cdot\sigma_2 \)
+
+setze \(a=z\)  \(P=\begin{pmatrix} z&x+iy\\x-iy&-z\end{pmatrix}\) mit \(x,y,z \in \mathbb R\)
+
+Da \(P\) hermitesch ist \(a=z\in \mathbb R\)
+
+
+
+\item[\textbf{b})] Solch eine Matrix werde nun mit einer unitären Matrix \(U\in SU(2)\) trasformiert, \(P' = U^{-1}PU\). Zeigen Sie, dass \(P'=(\vec p)'\cdot \vec \sigma\) mit \((\vec p)' \in \mathbb R^3\) und berechnen Sie \(det P\) sowie \(det P'\). Begründen Sie aus Ihren Ergebnissen, dass sich \(\vec p\) wie ein dreidimensionaler Vektor unter Drehungen transformiert.
+
+\subsection*{LSG}
+
+zu Zeigen: det P = det P' weil U unitär ist (\(detU=\frac{1}{detU^{-1}})\), weiterhin
+Sp(P)=Sp(P')=0 wegen a)
+
+\(U =\begin{pmatrix}a&b\\-b^*&a^* \end{pmatrix} \Rightarrow U^\dagger = \begin{pmatrix}a^*&-b\\b^*&a \end{pmatrix}  \)
+
+\[ P' = U^\dagger P U = U^\dagger \vec p \vec \sigma U\]
+
+\[Sp(P') = \sum_k U^\dagger_{ki} p_n\sigma_{ij} U_{jk} = \sum_j \underbrace{U_{jk}U^\dagger_{ki}}_{=1} p_n\sigma_{ij} = Sp(P)=0\]
+
+\begin{align}
+ P'&=U^\dagger PU =\begin{pmatrix}a^*&-b\\b^*&a\end{pmatrix}\begin{pmatrix} z&x+iy\\x-iy&-z\end{pmatrix}\begin{pmatrix}a&b\\-b^*&a^*\end{pmatrix}\\
+&=\begin{pmatrix}a^*&-b\\b^*&a\end{pmatrix}\begin{pmatrix} az-b^*(x+iy)&bz+a^*(x+iy)\\ a(x-iy)+b^*z&b(x-iy)-a^*z \end{pmatrix}\\
+&=\begin{pmatrix}a^*az-a^*b^*(x+iy)-ba(x-iy)-bb^*z&a^*bz+a^*a^*(x+iy)-b^2(x-iy)+ba^*z\\b^*az-b^*b^*(x+iy)+a^2(x-iy)+ab^*z & b^*bz+b^*a^*(x+iy)+ab(x-iy)-aa^*z\end{pmatrix} \\
+&\equiv\begin{pmatrix}p_1&p_2\\p_2^*&-p_1\end{pmatrix} = p_1\sigma_3+Re\{p_2\}\sigma_1+Im\{p_2\}\sigma_2
+\end{align}
+
+
+\(det P =  -z^2-((x+iy)(x-iy)) = -(x^2+y^2+z^2)\equiv -||\vec p||^2\)
+
+\begin{align}
+det P' &= -||(\vec p)'||^2 \\
+&= det(U^\dagger P U) \\
+&= det(U^\dagger)\cdot det(P)\cdot det(U) \\
+&= det(U^\dagger)\cdot det(U) \cdot det(P) \\
+&= det(U^\dagger U) \cdot det(P)\\
+&= \underbrace{det(U^\dagger U)}_{=1}\cdot det(P) \\
+&= det(P) = -||\vec p||^2
+\end{align}
+
+
+Also kann die Unitäre Transformation in SU(2) eine Drehung in SO(3) sein, weil sich die Länge des Vektors nicht verändert.
+
+\[\Rightarrow ||\vec p||^2 = ||(\vec p)'||^2 \]
+
+
+Es ist möglich jedes Element aus SO(3) mit einem Element aus SU(2) eindeutig zuzuordnen (surjektiv???). Wenn wir \(U\) durch \(-U\in SU(2)\) ersetzen, folg:
+
+\[P'' = (-U)^\dagger P(-U) = U^\dagger P U = P'\]
+
+Somit wird \(-U\in SU(2)\) genau das gleiche \(R\in SO(3)\) wi auch \(U\in SU(2)\) zugeordnet.
+
+
+
+
+
+\item[\textbf{c})] Wenn nun also \(U\) für \(\vec p\) eine 'gewöhnliche' Drehung \(R\) induziert, also \(p'_i = R_{ij}p_j\), dann sollte es einen Zusammenhang zwischen \(R\) und \(U\) geben. Drücken Sie die Matrixelemente \(R_{ij}\) mit Hilfe der Pauli-Matrizen durch \(U\) aus. Ist diese Zuordnung eindeutig?
+
+\subsection*{LSG}
+
+first try:
+Mit der Darstellung \(P=\vec p \vec \sigma\) wird mit der U aus SU(2) Trasformiert und danach als eine 3D Rotationsmatrix dargestellt wie folgt: \(\vec p = 3DMatrix \cdot (\vec p)'\) 
+
+schreibe \(\vec p =\begin{pmatrix}x\\y\\z\end{pmatrix}\) und \((\vec p)'=\begin{pmatrix}Re\{p_2\}\\Im\{p_2\}\\p1\end{pmatrix}\); TODO \((\vec p)' = R\cdot \vec p\)
+
+\(p_1= a^*az-a^*b^*(x+iy)-ba(x-iy)-bb^*z\),
+\(p_2 = a^*bz+(a^*)^2(x+iy)-b^2(x-iy)+ba^*z\)
+
+\begin{align}
+Re\{p_2\} &= (a^*bz+(a^*)^2(x+iy)-b^2(x-iy)+ba^*z)(a^*bz+(a^*)^2(x+iy)-b^2(x-iy)+ba^*z)^*\\
+&=(a^*bz+(a^*)^2(x+iy)-b^2(x-iy)+ba^*z)(ab^*z+(a)^2(x-iy)-(b^*)^2(x+iy)+b^*az)\\
+&=(aa^*bb^*z^2...
+\end{align}
+
+
+
+\begin{align}
+\begin{pmatrix}Re\{p_2\}\\Im\{p_2\}\\p1\end{pmatrix} &= R\cdot \begin{pmatrix}x\\y\\z\end{pmatrix} \\
+\end{align} 
+
+\begin{align}
+\begin{pmatrix}Re\{p_2\}\\Im\{p_2\}\\p1\end{pmatrix} &=
+\begin{pmatrix} & & \\ & & \\(a^*)^2-b^2 &i(a^*)^2+ib^2 & a^*b+ba^*\end{pmatrix}
+\begin{pmatrix}x\\y\\z\end{pmatrix} \\
+\end{align}
+
+\((x+iy)(x+iy) = x^2-y^2+2ixy\) 
+
+
+second try:
+
+
+\begin{align}
+Up_j\sigma_j U^\dagger &= p'_k\sigma_k \\
+U\sigma_j U^\dagger p_j &= p'_k\sigma_k\qquad |\cdot \sigma_i \\
+U\sigma_j U^\dagger p_j \cdot \sigma_i &= p'_k\sigma_k\cdot \sigma_i
+\end{align}
+
+mit \([\sigma_i,\sigma_j]=2i\epsilon_{ijk}\sigma_k\);  \(\sigma_i\sigma_j=\sigma_j\sigma_i+2i\epsilon_{ijk}\sigma_k\); \(\sigma_j\sigma_i = \mathbb 1\cdot \delta_{ji}+2i\epsilon_{ijk}\sigma_k\)
+
+\begin{align}
+U\sigma_j U^\dagger p_j \cdot \sigma_i &= p'_k\mathbb 1 \delta_{ki}+2\epsilon_{kip}\sigma_p\\
+U\sigma_j U^\dagger p_j \cdot \sigma_i &= p'_k\mathbb 1 \delta_{ki}+p'_k2\epsilon_{kip}\sigma_p\\
+U\sigma_j U^\dagger p_j \cdot \sigma_i &= p'_i\mathbb 1 + p'_k2\epsilon_{kip}\sigma_p\\
+Sp(U\sigma_j U^\dagger p_j \cdot \sigma_i) &= Sp(p'_i\mathbb 1 + p'_k2\epsilon_{kip}\sigma_p)\\
+Sp(U\sigma_j U^\dagger\sigma_i)p_j &= p'_i \underbrace{Sp(\mathbb 1)}_{=2} + p'_k2\epsilon_{kip}\underbrace{Sp(\sigma_p)}_{=0}\\
+\end{align}
+
+\[ \Leftrightarrow p'_i = \underbrace{\frac{Sp(U\sigma_j U^\dagger\sigma_i)}{2}}_{R_{ij}}p_j\]
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+-------------------------
+Spur: \(Sp(A) = \sum_n \langle n |A|n\rangle\); 
+
+\begin{align}
+Sp(AB) = \sum_n \langle n |A\cdot B|n\rangle &= \sum_n \langle n |A\cdot \mathbb 1 \cdot B|n\rangle \\
+&= \sum_n \langle n |A|m\rangle \langle m |B|n\rangle \\
+&\equiv \sum_m \langle m |B|n\rangle \langle n |A|m\rangle \\
+= Sp(BA)
+\end{align}
+
+\begin{align}
+Sp(ABC) = \sum_k \langle k |A\cdot B\cdot C|k\rangle &= \sum_k \langle k |A\cdot \mathbb 1\cdot C\cdot \mathbb 1 \cdot B|k\rangle \\
+&= \sum_k \langle k |A| i\rangle \langle i|C| j\rangle \langle j |B|k\rangle \\
+&= \sum_j \langle j |B|k\rangle \langle k |A| i\rangle \langle i|C| j\rangle \\
+&= Sp(CAB)\\
+&= Sp(BCA)
+\end{align}
+
+
+
+mit \(Sp(\sigma_i)=0 \rightarrow Sp(P)=\sum_jp_i\sigma_{jj}=p_i\sum_j\sigma_{jj}=0\)
+
+
+
+
+\end{document}

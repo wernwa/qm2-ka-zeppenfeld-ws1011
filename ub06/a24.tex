@@ -1,0 +1,97 @@
+\input{../../headers/header_script.tex}
+
+%couchdb db=physik
+%couchdb id=qm2uba24_Zwei-Nukleonen-System
+%couchdb tags=qm2ub
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2ub/ub06/a24.pdf
+
+
+\begin{document}
+\section*{Aufgabe 24: Zwei-Nukleonen-System}
+
+Ein System aus zwei Nukleonen mit Spin \(\frac{1}{2}\) wird durch die Wechselwirkung
+
+\[ V(\vec r) = V_1(r) + \frac{1}{\hbar^2}V_2(r)\vec S_1\cdot \vec S_2 +  \frac{1}{\hbar^2}V_3(r)\vec L\cdot\vec S\]
+
+beschrieben. Welche Quantenzahlen charakterisieren das System (warum?) und wie muss die Wellenfunktion des Systems zusammengefügt werden? Der Bahndrehimpuls \(l\) wird zu den 'guten' Quantenzahlen gehören, da das System rotationssymmetrisch ist. Welche Werte können die weiteren Quantenzahlen für \(l=0\) und \(l=1\) unter Berücksichtigung des Pauli-Prinzips annehmen? Was können Sie dann über das Spektrum aussagen?
+\textit{Hinweis:} Das Pauli-Prinzip kommt allgemein erst später dran und besagt, dass die Gesamtwellenfunktion von Fermionen antisymmetrie der Bahndrehimpulseigenfunktionen aus der Parität der Kugelflächenfunktionen \(Y^l_m(\vec n)\) ablesen können.
+
+\subsection*{LSG}
+
+
+\notiz{
+\underline{Info} Wenn ein Messoperator \(M\) mit dem Hamilton-Operator \(H\) exakt vetauschbar ist, wenn also \(M\) eine Erhaltungsgrösse darstellt: \([H,M]=0\)
+so kann man die Eigenwerte von \(M\) als zusätzliche Quantenzahl neben der Energiequantenzahl benützen. Man spricht in diesem Fall von einer "guten" Quantenzahl. Gilt die obige Kommutatorrelation nur näherungsweise, z.B. weil sie durch Störfelder beeinträchtigt ist, so sagt man, die Quantenzahl werden dadurch "schlecht". Quelle: http://www.gutefrage.net/frage/was-sind-gute-quantenzahlen}
+
+
+\[\vec S = \vec S_1 + \vec S_2\rightarrow 2\vec S_1\vec S_2 = \vec S^2-\vec S_1^2-\vec S_2^2 = (\vec S_1+\vec S_2)^2-\vec S_1^2-S_2^2\]
+
+\[2\vec L \vec S = (\vec L+\vec S)^2 -\vec L^2-\vec S^2\]
+
+\[\Rightarrow  V(\vec r) = V_1(r) + \frac{1}{2\hbar^2 }V_2(r)(\vec S_1+\vec S_2)^2-\vec S_1^2-S_2^2 +  \frac{1}{2\hbar^2}V_3(r) (\vec L+\vec S)^2 -\vec L^2-\vec S^2\]
+
+kurz: \([J^2,V(\vec r)]=0\):
+\begin{itemize}
+\item \(V_i(r)\) vertauschen mit allen Drehipulsoperatoren wegen Kugelsymmetrie
+\item  \((\vec S_1+\vec S_2)^2-\vec S_1^2-S_2^2\) und \( (\vec L+\vec S)^2 -\vec L^2-\vec S^2\) vertauscht mit \(J^2,J_z\)
+\end{itemize}
+
+
+\(\Rightarrow \) Wellenfunktion kann nur 'gute' Quantenzahlen enthalten, da es mit \(\vec J\) und somit auch \(H\) vertauscht. \(l,s,s_1,s_2,m,m_1,m_2\). 
+
+Die Wellenfunktion lässt sich zerlegen in drei Teile: Radialanteil \(u(r)\) , Winkelanzei \(Y^m_l(\theta,\phi)\) und dem Spinanteil:
+
+\[ \sum_{m_1,m_2} u(r) Y^m_l(\theta,\phi)\otimes |s_1,m_1\rangle \otimes|s_2,m_2\rangle = \sum_{m_1,m_2} \psi(\vec r)|s_1s_2;m_1,m_2\rangle \]
+
+Produktansatz funktioniert weil die gesamtenergie aus der Summe der einzelnen Energieen besteht (und somit 3 separable DGLs entstehen für jeden Anteil?) 
+
+Für \(l=0\)
+\(|sm\rangle = \sum_{m_1,m_2}\langle s_1,s_2;m_1,m_2 |sm\rangle  |s_1,s_2;m_1,m_2\rangle \)
+
+mit \(m=\frac{1}{2}\equiv +\) und \(m=-\frac{1}{2}\equiv -\)
+
+die Condon-Shortley Konvention: \(\langle jj|j_1j_1;m_1=j_2,m_2=j-j_1\rangle \equiv \text{positiv}\); \(\langle j_1j_2;m_1m_2|jm\rangle = (-1)^{j-j_1-j_2}\langle j_2 j_1; m_2 m_1| j m\rangle\)
+
+
+Triplett-Zustände (symmetrisch):
+\[|11\rangle = \underbrace{\langle \frac{1}{2},\frac{1}{2};+,+|11\rangle }_{=1}|\frac{1}{2},\frac{1}{2};+,+\rangle\equiv |++\rangle \]
+
+
+\[|1-1\rangle = \underbrace{\langle \frac{1}{2},\frac{1}{2};-,-|1-1\rangle }_{=1}|\frac{1}{2},\frac{1}{2};-,-\rangle\equiv |--\rangle \]
+
+
+\[|10\rangle = \langle \frac{1}{2},\frac{1}{2};+,-|10\rangle |\frac{1}{2},\frac{1}{2};+,-\rangle + \langle \frac{1}{2},\frac{1}{2};-,+|10\rangle |\frac{1}{2},\frac{1}{2};-,+\rangle = \frac{1}{\sqrt{2}}(|+,-\rangle+|-,+\rangle)\]
+
+Singulet-Zustand (antisymmetrisch):
+\[|00\rangle = \langle \frac{1}{2},\frac{1}{2};+,-|00\rangle |\frac{1}{2},\frac{1}{2};+,-\rangle + \langle \frac{1}{2},\frac{1}{2};-,+|00\rangle |\frac{1}{2},\frac{1}{2};-,+\rangle \equiv \frac{1}{\sqrt{2}}(|+,-\rangle-|-,+\rangle)\]
+
+
+
+
+\notiz{\textit{Info:} Pauli-Prinzip für Spin-\(\frac{1}{2}\)-Teilchen: Spinanteil symmetrisch \(\Leftrightarrow\) bahndrehimpulsanteil antisymmetrisch und umgekehrt. Damit die gesamte Funktion antisymmetrisch bleibt (Fermionen).}
+
+
+Der Radialanteil bleibt positiv wegen \(r\geq 0\) also keine Auswirkung auf die 'Symmetrie'; Parität der Kugelflächenfunktion: \(Y^m_l (-\vec r) = (-1)^lY^m_l(\vec r)\), hier gibt es für verschiedene Quantenzahlen \(l\) unterschiedliche Symmetrie und somit auch eine Einschränkung für den verbleibenden Spinanteil-Zustände.
+
+\(\Rightarrow l=0\): symmetrisch;
+Der Spinanteil kann nur noch in diesem Fall antisymmetrischen Singulet Eigenfunktion Zustand annehmen \(\Rightarrow s=0\) 
+
+
+ \(l=1\):antisymmetrisch
+Der Spinanteil kann in diesem Fall nur noch symmetrische Eigenfunktionen haben, diese sind Tripplet-Zustände
+
+
+\begin{enumerate}
+\item \(l=0\) (s-Zustände) symmetrisch
+ \(\Rightarrow s=0\) antisymmetrisch;
+ \(\Rightarrow j=0,m=0\) keine Entartung bezüglich \(j\) oder \(m\), daraus folgt s-Zustände sind nicht entartet
+\item \(l=1\) (p-Zustände) antisymmetrisch
+ \(\Rightarrow s=1\) symmetrisch;
+ \(\Rightarrow j=0,1,2\), \(m=-2,-1,0,1,2\), daraus folgt p-Zustände sind 3-fach j-entartet und 5-fach m-entartet (nicht verstanden ???)
+\end{enumerate}
+
+\underline{Veralgemeinerung}: Das Ausschlussprinzip, welches die Antisymmetrie der Wellenfuntion unter Vertauschung der Ferminonen fordert, auf die Bedingung, dass dür den Spin-Singulettzustand \(l=0,2,4,...\) und für den Spin-Triplettuzustand \(l=1,3,5,...\) gilt.
+
+
+
+\end{document}
