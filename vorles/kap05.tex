@@ -1,13 +1,8 @@
-input{../headers/header_script.tex}
+\input{../headers/header_script.tex}
 
-%\includegraphics[width=0.75\textwidth]{thepic.png}
-%couchdb db=physik
-%couchdb id=qm2vorles04_Identische_Teilchen
-%couchdb tags=qm2
-%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2/kap04.pdf
 
 \begin{document}
-\tableofcontents
+%\tableofcontents
 \setcounter{chapter}{4}
 \chapter*{Kap 5. Pfadintegrale}
 
@@ -22,7 +17,7 @@ Beispiel: 1 dim System
 
 Impulsoperator
 
-\[\hat q,\hat p]=i\hbar\]
+\[ [\hat q,\hat p]=i\hbar\]
 
 Ortsbasis: \(\hat |q\rangle =q|q\rangle \)
 Schrödingerbild: \(|\alpha t\rangle_S =  \int dq|q\rangle \underbrace{\langle q|e^{-i\hat H t/\hbar}}_{\langle qt|} \underbrace{|\alpha,0\rangle}_{|\alpha\rangle_H} \)
@@ -34,14 +29,16 @@ Wellenfkt: \(\psi(q,t) = \langle q|\alpha t\rangle_S\)
 \[\psi(q_f,t_f) = \langle q_f t_f | \alpha\rangle_H = \int dq_i\underbrace{\langle q_f t_f|q_it_i\rangle }_{K(q_f,t_f;q_it_i}\underbrace{\langle q_it_i|\alpha\rangle_H}_{\psi (q_i,t_i)}\]
 
 
-K = ``Propagator'' = Zeitenintegral operator in Ortsbasis
+K = 'Propagator' = Zeitenintegral operator in Ortsbasis
 
 Feynman:
 \[ K(q_ft_f; q_it_i) = \left.\int\mathcal D_q exp(\frac{i}{\hbar}\int_{t_i}^{t_f}L(q,\dot q)dt)\right|_{q(t_i) = q_i; q(t_f) = q_f}\]
 
 \(D_q\) Integral über alle Klassischen Pfade von \(q_i\) nach \(q_f\)
 
-img TODO
+
+\includegraphics[width=0.75\textwidth]{kap05_01.png}
+
 
 \(t_f-t_i = \tau(n+1)\)
 
@@ -98,18 +95,18 @@ Klassisches freies Teilchen
 
 Randbed. \(t_i = 0, x_i = 0, t_f = 1sec, x_f = 1cm\)
 
+\begin{tabular}{ccc}
+&\(m=1g\) & \(m=m_e\)\\
+  \(x_1: S_1 = \frac{m}{2} v^2 t_f\)  &  \(4.7*10^26\hbar\) &   \(0.43\hbar\) \\
+\(x_2: S_2 = \frac{2}{3} mg^2 t^3_f= \frac{4}{3}S_1\)  &&\\
+\(S_2-S_1\) &  \( 1.6*10^26\hbar\)& \(0.14\hbar\)
+\end{tabular}
 
-todo Tabelle
-\[x_1: S_1 = \frac{m}{2} v^2 t_f\]    m=1g: 4.7*10^26\hbar    m=m_e :   0.43\hbar
 
-\[x_2: S_2 = \frac{2}{3} mg^2 t^3_f= \frac{4}{3}S_1\]  
-
-\[S_2-S_1\]    1.6*10^26\hbar         0.14\hbar
-
-In \(\int\) 
+In \(\int \mathcal D_q e^{\frac{i}{\hbar}S}\) extra \(\frac{1.6\cdot 10^{26}}{2\pi}\approx 10^{25}\) Oszillationen gegen \(S_1\)
 
 Oszillation dämpfen Pfade mit \(S(q)>>S_{min}\)
-Wichtig sind extremale Pfade mit \(\delta S = 0 \LeftRightarrow \) euler-Lagrange
+Wichtig sind extremale Pfade mit \(\delta S = 0 \Leftrightarrow \) euler-Lagrange
 
 
 \end{document}
