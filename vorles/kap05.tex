@@ -1,0 +1,115 @@
+input{../headers/header_script.tex}
+
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+%couchdb db=physik
+%couchdb id=qm2vorles04_Identische_Teilchen
+%couchdb tags=qm2
+%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2/kap04.pdf
+
+\begin{document}
+\tableofcontents
+\setcounter{chapter}{4}
+\chapter*{Kap 5. Pfadintegrale}
+
+Alternative Form der QM parallel zu 
+
+\begin{itemize}
+\item Matrizenmechanik
+\item Wellenmechanik
+\end{itemize}
+
+Beispiel: 1 dim System
+
+Impulsoperator
+
+\[\hat q,\hat p]=i\hbar\]
+
+Ortsbasis: \(\hat |q\rangle =q|q\rangle \)
+Schrödingerbild: \(|\alpha t\rangle_S =  \int dq|q\rangle \underbrace{\langle q|e^{-i\hat H t/\hbar}}_{\langle qt|} \underbrace{|\alpha,0\rangle}_{|\alpha\rangle_H} \)
+
+Def: \(|qt\rangle = e^{+i\hat H t/\hbar}|q\rangle \)
+
+Wellenfkt: \(\psi(q,t) = \langle q|\alpha t\rangle_S\)
+
+\[\psi(q_f,t_f) = \langle q_f t_f | \alpha\rangle_H = \int dq_i\underbrace{\langle q_f t_f|q_it_i\rangle }_{K(q_f,t_f;q_it_i}\underbrace{\langle q_it_i|\alpha\rangle_H}_{\psi (q_i,t_i)}\]
+
+
+K = ``Propagator'' = Zeitenintegral operator in Ortsbasis
+
+Feynman:
+\[ K(q_ft_f; q_it_i) = \left.\int\mathcal D_q exp(\frac{i}{\hbar}\int_{t_i}^{t_f}L(q,\dot q)dt)\right|_{q(t_i) = q_i; q(t_f) = q_f}\]
+
+\(D_q\) Integral über alle Klassischen Pfade von \(q_i\) nach \(q_f\)
+
+img TODO
+
+\(t_f-t_i = \tau(n+1)\)
+
+\[ \langle q_ft_f|q_it_i\rangle =\int_{-\infty}^{\infty} dq_idq_2...dq_n\langle \overbrace{q_f}^{q_{n+1}}\overbrace{t_f}^{t_{n+1}}|q_nt_n\rangle \langle q_n t_n|q_{n-1}t_{n-1}\rangle...\langle q_{j+1}t_{j+1}|q_jt_j\rangle ...\langle q_1t_1|\underbrace{q_i}_{q_o}\underbrace{t_i}_{t_o}\rangle  \]
+
+\[ \langle q_{j+1}t_{j+1}\rangle = \langle q_{j+1}|\underbrace{e^{-i\hbar t_{j+1}/\hbar}e^{i\hbar t_{j+1}/\hbar}}_{e^{-i\hbar \hat H (t_{j+1}-t_j)/\hbar}=e^{-i\hat H\tau/\hbar}}|q_j\rangle\approx 1-i\tau/\hbar \hat H + ... \]
+
+\[=\underbrace{\delta(q_{j+1}-q_j)}_{\int_{-\infty}^{\infty}\frac{dp}{2\pi\hbar}e^{ip(q_{j+1}-q_j)/\hbar}}-\]
+
+Annahme \(\hat H = \frac{\hat p^2}{2m}+V(\hat q)\)
+
+\( \langle q_{j+1}|  \frac{\hat p^2}{2m} |q_j\rangle =\int dp'dp \underbrace{\langle q_{j+1}|p'\rangle}_{\frac{1}{\sqrt{2\pi\hbar}}e^{-ipq_{j+1}/\hbar}} \langle p'| \frac{\hat p^2}{2m} |p\rangle p \underbrace{\langle p|q_j\rangle}_{ \frac{1}{\sqrt{2\pi\hbar}}e^{-ipq/\hbar}} \)
+
+\[  = \int \frac{dp}{2\pi \hbar}e^{i\frac{p}{\hbar}(q_{j+1}-q_j}\frac{p^2}{2m}\]
+
+
+Normierung der \(|p\rangle \): \(\langle p|p'\rangle \delta (p-p')\); \(\langle p|q\rangle = \frac{1}{\sqrt{2\pi\hbar}}e^{-ipq/\hbar}\)
+
+
+\[ \langle q_{j+1}|V(\hat q)| q_j\rangle  = V(q_j) \delta(q_{j+1}-q_j) = \int \frac{dp}{2\pi \hbar}e^{ip/\hbar(q_{j+1}-q_j)}V(q_j) \]
+
+\[\langle q_{j+1}|e^{-i\hat H\tau/\hbar}|q_j\rangle = \int  \frac{dp}{2\pi \hbar} e^{ip(q_{j+1}-q_j)/\hbar}\overbrace{[1-i\frac{\tau}{\hbar}(\frac{p^2}{2m}+V(q_i))+...]}^{e^{-iH(p,q_i)\tau/\hbar}}\]
+
+Für Propagator: 
+
+\[\langle q_ft_f|q_it_i\rangle = \lim_{n \to \infty}\int...\int \prod_{j=1}^n(dq_j\frac{dp_j}{2\pi\hbar})\frac{dp_o}{2\pi\hbar}exp(\frac{i}{\hbar}\sum_{j=0}^n[p_j(q_{j+1}-q_j)-\tau H(p_j,q_j)])\]
+
+\[= \int D_pD_q exp(\frac{i}{\hbar}\int_{t_i}^{t_f}dt(p(t)\dot q(t) - H(p(t),q(t)))\]
+
+Sei \(\hat H = \frac{\hat p^2}{2m}+V(\hat q)\)
+
+\[\langle q_f t_f|q_it_i\rangle = \lim_{n to \infty}\int...\int \prod_j dq_j \frac{dp_j}{2\pi \hbar} exp(i\sum_{j=0}^\infty(\underbrace{-\tau\frac{p^2_j}{2m}+\overbrace{p_j(q_{j+1}-q_j)/\hbar}^{2\sqrt{\frac{\tau}{2m\hbar}}p_j(q_{j+1}-q_j)/2\sqrt{\frac{\tau}{2m\hbar}}\frac{1}{\hbar}}}_{-(p_j\sqrt{\frac{\tau}{2m\hbar}}-(q_{j+1}-q_j)\sqrt{\frac{m}{2\tau\hbar}} )^2+\frac{m}{2\tau\hbar}(q_{j+1}-q_j)^2} - V(q_j)\frac{\tau}{\hbar})\]
+
+\[= \lim_{n to \infty}\int \underbrace{\prod_{k=0}^n \frac{dp_k}{2\pi \hbar}e^{-\frac{i}{\hbar}\frac{\tau\hbar}{2m}p^2_k/\hbar^2}}_{\sqrt{\frac{2in\pi}{i\tau \hbar(2\pi)^2}}^{n+1}=\sqrt{\frac{m}{i2\pi\hbar\tau}}^{n+1}}\prod_{j=1}^n dq_j exp(\underbrace{\frac{i}{\hbar}\sum_{j=0}^n\tau(\frac{m}{2}(\frac{q_{j+1}-q_j}{\tau})^2-V(q_j))}_{\rightarrow \frac{i}{\hbar}\int_{t_i}^{t_f}dt(\frac{m}{2}(\dot q(t)^2-V(q))})\]
+
+
+mit \(\int_{-\infty}^\infty dxe^{-\alpha x^2}=\sqrt{\frac{\pi}{\alpha}}\)
+
+
+\[\langle q_ft_f|q_it_i\rangle = \lim_{n to \infty} \int \underbrace{(\frac{m}{2\pi i\tau \hbar})^{n+1}\prod_{j=1}^n dq_j}_{\mathcal D_q}e^{\frac{i}{\hbar}\int_{t_i}^{t_f}(\underbrace{\frac{m}{2}\dot q^2-V(q)}_{L(q,\dot q)})dt}\]
+
+\[=\left.\int \mathcal D_q e^{\frac{i}{\hbar}\int_{t_i}^{t_f}dtL(q,\dot q)}\right|_{q(t_i)=q_i; q(t_f) = q_f}\]
+
+
+Klassisches freies Teilchen
+
+\[L = \frac{1}{2}mv^2\]
+
+2 Pfade sind z.B. 
+\begin{enumerate}
+\item \(x_i(t) = vt\)  \(v=1\frac{cm}{sec}\)
+\item \(x_2(t) = gt^2\) \(g = \frac{cm}{sec}\)
+\end{enumerate}
+
+Randbed. \(t_i = 0, x_i = 0, t_f = 1sec, x_f = 1cm\)
+
+
+todo Tabelle
+\[x_1: S_1 = \frac{m}{2} v^2 t_f\]    m=1g: 4.7*10^26\hbar    m=m_e :   0.43\hbar
+
+\[x_2: S_2 = \frac{2}{3} mg^2 t^3_f= \frac{4}{3}S_1\]  
+
+\[S_2-S_1\]    1.6*10^26\hbar         0.14\hbar
+
+In \(\int\) 
+
+Oszillation dämpfen Pfade mit \(S(q)>>S_{min}\)
+Wichtig sind extremale Pfade mit \(\delta S = 0 \LeftRightarrow \) euler-Lagrange
+
+
+\end{document}
