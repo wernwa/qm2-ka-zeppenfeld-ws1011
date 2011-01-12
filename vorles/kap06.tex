@@ -1,0 +1,164 @@
+\input{../headers/header_script.tex}
+
+
+\begin{document}
+%\tableofcontents
+\setcounter{chapter}{5}
+\chapter*{Kap 6. Relativistische QM}
+
+Notation: Vierer-Vektoren
+
+\[x^{\mu} = ct,x,y,z) = (x^0,x^1,x^2,x^3) = (ct,\vec r)\]
+
+invariante Lönge \(\sqrt{x^2}\)
+
+\[x^2=x\cdot x = x^{\mu}x_\mu = x^\mu g_{\mu \nu}x^\nu\]
+
+
+
+Einsteinsche Summenkonvention: \(\sum_{\mu=0}^3\) für jedes Paar von oberen und unteren Index
+
+Metrischer Tensor
+
+\[ g_{\mu\nu} = \begin{bmatrix}
+ 1 & 0 & 0 & 0\\
+ 0 & -1 & 0 & 0\\
+ 0 & 0 & -1 & 0\\
+ 0 & 0 & 0 & -1\\
+\end{bmatrix} \]
+
+\[ x_\mu = g_{\mu\nu}x^\nu = (ct,-\vec r)\]
+
+\[x^\mu = g^{\mu\nu}x_\nu = g^{\mu\nu}x^\nu = g^\nu_\nu x^\nu\] 
+
+\[g^\nu_\nu = \delta^\nu_\nu =\begin{cases}
+  1,  & \mu = \nu\\
+  0 & \text{sonst}
+\end{cases} \]
+
+\[= g^{\mu\rho}g_{\rho\nu} \rightarrow  g^{\mu\nu} = [g_{\mu\nu}]^{-1} = \begin{bmatrix}
+ 1 & 0 & 0 & 0\\
+ 0 & -1 & 0 & 0\\
+ 0 & 0 & -1 & 0\\
+ 0 & 0 & 0 & -1\\
+\end{bmatrix} \]
+
+Vierer-Impuls: \(p^\mu=(\frac{E}{c},\vec p)\) \(E= \sqrt{(mc^2)^2+(\vec p c)^2}\)
+
+\[p^2 = p_\mu p^\mu = \frac{E^2}{c^2}-\vec p^2 = \frac{m^2c^4+\vec p^2 c^2}{c^2} - \vec p^2 = m^2c^2\]
+
+Vierer-Potential:  LT \(x^{'\mu} = \Lambda^{\mu}_\nu x^\nu\)
+
+\[A^\mu = (\frac{\phi}{c},\vec A \qquad \rightarrow  A^{'\mu}(x') = \Lambda^\mu_\nu A^\nu(x)\]
+
+Strom: \(j^\mu = (c\rho,\vec j)\) in E und M
+
+Skalarprodukt für \(a^\mu,b^\mu: \qquad a\cdot b = a^\mu b_\mu = a^\mu g_{\mu\nu}b^\nu = a^0 b^0 - \vec a\cdot \vec b\)
+
+Ableitung nach \(x^\nu\)
+
+\[\partial_\mu = \frac{\partial}{\partial x^\mu} = (\frac{1}{c} \frac{\partial}{\partial t},\vec \nabla )\]
+
+ist kovarianter Vektor unter Index wg: \(\partial \mu a\cdot x = \frac{\partial}{\partial x^\mu}(a_\nu x^\nu)= a_\mu\)
+
+Entsprechend \(\partial^\mu = g^{\mu\nu}\partial_\nu = (\frac{1}{c}\frac{\partial}{\partial t},-\vec\nabla)\)
+
+
+d'Alebert Operator
+
+\[\square = \partial_\mu\partial^\mu = \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \vec \nabla^2\]
+
+\subsection{QM eines freien Teilchens}
+
+\[E\rightarrow i\hbar\frac{\partial}{\partial t}, \quad \vec p = \frac{\hbar}{i}\vec \nabla\]
+
+\[ p^\mu = (\frac{E}{c},\vec p) \rightarrow (i\hbar \frac{1}{c}\frac{\partial}{\partial t},-i\hbar \vec \nabla) = i\hbar\partial^\mu\]
+
+Schrödinger Gl. für NR freies Teilchens
+
+\[E=\frac{\vec p^2}{2m} \rightarrow  i\hbar \frac{\partial }{\partial t}\psi = -\frac{\hbar^2\nabla^2}{2m}\psi(\vec x,t) \]
+
+
+Relativistischer Fall
+
+\begin{enumerate}
+\item[1)] \(E = \sqrt{m^2c^4+\vec p^2c^2} \rightarrow \) nichtlokalen Operator
+\item[2)] \(\frac{E^2}{c^2} = m^2c^2 + \vec p^2 \rightarrow - \frac{\hbar^2}{c^2}\frac{\partial^2 }{\partial t^2}\psi = m^2c^2\psi -\hbar^2\vec \nabla^2\psi \)
+\end{enumerate}
+
+\[\Leftrightarrow  0 = m^2c^2\psi + \hbar^2(\frac{1}{c^2}\frac{\partial^2}{\partial t^2 - \nabla^2)\psi = m^2c^2\psi+\hbar^2 \square \psi})\]
+
+
+Klein Gordon Gl.
+
+\[(\square + (\frac{mc}{\hbar})^2)\psi(x) = 0\]
+
+Anwendbar auf skalare Teilichen (Spin 0) wie \(\pi^+,\pi^-,\pi^0,K,H\)
+
+Lösungen der KG-Gl. durch ebene Wellen
+
+\[\psi_p(x) = N e^{-ip\cdot x/\hbar} = Ne^{-iEt/\hbar}e^{+i\vec p\cdot\vec x/\hbar}\]
+
+mit \(p\cdot x = p^\mu x_\mu = Et-\vec p\cdot \vec x\)
+
+\[\square \psi_p = (x) = \frac{\partial}{\partial x^\mu} \frac{\partial}{\partial x_\mu} \psi_p(x) = N(-\frac{i}{\hbar}p_\mu)(-\frac{i}{\hbar}p^\mu) e^{-ip\cdot x/\hbar} = -\frac{p^2}{\hbar^2}\psi_p \]
+
+
+KG:
+
+\[\Rightarrow (-\frac{p^2}{\hbar^2} + \frac{m^2c^2}{\hbar^2})\psi_p(x) = 0 \Leftrightarrow p^2 = m^2 c^2; \frac{E^2}{c^2}-\vec p^2\]
+
+\[\rightarrow E = \pm c \sqrt{m^2c^2+\vec p^2}\]
+
+Lösungen mit Negativer Energie und das Energiespektrum ist nach unten nicht beschränkt. 
+
+\subsection{Wahrscheinlichkeitserhaltung}
+
+Kontin.Gl \(\frac{\partial\rho}{\partial t}+\vec \nabla\cdot \vec J = 0 \Leftrightarrow \partial_\mu j^\mu = 0\) mit \(j^\mu = (\rho c,\vec j)\). 
+
+Gibt es einen erhaltenen 4-Strom für die lösung der KG-Gleichung?
+
+\[\psi^*(\square + (\frac{mc}{\hbar})^2)\psi(x) - \psi(\square + (\frac{mc}{\hbar})^2)\psi^*(x) = 0\]
+
+
+\[\psi^*(\partial_\mu\partial^\mu \psi) - \psi(\partial_\mu\partial^\mu \psi^*) = 0 \]
+
+\[\partial_\mu(\underbrace{\psi^*\partial^\mu\psi - \psi \partial^\mu \psi^*}_{\propto j^\mu}) = 0\]
+
+\[ j^\mu \propto (\psi^*\frac{i}{c}\frac{\propto}{\propto t}\psi - \psi\frac{i}{c}\frac{\propto}{\propto t}\psi^* ,-(\psi^*\vec \nabla \psi - \psi\vec \nabla\psi^*)) \]
+
+Kandidat für Wahrscheinlichkeits Strom \(\frac{2im}{\hbar}\vec j\) in Schrödinger Gl
+
+\[j^\mu = \frac{i\hbar}{2m} (\psi^*\partial^\mu \psi - \psi \partial^\mu \psi^*)\]
+
+\[\rightarrow j^0 = \rho c =  \frac{i\hbar}{2mc}(\psi^*\frac{\partial\psi}{\partial t} - \psi\frac{\partial\psi^*}{\partial t}) \]
+
+Anwendung auf stationäre Lösung: \(\psi_E(x) = e^{-iEt/\hbar}\psi_E(\vec x)\)
+
+\[\frac{\partial \psi_E}{\partial t} = -\frac{iE}{\hbar}\psi_E,\frac{\partial \psi_E^*}{\partial t} = -\frac{iE}{\hbar}\psi_E^* \Rightarrow \rho = \frac{i\hbar}{2mc^2}|\psi_E(\vec x)|^2\frac{-2iE}{\hbar} = \frac{E}{mc^2}|\psi_E(x)|^2 \]
+
+\(\rho < 0\) für Zustände mit \(E<0\)
+
+\(\Rightarrow  \) Keine mögliche Wahrscheinlichkeitsdichte. (Ok für Zustände mit positiver Energie)
+
+Interpretation: Zustände mit \(E>0\Leftrightarrow \) z.B. \(\pi^+\) und  \(E<0\Leftrightarrow \) z.B. \(\pi^-\)(Antiteilchen zum  \(\pi^+\))
+
+\(\rho > 0\): \(\pi^+\) dominieren
+\(\rho < 0\): \(\pi^-\) dominieren
+
+\(\rho \propto\) elektromagn. Ladungsdichte
+
+\[ j^\mu = |e|\frac{i\hbar}{2mc} (\psi^*\partial^\mu\psi -\psi\partial^\mu\psi^* )\]
+
+
+Elektronen: Spin
+
+\(\rightarrow \) Wellenfunktion \(\psi(x)\) hat \(\geq 2\) Komponenten
+
+\[\psi(x) =\begin{pmatrix} \psi_1(x)\\ ...\\ \psi_N(x) \end{pmatrix} \]
+
+Möglichkeit: Matrixstruktur für \(\hat H\)
+
+\[i\hbar \frac{\partial}{\partial t}\psi(x) = \hat H \psi(x)\]
+
+\end{document}
