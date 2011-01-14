@@ -161,4 +161,154 @@ Möglichkeit: Matrixstruktur für \(\hat H\)
 
 \[i\hbar \frac{\partial}{\partial t}\psi(x) = \hat H \psi(x)\]
 
+
+
+
+Ansatz: \(i\hbar \frac{\partial }{\partial t} \psi = \hat H \psi\) mit \(\psi(x) =\begin{pmatrix} \psi_1(x)\\ ...\\ \psi_N(x) \end{pmatrix} \)
+
+und Wahrscheinlichkeitsdichte \(\rho = \sum_{i=1}^N |\psi_i|^2\)
+
+\[\Rightarrow \hat H \propto \frac{\partial}{\partial x^i}\propto \hat p_i\]
+
+Ansatz für \(\hat H\)
+
+\[\hat H = c(\alpha_x\hat p_x+\alpha_y\hat p_y) +\beta mc^2 = c\sum_{i=1}^3 \alpha_i\hat p_i+ \beta mc^2\]
+
+Ebene Wellenlösung für freie Teilchen
+
+\[\psi(x) = e^{-px/\hbar}\psi(p)\]
+
+mit \(p^2 = m^2c^2\)
+
+\[\Rightarrow  E\psi(p) =[c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p)\]
+
+\[E^2\psi(p) = (m^2c^4+\vec p^2 c^2)\psi(p)\]
+\[E c(\vec\alpha\vec p + \beta mc)\psi(p) = c^2(\vec \alpha\vec p + \beta mc)^2\psi(p)\]
+
+\[= c^2(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2)\psi(p)\]
+
+Koeffizienfenvergleich: \(\beta^2=1\); Antikommutator: \[\{\alpha_i,\beta\}=0\]
+\begin{itemize}
+\item  \(\boxed{\beta^2=1}\)
+\item Antikommutator: \(\boxed{\{\alpha_i,\beta\}=0}\)
+\item \(i\neq j\): z.B: \(p_xp_y\{\alpha_x\alpha_y+\alpha_y\alpha_x\}\); \(\{\alpha_i,\alpha_j\}=0\)
+\item \(i=j\): \(\alpha_x^2p_x^2+\alpha_y^2p_y^2+\alpha_z^2p_z^2=\vec p^2 \Rightarrow \alpha_i^2 = 1\)
+\[\Rightarrow \boxed{\{\alpha_i,\alpha_j\}=2\delta_{ij}}\]
+\end{itemize}
+
+
+\begin{enumerate}
+\item[1)] \(\hat p_i,\hat H\) hermitesch \(\Rightarrow \vec\alpha,\beta\) hermitesch
+\item[2)] \(\alpha_i^2=1,\beta^2=1 \Rightarrow \) Eigenwerte von \(\alpha_i,\beta\)
+\item[3)] \(\alpha_i\beta + \beta\alpha_i=0\qquad |\cdot \beta\)
+\[\Rightarrow \alpha_i=-\beta\alpha_i\beta \Rightarrow Tr[\alpha_i] = -Tr[\beta\alpha_i\beta]=-Tr[\alpha_i\beta^2]=-Tr[\alpha_i]\]
+\end{enumerate}
+
+# - Anzahl; N - Dimension der Matrix
+
+# EW +1 = # EW -1
+
+\(\Rightarrow N\) gerade (\N=2,4,...\))
+
+\(N=2\Rightarrow 3\) Pauli Matrizen als Kandidaten benötigt: 4 Matrizen
+\(\Rightarrow N\geq 4: N=4\) funktioniert
+
+\(N=4:\) Dirac Basis: \(\beta\) diagonal
+
+\[\beta=\begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}= \begin{pmatrix}\mathbb 1&0\\ 0&\mathbb 1\end{pmatrix}\]
+
+\(\alpha_i\) hermitesch + \(\{\alpha_i,\beta\}=0\)
+
+\[\alpha =\begin{pmatrix}A&B\\ C&D\end{pmatrix}\qquad \begin{pmatrix}A&-B\\ C&-D\end{pmatrix} \]
+
+\(A=D=0\), \(C=B^\dagger\)
+
+\[\beta\alpha = \begin{pmatrix}A&B\\ -C&-D\end{pmatrix}\]
+
+\[\Rightarrow \alpha_i =\begin{pmatrix}0&\tau_i\\ \tau_i^\dagger&0\end{pmatrix} \]
+
+\[\{\alpha_i,\alpha_j\}=2\delta_{ij} \Leftrightarrow \tau_i\tau_j^\dagger+\tau_j\tau_i^\dagger = 2\delta_{ij}\]
+
+Lösung \(\tau_i=\sigma_i=\) Pauli Matrizen
+
+\[\Rightarrow \boxed{ \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix};\qquad \alpha_i=\begin{pmatrix} 0&\sigma_i\\ \sigma_i&0\end{pmatrix} }\]
+
+\section{Dirac Gleichung}
+
+\[i\hbar \frac{\partial}{\partial t}\psi(x) = c(\vec \alpha\cdot\frac{\hbar}{i}\vec \nabla + \beta mc)\psi(x) \qquad |\cdot \frac{\beta}{\hbar c}\]
+
+Alternativ: kovariante Form
+
+\[\Rightarrow i\beta \underbrace{\frac{i}{c}\frac{\partial}{\partial t}}_{\frac{\partial}{\partial x^0}}\psi+i\underbrace{\beta\vec \alpha_i}_{\gamma^i}\cdot\underbrace{\vec\nabla_i}_{\frac{\partial}{\partial x^i} }\psi-\frac{mc}{\hbar}\psi=0\]
+
+\[\Rightarrow (i\gamma^\mu\frac{\partial}{\partial x^\mu} - \frac{mc}{\hbar})\psi = 0 \]
+
+\(\gamma^0 = \beta\); \(\gamma^i = \beta\alpha_i\)
+
+\[\boxed{\left(i\gamma^\mu\partial_\mu - \frac{mc}{\hbar}\right)\psi=0}\]
+
+Kovariante Form der Dirac Gleichung mit \(\boxed{\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}}=2g^{\mu\nu}\mathbb 1_4\)
+
+z.B. \(\{\gamma^i,\gamma^j\}=\beta\underbrace{\alpha_I\beta}_{-\beta\alpha_i}\alpha_j + \beta\underbrace{\alpha_j\beta}_{-\beta\alpha_j}\alpha_i = -\{\alpha_i,\alpha_j\}=-2\delta_{ij}\)
+
+\subsection{Wahrscheinlichkeitsstrom}
+
+\[i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi\]
+
+adjungierte Dirac Gleichung:
+
+\[-i\hbar \frac{\partial \psi^\dagger}{\partial t} = \frac{\hbar c}{i}\vec(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi\]
+
+Differenz der beiden Gleichungen:
+
+\[ i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) = \frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi) \]
+
+\[\Rightarrow \frac{\partial}{\partial t}(\psi^\dagger\psi) = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)\]
+
+\[ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j}) \]
+
+
+\[\rho =\psi^\dagger\psi = \sum_i|\psi_i|^2\geq 0 \]
+
+\(\rho\) ist positiv definierte Warscheinlichkeitsdichte
+
+Kovariante Form des W-Stroms
+
+\begin{align}
+j^\mu &= (c\psi^\dagger\psi ,c\psi^\dagger\vec\alpha\psi )\\
+&= (c\psi^\dagger\beta\gamma^0\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
+&= c\psi^\dagger \beta\gamma^\mu \psi = c\overline \psi\gamma^\mu \psi
+\end{align}
+
+wobei \(\overline \psi = \psi^\dagger\beta=\psi^\dagger\gamma^0\) der Pauli adungierte Spinor ist.
+
+
+\subsection{Elektromagnetische Wechselwirkung}
+
+externe \(\vec E,\vec B\) Fleder \(\vec B = \vec\nabla\times\vec A\), \(\vec E = -\vec\nabla\phi-\frac{\partial\vec A}{\partial t}\)
+
+\[\rightarrow A^\mu = (\frac{\phi}{c},\vec A)\]
+
+minimale Subsittution:
+
+\[p^\mu\rightarrow p^\mu-eA^\mu ^{QM}\rightarrow i\hbar\partial^\mu-eA^\mu = i\hbar(\partial^\mu+\frac{ie}{\hbar}A^\mu)=i\hbar D^\mu\]
+
+Komponenten der Kovarianten Ableitung \(D^\mu\)
+
+\[i\hbar D^\mu = (i\hbar \frac{1}{c} \frac{\partial}{\partial t} - \frac{e}{c}\phi,\frac{\hbar}{i}\vec\nabla-e\vec A)\]
+
+\[=(\frac{i}{c}(c\hbar\frac{\partial}{\partial t}-e\phi),\frac{\hbar}{i}\vec\nabla-e\vec A) \]
+
+jErsetze in freier Dirac-Gl \(\partial \)
+
+
+\[\boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\vec \alpha(\frac{\hbar}{i}\vec\nabla-e\vec A)\psi+\beta m c^2\psi+e\phi\psi}\]
+
+oder
+
+\[\boxed{(i\gamma^\mu D_\mu - \frac{mc}{\hbar})\psi = 0}\]
+
+beschreibt WW eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
+
+
 \end{document}
