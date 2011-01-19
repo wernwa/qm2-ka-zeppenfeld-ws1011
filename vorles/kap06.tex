@@ -312,5 +312,98 @@ oder
 
 beschreibt WW eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
 
+Notation: \(\vec \alpha\vec p\psi = \frac{\hbar}{i}\vec\alpha\vec\nabla\psi\)
+
+mit \(A=1...4\) \([\vec\alpha\vec p\psi]_A=\sum_{j=1}^3\sum_{B=1}^4\alpha_{jAB}\frac{\hbar}{i}\nabla_i\psi_B(\vec x,t) = \left[\ \begin{pmatrix} 0&\vec\sigma\vec p\\ \vec\sigma\vec p&0\end{pmatrix}\begin{pmatrix} \begin{pmatrix} \psi_1\\\psi_2\end{pmatrix} \\ \begin{pmatrix} \psi_3\\\psi_4\end{pmatrix}  \end{pmatrix} \right]_A\)
+
+
+Nichtrel. Grenzfall: \(E=mc^2+E_S\)
+
+Ansatz: 
+\[\psi(\vec x,t) = e^{i\frac{mc^2}{\hbar}t}\begin{pmatrix}\phi(\vec x,t)\\\chi(\vec,t)\end{pmatrix} =  e^{i\frac{mc^2}{\hbar}t}  e^{i\frac{E_S}{\hbar}t} \begin{pmatrix}\phi_E(\vec x,t)\\\chi_E(\vec,t)\end{pmatrix}\]
+
+\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec pi \vec \chi\\ \vec \sigma \vec pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
+
+mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \)
+
+\[\Rightarrow \chi: 2mc^2\chi+i\hbar \dot\chi - e\phi \chi = c\vec\sigma\vec\pi\phi\]
+
+\[\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi\]
+
+\[\chi \approx \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
+
+(\(\chi = \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi\)) \(\chi\) ist kleine Komponente des Dirac Spinors. Einsetzen von \(\chi\):
+
+\[i\hbar \frac{\partial \phi}{\partial t} = \frac{c^2(\vec\sigma\vec\pi)^2}{2mc^2}\phi+V\phi\qquad (V=e\Phi)\]
+
+Berechnung von \((\vec\sigma\vec\pi)^2=-\hbar^2\underbrace{\sigma_i\sigma_j}_{\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\}}D_iD_j\) mit \([\sigma_i,\sigma_j]=i\hbar^2\epsilon_{ijk}\sigma_k \) und \( \sigma_{ij}\)
+
+\[(\vec\sigma\vec\pi)^2=\vec\pi^2 -i\hbar^2\epsilon_{ijk}\sigma_k \underbrace{D_iD_j}_{\frac{1}{2}[D_i,D_j]} \]
+
+\[[D_i,D_j]=[\nabla_i-\frac{i}{\hbar}eA_i,\nabla_j-\frac{i}{\hbar}eA_j ] = -\frac{i}{\hbar}e(\underbrace{(\nabla_iA_j)}_{\vec\nabla\times\vec A}\underbrace{-(\nabla_j A_i)}_{\vec\nabla\times\vec A}\]
+
+\[\Rightarrow (\vec\sigma\vec\pi)^2 = \vec \pi^2 -\frac{1}{2}\hbar e \vec\sigma (\vec\nabla\times\vec A)2= \vec \pi^2 -2e\vec S\vec B \qquad (\vec S=\frac{\hbar}{2}\vec\sigma\]
+
+
+\[\rightarrow i\hbar \frac{\partial \phi}{\partial t} = \frac{\pi^2}{2m}\phi - \frac{e}{2m}2\vec S\vec B\phi + V\phi\]
+
+\[\boxed{i\hbar \frac{\partial \phi}{\partial t} = \frac{(\vec p - e\vec A)^2}{2m}\phi - \frac{e}{2m}2\vec S\vec B\phi+V\phi } \qquad \text{Pauli Gleichung}\]
+
+
+Schwaches homogenes \(B\)-Feld: \(\vec A = \frac{1}{2}\vec B\times\vec r\)
+
+\[  \frac{(\vec p - e\vec A)^2}{2m} \approx \frac{\vec p^2}{2m} -\frac{e}{2m}\vec B\vec L\]
+
+\[\Rightarrow i\hbar  \frac{\partial \phi}{\partial t} = \frac{\vec p^2}{2m}\phi -\frac{e}{2m}\vec B(\vec L+2\vec S)\phi + V\phi \]
+
+
+Magnetisches Moment des Elektrons: \(\vec\mu = \frac{e}{2m}(\vec L+2\vec S)\) \(g=2\) für geladenes Dirac-Fermion
+
+\subsection{Relativistische Korrekturen}
+
+Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{-E_st/\hbar}\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) \)
+
+Dirac Gleichung ist äquivalent zu
+
+\[(2mc^2+E_S-V)\chi = c\vec\sigma\vec\pi\phi\]
+\[E_S\phi = c\vec\sigma\vec\pi\chi + V\phi \]
+
+\begin{align}
+\Rightarrow \chi &= \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi \\
+&= \frac{1}{2mc}\frac{1}{1 + \frac{E_S-V}{2mc^2}}\vec\sigma\vec\pi\phi \\
+&\approx \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi
+\end{align}
+
+
+\[(E_S-V)\vec\sigma\vec\pi\phi =\vec\sigma\vec\pi(E_S-V)\phi + \vec\sigma\underbrace{[E_S-V,\vec\pi]}_{[\vec\pi,V]=\frac{\hbar}{i}(\vec\nabla V)}\phi \]
+
+Einsetzen in \(E_S \phi = ...\)
+
+\[(E_S-V)\phi = \frac{(\vec\sigma\vec\pi)^2}{2m}\phi - \frac{\vec\sigma\vec\pi}{4m^2c^2}\left(\frac{(\vec\sigma\vec\pi)^3}{2m} +\vec\sigma \frac{\hbar}{i}(\vec\nabla V)\right)\phi \]
+
+Spezialfall: 
+\begin{itemize}
+\item \(V=V(r)\) sphärisch symmetrisch \(\Rightarrow \vec\nabla V = \vec r \frac{1}{r}\frac{dV}{dr}\)
+\item \(\vec A = 0 \Rightarrow \vec \pi = \vec p = \frac{\hbar}{i}\vec\nabla \Rightarrow (\vec\sigma \vec\pi)^2=\vec p^2\) 
+\end{itemize}
+
+\[\Rightarrow E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \frac{\hbar}{i}\frac{1}{4m^2c^2}\underbrace{\sigma_i\sigma_j}_{i\epsilon_{ijk}\pi_k+\sigma_{ij}} p_ir_j\frac{1}{r}\frac{dV}{dr}\phi\]
+
+
+\[E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+\underbrace{(\vec\nabla)\cdot\vec\nabla}_{\text{nicht selbst adjungiert}}  \right)\phi\]
+
+
+Interpretation:
+
+\begin{itemize}
+\item  \(- \frac{p^4}{8m^3c^2}\) relativistischer Beitrag zur kin. Energie
+
+\(E = \sqrt{(mc^2)^2+p^2c^2} = mc^2\sqrt{1+\frac{p^2}{(mc)^2}}= mc^2(1+\frac{1}{2}\frac{p^2}{m^2c^2}-\frac{1}{8}\frac{p^4}{m^4c^4}+...) = mc^2-\frac{p^2}{2m}-\frac{1}{8}\frac{p^4}{m^3c^2}\)
+
+\item \( \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi = \frac{1}{2m^2c^2}\frac{1}{r}\frac{dV}{dr}\vec L\vec S\phi = H_{LS} \) Korrekte Spin-Bahn Kopplung, incluive Thomas Präzessionsfaktor \(\frac{1}{2}\)
+\end{itemize}
+
+
+
 
 \end{document}
