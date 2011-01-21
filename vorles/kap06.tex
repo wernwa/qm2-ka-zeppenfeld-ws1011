@@ -404,6 +404,141 @@ Interpretation:
 \end{itemize}
 
 
+\subsection{Dirac Gleichung und Pauli Gl incl. relativistische Korrekturen}
+
+\[i\hbar \frac{\partial \phi}{\partial t} H_\phi \phi\]
+
+
+mit 
+
+\[H_\phi = \frac{\vec p^2}{2m}+V+H_r+H_{LS}+\tilde H_D\]
+
+\[H_r = -\frac{1}{8m}\left(\frac{\vec p^2}{2m}\right)^2\]
+
+\[H_{LC} = \frac{1}{2m^2c^2}\frac{1}{\gamma}\frac{dV}{d\gamma}\vec L\cdot\vec S\]
+
+\[\tilde H_D = \frac{\hbar^2}{4m^2c^2}((\nabla^2V)+(\vec\nabla V)\cdot\vec\nabla)\]
+
+\(\cdot\vec\nabla)\) nicht hermitesch
+
+Problem: Warhscheinlichkeits-Dichte ist
+
+\begin{align}
+\rho &= \frac{j^0}{c}=\overline \psi\gamma^0psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
+&=|\phi|^2 + |\chi|^2\\
+&=|\phi|^2+|\frac{\vec\sigma\cdot\vec p}{2mc}\phi|^2\\
+&=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi
+&\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\phi}|^2
+\end{align}
+
+Übergang zu 
+
+\[\phi = \Omega\phi = (1+\frac{\vec p^2}{8m^2c^2}+...)\phi\]
+
+Foldy-Wouthuysen Transformation. (Details: Bjorken-Drell relativ. QM)
+
+Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\phi}\)
+
+\begin{align}
+H&=(1+\frac{\vec p^2}{8m^2c^2})H_\phi (1-\frac{\vec p^2}{8m^2c^2}) \\
+&=H_\phi + [\frac{\vec p^2}{2m^2c^2},H_\phi]+...
+&=H_\phi + [\frac{\vec p^2}{2m^2c^2},V]+...
+\end{align}
+
+NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} = [(\nabla^2 V)+2(\nabla,V)\nabla_i]\)
+
+
+\section{Hamilton Op. für Pauli Gl mit rel. Korrekturen}
+
+\[H= \frac{\vec p^2}{2m}+V+H_r+H_{LS}+H_D\]
+
+mit Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
+
+
+\subsection{Korrekturen zum Wasserstoff spektrum}
+
+\[E^{(0)}_n = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{2a_0n^2}\]
+
+\[\Delta E^{(1)}_n = \alpha^2 E^{(0)}_n \frac{1}{n}(\frac{1}{j+\frac{1}{2}}-\frac{3}{4n}) \]
+
+Aufspaltung von \(2p_{\frac{1}{2}}\)  \(2p_{\frac{3}{2}}\)
+
+gleiche Energie für \(2s_{\frac{1}{2}}\)  \(2p_{\frac{1}{2}}\)
+
+
+\subsection{Ebene Wellen als Lösungen der freien Dirac Gl}
+
+\[\left(i\gamma^\mu\partial_\mu-\frac{mc}{\hbar}\right)\psi(x) = 0\]
+
+Ebene Welle als Ansatz \(\psi = e^{-px/\hbar}w(p)\) mit \(w(p)\)-Spinor im Impulsraum
+
+\begin{align}
+i\gamma^\mu\frac{\partial}{\partial x^\mu}\phi(x) &= i\gamma^\mu(-\frac{ip_\mu}{\hbar})\psi(x)\\
+&=\frac{1}{\hbar}\gamma^\mu p_\mu \psi(x) = \frac{mc}{\hbar}\psi(x)
+\end{align}
+
+Notation: \(\gamma^\mu p_\mu = \cancel a\)
+
+\[\boxed{(\cancel p - mc)w(p) = 0}\]
+
+\subsubsection{Spezialfall: Teilchen in Ruhe}
+
+\[p^\mu = (\frac{E}{c},\vec 0)\]
+
+
+\[\rightarrow \cancel p = \frac{E}{c}\gamma^0 = \frac{E}{c} \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix} \]
+
+\[\Rightarrow \begin{pmatrix}\frac{E}{c}-mc&0&0&0\\ 0&\frac{E}{c}-m &0&0\\0&0&-\frac{E}{c}-m&0\\0&0&0&-\frac{E}{c}-m\end{pmatrix} w(\vec p) = 0\]
+
+4 Lösungen zu 2EW
+
+\(E=+mc^2\) : \(w_1(0) =  \begin{pmatrix}1\\0\\0\\0\end{pmatrix}\), \(w_2(0) =  \begin{pmatrix}0\\1\\0\\0\end{pmatrix}\), 
+
+\(E=-mc^2\): \(w_3(0) =  \begin{pmatrix}0\\0\\1\\0\end{pmatrix}\), \(w_4(0) =  \begin{pmatrix}0\\0\\0\\1\end{pmatrix}\)
+
+\(\Rightarrow \) Lösungen mit negativer Energie \(\rightarrow \) Existenz von Positronen. 
+
+\subsection{Lösung für Impuls ungleich 0}
+
+\begin{enumerate}
+\item[1)] Matrixgl. \(\cancel p w = mcw\) lösen
+\item[2)] Lorenztransormation von Inertialsystem IS (Teilchen in Ruhe) in IS' (\(\vec p\neq 0\))
+\end{enumerate}
+
+\subsection{Lorentz Transformation}
+
+\(x' = \Lambda x\)  mit \(x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu\)
+
+Bsp: Boost in z-Richtung: \(z' = \gamma(z-vt)\), \(t' = \gamma(t-\frac{v}{c^2}z)\), \(x' = x\), \(y'=y\)
+
+LT erhält relativ. Länge
+
+\[x'x' = g_{\mu\nu}x^{'\mu}x^{'\nu} = \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma = x\cdot c = x^\rho x^\sigma g_{\sigma\rho}\]
+
+Def. Eigenschaft einer LT
+
+\[\Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma}  \]
+
+oder \((\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}\)
+
+\(\Rightarrow det\Lambda = \pm 1\) (verallgemeinerung von orthogonalen Transf)
+
+\subsubsection{infinitesimale LT}
+
+Mit \(w^\rho_{\,\,\mu}\) infinitesimal
+\[\Lambda^\rho_{\,\,\mu} = g^\rho_{\,\,\mu}+w^\rho_{\,\,\mu} \]
+
+\begin{align}
+\Lambda^{\,\,\rho}_{\mu}\Lambda^\mu_{\,\,\sigma}  &= (g_\mu^{\,\,\rho}+w_\mu^{\,\,\rho})(g^\mu_{\,\,\sigma}+w^\mu_{\,\,\rho} \\
+g^\rho_{\,\,\sigma} &= g^\rho_{\,\,\sigma}+\underbrace{w_\sigma^{\,\,\rho}+w^\rho_{\,\,\sigma}}_{=0}+...
+\end{align}
+
+\(\rightarrow w_{\sigma\rho}+w_{\rho\sigma}=0\), \( \begin{pmatrix}0&w_{01}&w_{02}&w_{03}\\ -w_{01}&0&w_{12}&w_{13}\\ &&0&w_{23}\\ 0&0&0&0\\ \end{pmatrix} \)
+
+6 reelle freie Parameter  \(\Rightarrow \) 6 Generatoren
+
+\(\vec J\) (Drehungen) 3 \(w_{ij}\)
+\(\vec K\) (Boosts) 3 \(w_{oi}\)
 
 
 \end{document}
