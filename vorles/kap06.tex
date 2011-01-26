@@ -541,4 +541,143 @@ g^\rho_{\,\,\sigma} &= g^\rho_{\,\,\sigma}+\underbrace{w_\sigma^{\,\,\rho}+w^\rh
 \(\vec K\) (Boosts) 3 \(w_{oi}\)
 
 
+\subsection{Kovarianz der Dirac Gleichung}
+
+inertialsystem:
+
+\begin{tabular}{cc}
+  IS&IS'\\
+\(x^\mu\)& \(x^{'\mu}=\Lambda^\mu_\nu x^\nu\)\\
+\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x) = 0\)
+\end{tabular}
+
+Zu zeigen: Es gibt zu jeder LT \(\Lambda\) eine lineare Abbildung \(S(\Lambda)\) der Spinoren: \(\psi'(x')=S(\Lambda)\psi(\Lambda^{-1}x^1)\)
+
+Die Menge \(\{S(\Lambda)\}\) bilden Darstellung der Lorenzgruppe
+
+\[S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}\]
+
+\[\psi(x) = S(\Lambda^{-1})\psi'(x') \]
+
+
+
+\[S(\Lambda_1)  (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})S(\Lambda^{-1}) \psi'(x') = 0\]
+
+\[\Leftrightarrow iS(\Lambda_1) \gamma^\mu S(\Lambda^{-1})\underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar})\psi'(x') = 0 \]
+
+NR:
+
+\(x^{'\nu}=\Lambda^\nu_{\,\,\rho}x^\rho \)
+
+\(\frac{\partial}{\partial x^\mu} =\underbrace{\frac{\partial x^{'\nu}}{\partial x^{\mu}}}_{\Lambda^\nu_{\,\,\mu}}\frac{\partial}{\partial x^{'\nu}}... \)
+
+ist äquivalent zur Dirac Gl in IS'
+
+\[S(\Lambda)\gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu} = \gamma^\nu\]
+
+\[\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda^{-1})  }* \]
+
+Betrachte infinitesimalen Fall:
+
+\[ \Lambda^\nu_{\,\,\mu} = g^\nu_{\,\,\mu}+\omega^\nu_{\,\,\mu}  \]
+
+\[S(\Lambda) = \mathbb 1 - \frac{i}{4} \sigma_{\alpha\beta}\omega^{\alpha\beta}\]
+
+mit 4x4 Matrizen \(\sigma_{\alpha\beta} = - \sigma_{\beta\alpha} \) (6 Matrizen)
+
+\[ S(\Lambda^{-1}) = \mathbb 1 - \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
+
+Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
+
+\[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu \]
+
+
+\[\Rightarrow \boxed{[\gamma^\nu,\sigma_{\alpha\beta}] = 2i(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha)  }\]
+
+
+Lösung fir \(\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]\)
+
+Bew: 
+
+\begin{align}
+\frac{2}{i}[\gamma^\nu,\sigma_{\alpha\beta} &= \gamma^\nu(\gamma_\alpha\gamma_\beta - \gamma_\beta\gamma_\alpha)-(\gamma_\alpha\gamma_\beta-\gamma_\beta\gamma_\alpha)\gamma^\nu]+\gamma_\alpha\gamma^\nu\gamma_\beta - \gamma_\beta\gamma^\nu\gamma_\alpha-\gamma_\alpha\gamma^\nu\gamma_\beta + \gamma_\beta\gamma^\nu\gamma_\alpha \\
+&= 2\cdot 2 g^\nu_{\,\,\alpha}\gamma_\beta - 2\cdot 2 g^\nu_{\,\,\beta}\gamma_\alpha \\
+&= \frac{2}{i}2i(g^\nu_{\,\,\alpha}\gamma_\beta - g^\nu_{\,\,\beta}\gamma_\alpha)
+ \end{align}
+
+\(\Rightarrow \sigma_{\alpha\beta}\) sind Generatoren für Spinordastellung der LG
+
+\[S(g+\omega) = 1+\frac{1}{8}[\gamma_\nu,\gamma_\nu]\omega^{\mu\nu}\]
+
+\[\Rightarrow S(\Lambda) = e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}}\]
+
+mit \(\omega^{\mu\nu}\) endlich
+
+Frage: Ist \(j^\mu = c\overline \psi \gamma^\mu \psi\) mit \(\overline\psi =\psi^\dagger\gamma^0\) ein 4-Vektor?
+
+
+Transformation von \(\overline \psi\):
+
+\[\psi'(x')^\dagger = (S(\Lambda)\psi(x))^\dagger = \psi^\dagger(x) S^\dagger(\Lambda) = \psi^\dagger(x)e^{+\frac{i}{4}\sigma^\dagger_{\mu\nu}\omega^{\mu\nu}}\]
+
+\[\sigma^\dagger_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]^\dagger = -\frac{i}{2} [\gamma_\beta^\dagger,\gamma_\alpha^\dagger] = \frac{i}{2}[\gamma_\alpha^\dagger,\gamma_\beta^\dagger] \]
+
+
+\[\gamma^\dagger_0 = \gamma_0 = \gamma^0\gamma_0\gamma^0\]
+
+\[\vec \gamma^\dagger = (\beta\vec\alpha)^\dagger = \vec\alpha\beta = \beta\underbrace{(\beta\vec\alpha)}_{\vec\gamma}\beta=\gamma^0\vec\gamma\gamma^0\]
+
+
+Durch eine Gleichung zusammenfassen:
+
+\[(\gamma^\mu)^\dagger = \gamma^0\gamma^\mu\gamma^0\]
+
+\[\sigma^\dagger_{\alpha\beta} = \frac{i}{2}[ \gamma^0\gamma_\alpha\gamma^0, \gamma^0\gamma_\beta\gamma^0] = \gamma^0\sigma_{\alpha\beta}\gamma^0\]
+
+wegen \(\gamma^0=\mathbb 1\)
+
+
+\begin{align}
+\Rightarrow  S^\dagger(\Lambda) &= e^{\gamma^0 A\gamma^0}\\
+&=\sum_{n=0}^\infty \frac{1}{n!}(\underbrace{\gamma^0 A \gamma^0}_{\gamma^0 A^n \gamma^0})^n \\
+&= \gamma^0 A \gamma^0 \\
+&= \gamma^0 e^{+\frac{i}{4}\sigma^\dagger_{\mu\nu}\omega^{\mu\nu}}  \gamma^0 \\
+&= \gamma^0 S(\Lambda)^{-1}\gamma^0
+\end{align}
+
+mit \(A = \frac{i}{4}\sigma_{\alpha\beta}\omega^{\alpha\beta}\)
+
+\[\boxed{S^\dagger (\Lambda) = \gamma^0S(\Lambda^{-1})\gamma^0 }\]
+
+\(\overline\psi'(x') = (\overline\psi'(x'))^\dagger\gamma^0 = \psi^\dagger(x)\psi^0\psi^0\S^\dagger(\Lambda)\gamma^0 =\overline\psi(x)\overbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}^{S(\Lambda^{-1})}  \)
+
+LT von \(j^\mu c\overline\psi(x)\gamma^\mu\psi(x)\)
+
+\begin{align}
+j^{\mu'}(x') &= c\overline\psi'(x')\gamma^\mu\psi'(x') = c\overline\psi(x)\underbrace{S(\Lambda^{-1})\gamma^\mu S(\Lambda)}_{\Lambda^\mu_{\,\,\alpha}\gamma^\alpha}\psi(x)\\
+&=\Lambda^\mu_{\,\,\alpha}(c\overline\psi'(x')\gamma^\alpha\psi(x)) = \Lambda^\mu_{\,\,\alpha}j^\alpha(x)
+\end{align}
+
+\(\Rightarrow j^\mu(x)\) ist 4-Vektorfeld
+
+\[j^\mu = (c\rho,\vec j)\]
+
+Kontinuitätsgleichung \(\frac{1}{c}\frac{\partial (c\rho) }{\partial t} \vec\nabla\vec j = 0 \Leftrightarrow  \partial_\mu j^\mu = 0 \)
+
+Andere Bilineare: z.B.
+
+\[\rho(x) = \overline \psi(x)\psi(x) \rightarrow \psi'(x') = \overline \psi'(x')\psi'(x') = \overline \psi'(x')\mathcal 1 \psi'(x') = \overline \psi'(x') S(\Lambda^{-1}S(\Lambda) \psi'(x') = \overline \psi(x)\psi(x) = \rho(x) \]
+
+\(\Rightarrow \rho(x)\) ist ein Skalares Feld
+
+Allgemeiner Fall: \( \overline \psi(x)\Gamma \psi(x)  \) mit \(\Gamma\) 4x4 Matrix
+
+Gute Basis der \(\Gamma\):
+
+\[\Gamma_S = \mathbb 1, \quad \Gamma^\nu_\mu =\gamma_\mu, \quad \Gamma^T_{\mu\nu} = \sigma_{\mu\nu}\]
+
+\[\Gamma_p = i\gamma^0\gamma^1\gamma^2\gamma^3 = \gamma^5 = \gamma_5, \quad \Gamma^A_\mu = \gamma_\mu\gamma_5 \]
+
+
+
 \end{document}
