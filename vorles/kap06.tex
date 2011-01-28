@@ -16,8 +16,6 @@ invariante Lönge \(\sqrt{x^2}\)
 
 \[x^2=x\cdot x = x^{\mu}x_\mu = x^\mu g_{\mu \nu}x^\nu\]
 
-
-
 Einsteinsche Summenkonvention: \(\sum_{\mu=0}^3\) für jedes Paar von oberen und unteren Index
 
 Metrischer Tensor
@@ -589,7 +587,7 @@ mit 4x4 Matrizen \(\sigma_{\alpha\beta} = - \sigma_{\beta\alpha} \) (6 Matrizen)
 
 Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
 
-\[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu \]
+\[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu) \]
 
 
 \[\Rightarrow \boxed{[\gamma^\nu,\sigma_{\alpha\beta}] = 2i(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha)  }\]
@@ -672,11 +670,190 @@ Andere Bilineare: z.B.
 
 Allgemeiner Fall: \( \overline \psi(x)\Gamma \psi(x)  \) mit \(\Gamma\) 4x4 Matrix
 
+\section{16 unabhängige Fermion-Bilineare}
+
 Gute Basis der \(\Gamma\):
 
 \[\Gamma_S = \mathbb 1, \quad \Gamma^\nu_\mu =\gamma_\mu, \quad \Gamma^T_{\mu\nu} = \sigma_{\mu\nu}\]
 
-\[\Gamma_p = i\gamma^0\gamma^1\gamma^2\gamma^3 = \gamma^5 = \gamma_5, \quad \Gamma^A_\mu = \gamma_\mu\gamma_5 \]
+\[\Gamma_p = i\gamma^0\gamma^1\gamma^2\gamma^3 = \gamma^5 = \gamma_5, \quad \Gamma^A_{\,\,\mu} = \gamma_\mu\gamma_5 \]
+
+
+
+
+\[\overline \psi(x) = \Gamma\psi(x)\]
+
+\(\Gamma\) große Gamma Matrizen, 16 lin. unabh. 4x4-Matrizen
+
+\[T^{\mu\nu}=\overline \psi(x)\sigma^{\mu\nu} \psi(x) \]
+
+\begin{align}
+T^{'\mu\nu}&=\overline \psi(x)\underbrace{  S^{-1}(\Lambda)\frac{i}{2}[\gamma^\mu,\gamma^\nu]S(\Lambda)}_{  = \frac{i}{2}[\underbrace{S^{-1}(\Lambda)\gamma^\mu S(\Lambda)}_{\Lambda^\mu_{\,\,\rho}\gamma^\rho},\underbrace{S^{-1}(\Lambda)\gamma^\nu S(\Lambda)}_{\Lambda^\nu_{\,\,\sigma}\gamma^\sigma} ]  } \psi(x)\\
+&= \Lambda^\mu_{\,\,\rho}\gamma^\rho \Lambda^\nu_{\,\,\sigma}\gamma^\sigma\overline \psi \sigma^{\rho\sigma}\psi\\
+&= \Lambda^\mu_{\,\,\rho}\gamma^\rho \Lambda^\nu_{\,\,\sigma}\gamma^\sigma T^{\rho\sigma}
+\end{align}
+
+\(\rightarrow \) Trasformiert sich wie ein Tensor
+
+Was ist mit \(\gamma_5\) - Termen?
+
+verwende \(\gamma_5\gamma^\mu =- i\gamma^2\gamma^0\gamma^1\gamma^3\gamma^\mu = -\gamma^\mu\gamma_5 \)
+
+z.B. \(\gamma_5\gamma^2 = - i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^2 = - i\gamma^2\gamma^0\gamma^1\gamma^3 = -\gamma^2\gamma_5 \)
+
+\[\Rightarrow \{ \gamma_5,\gamma^\mu \} = 0\]
+
+\[\Rightarrow [\gamma_5,\sigma^{\mu\nu}]=0 \Rightarrow [\gamma_5,S(\Lambda)]=0\]
+
+\[\overline\psi(x)\gamma_5\psi(x) \equiv Skalar\]
+
+
+\[\overline \psi \gamma^\mu\psi(x) \equiv Vektor \]
+
+Pseudo-/Axial wegen \underline{Paritätstransformation} (spezielle Lorenztrasformation)
+
+\[x' = \Lambda x \qquad x=(ct,\vec x) = x^\mu  \qquad x'=(ct,-\vec x) = x_\mu  \]
+
+\[\Lambda^\mu_{\,\,\nu} = \begin{pmatrix} 1&0&0&0\\   0&-1&0&0\\  0&0&-1&0\\   0&0&0&-1 \end{pmatrix} = g^{\mu\nu} \]
+
+Transformation von Spinoren: brauchen 4x4 Matrix P
+
+\[P^{-1}\gamma P = \Lambda^\mu_{\,\,\nu}\gamma^\nu = \gamma_\nu\]
+
+
+Bei Spinoren:
+
+\[\psi'(x') = P\psi(x) = \gamma^0\psi(x) \]
+\[\overline \psi'(x') = \overline\psi(x)P^{-1} = \overline \psi(x) \gamma^0 \]
+
+
+\[\Rightarrow P^{-1}\gamma_5 P = \gamma^0\gamma_5\gamma^0 = -\gamma^0\gamma^0\gamma_5 = -\gamma_5\]
+
+\(\Rightarrow \overline\psi(x) \gamma_5\psi(x)\) ist ungerade und Permutation.
+
+\underline{Anwendung}: Paritätsverletzung in der schwachen Wechselwirkung. \(\Rightarrow \) z.B. \(\mu^-\)-Zerfall
+
+\[\mu^-(P.) \rightarrow \nu_\mu(P_i) + e^-(k_1) + \vec \nu_e(k_2)\]
+
+
+ \includegraphics[width=0.75\textwidth]{kap06_01.png}
+
+
+\[T= \frac{G_F}{\sqrt{2}}\underbrace{  \overline\psi(P_2)\gamma^\mu(1-\gamma_5)\psi(P_1)}_{J^{\text{myon}}} \underbrace{\overline\psi(k_1)\gamma_\mu(1-\gamma_5)\psi(k_2)}_{J^{\text{elektron}}}\]
+
+
+\(J^{\text{myon}}\cdot J^{\text{elektron}} = \text{Lorenz-Skalar?}\) \(\rightarrow \) Parität:
+
+\[T\rightarrow T' =\frac{G_F}{\sqrt{2}} \overline\psi(P_2)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma^\mu (1+\gamma_5)} P \psi(P_1)   \overline\psi(k_1)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma_\mu (1+\gamma_5)} P \psi(k_2) \neq T\]
+
+\(\beta\)-Zerfall: sehr ähnlich, jedoch Koeffizienten \(c_\mu,c_\lambda\) für Nukleonen
+
+
+\section{Bedeutung der omega Parameter}
+
+\[S(\Lambda) = e^{-\frac{1}{4}(\omega^{12}\sigma_{12}+\omega^{22}\sigma_{21})}= e^{-\frac{i}{2}\omega^{12}\sigma_{12}}\]
+
+\[\frac{1}{2}\sigma_{12} = \frac{1}{2}\frac{i}{2}[\gamma_1,\gamma_2] = \frac{i}{4}\underbrace{\left[ \begin{pmatrix} 0&-\sigma_1\\   \sigma_1&0 \end{pmatrix}, \begin{pmatrix} 0&-\sigma_2\\   \sigma_2&0 \end{pmatrix} \right]}_{=  \begin{pmatrix} -[\sigma_1,\sigma_2]&0\\  0&- [\sigma_1,\sigma_2] \end{pmatrix}  } =  \begin{pmatrix} \frac{\sigma_3}{2}&0\\0& \frac{\sigma_3}{2} \end{pmatrix} = \frac{S_z}{\hbar} \]
+
+
+mit \(\gamma_5 = \begin{pmatrix} 0&1\\   1&0 \end{pmatrix} \) allgemeiner:
+
+\[\frac{1}{2}\sum_k = \frac{S_k}{\hbar} = \frac{1}{4} \epsilon^{ijk}\sigma_{ij} = \frac{1}{2} \gamma_5\alpha_k\]
+
+\(\omega_1\) und \(\omega_3\) sind EZ von \(S_z\) zu \(+\frac{\hbar}{2}\); \(\omega_2\) und \(\omega_4\) sind EZ von \(S_z\) zu \(-\frac{\hbar}{2}\);
+
+Jetzt boost in Bezugssystem mit Geschwindigkeit \(\vec v\)
+
+Dazu
+
+\[\omega^{\mu\nu}   =\begin{pmatrix} 0&+n_1&+n_2&+n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix}\vec n^2 = 1 \]
+
+\[ S(\Lambda) = e^{-\frac{i}{4}\omega^{\mu\nu}\sigma_{\mu\nu}}  = e^{-\frac{i}{2}\sum_j\omega^{0j}\sigma_{0j}} = e^{-\frac{1}{2}\omega \vec n\vec \alpha}  \]
+
+mit \( \sum_j\omega^{0j}\sigma_{0j} = \omega \vec n \frac{i}{2}\underbrace{[\beta,-\beta\vec\alpha]}_{-2\vec\alpha} \)
+
+Verschiebung von \(\omega^{\mu\nu}\) und \(\vec v\)
+
+
+\[\Lambda^\mu_{\,\,\nu}: \qquad \Lambda = \lim_{N \to \infty} (g+\frac{\omega}{N})^N = exp\left\{\omega\underbrace{ \begin{pmatrix} 0&+n_1&+n_2&+n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix}}_{I}  \right\}\]
+
+Spezialfall \(n_1 = 1, n_2=n_3 = 0\)
+
+\[I^2 = \begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix};\qquad I^3=I;\qquad etc. \]
+
+\[\Lambda = e^{\omega I} = cosh(I\omega) + sinh(I\omega) =  \begin{pmatrix} cosh\omega&-sinh\omega&0&0\\ -sinh\omega&cosh\omega&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} \]
+
+vergleiche \(x^{'\nu} = \Lambda^\nu_{\,\,\mu}x^\mu\)
+
+
+\[x^{0'} = cosh\omega(x^0-tanh\omega x') = \gamma(ct-\frac{v}{2}x)\]
+
+\[x^{''} = cosh\omega(x'-tanh\omega x^0) = \gamma(x-\frac{v}{2}ct)\]
+
+\[\Rightarrow tanh \omega = \frac{v}{c} = \frac{|\vec p|^2}{E}\]
+
+\[cosh\omega =\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} = \frac{E}{m^2} \]
+
+
+\(\Rightarrow \) Allgemeiner Fall \(\vec n = \hat v\); \(tanh\omega = \frac{v}{c}\)
+
+
+Rapidität = \(\frac{1}{2} ln\frac{E+|\vec p|c}{E-|\vec p|c} =\frac{1}{2} ln\frac{1+tanh\omega}{1-tanh\omega} = \frac{1}{2} ln\frac{cosh\omega+sinh\omega}{cosh\omega-sinh\omega}  = \frac{1}{2}ln\frac{e^\omega}{e^{-\omega}} =\omega \)
+
+
+\subsection{Ebene-Wellen-Lösung zu allg. Impuls}
+
+\[(i\cancel \partial - \frac{mc}{\hbar})\psi(x) = 0\]
+
+Lösung mit \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega(\vec p)\)
+
+\(\vec p\) in Ruhe
+
+\[E = +cm^2\qquad \omega_1 = \begin{pmatrix} 1\\ 0 \\ 0\\ 0 \end{pmatrix},\qquad \omega_2(0) = \begin{pmatrix} 0\\ 1 \\ 0\\ 0 \end{pmatrix} \]
+
+\[E = -cm^2\qquad \omega_3 = \begin{pmatrix} 0\\ 0 \\ 1\\ 0 \end{pmatrix},\qquad  \omega_4(0) = \begin{pmatrix} 0\\ 0 \\ 0\\ 1 \end{pmatrix} \]
+
+Besser für Teilchenwellenfunktionen immer \(E>0\), d.h.
+
+\[p^\mu = (\frac{E}{2},\vec p) = (+\sqrt{m^2c^2+\vec p^2},\vec p)\]
+
+Lsg pos. Energie \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega_i(\vec p)\) mit i=1,2
+
+Lsg neg. Energie \(\psi(x) = e^{+i\frac{px}{\hbar}}\omega_i(\vec p)\) mit i=3,4
+
+\[\Rightarrow (\cancel p -mc) \omega_i(\vec p) = 0 \qquad i=1,2\]
+
+\[\Rightarrow (\cancel p +mc) \omega_i(\vec p) = 0 \qquad i=3,4\]
+
+Jetzt \(\omega_i(\vec p)\) durch boost von \(\omega_i(0)\) entlang der \(\vec p\)- Richtung:
+
+ungestricheltes System = Ruhesystem des Teilchens
+gesticheltes System = Teilchen bewegt sich in \(\vec p \)-Richtung
+
+\(\Rightarrow \) boosst in \(-\vec p\)-Richtung im Teilchen in Bewegung zu setzen
+
+\[\Rightarrow \omega_\nu(\vec p) = S(\Lambda)\omega_\nu(0) = e^{\frac{1}{2}\omega\hat p\vec\alpha}\omega_\nu(0)  \]
+
+Diese \(\omega_\nu(\vec p)\) ist der Spinor der Elektornen mit Impuls \(\vec p\) und Spin in Ruhesystem in \(\pm z\)-Richtung beschreibt
+
+\[\hat p\vec \alpha = \begin{pmatrix} 0& \hat p\vec\sigma \\ \hat p\vec \sigma& 0 \end{pmatrix} \]
+
+\[ (\hat p\vec \alpha)^2 = \begin{pmatrix} (\hat p\vec\sigma)^2&0 \\0& (\hat p\vec \sigma)^2 \end{pmatrix} =  \begin{pmatrix} \mathbb 1_2&0 \\0& \mathbb 1_2 \end{pmatrix}  \]
+
+\[\Rightarrow e^{\frac{1}{2}\omega\hat p\vec\alpha} = cosh\frac{\omega}{2}\mathbb 1 + sinh(\frac{\omega}{2})(\hat p\vec \alpha)\]
+
+\[cosh\frac{\omega}{2} = \sqrt{\frac{1+cosh\omega}{2}} = \sqrt{\frac{1+E/mc^2}{2}} =  \sqrt{\frac{E+mc^2}{2mc^2}} \]
+
+
+\[sinh\frac{\omega}{2} = \sqrt{cosh^2\frac{\omega}{2}-1} =  \sqrt{\frac{E-mc^2}{2mc^2}} =  \sqrt{\frac{E+mc^2}{2mc^2} \frac{(E-mc^2)(E+mc^2}{(E+mc^2)} } = \sqrt{\frac{E+mc^2}{2mc^2}} \frac{|\vec p|c}{E+mc^2}   \]
+
+\begin{align}
+S(\Lambda) &= e^{\frac{1}{2}\omega\hat p \vec\alpha} = cosh\frac{\omega}{2}(\mathbb 1 + \frac{c\hat p\vec\alpha}{E+mc^2})\\
+&=\sqrt{\frac{E+mc^2}{2mc^2}} \begin{pmatrix}1&0&\frac{cp_+}{E+mc^2}&\frac{cp_-}{E+mc^2}\\0&1&\frac{cp_+}{E-mc^2} &-\frac{cp_+}{E+mc^2}\\\frac{cp_z}{E+mc^2} &\frac{c(p_x-ip_y)}{E+mc^2}&1&1\\\frac{c(p_x+ip_y)}{E+mc^2} &-\frac{cp_z}{E+mc^2} &0&1\end{pmatrix} \\
+&= (\omega_1(\vec p),\omega_2(\vec p), \omega_3(\vec p),\omega_4(\vec p))
+\end{align}
+
+mit \(p_\pm = p_x\pm ip_y\)
 
 
 
