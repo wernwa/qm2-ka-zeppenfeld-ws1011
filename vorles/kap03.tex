@@ -487,7 +487,7 @@ Systeme mit Hamiltonoperator \(H=H_0+V(t)\). Annahme dass die Lösung für \(H_0
 
 Zur Zeit \(t=0\): Eigenzustand \(|i\rangle\) von \(H_0\)
 
-\(t=0\): \(|\alpha\rangle = \sum_n c_n(0)|n\rangle\); gesucht \(|\alpha,t\rangle = \sum_n c_n(t)e^{-\frac{i}{\hbar}E_n t}\)
+\(t=0\): \(|\alpha\rangle = \sum_n c_n(0)|n\rangle\); gesucht \(|\alpha,t\rangle = \sum_n c_n(t)e^{-\frac{i}{\hbar}E_n t} |n\rangle \)
 
 \begin{enumerate}
 \item Wahrscheinlichkeit \(|n\rangle\) zu finden: \(|c_n(t)|^2\)
@@ -509,57 +509,77 @@ Für \(V(t)=0\):
 
 WW-Bild \(\equiv\) Heisenbergbild Schrödingerbild \(H_0\rightarrow\) WW Bild \(V\) Heisenbergbild
 
-\[ i\hbar \frac{\partial}{\partial t}|\alpha,t_0,t\rangle_I = i\hbar \frac{\partial}{\partial t}(e^{\frac{i}{\hbar}H_0t}|\alpha,t_0,t\rangle_S)\]
-\[ = -H_0 e^{\frac{i}{\hbar}H_0 t}|\alpha,t_i,t\rangle_s + e^{\frac{i}{\hbar}H_0t}(H_0+V)|\alpha,t_0;t\rangle_S\]
+\begin{align} 
+i\hbar \frac{\partial}{\partial t}|\alpha,t_0,t\rangle_I &= i\hbar \frac{\partial}{\partial t}(e^{\frac{i}{\hbar}H_0t}|\alpha,t_0,t\rangle_S)\\
+&= i\hbar(\frac{i}{\hbar}H_0 e^{\frac{i}{\hbar}H_0 t}|\alpha,t_i,t\rangle_s +  e^{\frac{i}{\hbar}H_0t}\underbrace{\frac{\partial}{\partial t}|\alpha,t_0,t\rangle_S}_{\frac{1}{i\hbar}(H_0+V)|\alpha,t_0,t\rangle_S} ) \quad |\text{mit SG:}\quad H|\psi(t)\rangle=i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle    \\
+&= -H_0 e^{\frac{i}{\hbar}H_0 t}|\alpha,t_i,t\rangle_s + e^{\frac{i}{\hbar}H_0t}(H_0+V)|\alpha,t_0;t\rangle_S\\
+&= e^{\frac{i}{\hbar}H_0t}V\cdot\mathbb 1\cdot|\alpha,t_0;t\rangle_S\\
+&= \underbrace{e^{\frac{i}{\hbar}H_0t}Ve^{-\frac{i}{\hbar}H_0t}}_{V_I}\cdot \underbrace{e^{\frac{i}{\hbar}H_0t}|\alpha,t_0;t\rangle_S}_{|\alpha,t_0;t\rangle_I}
+\end{align}
 
 
-\[ = \underbrace{e^{\frac{i}{\hbar}H_0t}Ve^{-\frac{i}{\hbar}H_0t}}_{V_I}\cdot \underbrace{e^{-\frac{i}{\hbar}H_0t}|\alpha,t_0;t\rangle_S}_{|\alpha,t_0;t\rangle_I}\]
-\(\Rightarrow\) \[\boxed{i\hbar \frac{\partial}{\partial t} |\alpha,t_0;t\rangle = V_I|\alpha,t_0;t\rangle_I}\]
+
+\[\boxed{i\hbar \frac{\partial}{\partial t} |\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I}\]
 
 Schrödigner-artige Gleichung mit \(H\rightarrow V_I\); \(V_I\rightarrow 0\) \(\Rightarrow |\alpha,t_0,t\rangle_I=const.\)
 
 \[A_I = e^{\frac{i}{\hbar}H_0t}A_Se^{-\frac{i}{\hbar}H_0t}\]
-\[\frac{dA_I}{dt} = \frac{i}{\hbar} H_= \underbrace{e^+ A_S e^-}_{A_I} -  \frac{i}{\hbar} \underbrace{e^{\frac{i}{\hbar}H_0t}A_Se^{-\frac{i}{\hbar}H_0t}}_{A_I H_0}+\underbrace{e^{\frac{i}{\hbar}H_0} \frac{\partial A_S}{\partial t} e^{-\frac{i}{\hbar}H_0}}_{=\left(\frac{\partial A}{\partial t}\right)_I=\frac{\partial A_I}{\partial t}}\]
+\[\frac{d A_I}{d t} = \frac{i}{\hbar} \underbrace{H_0e^{\frac{i}{\hbar}H_0t} A_Se^{-\frac{i}{\hbar}H_0t} }_{H_0A_I} -  \frac{i}{\hbar} \underbrace{e^{\frac{i}{\hbar}H_0t}A_S H_0e^{-\frac{i}{\hbar}H_0t}}_{A_I H_0}+\underbrace{e^{\frac{i}{\hbar}H_0} \frac{\partial A_S}{\partial t} e^{-\frac{i}{\hbar}H_0}}_{=\left(\frac{\partial A}{\partial t}\right)_I=\frac{\partial A_I}{\partial t}}\]
 
-\[\frac{dA_I}{dt} = \frac{1}{i\hbar}[A_I,H_0]+ \frac{\partial A_I}{\partial t}\]
+\[\frac{dA_I}{dt} = \frac{i}{\hbar}[H_0,A_I]+ \frac{\partial A_I}{\partial t}\]
 
-\(\rightarrow\) Heisenberg-artige Gleichung mir \(H\rightarrow H_0\) Im folgenden:
+\(\rightarrow\) Heisenberg-artige Gleichung mit \(H\rightarrow H_0\) Im folgenden:
 
-\[ |\alpha,t_0;t\rangle_i = \sum_h c_n(t)|n\rangle\]
+\[ |\alpha,t_0;t\rangle_I = \sum_h c_n(t)|n\rangle\]
 
-\(|n\rangle\) bekannt. Problem gelöst, wenn \(c_n(t) bekannt\)
+\(|n\rangle\) bekannt. Problem gelöst, wenn \(c_n(t)\) bekannt
 
 \[ i\hbar \frac{\partial}{\partial t}|\alpha,t_0,t\rangle_I = V_I|\alpha,t_0,t\rangle_I\]
-\[\Rightarrow i\hbar\frac{\partial}{\partial t}\langle n|\alpha,t_0;t\rangle_I = \sum_m \langle n|V_I|m\rangle\langle m|\alpha,t_0;t\rangle_I\]
+\[\Rightarrow i\hbar\frac{\partial}{\partial t}\langle n|\alpha,t_0;t\rangle_I = \sum_m \langle n|V_I\underbrace{|m\rangle\langle m|}_{\mathbb 1}\alpha,t_0;t\rangle_I\]
 
-\(\langle n|V_I|m\rangle = \langle n | e^{\frac{i}{\hbar}H_0t}V(t)e^{-\frac{i}{\hbar}H_0t}|m\rangle = V_nm(t) e^{i\omega_nm t}\)
-
-\[\boxed{i\hbar \frac{d}{dt}c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm}t}c_m(t)}\]
+\begin{align}
+\langle n|V_I|m\rangle &= \underbrace{\langle n | e^{\frac{i}{\hbar}H_0t}}_{\langle n|e^{\frac{i}{\hbar}E_nt}}V(t)\underbrace{e^{-\frac{i}{\hbar}H_0t}|m\rangle}_{e^{-\frac{i}{\hbar}E_mt}|m\rangle } \\
+& = \langle n|V(t)|m\rangle e^{\frac{i}{\hbar}(E_n-E_m)t} \\
+&= V_{nm}(t) e^{i\omega_{nm} t}
+\end{align}
+\[\boxed{i\hbar \frac{\partial}{\partial t}c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm}t}c_m(t)}\]
 
 \(\omega_{nm}=\frac{E_n-E_m}{\hbar}\rightarrow \omega_{nm}=\omega_{mn}\)
 
 \[\Leftrightarrow i\hbar \begin{pmatrix}\dot c_1\\\dot c_2\\.\\.\\.\end{pmatrix} =\begin{pmatrix}V_{11}&V_{12}e^{i\omega_{12}t}&.&.&.\\
-  V_{21}&V_{12}e^{i\omega_{21}t}&.&.&.\\
+  V_{21}e^{i\omega_{21}t}&V_{12}&.&.&.\\
   .&.&.&.&.\\
   .&.&.&.&.\\
   .&.&.&.&.
-\end{pmatrix}=\begin{pmatrix}C_1\\C_2\\.\\.\\.\end{pmatrix}\]
+\end{pmatrix}\cdot\begin{pmatrix}c_1\\c_2\\.\\.\\.\end{pmatrix}\]
 
 Um Hinreichend einfach und nur endlich viele Zustände \(\rightarrow\) evtl. exakt lösbar. System gekoppelter DGL.
 
+
 Bsp: 2-Zustandssystem mit harmonischem Potential:
 
-\(H_0 =\begin{pmatrix} E_1& 0\\0&E_2)\end{pmatrix}\); \(E_1<E_2\); \(V(t) =\begin{pmatrix}0&\hbar \gamma e^{i\omega t}\\\hbar \gamma e^{-i\omega t}&0 \end{pmatrix}\)
+
+\(H_0 =\begin{pmatrix} E_1& 0\\0&E_2\end{pmatrix}\); \(E_1<E_2\); \(V(t) =\begin{pmatrix}0&\hbar \gamma e^{i\omega t}\\\hbar \gamma e^{-i\omega t}&0 \end{pmatrix}\)
+
 
 \(V(t)\) vernüpft \(|1\rangle\) und \(|2\rangle\)
 
+
 \(\Rightarrow\) Übergänge möglich. Problem exakt lösbar. z.B mit \(c_1(0)=1\); \(c_2(0)=0\)
 
-\(\Rightarrow\) \(|c_2(t)|^2=\frac{\gamma^2}{\gamma^2+\frac{(\omega-\omega_{12})^2}{4}}sin^2\left( \underbrace{\sqrt{\gamma^2+\frac{(\omega-\omega_{12})^2}{4}}}_{\Omega}t\right)|c(t)|^2\) \(\rightarrow\) Oszillation mit frequenz \(\Omega\) \(|c_1(t)|^2 = 1-|c_2(t)|^2\)
+
+\(\Rightarrow\) \(|c_2(t)|^2=\frac{\gamma^2}{\gamma^2+\frac{(\omega-\omega_{12})^2}{4}}sin^2\left( \underbrace{\sqrt{\gamma^2+\frac{(\omega-\omega_{12})^2}{4}}}_{\Omega}t\right)\) \(\rightarrow\) Oszillation mit frequenz \(\Omega\)
+
+ \[|c_1(t)|^2 = 1-|c_2(t)|^2\]
+
 
 
 \includegraphics[width=0.75\textwidth]{kap03_04.png}
+
+
 \includegraphics[width=0.75\textwidth]{kap03_05.png}
+
+
 \includegraphics[width=0.75\textwidth]{kap03_06.png}
 
 
