@@ -856,5 +856,160 @@ S(\Lambda) &= e^{\frac{1}{2}\omega\hat p \vec\alpha} = cosh\frac{\omega}{2}(\mat
 mit \(p_\pm = p_x\pm ip_y\)
 
 
+\section{Der Diracsee}
+
+
+
+\includegraphics[width=0.75\textwidth]{kap06_02.png}
+
+Grundzustand:
+
+ \(E>0\) unbesetzt
+
+\(E<0\) alle besetzt \(\Rightarrow \) Pauli Prinzip verbietet Übergänge von \(E>0 \rightarrow E<0 \)
+
+Elektron: Zustand mit \(E>mc^2\) , Ladung \(-|e|\), Spin \(S_z\)
+
+Loch: es fehlt Elektron mit \(E<0\)
+
+Gegenüber Grundzustandd: Energieerhöhung um \(-E = +\sqrt{m^2c^4+(\vec pc)^2}\)
+
+Ladung \(+|e|\)
+Spin \(-S_z\)
+
+\(\rightarrow \)\underline{Positronen mit positiver Ladung} \(E>0\)
+
+Lösungen der Dirac Gl: \(E=p^0 = +\sqrt{m^2c^4+(\vec pc^2)}\)
+
+pos. Energie: \(\psi(x) = e^{-ipx/\hbar}w_r(\vec p)\) mit \(r=1,2\)
+
+neg. Energie: \(\psi(x) = e^{+ipx/\hbar}w_r(\vec p)\) mit \(r=3,4\)
+
+Die \(w_r(\vec p)\) erfüllen
+
+\[(\cancel p - mc)w_r(\vec p) = 0 \qquad\text{für } r=1,2\]
+
+\[(\cancel p + mc)w_r(\vec p) = 0 \qquad\text{für } r=3,4\]
+
+
+\underline{u und v Spinoren}
+
+
+Ruhesystem des \(e^{\pm}\). \(\overline p^\mu = (mc,\vec 0)\) 4 Impuls 
+
+\(\overline S^\mu = (0,\vec S)(\vec s^2=1\)  \(\vec S\) Quant. achse
+
+
+Boost in IS in dem \(p^0 = +\sqrt{(mc^2)^2+(\vec p c)^2}\quad:\quad \Lambda^\mu_{\,\,\nu} \)
+
+\[p^\mu = \Lambda^\mu_{\,\,\nu}\overline p^\nu, \qquad s^\nu =\Lambda^\mu_{\,\,\nu}\overline s^\nu \]
+
+\[\Rightarrow p^2=m^2c^2, \quad p\cdot s = \overline p\cdot \overline s = 0,\quad s^2 = -1\]
+
+\(e^-:\quad \psi(x) = e^{-ipx/\hbar}u(p,\pm s)\)
+
+\(e^+:\quad \psi(x) = e^{+ipx/\hbar}v(p,\pm s)\)
+
+
+Für \(\vec S = \hat z\):
+
+Elektron:
+\[w_1(\vec p) = u(p,+s)\]
+\[w_2(\vec p) = u(p,-s)\]
+
+Positron:
+\[w_3(\vec p) = v(p,-s)\]
+\[w_4(\vec p) = v(p,+s)\]
+
+Normierung der \(u,v\) \(\epsilon,\epsilon' = \pm 1\)
+
+\[\overline u(p,\epsilon s) u(p,\epsilon' s)\quad ^{L.I.}= \overline u(\overline p,\epsilon\overline s)  u(\overline p,\epsilon'\overline s) = w^+_{r(\epsilon)}(\vec 0)\gamma^0w_{r'(\epsilon')}(0) = \delta_{\epsilon\epsilon'}\]
+
+\[\overline u(p,\epsilon s) v(p,\epsilon' s) = 0\]
+
+\[\overline v(p,\epsilon s) v(p,\epsilon' s) =-\delta_{\epsilon'\epsilon}\qquad \text{wegen} \gamma^0 = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix} \]
+
+\underline{Vollständigkeit}
+
+Jeder Spinor kann als Linearkombination von \(u(p,s), u(p-s), v(p,s), v(p,-s)\) geschrieben werden.
+
+\[\Rightarrow \sum_{\epsilon'} u_{A}(p,\epsilon's )\overline u_B(p,\epsilon' s) = \left(\frac{\cancel p +mc}{2mc}\right)_{AB} = (\Lambda_+(p))_{AB}\]
+
+Bew: Angewendet auf \(u,v\) Spinoren, geben beide Matrizen gleiches Ergebnis
+
+\[\frac{\cancel p + mc}{2mc} u(p,\epsilon s) =\frac{\cancel p -mc+2mc}{2mc} u(p,\epsilon s) = u(p,\epsilon s) \]
+
+
+\[\frac{\cancel p + mc}{2mc} v(p,\epsilon s) = 0 \]
+
+
+Andererseits
+
+\[\sum_{\epsilon'} u(p,\epsilon' s)\underbrace{\overline u(p,\epsilon s) u(p,\epsilon s)}_{\delta_{\epsilon'\epsilon}} = u(p,\epsilon s)\]
+
+\[\sum_{\epsilon} u(p,\epsilon' s)\underbrace{\overline u(p,\epsilon' s) v(p,\epsilon s)}_{=0} = 0\]
+
+
+Analog für \(v\) Spinoren
+
+\[ \sum_{\epsilon'} u_A(p,\epsilon' s) \overline u_B(p,\epsilon' s) = \left(\frac{\cancel p -mc}{2mc}\right)_{AB}\]
+
+
+denn \(\sum_{\epsilon'} v(p,\epsilon' s)\underbrace{\overline v (p,\epsilon' s) v(p,\epsilon s)}_{-\delta_{\epsilon'\epsilon}} = -v(p,\epsilon s)\)
+
+\[ \left(\frac{\overbrace{\cancel p}^{-mc} -mc}{2mc}\right) v(p,\epsilon s) = -v(p,\epsilon s) \]
+
+
+\(\Lambda_+(p)\) ist Projektor auf Zustände pos. Energie \(e^-\)
+
+\(\Lambda_-(p)\) ist Projektor auf Zustände neg. Energie \(e^+\)
+
+Beweis: z.Z: \(\Lambda^2_{\pm}=\Lambda_\mp,\quad \Lambda_+\Lambda_- = 0,\quad \Lambda_++\Lambda_- = \mathbb 1\) mit \(\cancel p^2 = p^2\)
+
+\[ \Lambda_{\pm} = \frac{mc\pm \cancel p}{2mc} \Rightarrow \Lambda^2_{\pm} = \frac{m^2c^2\pm 2mc\cancel p+p^2}{(2mc)^2} = 2mc \frac{mc\pm \cancel p}{(2mc)^2} = \Lambda_\pm\]
+
+
+\[ \Lambda_+\Lambda_- = \frac{mc+\cancel p}{2mc}\frac{mc-\cancel p}{2mc} = \frac{(mc)^2-p^2}{(2mc)^2} = 0 \]
+
+\[ \Lambda_++\Lambda_- = = \frac{mc+\cancel p + mc - \cancel p}{2mc} = \mathbb 1 \]
+
+
+\section{Ladungskonjugation}
+
+Dirac Gl. sollte auch für Positronen als Teilchen , Elektronen als Antiteilchen existieren. (mit Spinor \(\psi_C\))
+
+\[(i\hbar \cancel \partial\underbrace{+e\cancel A}_{-q_e+\cancel A}-mc)\psi_C(x) = 0\]
+
+(e<0 = Ladungsvorzeichen \(e^-)\)
+
+Ges. Beziehung zur Dirac Gl. für \(e^-\)
+
+\[ i\hbar\cancel \partial - e\cancel A - mc)\psi(x) = 0 \]
+
+\[\Rightarrow [-(i\hbar\partial_\mu+eA_\mu)\gamma^{*\mu} - mc]\psi^*(x) = 0\qquad |\cdot C\gamma^0\]
+
+Transformation mit Matrix \(C\gamma^0\)
+
+\[\Rightarrow  [(i\hbar\partial_\mu+eA_\mu)(-C\gamma^0\gamma^{*\mu}((\gamma^0)^{-1} - mc]C\gamma^0\psi^*(x) = 0  \]
+
+
+gesucht \(C\) mit \( C\gamma^0\gamma^{*\mu} (C\gamma^0)^{-1} = -\gamma^\mu\) !
+
+Dann ist \(\psi_C (x) = C\gamma^0\psi^*(x) = C(\gamma^0)^T(\psi^\dagger)^T = C(\psi^\dagger\gamma^0)^T = C\overline \psi^T(x)\)
+
+die Matrix \(C=i\gamma^2\gamma^0\) tut's !
+
+\[\Rightarrow C\gamma^0 = i\gamma^2\gamma^0\gamma^0 = i\gamma^2 = (C\gamma^0)^{-1},\qquad (\gamma^2)^2 = -\mathbb 1, \quad (i\gamma^2)^2 = +\mathbb 1\]
+
+\[C\gamma^0(\gamma^\mu)^*(C\gamma^0)^{-1} = i\gamma^2\gamma^{*\mu}i\gamma^2 = -\gamma^2\gamma^{\mu*}\gamma^2 = \begin{cases}
+  \mu = 2:  & -\gamma^2(-\gamma^2)\gamma^2 = -\gamma^2\\
+  \text{sonst }&-\gamma^2\underbrace{\gamma^\mu\gamma^2}_{-\gamma^2\gamma^\mu} = -\gamma^\mu
+\end{cases}\]
+
+Es gilt auch
+
+\[C\overline u^T (p,s) = v(p,s) \cdot e^{i\alpha}\]
+
+\[C\overline v^T (p,s) = u(p,s) \cdot e^{i\alpha'}\]
 
 \end{document}
