@@ -1,0 +1,53 @@
+%\input{../headers/header_script.tex}
+
+\documentclass[10pt,a4paper,oneside,fleqn]{scrbook}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm,top=1cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+%\usepackage{ngerman}
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+\usepackage{amsfonts}                % brauche ich für die Mengensymbole
+\usepackage{graphicx}
+\setlength{\parindent}{0px}
+\setlength{\mathindent}{10mm}
+\usepackage{bbold}                    %brauche ich für die doppel Zahlen Darstellung (Einheitsmatrix z.B)
+
+
+\begin{document}
+\section*{Aufgabe 37: Störungsrechnung}
+
+
+
+\subsection*{LSG a)}
+
+Für den Eigenzustand in der Störungsrechnung gilt:
+
+\[ |n\rangle = |n\rangle ^{(0)}+\sum_{k\neq n} \frac{\langle k|V|n\rangle }{E_n^{(0)}- E_k^{(0)}}|k\rangle ^{(0)} + ... \]
+
+Für den Grundzustand bis erster Ordnung:
+
+\begin{align} 
+|1\rangle &= |1\rangle ^{(0)}+\frac{\langle 2|V|1\rangle }{E_1^{(0)}- E_2^{(0)}}|2\rangle ^{(0)} +  \frac{\langle 3|V|1\rangle }{E_1^{(0)}- E_3^{(0)}}|3\rangle ^{(0)} \\
+&= |1\rangle ^{(0)}+\frac{\alpha }{\hbar\omega 2- \hbar\omega 5}|2\rangle ^{(0)} +  \frac{\beta }{\hbar\omega 2- \hbar\omega 6}|3\rangle ^{(0)} \\
+&= |1\rangle ^{(0)}-\frac{\alpha }{\hbar\omega 3}|2\rangle ^{(0)} -  \frac{\beta }{\hbar\omega 4}|3\rangle ^{(0)} \\
+\end{align}
+
+\begin{align}
+E_n &= E_n^{(0)}+ E_n^{(1)}+E_n^{(2)} \\
+&=E_n^{(0)} + \langle n|V|n\rangle + \sum_{k\neq n}\frac{|\langle
+  k|V|n\rangle|^2}{E_n^{(0)}- E_k^{(0)}}
+\end{align}
+
+Da die Grundzustandsenergie per Definition der kleinste Energiezustand ist, d.h in dem Beispiel \(E_1=\hbar\omega\cdot 2\):
+
+
+\[E_1 = \hbar\omega 2 + 0 +  \frac{|\langle 2|V|1\rangle|^2}{\hbar\omega 2
+  -\hbar\omega 5  } + \frac{|\langle 3|V|1\rangle|^2}{\hbar\omega 2
+  -\hbar\omega 6  } \]
+
+
+
+
+
+
+\end{document}
