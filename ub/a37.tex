@@ -88,12 +88,12 @@ Diese Koeffizienten \(c_n(t)\equiv \langle n| U_I(t,t_0)|i\rangle \) bestimmen d
 
 \[ c_n^{(1)}(t) =  \langle n| U_I^{(1)}(t,t_0)|i\rangle = \langle n|i\rangle -  \frac{i}{\hbar}\int_{t_0}^t \langle n|V_I|i\rangle dt \]
 
-Was hier im Integral unterschlagen (oder unsichtbar) ist, dass die Kets und bras im WW-Bild von der Zeit Abhängen. Es kommen noch von beiden Seiten Exponetial Funktionen heraus, falls man das Schrödinger Bild wieder betrachtet. Zweck dieser Übung ist, die Matrixelemente \(V_I\) aus dem Integral auszuklammern:
+Der Störungsoperator \(V_I\) ist von der Zeit abhängig, um das Integral zu berechnen wird hier nun das Schrödinger Bild gewählt:
 
 \begin{align}
-c_n^{(1)}(t) &= \delta_{ni} -  \frac{i}{\hbar}\int_{t_0}^{t'} \langle n|e^{\frac{i}{\hbar}E_nt'} V_I e^{-\frac{i}{\hbar}E_it'} |i\rangle dt' \\
-&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_I  |i\rangle \int_{t_0}^{t'} dt' e^{\frac{i}{\hbar}(E_n-E_i)t'} \\
-&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_I  |i\rangle \int_{t_0}^{t'} dt e^{i\omega_{ni}t'}
+c_n^{(1)}(t) &= \delta_{ni} -  \frac{i}{\hbar}\int_{t_0}^{t'} \langle n|e^{\frac{i}{\hbar}E_nt'} V_S e^{-\frac{i}{\hbar}E_it'} |i\rangle dt' \\
+&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_S  |i\rangle \int_{t_0}^{t'} dt' e^{\frac{i}{\hbar}(E_n-E_i)t'} \\
+&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_S  |i\rangle \int_{t_0}^{t'} dt e^{i\omega_{ni}t'}
 \end{align}
 
 Mit \(\omega_{ni} =\frac{E_n-E_i}{\hbar} \). 
