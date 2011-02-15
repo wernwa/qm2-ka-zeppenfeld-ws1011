@@ -102,9 +102,10 @@ mit \(\delta_r=\pm 1\)
 
 \begin{align}
 \int \vec B^2 d^3\vec x &\approx \int(\underbrace{\vec k\times\vec f_{r,\vec k}(\vec x))(\vec k'\times \vec f^*_{r',\vec k'}(\vec x)}_{\vec k^2\vec f_{r,\vec k}\vec f^*_{r',\vec k'}-\vec k\vec f^*_{r',\vec k'}(\vec x)\vec k'\vec f_{r,\vec k}(x)})d^3\vec x\\
-&= \delta_{\vec k,\vec k'}(\vec k^2\underbrace{\epsilon_r(\vec k)\vec \epsilon_{r'}(\vec k)  }_{\delta_{r,r'}}- \underbrace{\vec k\vec\epsilon_{r'}(\vec k)}_{0}\underbrace{\vec k\vec \epsilon_r(\vec k)}_{0}\\
+&= \delta_{\vec k,\vec k'}(\vec k^2\underbrace{\epsilon_r(\vec k)\vec \epsilon_{r'}(\vec k)  }_{\delta_{r,r'}}- \underbrace{\vec k\vec\epsilon_{r'}(\vec k)}_{0}\underbrace{\vec k\vec \epsilon_r(\vec k)}_{=0 \quad \text{da}\quad \vec k\bot\vec\epsilon_r}\\
 &= |\vec k|^2\delta_{\vec k,\vec k'}\delta_{rr'}
 \end{align}
+
 
 
 Einsetzen in \(H_{rad}\)
@@ -146,4 +147,307 @@ Messe Energie relativ zum Grundzustand
 
 \[\boxed{H_{rad} = \sum_{r,\vec k} \hbar\omega_k(\underbrace{a_r^\dagger (\vec k)a_r(\vec k)}_{N_r(\vec k)}) } \]
 
+Harmonischer Oszillator für jeden Mode \((\vec k,r)\)
+
+\[\vec p_{rad} = \sum_{\vec k,r} \hbar\vec k N_r(\vec k)\]
+
+mit Teilchenzahlop \(N(\vec k) = a^\dagger_r(\vec k)a_r(\vec k)\) mit Mode \((\vec k,r)\) Eigenzustände von \(N_r(\vec k)\) (und \(H_{rad},\vec P_{rad}\))
+
+\[|n_r(\vec k)=n\rangle  = \frac{(a^\dagger_r(\vec k))^n}{\sqrt{n!}}|0\rangle \]
+
+
+Allgemeiner Zustand: Produkt über Moden (\underline{Fock Raum} für Photonen):
+
+\[|... n_r(\vec k)...\rangle  = \prod_{\vec k,r}|n_r(\vec k)\rangle \in \mathcal H_{rad} = \otimes_{\vec k,r}\mathcal H_{\vec k,r}^{H0}\]
+
+Grundzustand: \(|0\rangle \) def. durch \(a_r(\vec k)|0\rangle =0\)
+
+\begin{itemize}
+\item 1 Photon Zustand: \(a^\dagger_r(\vec k) |0\rangle = |\vec k,r\rangle  \)
+\item 2 Photon Zustand: \(a^\dagger_{r1} (\vec k_1) a^\dagger_{r2} (\vec k_2)   |0\rangle = |(\vec k_1,r_1),(\vec k_2,r_2)\rangle   \)
+\end{itemize}
+
+sind Eigenzustände zu \(H_{rad},\vec P_{rad}\)
+
+\[ H_{rad}a^\dagger_r(\vec k) |E,\vec P\rangle  =  [H_{rad},a^\dagger_r]+a^\dagger_r(\vec k)\underbrace{H_{rad}}_{E}|E,\vec p\rangle \]
+
+
+mit \([H_{rad},a^\dagger_r] = \hbar\omega_k[a^\dagger_r(\vec k) a_r(\vec k),a^\dagger_r(\vec k)] =\hbar\omega_k a^\dagger_r(\vec k)  \)
+
+\[ H_{rad}a^\dagger_r(\vec k) |E,\vec P\rangle  = (\hbar\omega_k+E) a^\dagger_r(\vec k)|E,\vec P\rangle  \]
+
+\( a^\dagger_r(\vec k) \) erzeugt extra Photon im Zustand mit Energie \(\hbar\omega_k\) und Impuls \(\hbar \vec k\)
+
+\(\Rightarrow  a^\dagger_r(\vec k) \) ist Vrzeugungsoperator für 1 Photon
+
+\(\Rightarrow  a_r(\vec k) \) ist Vernichtungsoperator für 1 Photon
+
+
+Allgemeiner 1 Photon zustand:
+
+\[|1\rangle  = \sum_{\vec k,r}\psi(\vec k,r)a^\dagger_r(\vec k)|0\rangle \]
+
+Bose Symmetrie (Fall n=2, gilt für alle n)
+
+
+\[|(\vec k_1,r_1),(\vec k_2,r_2)\rangle = a^\dagger_{r1}(\vec k_1) a^\dagger_{r2} |0\rangle =  a^\dagger_{r2}(\vec k_2) a^\dagger_{r1}(\vec k_1) |0\rangle   \]
+
+\[= |(\vec k_2,r_2),(\vec k_1,r_1)\rangle    \]
+
+ist automatisch Bose-symmetrisch!
+
+
+Vektor potential des quantisierten Feldes:
+
+\[\vec A(\vec x,t) = \vec A^+(\vec x,t) +\vec A^-(\vec x,t)  \]
+
+
+mit ist linear in erzeugern und Vernichtern:
+
+\[\vec A^-(\vec x,t) =\vec \sum_{\vec k,r} \sqrt{\frac{\hbar}{2\epsilon_0 V\omega_k}}\vec \epsilon_r(\vec k)a^\dagger_r(\vec k)e^{-i(\vec k\vec x-\omega_k t)}\]
+\[\vec A^+(\vec x,t) =\vec \sum_{\vec k,r} \sqrt{\frac{\hbar}{2\epsilon_0 V\omega_k}}\vec \epsilon_r(\vec k)a^\dagger_r(\vec k)e^{+i(\vec k\vec x-\omega_k t)}\]
+
+ist linear in erzeugern und Vernichtern:
+
+\[\Rightarrow \vec E = -\frac{\partial \vec A}{\partial t};\quad \vec B = \vec\nabla\times\vec A\]
+
+\(\vec E\) und \(\vec B\) sind Operatoren auf dem Fock Raum.
+
+\(\vec x,t\) sind Parameter der Felder \(\vec E(\vec x,t),\vec A(\vec x,t)...\) (sind keine Operatoren)
+
+
+Klassischer Limes
+
+\[\vec E_{\text{Klassisch}}(\vec x,t) = \langle A|\vec E(\vec x,t)|A\rangle \qquad |A\rangle \in \mathcal H_{rad}\]
+
+\(A\) darf keine feste Anzahl (=n) Photoonen haben. 
+
+\[|B\rangle  = |n \text{ Photonen}\rangle  \Rightarrow \underbrace{\vec A(\vec x,t)}_{\vec A^++\vec A^-}|n \text{ Photonen}\rangle = \#|n-1\rangle +  \#|n+1\rangle  \]
+
+
+\[\langle n| \vec A(\vec x,t)|n\rangle \]
+
+
+Zustände mit vorgegebener fester Photonenzahl \(\cancel \Leftrightarrow \) Klassischer Zustandände. Klassischer Limes entspricht den Kohärenten Zuständen. 
+
+
+\section{Wechselwirkung Strahlung in Materie}
+
+
+Materie: \(N\) Punktteilchen, Masse \(m_i\), Ladung \(e_i\). 
+
+\[\tilde H_m = \sum_i^N \frac{1}{2}m_i (\frac{d\vec r_i}{dt})^2 + H_C\]
+
+mit Coulomb WW.
+
+\[H_C = \frac{1}{2}\sum_{i\neq j} \frac{e_ie_j}{4\pi\epsilon_0|\vec r_i-\vec r_j|}\]
+
+mit der Beziehung: \(\sum_{i,j;i\neq j} = 2\sum_{i,j;i<j}\)
+
+Strahlungsfeld in Coulomb Eichung \(\vec \nabla\cdot\vec A = 0\)
+
+aber:
+
+\[ \vec \nabla\cdot\vec E = \frac{\rho (\vec x,t)}{\epsilon} = \frac{1}{\epsilon_0}\sum_{i=1}^N e_i\delta^3(\vec x-\vec r_i(t))\neq 0\]
+
+\(\Rightarrow \vec E\) hat longitudinale Komponente \(\vec E_L\)
+
+\[\vec E = \vec E_L + \vec E_T = -\frac{\partial \vec A}{\partial t}-\vec \nabla\phi\qquad\text{mit }\vec\nabla\times\vec E_L = 0,\quad\vec\nabla\cdot\vec E_T = 0\]
+
+
+Es gilt \(\boxed{\vec E_L = -\vec \nabla\phi,\quad \vec E_T = -\frac{\partial \vec A}{\partial t}} \) wegen \(\vec \nabla\cdot\vec E-T = -\frac{\partial }{\partial t}\vec \nabla\cdot\vec A \)
+
+Energie des e.m.Feldes
+
+\begin{align}
+H_{e.m.} &= \frac{\epsilon_0}{2}\int d^3\vec x(\vec E^2+c^2\vec B^2)\\
+&=\underbrace{ \frac{\epsilon_0}{2}\int d^3\vec x(\vec E^2_T+c^2\vec B^2 }_{H_{red}} + \vec E_L^2+\cancel{2\vec E_L\cdot\vec E_T})
+\end{align}
+
+NR: \(\vec E_L\cdot\vec E_T = \vec\nabla\phi\frac{\partial\vec A}{\partial t} = \vec\nabla\cdot(\phi\frac{\partial\vec A}{\partial t}) - \phi\frac{\partial}{\partial t}\underbrace{\vec \nabla\vec A}_{=0} \rightarrow  \) Oberflächenterm \(\rightarrow 0\)
+\begin{align} 
+\frac{\epsilon_0}{2} \int \underbrace{ \vec E^2_L}_{(-\vec\nabla\phi)^2}d^3\vec x &= -\frac{\epsilon_0}{2} \int\phi\underbrace{\nabla^2\phi}_{-\frac{\rho(\vec x,t)}{\epsilon_0}}d^3\vec x\\
+&= \frac{1}{2}\int d^3\vec x \rho(\vec x,t) \frac{\rho(\vec x',t)}{4\pi\epsilon_0|\vec x-\vec x'|} \\
+&=  \frac{1}{2} \sum_{i,j=1}^N \frac{e_ie_j}{4\pi\epsilon_0|\vec r_i(t)-\vec r_j(t)|}\\
+&= H_C+E_S
+\end{align}
+
+
+(\(E_S\) = Selbstenergie der N Teilchen)
+
+\(H_C\) schon in \(\tilde H_m\) enthalten
+
+Korrekter Kanonischer Impuls für \(\tilde H_m\)
+
+\[\vec p_i = m_i\frac{d\vec r_i}{dt}+e_i\vec A(\vec r_i(t),t)\]
+
+\[\Rightarrow \tilde H_m = \sum_i\frac{1}{2m_i}(\vec p_i-e_i\underbrace{\vec A(\vec r_i)}_{\vec A_i})^2+H_C\]
+
+
+\[\tilde H_m = \underbrace{\sum_i \frac{\vec p_i^2}{2m_i}+H_C}_{H_m} + \underbrace{\sum_i \frac{1}{2m_i}(-e_i\vec p_i A_i-e_i\vec A_ip_i+e^2_iA^2_i)}_{H_I}\]
+
+in Coulomb Eichung gilt: \(\vec p_i\cdot\vec A_i = \vec A_i\cdot\vec p_i\) wegein \(\vec\nabla\vec A = 0\)
+
+\[H_I = \sum_{i=1}^N \{ i\frac{e_i\hbar}{m_i}\vec A(\vec r_i,t)\cdot\vec\nabla_i + \frac{ e^2_i}{2m_i}\vec A^2(\vec r_i,t) \}\]
+
+\(\Rightarrow \) Störungentwicklung für
+
+\[H = \underbrace{H_{rad}+H_m}_{H_0} + H_I\]
+
+
+\section{Materie + Strahlung}
+
+\[H = \underbrace{H_m+H_{rad}}_{H_0}+H_I\]
+
+\[H_I = \sum_{i=1}^{N}(-\frac{e_i}{m_i}\vec A(\vec r_i,t)\vec p_i + \frac{e_i^2}{2m}\vec A^2)\]
+
+\[\vec A(\vec r,t) =\sum_{\vec k,r}\sqrt{\frac{\hbar}{2\epsilon_0V\omega_k}}\vec\epsilon_r(\vec k)[a^\dagger_r(\vec k) e^{-i(\vec k\vec x-\omega t}+c.c.]\]
+
+ungestörter Zustand
+
+\[|A;...n_r(\vec k) ...\rangle  = |A\rangle |...n_r(\vec k)...\rangle \]
+
+
+\(|A\rangle \) Eigenzustand von \(H_m\)
+
+\[H_m|A\rangle  = E_A|A\rangle \]
+
+\underline{Emission} von Photon:
+
+\[A\rightarrow B+\gamma\]
+
+Übergangswahrscheinlichkeit/Zeit
+
+\[p_r(\vec k) = \frac{2\pi}{\hbar}|\langle B;...n_r(\vec k)+1...|H_I|A;...n_r(\vec k)...\rangle |^2\cdot\delta(E_A-E_B-\hbar\omega_k)\]
+
+Zerfallswarcheinlichkeit/Zeit
+
+\[w_r = \sum_{\vec k}p_r(\vec k) = \frac{V}{(2\pi)^3}\sum_{\vec k}\underbrace{(\frac{2\pi}{2})^3}_{\Delta^3k}p_r(\vec k)\rightarrow \frac{V}{(2\pi)^3}\int d^3\vec k p_r(\vec k)\]
+
+Matrixelement:
+
+\[\langle B;n_r(\vec k) +1 |H_I|A;n_r(\vec k)\rangle = -\sum_i \frac{e_i}{m_i}\sqrt{\frac{\hbar}{2\epsilon_o V\omega_k}}\underbrace{\langle n_r(\vec k) +1 |a^\dagger_r(\vec k)|n_r(\vec k)\rangle }_{\sqrt{n_r(\vec k)+1}} \langle B|e^{-i\vec k\cdot\vec r_i}\epsilon_r(\vec k)\cdot \vec p_i|A\rangle \]
+
+
+\begin{itemize}
+\item 
+\[V_{ni}\propto \sqrt{n+1} \rightarrow w_r\propto (n+1)\]
+\(\rightarrow \) Stimulierte Emission für große n : Laser
+
+\item Emission auch für \(n=0\). Aber klassisch \(\vec E = 0=\vec B \Rightarrow \vec A=0\Rightarrow H_I=0\). spoontante Emission ist rein QM.
+
+\end{itemize}
+
+
+Dipolapproximation für \(\langle B|e^{-ikr}...|A\rangle \):
+
+\[e^{-i\vec k\vec r_i}\approx 1-i\vec k\vec r_i\approx 1\]
+
+und den Impulsoperator können wir schreiben als:
+
+\[\vec p_i = \frac{m_i}{i\hbar} [\vec x_i,\frac{\vec p_i^2}{2m_i}] = \frac{m_i}{i\hbar} [\vec x_i,H_m]  \]
+
+
+\begin{align}
+\Rightarrow &\langle B|\sum_i \underbrace{e^{-i\vec k\vec r_i}}_{\approx 1} \frac{e_i}{m_i}\vec p_i|A\rangle \\
+&=\frac{1}{i\hbar} \langle B|[\sum_i e_i \vec x_i,H_m] |A\rangle \\
+&=\frac{1}{i\hbar} (E_A-E_B) \langle B|\sum_i e_i\vec x_i|A\rangle\\
+&=\frac{1}{i\hbar} (E_A-E_B) e\vec X_{AB}\\
+&= (-im\omega \vec X_{AB})\frac{e}{m}
+\end{align}
+
+
+mit \(\omega = \omega_k = \frac{E_A-E_B}{\hbar}\) und \(m\)=Elektronenmasse
+
+
+\(\Rightarrow \) Zerfallswarhscheinlichkeit/Zeit
+
+
+\begin{align}
+\langle B;n_r(\vec k) +1 |H_I|A;n_r(\vec k)\rangle &= \sqrt{\frac{\hbar}{\epsilon_0}}\sqrt{\frac{(2\pi)^3}{V}}\frac{1}{\sqrt{(2\pi)^32\omega_k}}\sqrt{n_r(k)+1}\frac{e}{m}(-im\omega\vec X_{AB}\vec \epsilon_r(\vec k) \\
+\end{align}
+
+
+\begin{align}
+\Rightarrow w_r &= \sum_{\vec k}\frac{(2\pi)^3}{V} \frac{\hbar}{\epsilon_0}\frac{1}{(2\pi)^32\omega_k}(n_r(\vec k)+1)\frac{2\pi}{\hbar}\delta(\hbar\omega-E_A+E_B)\frac{e}{m^2} |-im\omega\vec\epsilon_r(\vec k)\vec X_{AB}|^2\\
+&=\int d^3\vec k\frac{e^2}{4\pi\epsilon_0\hbar c}\frac{\hbar c}{\pi m^32\omega_k}(n_r(\vec k)+1)|...|^2 \delta(\hbar\omega-E_A+E_B)
+\end{align}
+
+NR: \(d^3\vec k = d\Omega \frac{(ck)^2 dck}{c^3} = d\Omega \frac{\omega^2}{\hbar^3}d(\hbar\omega)\)
+
+
+
+\[w_r = \int d\Omega \alpha \frac{\omega}{m^2c^2 2\pi}(n_r(k) +1) m^2\omega^2|\epsilon_r(\vec k)\vec X_{AB}|^2\]
+
+\[\boxed{w_r = \int d\Omega \alpha \frac{\omega^3}{2\pi c^2} |\epsilon_r(\vec k)\vec X_{AB}|^2 (n_r(k) +1)}\]
+
+Spontane Emission \(n_r(k) = 0\)
+
+
+Keine Polarisation : \(\sum_{r=1,2}\)
+
+\begin{align}
+&\int d\Omega \sum_r|\vec X\vec \epsilon|^2\\
+&=\int d\Omega \vec X^*(\underbrace{\vec \epsilon_1\vec \epsilon_1\vec X+\vec \epsilon_2\vec \epsilon_2\vec X +\hat K\hat K\vec X}_{\vec X}-\hat K\hat K\vec X)\\
+&=\int d\Omega (|\vec X|^2-\underbrace{|\vec X\hat K|^2}_{|\vec X|cos^2\theta} = |\vec X|^2 \underbrace{\int_0^{2\pi}d\phi}_{4\pi}\underbrace{2\int_0^1dcos\phi(1-cos^2\theta)}_{\frac{2}{3}}
+&=\frac{2\pi}{3}|\vec X|^2
+\end{align}
+
+\[w_{A\to B}= \alpha \frac{\omega^3}{2\pi c^2}\frac{8\pi}{3}|\vec X_{AB}|^2\]
+
+\[\boxed{w_{A\to B}= \alpha\frac{4}{3} \frac{\omega^3}{c^2}|\vec X_{AB}|^2}\]
+
+Lebensdauer des Zustands \(|A\rangle \)
+
+\[\boxed{\frac{1}{\tau_A} = \sum_B w_{A\to B}}\]
+
+
+\section{Planck'sche Strahlungsformel für Schwarzkörperstrahlung}
+
+
+Übergang \(A\rangle B+\gamma\) im thermischen Gleichgewicht. 
+
+Anzahl der Atome in Level A \(N(A)\propto e^{-E_A/kT}\)
+
+Anzahl der Atome in Level B \(N(B)\propto e^{-E_B/kT}\)
+
+\[\frac{N(B)}{N(A)} = \frac{e^{-E_B/kT}}{e^{-E_A/kT}} = e^{\frac{\hbar \omega}{kT}}\]
+
+Gleichgewichtsbedingun:
+
+\[N(B) w_{abs.} = N(A)w_{emmiss.}\]
+
+
+\[w_{emmis.} = \alpha \frac{\omega}{2\pi m^2c^2}|\langle B|\sum e^{-i\vec K\vec r_i}\vec \epsilon_r\vec p_i|A\rangle |^2(n_r(\vec k)+1)\]
+
+\[w_{abs} = \alpha \frac{\omega}{2\pi m^2c^2}|\langle A|\sum e^{-i\vec K\vec r_i}\vec \epsilon_r\vec p_i|B\rangle |^2n_r(\vec k)\]
+
+Das Matrixelement von \(w_{abs}\) ist genau das komlex konjugierte von \(w_{emmis.}\)
+
+\[\Rightarrow \frac{w_{emiss}}{w_{abs}} = \frac{n_r(k)+1}{n_r(k)} = 1+\frac{1}{n_r(\vec k)}\]
+
+\[\frac{N(B)}{N(A)} = e^{\frac{\hbar\omega}{kT}}\]
+
+
+\[\Rightarrow \boxed{n_r(\vec k) = \frac{1}{e^{\frac{\hbar\omega}{kT}}-1} } \]
+
+
+Energie im Strahlungsfeld pro Volumeneinheit
+
+\begin{align}
+\int U(\omega)d\omega &= \frac{1}{V} \sum_{r,\vec k}n_r(\vec k) \hbar \omega_k = \underbrace{\frac{(2\pi)^3}{V}\sum_{r,\vec k}}_{\int d^3 k\cdot 2}  n_r(\vec k)\hbar\omega \frac{1}{(2\pi)^3}\\
+&=8\pi \int \frac{k^2 dck}{c^3}\frac{\hbar\omega}{(2\pi)^3}\frac{1}{e^{\hbar\omega/kT}-1}\\
+&= \frac{8\pi\hbar}{c^3}\int d\omega (\frac{\omega}{2\pi})^3 \frac{1}{e^{\hbar\omega/kT}-1}
+\end{align}
+
+
+\[U(\omega) = \frac{8\pi\hbar}{c^3} (\frac{\omega}{2\pi})^3 \frac{1}{e^{\hbar\omega/kT}-1} = u(r) \frac{d\omega}{d\nu} = \frac{1}{2\pi}u(r) \]
+
+\[\Rightarrow u(\nu) = 2\pi U(\omega) = \frac{8\pi h}{c^3} r^3 \frac{1}{e^{\hbar\omega/kT}-1} = u(\omega) \]
+
+\[\boxed{ u(\nu)= \frac{8\pi h}{c^3} r^3 \frac{1}{e^{\hbar\omega/kT}-1}  }  \]
+
+mit \(\frac{d\omega}{d\nu} = \frac{1}{2\pi}\)
+
 \end{document}
+
