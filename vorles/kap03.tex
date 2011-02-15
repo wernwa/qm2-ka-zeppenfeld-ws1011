@@ -1,10 +1,5 @@
 \input{../headers/header_script.tex}
 
-%\includegraphics[width=0.75\textwidth]{thepic.png}
-%couchdb db=physik
-%couchdb id=qm2vorles03_stoerungstheorie
-%couchdb tags=qm2
-%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2/kap03.pdf
 
 
 \begin{document}
@@ -104,8 +99,7 @@ Trick: benutze geignete Linearkombination im Unterraum \(D\) der entarteten Zust
 
 \( E^{(0)}_n = E^{(0)}_D\) sei g-fach entartet
 
-\[ D =  \left\{ \left. \sum^g_{n=1} c_n |n^{(0)}\rangle \right| H_0  =
-  |n^{(0)}\rangle = E^{(0)}_D|n^{(0)}\rangle \right\}\]
+\[ D =  \left\{ \left. \sum^g_{n=1} c_n |n^{(0)}\rangle \right| H_0 |n^{(0)}\rangle = E^{(0)}_D|n^{(0)}\rangle \right\}\]
 
 Diagonalisiere \(V\) in \(D\)
 
@@ -120,12 +114,13 @@ Komplement
 
 Es gilt: \([H_0,P_0]=0=[H_0,P_1]\)
 
+
+
 Gesucht: Eigenvektor \(|l\rangle\)
 
-\[ 0 = (E-H_0-\lambda V)\underbrace{1}_{P_0+P_1} |l\rangle \]
-
-\[ = (E-E^{(0)}_D-\lambda V)P_0 |l\rangle + (E-H_0-\lambda V)P_1
-|l\rangle \]
+\begin{align}
+0 &= (E-H_0-\lambda V)\underbrace{1}_{P_0+P_1} |l\rangle \\&= (E-E^{(0)}_D-\lambda V)P_0 |l\rangle + (E-H_0-\lambda V)P_1|l\rangle
+\end{align}
 
 Projektion auf \(D\), mit \(P_o\)
 
@@ -160,7 +155,7 @@ In Ordnung \(\lambda\): \(E=E^{(0)}_D+\lambda\Delta^{(1)}_l + \lambda^2\Delta^{(
 
 Eigenwertgleichung für \(g\times g\) Matrix:
 
-\[ P_0 V P_0 = \begin{pmatrix} 0&&0\\ &V_0&\\0&&0 \end{pmatrix} \]
+\[ P_0 V P_0 = \begin{pmatrix} 0&0&0\\ 0&V_D&0\\0&0&0 \end{pmatrix} \]
 
 Eigenwert von \(V_D \Rightarrow \Delta^{(1)}\) Wähle \(|l^{(0)}\rangle\) als Eigenvektoren von \(P_0VP_0\)
 
@@ -580,7 +575,7 @@ Bsp: 2-Zustandssystem mit harmonischem Potential:
 \includegraphics[width=0.75\textwidth]{kap03_05.png}
 
 
-\includegraphics[width=0.75\textwidth]{kap03_06.png}
+\includegraphics[width=0.55\textwidth]{kap03_06.png}
 
 
 \(|c_2(t)|^2_{max}=\frac{\gamma^2}{\gamma^2+\frac{(\omega-\omega_{12})^2}{4}}\)
@@ -589,7 +584,8 @@ praktisches Beispiel:
 
 Spin\(\frac{1}{2}\)-System im extenen \(\vec B\)-Feld
 
-\[ \vec B = B_0\hat z + B_1(\hat x cos\omega t \hat y sin\omega t\]
+\[ \vec B = B_0\hat z + B_1(\hat x cos(\omega t)+ \hat y sin(\omega t))\]
+
 \(\rightarrow\) zeitabhängige Störung, Feld rotiert in xy Ebene (typ Radiofrequenz).
 
 ; \(\vec \mu = \frac{e}{m_e}\vec S\)
@@ -605,16 +601,21 @@ Fall: nicht exakt lösbar \(\rightarrow\) Zeitabhängige Störungsrechnung
 \(H= H_0+V(t)\rightarrow\) Dyson-Reihe Störungsreihe für die Koeffizientenfkt
 
 \[ c_n(t) = c_n^{(0)} +c_n^{(1)} +c_n^{(2)} + ... \]
+
 (n) gibt Ordnung im WW-Potential, die mitberücksichtigt wrid. \(|i\rangle = |\text{initial}\rangle\); \(c_n^{(0)}(t) = \delta_{ni}\)
 
-\(c_n^{(m)}(t)\) per Störungsrechnung. Zeitevolutionsoperator im WW-Bild
+\(c_n^{(m)}(t)\) per Störungsrechnung. 
 
-\[ |\alpha,t_0;t\rangle_I = U_I(t,t_0)|\alpha,t_0;t\rangle_I\]
+Zeitevolutionsoperator im WW-Bild
+
+\[ |\alpha,t_0;t\rangle_I = U_I(t,t_0)|\alpha,t_0;t_0\rangle_I\]
 
 Einsetzen in DGL für Zustand im WW-Bild
 
 \[ i\hbar \frac{\partial}{\partial t}|\alpha,t_0;t\rangle_I  = V_I|\alpha,t_0;t\rangle_I \]
-
+\[ i\hbar \frac{\partial}{\partial t}  U_I(t,t_0)|\alpha,t_0;t_0\rangle_I = V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I  \]
+\[|\alpha,t_0;t_0\rangle_I  i\hbar \frac{\partial}{\partial t}  U_I(t,t_0) = V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I  \]
+\[|\alpha,t_0;t_0\rangle_I  i\hbar \frac{\partial}{\partial t}  U_I(t,t_0) = V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I \qquad |\cdot\quad _I\langle \alpha,t_0;t_0| \]
 \[\Rightarrow i\hbar  \frac{\partial}{\partial t}U_I(t,t_0) = V_IU(t,t_0)\]
 
 logische Anfangsbedingung \(U(t_0,t_0)=1\)
@@ -623,43 +624,58 @@ logische Anfangsbedingung \(U(t_0,t_0)=1\)
 
 \[ \int_{t_0}^{t}\frac{d}{dt} U_I(t,t_0) dt = U_I(t,t_0) -\overbrace{U_I(t_0,t_0) }^{1} = -\frac{i}{\hbar}\int_{t_0}^{t}V_IU_I(t,t_0)dt\]
 
-\(\Rightarrow U_I(t,t_0) = 1 - \frac{i}{\hbar} \int_{t_0}^{t}V_IU_I(t,t_0)dt\)
 
-Vorteil, da \(V_I\) klein ist
-
-\(\rightarrow\) Lösung per Iteration (und Abschneiden des \(H\))
+\[\Rightarrow U_I(t,t_0) = 1 - \frac{i}{\hbar} \int_{t_0}^{t}V_IU_I(t,t_0)dt\]
 
 
-\(U_I^{(0)}(t,t_0)=1\)
-
-\(U_I^{(1)}(t,t_0)=1 - \frac{i}{\hbar} \int_{t_0}^{t}V_IU_I(t,t_0)dt\)
-
-\( = 1 - \frac{i}{\hbar} \int_{t_0}^{t}V_Idt\)
+Vorteil, da \(V_I\) klein ist \(\rightarrow\) Lösung per Iteration (und Abschneiden)
 
 
-\(U_I^{(2)}(t,t_0)=1 - \frac{i}{\hbar} \int_{t_0}^{t}V'_Idt' + \frac{(-i)^2}{\hbar^2}\int_{t_0}^{t}V'_I(t')V''_I(t'')dt''\)
 
-\(\rightarrow\) Dyson-Reihhe
+\[U_I^{(0)}(t_0,t_0)=1\]
+
+\[U_I^{(1)}(t,t_0)=1 - \frac{i}{\hbar} \int_{t_0}^{t}V_IU_I^{(0)}(t,t_0)dt = 1 - \frac{i}{\hbar} \int_{t_0}^{t}V_Idt\]
+
+\[ U_I^{(2)}(t,t_0)=1 - \frac{i}{\hbar} \int_{t_0}^{t}V'_Idt' + \frac{(-i)^2}{\hbar^2}\int_{t_0}^{t}dt'\int_{t_0}^{t'}dt''V'_I(t')V''_I(t'') \]
+
+\(\rightarrow\) Dyson-Reihe
   
-\(U_I(t,t_0)=T e^{-\frac{i}{\hbar}\int_{t_0}^{t}V_I(t')dt'}\)
+\[\boxed{U_I(t,t_0)=T e^{-\frac{i}{\hbar}\int_{t_0}^{t}V_I(t')dt'}}\]
 
-Jetzt zurück zuur Übergangsamplitude. Wir wollen die \underline{Übergangswahrscheinlichkeit} berechnen. Initial state \(|i\rangle\) bei \(t=t_0\); \(|i,t_0;t_0\rangle_S = e^{-\frac{i}{\hbar}E_0 t_0}|i\rangle\)
+\(T\) ist ein Zeitordnungsoperator. Die spätere Zeit kommt immer nach links. Sortierung von höheren Zeiten zu kleineren Zeiten.
 
-\[ |i,t_0,t_0\rangle_I = e^{-\frac{i}{\hbar}H_0 t_0}|i,t_0,t_0\rangle_S = e^{\frac{i}{\hbar}E_0 t_0}e^{-\frac{i}{\hbar}E_0 t_0}|i\rangle = |i\rangle\]
+Jetzt zurück zuur Übergangsamplitude. Wir wollen die \underline{Übergangswahrscheinlichkeit} berechnen. Initial state: \(|i\rangle\) bei \(t=t_0\)
+
+ 
+\[|i,t_0;t_0\rangle_S = e^{-\frac{i}{\hbar}E_0 t_0}|i\rangle\]
+
+\begin{align} 
+|i,t_0,t_0\rangle_I &= e^{\frac{i}{\hbar}H_0 t_0}|i,t_0,t_0\rangle_S\\
+&= e^{\frac{i}{\hbar}E_0 t_0}e^{-\frac{i}{\hbar}E_0 t_0}|i\rangle \\
+&= |i\rangle
+\end{align}
 
 
-\[ |i,t_0,t_0\rangle_I = U_I(t,t_0)|i\rangle = \sum_n c_n(t) |n\rangle\]
+\begin{align}
+|i,t_0,t\rangle_I &= U_I(t,t_0)|i\rangle \\
+&=\mathbb 1\cdot U_I(t,t_0)|i\rangle \\
+&=\sum_n |n\rangle \langle n| U_I(t,t_0)|i\rangle \\
+&= \sum_n c_n(t) |n\rangle
+\end{align}
 
 \[\rightarrow c_n(t) = \langle n|\underbrace{U_I(t,t_0)}_{Te^{-\frac{i}{\hbar}\int_{t_0}^tdt'V_I(t')}}|i\rangle\]
 
-\(T\) ist ein Zeitordnungsoperator. Die spätere Zeit kommt immer nach links. Sortierung von höheren Zeiten zu kleineren Zeiten. Jetzt einsetzen der Dyson-Reihe für den Zeitentwicklungsoperator:
+Jetzt einsetzen der Dyson-Reihe für den Zeitentwicklungsoperator:
 
 \[ c_n(t) = \langle n|i\rangle - \frac{i}{\hbar}\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle + (\frac{i}{\hbar})^2\langle n |\int_{t_0}^t dt'\int_{t_0}^t V_I(t')V_I(t'')dt'' |i\rangle +...\]
-
+\[ c_n(t) = \langle n|i\rangle - \frac{i}{\hbar}\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle + (\frac{i}{\hbar})^2\langle n |\int_{t_0}^t dt'\int_{t_0}^t V_I(t')\cdot\sum_m |m\rangle \langle m|\cdot V_I(t'')dt'' |i\rangle +...\]
 \[ = \delta_{ni}+(\frac{-i}{\hbar})\int_{t_0}^t V_{ni}(t')e^{i\omega_{ni}t'}dt' + (\frac{-i}{\hbar})^2\sum_m\int_{t_0}^tdt'\int_{t_0}^{t'} V_{nm}(t')e^{i\omega_{ni}t'} V_{mi}(t'')e^{i\omega_{ni}t''} dt''\]
 \[ = c_n^{(0)}(t)+c_n^{(1)}(t)+c_n^{(2)}(t)+...\]
 
-\(P(i\rightarrow n) = | c_n^{(1)}(t)+c_n^{(2)}(t)+...|^2\)
+
+
+\[\boxed{P(i\rightarrow n) = | c_n^{(1)}(t)+c_n^{(2)}(t)+...|^2}\]
+
 
 \(P(i\rightarrow n) = |c_n^{(1)}|^2 + 2Re c_n^{(1)} c_n^{(2)*}+(|c_n^{(2)}|^2 + 2Re c_n^{(1)} c_n^{(3)*})+...\)
 
@@ -672,40 +688,52 @@ Jetzt zurück zuur Übergangsamplitude. Wir wollen die \underline{Übergangswahr
   V& t\geq 0
 \end{cases}\]
 
-Wähle \(t_0 = 0\)
+Wähle \(t_0 = 0\) und \(V_{ni}\) konstant
 
 \[ c^{(0)}_n = \delta_{ni}\]
-\[ c^{(1)}_n = -\frac{i}{\hbar} V_{ni}\underbrace{\int_0^t e^{i\omega_{ni}t'}dt'}_{\frac{e^{i\omega_{ni}t}-1}{i\omega_{ni}}=\frac{e^{i\omega_{ni}t/2}}{i\omega_{ni}}(e^{i\omega_{ni}t/2}-e^{-i\omega_{ni}t/2})}=-\frac{i}{\hbar}V_{ni}\frac{2sin\frac{\omega_{ni}t}{2}e^{\frac{i\omega_{ni}t}{2}}}{(E_n-E_i)/\hbar}\]
+\[ c^{(1)}_n = -\frac{i}{\hbar} V_{ni}\int_0^t e^{i\omega_{ni}t'}dt'=-\frac{i}{\hbar}V_{ni}\frac{2sin\frac{\omega_{ni}t}{2}e^{\frac{i\omega_{ni}t}{2}}}{(E_n-E_i)/\hbar}\]
+
+mit
+
+\[\int_0^t e^{i\omega_{ni}t'}dt' = \frac{e^{i\omega_{ni}t}-1}{i\omega_{ni}}=\frac{e^{i\omega_{ni}t/2}}{i\omega_{ni}}(e^{i\omega_{ni}t/2}-e^{-i\omega_{ni}t/2})\]
 
 Übergangswahrscheinlichkeit \(n\neq i\)
 
-\[ |c^{(1)}_n|^2 = 4|V_{ni}|^2 \frac{sin^2\frac{E_n-E_i}{2\hbar}}{(E_n-E_i)^2} \]
+\[ |c^{(1)}_n|^2 = 4|V_{ni}|^2 \frac{sin^2\left(\frac{(E_n-E_i)t}{2\hbar}\right)}{(E_n-E_i)^2} \]
 
-mit \(\omega \frac{E_n-E_i}{\hbar}\); \(f(\omega) = 4\frac{sin^2\frac{\omega t}{2}}{\omega^2}\)
+
+mit \(\omega_{ni} =  \frac{E_n-E_i}{\hbar}\); \(f(\omega_{ni}) = 4\frac{sin^2\left(\frac{\omega_{ni} t}{2}\right)}{\omega^2_{ni}t}\)
+
 
 
 \includegraphics[width=0.75\textwidth]{kap03_07.png}
 
-\(t\rightarrow \infty\); \(f(\omega) \rightarrow^{t\rightarrow \infty} c t\delta(\omega)\)
 
-Betrachte \(\frac{1}{E^2}sin^2 \frac{Et}{2\hbar} =^{t\rightarrow \infty} c\delta(E)\)
 
-\[ c = \int_{-\infty}^{\infty} dE c\delta(E) = \int_{-\infty}^{\infty} dE \frac{1}{E^2}sin^2\frac{Et}{\underbrace{2\hbar}_{x}} =^{\frac{1}{E}=\frac{2\hbar}{Et}\frac{t}{2\hbar}} \frac{t}{2\hbar} \int_{-\infty}^{\infty} dx \frac{sin^2 x}{x^2} \]
+ \[f(\omega) \xrightarrow{t\rightarrow \infty} 2\pi\delta(\omega)\]
+
+
+
+Betrachte \(\frac{1}{E^2}sin^2 \frac{(E)t}{2\hbar} \stackrel{\mathrm{t\rightarrow \infty}}= c\delta(E)\) mit \(E = E_n-E_i\)
+
+\[ c' = \int_{-\infty}^{\infty} dE c\delta(E) = \int_{-\infty}^{\infty} dE \frac{1}{E^2}sin^2\frac{Et}{\underbrace{2\hbar}_{x}} \stackrel{\mathrm{\frac{1}{E}=\frac{2\hbar}{Et}\frac{t}{2\hbar} }}= \frac{t}{2\hbar} \int_{-\infty}^{\infty} dx \frac{sin^2 x}{x^2} \]
 
 \[ |c^{(1)}_n|^2 = 4|V_{ni}|^2 \frac{\pi t}{2\hbar} \delta(E_n-E_i) \]
 
-Übergangsrate = Übergangswahrscheinlichkeit pro Zeit \(\equiv \frac{d}{dt}|c^{(1)}_n|^2\) . \underline{Die Goldene Regel von Fermi}:
+Übergangsrate = Übergangswahrscheinlichkeit pro Zeiteinheit \(\equiv \frac{d}{dt}|c^{(0)}_n+c^{(1)}_n|^2\) . 
+
+\underline{Die Goldene Regel von Fermi}:
 
 \[\boxed{w_{i\rightarrow n} = \frac{2\pi}{\hbar} |V_{ni}|^2 \delta(E_n-E_i)}\]
 
 
 \underline{Bsp: Streuung}
 
-\(\rightarrow_{|i\rangle }\) \(E_i = \frac{\vec p^2}{2m}\)
+\(\xrightarrow{|i\rangle }\) \(E_i = \frac{\vec p^2}{2m}\)
 
-\includegraphics[width=0.75\textwidth]{kap03_08.png}
+\includegraphics[width=0.25\textwidth]{kap03_08.png}
 
-Kontinuum von Endzuständen der Energie \(E_n = \frac{\vec p^2}{2m}\) mit Richtungen \(\hat p_n\).
+Kontinuum von Endzuständen der Energie \(E_n = \frac{\vec p^2_n}{2m}\) mit Richtungen \(\hat p_n\).
 
 Summe über Endzustände mit \(E_n \approx E_i\). Anzahl der Zustände in \((E,E+dE)\): \(\rho(E)dE\) mit \(\rho\) Zustandsdichte der Energieeigenzustände.
 
@@ -714,6 +742,9 @@ Summe über Endzustände mit \(E_n \approx E_i\). Anzahl der Zustände in \((E,E
 \[\boxed{\omega_{i\rightarrow [n]} \equiv \int dE_n\rho(E_n)\overline{\omega_{i\rightarrow n}} = \left. \frac{2\pi}{\hbar}\overline{|V_{ni}|^2}\rho(E_n)\right|_{E_n=E_i}}\]
 
 \(\overline{\omega_{i\rightarrow n}}\) Mittelung über Zustände mit gleichem \(E_n\).
+
+
+
 
 \underline{2.Ordnung Störungstheorie}
 
@@ -727,7 +758,7 @@ Summe über Endzustände mit \(E_n \approx E_i\). Anzahl der Zustände in \((E,E
 \end{align}
 
 
-Zeitentwicklung iin höherer Ordnung:
+Zeitentwicklung in höherer Ordnung:
 
 \[ c_n(t) = -\frac{i}{\hbar} (V_{ni} +\sum_{m; E_m\neq E_i} \frac{ V_{nm}V_{mi} }{E_m-E_i} +...)\int_0^t dt e^{i\omega_{ni}t'} \]
 
@@ -737,11 +768,13 @@ Zeitentwicklung iin höherer Ordnung:
 
 Energie unschärfe \(\frac{\frac{sins^2(E_n-E_i)t}{2\hbar}}{(E_n-E_i)^2}\)
 
-\includegraphics[width=0.75\textwidth]{kap03_07.png}
 
 Kurze Zeiten \(t=\Delta t\); \(\Delta E = \frac{h}{\Delta t}\)
 
 Energieunschärfe \(\Delta t \cdot \Delta E >\approx h\)
+
+
+
 
 \subsection{Harmonische Störung}
 

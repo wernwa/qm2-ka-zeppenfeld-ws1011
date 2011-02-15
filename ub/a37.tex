@@ -4,6 +4,20 @@
 \begin{document}
 \section*{Aufgabe 37: Störungsrechnung}
 
+Der Hamilton-Operator eines 3-Zustands-Systems ist durch \(H=H_0+V\) gegeben, wobei
+
+\[H_0 = \hbar\omega \begin{pmatrix}2&0&0\\ 0&5&0\\ 0&0&6\\ \end{pmatrix}, \qquad V = \begin{pmatrix}0&\alpha&\beta\\ \alpha&0&0\\ \beta&0&0\\ \end{pmatrix} \]
+
+Darin ist V als Störung aufzufassen, d.h, \(\alpha,\beta << \hbar\omega\). Hier sind beide Operatoren in der Basis der ungestörten Energieeigenzustände \(|1\rangle^{(0)}, |2\rangle^{(0)},|3\rangle^{(0)} \) zu den Eigenwerten \(E_1 = 2\hbar\omega, E_2 = 5\hbar\omega, E_3 = 6\hbar\omega\) geschrieben.
+
+\begin{enumerate}
+\item[(a)] Berechnen Sie den Grundzustand in 1. Ordnung und die Grundzustandsenergie in 2. Ordnung zeitunabhängiger Störungsrechnung.
+\item[(b)] Die Störung \(V\) sei jetzt nur für \(0<t<t_1\) eingeschaltet. Das System befinde sich zum Zeitpunkt \(t=0\) im Zustand \(|2\rangle^{(0)} \). Berechnen Sie den Wahrscheinlichkeit, das System zu einem Zeitpunkt \(t_{obs}>t_1\) im Zustand  \(|1\rangle^{(0)} \) vorzufinden in erster Ordnung zeitabhängiger Störungstheorie.
+
+\item[(c)] Sei nun wieder \(V(t) = const = V\). Das ungestörte System habe jedoch einen entarteten Grundzustand: wir setzen \(\langle 2|H_0|2\rangle =2\hbar\omega\). Wie lauten unter Berücksichtigung von V bis zur ersten Ordnung der entarteten Störungsrechnung die Energien und Energieeigenzustände?
+\end{enumerate}
+
+
 
 
 \subsection*{LSG a)}
@@ -38,6 +52,131 @@ Da die Grundzustandsenergie per Definition der kleinste Energiezustand ist, d.h 
 
 
 \subsection*{LSG b)}
+
+Für die Berechnung der Wahrscheinlichkeiten ist es leichter/zweckmäßig das Sytem im Wechselwirkungsbild zu betrachten, da dort die Statische Komponente \(H_0\) keine rolle spielt:
+
+\[i\hbar \frac{\partial}{\partial}|\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I\]
+
+Dies lässt sich weiter umformen zu:
+
+\[ i\hbar \frac{\partial}{\partial} U_I(t,t_0) = V_I U(t,t_0)  \]
+
+mit \(U_I\) als einen unitären Zeitentwicklungsoperator \(|\alpha,t_0;t\rangle_I = U_I(t,t_0) |\alpha,t_0;t\rangle_I \) der den \(t_0\)-Zustand zu einen beliebigen \(t\) Zeitzustand 'transformiert'. Integration der obigen gleichung über die Zeit ergibt eine rekursive formel:
+
+\[U_I^{(n)}(t,t_0) = 1-\frac{i}{\hbar}\int_{t_0}^t V_IU_I^{(n-1)}(t,t_0)dt\]
+
+Der unitäre Zeitentwicklungsoperator \(U_I\) soll den Zustand nicht verändert wenn keine Zeitdifferenz vorhanden ist, sprich \(U_I(t_0,t_0)=1\). Zeitabhängige Störung 0.Ordnung ist demnach:
+
+\[U_I^{(0)}(t,t_0)=1\]
+
+
+und 1. Ordnung ergibt sich aus dem Einsetzen in die Rekursive Formel:
+
+\[U_I^{(1)}(t,t_0) = 1-\frac{i}{\hbar}\int_{t_0}^t V_IU_I^{(0)}(t,t_0)dt = 1-\frac{i}{\hbar}\int_{t_0}^t V_I dt\]
+
+Nun werden die Zeitabhängigen Matrixelemente von \(U_I\) benötigt. Ein Zustand im WW-Bild lässt sich offenbar in Abhängigkeit der Zeitabhängigen Matrixelemente \(c_n(t)\) entwickeln:
+
+\begin{align}
+|i,t_0,t\rangle_I &= U_I(t,t_0)|i\rangle \\
+&=\mathbb 1\cdot U_I(t,t_0)|i\rangle \\
+&=\sum_n |n\rangle \langle n| U_I(t,t_0)|i\rangle \\
+&= \sum_n c_n(t) |n\rangle
+\end{align}
+
+
+Diese Koeffizienten \(c_n(t)\equiv \langle n| U_I(t,t_0)|i\rangle \) bestimmen den (Übergangs)-Zustand des Systems und deren Betragsquadrat \(|c_n(t)|^2\) die Übergangs-Warhscheinlichkeit. In 1.Ordnung Störungsrechnung werden zunächst die Matrixelemente von \(U_I^{(1)}(t,t_0)\) berechnet:
+
+\[ c_n^{(1)}(t) =  \langle n| U_I^{(1)}(t,t_0)|i\rangle = \langle n|i\rangle -  \frac{i}{\hbar}\int_{t_0}^t \langle n|V_I|i\rangle dt \]
+
+Der Störungsoperator \(V_I\) ist von der Zeit abhängig, um das Integral zu berechnen wird hier nun das Schrödinger Bild gewählt:
+
+\begin{align}
+c_n^{(1)}(t) &= \delta_{ni} -  \frac{i}{\hbar}\int_{t_0}^{t'} \langle n|e^{\frac{i}{\hbar}E_nt'} V_S e^{-\frac{i}{\hbar}E_it'} |i\rangle dt' \\
+&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_S  |i\rangle \int_{t_0}^{t'} dt' e^{\frac{i}{\hbar}(E_n-E_i)t'} \\
+&= \delta_{ni} -  \frac{i}{\hbar}\langle n|V_S  |i\rangle \int_{t_0}^{t'} dt e^{i\omega_{ni}t'}
+\end{align}
+
+Mit \(\omega_{ni} =\frac{E_n-E_i}{\hbar} \). 
+
+In unserem Fall befindet sich das System im Zustand \(|2\rangle^{(0)} \equiv |i\rangle  \). Es soll die Warscheinlichkeit im Zustand \(|1\rangle^{(0)} \equiv |n\rangle  \) bestimmt werden. Konkret heißt das:
+
+\[ c_1^{(1)}(t) =  \langle 1| U_I^{(1)}(t,t_0)|2\rangle = 0 - \frac{i}{\hbar}\langle 1|V_S  |2\rangle \int_{t_0}^{t'} dt' e^{i\omega_{12}t'} = - \frac{i}{\hbar}\alpha  \int_{t_0}^{t'} dt' e^{i\omega(2-5)t'}\]
+
+\[ c_1^{(1)}(t) =  - \frac{i}{\hbar}\alpha   \left[\frac{e^{-i3\omega t'}}{-i3\omega}\right]^{t}_{0} = - \frac{i}{\hbar}\alpha (\frac{e^{-i3\omega t}}{-i3\omega}-\frac{1}{-i3\omega}) = \frac{\alpha}{3\hbar\omega} (e^{-i3\omega t}-1) \]
+
+Die Übergangswahrscheinlichkeit ist das Betragsquadrat des Matrixelements:
+
+\begin{align} 
+p_{2 \to 1} &= |c_1^{(1)}(t)|^2 = \frac{\alpha^2}{9\hbar^2\omega^2} (e^{i3\omega t}-1)(e^{-i3\omega t}-1) \\
+&= \frac{\alpha^2}{9\hbar^2\omega^2} (1-e^{i3\omega t}-e^{-i3\omega t}+1) \\
+&= \frac{\alpha^2}{9\hbar^2\omega^2} (2-(e^{i3\omega t}+e^{-i3\omega t})) \\
+&= \frac{2\alpha^2}{9\hbar^2\omega^2} (1-cos(3\omega t))
+\end{align}
+
+ 
+\subsection*{LSG c)}
+
+Der \(H_0\) Operator hat nun 2 Zustände zu einem Energiewert \(\hbar\omega\cdot 2\) \(\Rightarrow \) entartet.
+
+\[H_0 = \hbar\omega \begin{pmatrix}2&0&0\\ 0&2&0\\ 0&0&6\\ \end{pmatrix}, \qquad V = \begin{pmatrix}0&a&b\\ a&0&0\\ b&0&0\\ \end{pmatrix} \]
+
+und \(V(t) = const = V\), Aus unerfindlichen Gründen geht \(\alpha\) in a und \(\beta\) in b über. Der wahre Grund ist, dass \(\alpha,\beta\) sich besser als Indizies für die Herleitung im Entarteten Unterraum eignen. Nein, der noch wahrere Grund ist, dass ich die Indizies so gewählt habe und erst zum Schluss bemerkte, dass es mit den Konstanten in der Matrix kollidiert.
+
+
+Die Energie \(E_n = E_2 = 2\hbar\omega\) ist zweifach entartet, dazu gehören die zwei Zustände im nicht entarteten Fall \(|1\rangle^{(0)} \)  \(|2\rangle^{(0)} \). Als Eigenwert Gleichung so Ausgedrückt:
+
+\[H_0 |1\rangle^{(0)} = E_2 |1\rangle^{(0)} \]
+\[H_0 |2\rangle^{(0)} = E_2 |2\rangle^{(0)} \]
+
+Oder wenn man den Entarteten Unterraum separat betrachtet gilt für \(\alpha=1,2\) allgemein:
+
+\[H_0 |\alpha\rangle^{(0)} = E_\alpha |\alpha\rangle^{(0)} \]
+
+Nach dem Überlagerungsprinzip, wonach die Summe der Zustandsfunktionen ebenso eine Lösung für die Eigenwertgleichung erfüllt:
+
+\[H_0 |\Sigma \rangle^{(0)} = E_\alpha |\Sigma\rangle^{(0)} = E_\alpha \mathbb 1 |\Sigma\rangle^{(0)} =  E_\alpha \sum_\alpha |\alpha\rangle^{(0)} \cdot^{(0)}\langle \alpha |\Sigma\rangle^{(0)} = E_\alpha \sum_\alpha c_\alpha|\alpha\rangle ^{(0)} \]
+Wobei die Koeffizienten \(c_\alpha =  ^{(0)} \langle \alpha |\Sigma\rangle^{(0)}\)
+
+Nun benötigen wir aus der Störungsrechnung die Gleichung mit der ersten Potenz \(\lambda^1\)
+
+\[(H_0-E_n^{(0)})|\Sigma\rangle ^{(1)} = (E_n^{(1)}-V)|\Sigma\rangle^{(0)}\]
+
+Multipliziert diese Gleichung mit \(^{(0)}\langle \alpha|\) sieht man:
+
+\begin{align}
+^{(0)}\langle \alpha|(H_0-E_n^{(0)})|\Sigma\rangle ^{(1)} &= ^{(0)}\langle \alpha|(E_n^{(1)}-V)|\Sigma\rangle^{(0)}\\
+^{(0)}\langle \alpha|\underbrace{(E_0^{(0)}-E_n^{(0)})}_{=0}|\Sigma\rangle ^{(1)} &=^{(0)}\langle \alpha| (E_n^{(1)}-V)|\Sigma\rangle^{(0)}
+\end{align}
+
+\[\Rightarrow  ^{(0)} \langle \alpha|V-E_n^{(1)}|\Sigma\rangle^{(0)} = 0 \]
+\[  ^{(0)} \langle \alpha|V|\Sigma\rangle^{(0)} -E_n^{(1)} \langle \alpha|V|\Sigma\rangle^{(0)}  = 0 \]
+\[  ^{(0)} \langle \alpha|V|\Sigma\rangle^{(0)} -E_n^{(1)} c_\alpha  = 0 \]
+
+
+Ersetze nun \(|\Sigma\rangle^{(0)}\) mit der Summe der Entarteten untervektoren als \(|\Sigma\rangle^{(0)} = \sum_\beta |\beta\rangle \). Der Index \(\beta\) läuft genau wie \(\alpha\) über alle entarteten Zustände
+
+\[\sum_\beta V_{\alpha\beta}-E_n^{(1)}c_\alpha = 0\]
+Das ist offensichtlich eine Sekulärgleichung im entarteten Unterraum mit einem Ausschnitt aus Störungsmatrix (in unserem Fall):
+
+\[V_{\alpha\beta} = \begin{pmatrix}0&a\\ a&0 \end{pmatrix} \]
+
+Oder als Eigenwertgleichung:
+
+
+\[V|\alpha\rangle ^{(0)} = E_n^{(1)}c_\alpha|\alpha\rangle ^{(0)}  \]
+
+\[V|\alpha\rangle ^{(0)} = E_\alpha^{(1)} |\alpha\rangle ^{(0)}  \]
+
+Nach lösen der Determinante, ist das Ergebniss:  \(E_\alpha^{(1)} = \pm a \).  Das bedeutet, dass die Lösung dieser Eigenwertgleichung im entarteten Unterraum der Störungsmatrix, uns die Energie-Eigenwerte in 1 Ordnung der Störung liefert. Die gesamte Energie (bis zur 1 Ordnung) sieht dann so aus:
+
+\[E_n^{(ges)} = E_n^{(0)}+E_n^{(1)}\]
+
+Im entarteten Unterraum dann so:
+
+\[E_\alpha^{(ges)} = E_\alpha^{(0)}+E_\alpha^{(1)} =E_\alpha^{(0)}\pm a \]
+
+Die Gesamtenergie ist dank der konstanten Störung nicht mehr entartet. Die Störung hebt offensichtlich (i.a. teilweise oder ganz) die Störung auf.
+
 
 
 
