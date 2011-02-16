@@ -384,13 +384,14 @@ Dirac-Gleichung: \(E=E_{nj}\Rightarrow 2s,2p_{1/2}\) entartet, angehoben durch L
 
 H-Atom im äußeren Magnetfeld
 
-(bzw. Alkali-Atom, H-artiger Atom))
+(bzw. Alkali-Atom, H-artiger Atom)
 
 Dazu
 
 \[ H=\frac{(\vec p-e\vec A)^2}{2m}+V_c(r)+V_{LS}\underbrace{-\vec \mu\vec B}_{\frac{e}{m}\vec S\vec B}\]
 
 \((\vec p-e\vec A)^2\): minimale Kopplung aus der L-Funktion
+\newline
 
 \underline{Exkurs}
 
@@ -411,57 +412,67 @@ Beachte: \((\vec v\times \vec B)_i = \epsilon_{ijk}\dot x_j \epsilon_{klm}\nabla
 \[\Rightarrow m\ddot x_i = q(-\nabla_i\phi - \dot A_i)+q\dot x_j\underbrace{(\nabla_iA_j-\nabla_jA_i)}_{\epsilon_{ijk}B_k}\]
 
 
-\(\Rightarrow m\ddot{\vec x} = q(\vec E + \vec \nabla \vec B)\) Lorenzkraft!
-
+\(\Rightarrow m\ddot{\vec x} = q(\vec E + \dot{\vec x} \times \vec B)\) Lorenzkraft!
+\\
 Übergang zur Hamiltonfuntion per Legendretransformation:
-
+\\
 \(p_i = \frac{\partial L}{\partial \dot x_i} = m_i \dot x_i + q A_i \rightarrow v_i = \frac{1}{m}(p_i-qA_i)\)
 
 \(H = \vec p \vec v - L = \vec p \frac{1}{m}(\vec p - q \vec A) -\frac{1}{2m}(\vec p - q \vec A)^2+q\phi-q\vec A(\frac{\vec p - q \vec A}{m})\)
 
-\[\Rightarrow \frac{\vec p - q\vec A)^2}{2m}+q\phi\]
+\[\Rightarrow H = \frac{(\vec p - q\vec A)^2}{2m}+q\phi\]
 
+Ende des Exkurses, weiter mit Zeeman Effekt
+\\
 
+Konstantes \(\vec B\)-Feld. \(\vec B = \vec \nabla \times \vec A = B\hat z\); wähle \(\vec A = \frac{B}{2}\begin{pmatrix} -y \\ x \\ 0 \end{pmatrix}\) hat \(\vec \nabla\cdot \vec A=0\). (Beachte Wirkung von \(\vec p\) auf den Operator \(\vec A\) und einen Zustand \(\psi\)).
 
-\subsection{Zeeman Effekt}
-
-Alkali (wasserstoffartige Atome) im B-Feld
-
-\[ H= \frac{(\vec p - e\vec A)^2}{2m_e}+V_e(r) + V_{LS}-\underbrace{\vec \mu\cdot \vec B}_{\frac{e}{2m_e}2\vec S\vec B}\]
-
-Konstantes \(\vec B\)-Feld. \(\vec B = \vec \nabla \times \vec A = B\hat z\); wähle \(\vec A = \frac{B}{2}\begin{pmatrix} -y \\ x \\ 0 \end{pmatrix}\) hat \(\vec \nabla\cdot \vec A=0\)
-\[ \vec p \vec A = \frac{\hbar}{i}\vec \nabla (\vec A...) = \vec A\vec p + \underbrace{[p_i,A_i]}_{\frac{\hbar}{i}[\nabla_i,A_i]}=\vec A\vec p + \frac{\hbar}{i}(\underbrace{\vec \nabla\vec A}_{=0})=\vec A\vec p\]
+\[ \vec p \vec A|\psi\rangle  = \frac{\hbar}{i}\vec \nabla (\vec A|\psi\rangle ) = \vec A\vec p + \underbrace{[p_i,A_i]}_{\frac{\hbar}{i}[\nabla_i,A_i]}=\vec A\vec p + \frac{\hbar}{i}(\underbrace{\vec \nabla\vec A}_{=0})=\vec A\vec p\]
 
 \[\vec p \vec A = \vec A\vec p = \frac{B}{2}\begin{pmatrix} -y \\ x \\ 0 \end{pmatrix}\cdot\begin{pmatrix} p_x \\ p_y \\ p_z \end{pmatrix} = \frac{B}{2}(-yp_x + xp_y)=\frac{B}{2}L_z\]
 
-\[ H=\frac{\vec p^2}{2m}-\frac{e}{2m_e}2\underbrace{\vec A\vec p}_{BL_z}+\frac{e^2}{2m_e}\vec A^2 + V_C+V_{LC}-\frac{e}{m_e}BS\]
+\[ H=\frac{\vec p^2}{2m}-\frac{e}{2m_e}2\underbrace{\vec A\vec p}_{BL_z}+\frac{e^2}{2m_e}\vec A^2 + V_C+V_{LS}-\frac{e}{m_e}BS\]
 
 \[H=H_0+H_{LS}+H_B+H_Q\]
 
-mit \(H_{LS} = \frac{1}{2m^2_ec^2}\frac{1}{r}\frac{dV_C}{dr}\vec L\cdot\vec S\); \(H_B=-\frac{e}{2m_e}B(L_z+2S_z)\); \(H_Q = \frac{e^2}{8m_e}B^2(x^2+y^2)\) (klein)
+\begin{align}
+H_{LS} &= \frac{1}{2m^2_ec^2}\frac{1}{r}\frac{dV_C}{dr}\vec L\cdot\vec S\\
+H_B&=-\frac{e}{2m_e}B(L_z+2S_z)\\ 
+H_Q &= \frac{e^2}{8m_e}B^2(x^2+y^2) \qquad \leftarrow \text{( klein)}
+\end{align}
+
+
 
 Größenordnung der Störterme:
 
+
+
 \[\langle H_B\rangle \approx \frac{e\hbar}{2m_e}B=\mu_BB = 6\cdot 10^{-5}\frac{eV}{T}B\]
 
+
 Feinstrukturaufspaltung
+\\
 
-\begin{tabular}{ccc}
-  Na&\(\Delta E_{3p}=2\cdot 10^{-3}eV\) & \(\Delta E_{3p}>> \rangle H_B\rangle\) \\
-  Li&\(\Delta E_{2p}=4\cdot 10^{-5}eV\) & \(\Delta E_{2p}<< \rangle H_B\rangle\) für \(B>>1Tesla\)
+\begin{tabular}{lll}
+  Na&\(\Delta E_{3p}=2\cdot 10^{-3}eV\) & \(\Delta E_{3p}>> \langle  H_B\rangle\) \\
+  Li&\(\Delta E_{2p}=4\cdot 10^{-5}eV\) & \(\Delta E_{2p}<< \langle  H_B\rangle\) für \(B>>1Tesla\)
 \end{tabular}
+\\
 
-\(H=H_0+H_{LS}+H_B(+H_Q)\) ist symmetrisch unter Drehungen um z-Achse \(\Rightarrow J_z\) ist erhalten: \([H,J_z]=0 \Rightarrow\) simultange Eigenzustände.m ist gute Quantenzahl
+\(H=H_0+H_{LS}+H_B(+H_Q)\) ist symmetrisch unter Drehungen um z-Achse \(\Rightarrow J_z\) ist erhalten: \([H,J_z]=0 \Rightarrow\) simultange Eigenzustände. m ist eine gute Quantenzahl
 
 \[ \langle m'|H|m\rangle \approx \delta_{mm'} \]
 
 Betrachte \([\vec L^2,H_{LS}]\propto[\vec L,\vec L^2\cdot \vec S] = 0\); \([\vec L^2,H_{B}]\propto[\vec L^2,L_z+2S_z] = 0\); analog für \(\vec S^2\): \(\vec L^2\) und \(\vec S^2\) sind gute Quantenzahlen.
+\\
 
-Basis für Rechnung: \(\vec L^2\),\(\vec S^2\),\(L_z\),\(S_z\) Eigenzustände; \(\vec L^2\),\(\vec S^2\),\(\vec J^2\),\(J_z\) Eigenzustände
+Basis für Rechnung: \(\vec L^2\),\(\vec S^2\),\(L_z\),\(S_z\) Eigenzustände oder diese \(\vec L^2\),\(\vec S^2\),\(\vec J^2\),\(J_z\) Eigenzustände
+\\
 
 \underline{Grenzfälle}
-
-1) \(H_{LS}\) dominiert: \(\vec J^2\) Basis \(\rightarrow\) Entartung aufgehoben. Die Aufspaltung ist gleich dem Erwartungswert \(H_B\): \(\Delta E_B = \langle H_B\rangle_{j=l\pm\frac{1}{2},m}=\frac{-eB}{2m_e}\langle \underbrace{L_z+2S_z}_{J_z+S_z=\hbar m+\langle S_z\rangle}\rangle_{j=l\pm\frac{1}{2},m}\) Eigenzustand \(|j,m\rangle\) ist
+\\
+1) \(H_{LS}\) dominiert: \(\vec J^2\) Basis \(\rightarrow\) Entartung aufgehoben. (Nichtentartete Störungstheorie)
+\\
 \[ |j=l\pm \frac{1}{2},m\rangle = \underbrace{\pm\sqrt{\frac{l\pm m+\frac{1}{2}}{2l+1}}}_{c_+}|m_l=m-\frac{1}{2},m_s=-\frac{1}{2}\rangle +\underbrace{\sqrt{\frac{l\mp m+\frac{1}{2}}{2l+1}}}_{c_+}|m_l=m+\frac{1}{2},m_s=-\frac{1}{2}\rangle \]
 
 \[ = c_+|m-\frac{1}{2},+\rangle + c_-|m+\frac{1}{2},-\rangle\]
@@ -469,9 +480,11 @@ Basis für Rechnung: \(\vec L^2\),\(\vec S^2\),\(L_z\),\(S_z\) Eigenzustände; \
 \[ \langle S_z\rangle = \frac{\hbar}{2}(|c_+|^2-|c_-|^2)= \frac{l\pm m+\frac{1}{2}-(l\mp m+\frac{1}{2}}{2l+1}\frac{\hbar}{2}=\pm \frac{\hbar m}{2l+1}\]
 
 Lande's Formel
+\\
 \[\boxed{\Delta E_B = -\frac{eB}{2m_e}\hbar m(1\pm \frac{1}{l2+1})}\]
 
-Paschen-Back Grenzfall: \(H_{LS}\) klein. \(H_B\) Term ist diagonal is nder \(L_z,S_z\) Basis.
+2) \(H_B\) dominiert: Die Entartung ist aufgehoben. Die Aufspaltung ist gleich dem Erwartungswert \(H_B\): \(\Delta E_B = \langle H_B\rangle_{j=l\pm\frac{1}{2},m}=\frac{-eB}{2m_e}\langle \underbrace{L_z+2S_z}_{J_z+S_z=\hbar m+\langle S_z\rangle}\rangle_{j=l\pm\frac{1}{2},m}\) Eigenzustand \(|j,m\rangle\) ist. (Nichtentartete Störungstheorie)
+Paschen-Back Grenzfall: \(H_{LS}\) klein. \(H_B\) Term ist diagonal ist in der \(L_z,S_z\) Basis.
 
 \[ \Delta E_B = \langle H_B\rangle_{m_l,m_s} = -\frac{e\hbar B}{2m_e}(m_l + 2m_s)\]
 
@@ -488,7 +501,8 @@ verschiedene m-Eigenzustände mischen nicht \(\rightarrow\) nicht entartete Stö
 \[ \boxed{\Delta E_{LS} = \frac{\hbar^2 m_lm_s}{2m^2_ec^2}\langle\frac{1}{r}\frac{dV_c}{dr}\rangle_{nl}}\]
 
 
-\section{Zeitabhängige Störungen}
+
+\section{Zeitabhängige Störung}
 
 Systeme mit Hamiltonoperator \(H=H_0+V(t)\). Annahme dass die Lösung für \(H_0\) bekannt ist.
 
