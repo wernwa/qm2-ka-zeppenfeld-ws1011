@@ -134,29 +134,33 @@ Oder wenn man den Entarteten Unterraum separat betrachtet gilt für \(\alpha=1,2
 
 Nach dem Überlagerungsprinzip, wonach die Summe der Zustandsfunktionen ebenso eine Lösung für die Eigenwertgleichung erfüllt:
 
-\[H_0 |\Sigma \rangle^{(0)} = E_\alpha |\Sigma\rangle^{(0)} = E_\alpha \mathbb 1 |\Sigma\rangle^{(0)} =  E_\alpha \sum_\alpha |\alpha\rangle^{(0)} \cdot^{(0)}\langle \alpha |\Sigma\rangle^{(0)} = E_\alpha \sum_\alpha c_\alpha|\alpha\rangle ^{(0)} \]
-Wobei die Koeffizienten \(c_\alpha =  ^{(0)} \langle \alpha |\Sigma\rangle^{(0)}\)
+\[|n_\alpha\rangle^{(0)} = \sum_\alpha c_\alpha |\alpha\rangle ^{(0)}\]
+
+\[H_0 |n_\alpha \rangle^{(0)} = E_\alpha |n_\alpha\rangle^{(0)} = E_\alpha \mathbb 1 |n_\alpha\rangle^{(0)} =  E_\alpha \sum_\alpha |\alpha\rangle^{(0)} \cdot^{(0)}\langle \alpha |n_\alpha\rangle^{(0)} = E_\alpha \sum_\alpha c_\alpha|\alpha\rangle ^{(0)} \]
+Wobei die Koeffizienten \(c_\alpha =  ^{(0)} \langle \alpha |n_\alpha\rangle^{(0)}\)
 
 Nun benötigen wir aus der Störungsrechnung die Gleichung mit der ersten Potenz \(\lambda^1\)
 
-\[(H_0-E_n^{(0)})|\Sigma\rangle ^{(1)} = (E_n^{(1)}-V)|\Sigma\rangle^{(0)}\]
+\[(H_0-E_n^{(0)})|n_\alpha\rangle ^{(1)} = (E_n^{(1)}-V)|n_\alpha\rangle^{(0)}\]
 
 Multipliziert diese Gleichung mit \(^{(0)}\langle \alpha|\) sieht man:
 
 \begin{align}
-^{(0)}\langle \alpha|(H_0-E_n^{(0)})|\Sigma\rangle ^{(1)} &= ^{(0)}\langle \alpha|(E_n^{(1)}-V)|\Sigma\rangle^{(0)}\\
-^{(0)}\langle \alpha|\underbrace{(E_0^{(0)}-E_n^{(0)})}_{=0}|\Sigma\rangle ^{(1)} &=^{(0)}\langle \alpha| (E_n^{(1)}-V)|\Sigma\rangle^{(0)}
+^{(0)}\langle \alpha|(H_0-E_n^{(0)})|n_\alpha\rangle ^{(1)} &= ^{(0)}\langle \alpha|(E_n^{(1)}-V)|n_\alpha\rangle^{(0)}\\
+^{(0)}\langle \alpha|\underbrace{(E_0^{(0)}-E_n^{(0)})}_{=0}|n_\alpha\rangle ^{(1)} &=^{(0)}\langle \alpha| (E_n^{(1)}-V)|n_\alpha\rangle^{(0)}
 \end{align}
 
-\[\Rightarrow  ^{(0)} \langle \alpha|V-E_n^{(1)}|\Sigma\rangle^{(0)} = 0 \]
-\[  ^{(0)} \langle \alpha|V|\Sigma\rangle^{(0)} -E_n^{(1)} \langle \alpha|V|\Sigma\rangle^{(0)}  = 0 \]
-\[  ^{(0)} \langle \alpha|V|\Sigma\rangle^{(0)} -E_n^{(1)} c_\alpha  = 0 \]
+mit \(|n_\beta \rangle^{(0)} = \sum_\beta c_\beta |\beta\rangle ^{(0)} \) und \(\langle \alpha|n_\beta\rangle = c_\beta\delta_{\alpha\beta}\)
+
+\[\Rightarrow  ^{(0)} \langle \alpha|V-E_n^{(1)}|n_\beta\rangle^{(0)} = 0 \]
+\[  ^{(0)} \langle \alpha|V|n_\alpha\rangle^{(0)} -E_n^{(1)} \langle \alpha|n_\beta\rangle^{(0)}  = 0 \]
+\[  ^{(0)} \langle \alpha|V|n_\alpha\rangle^{(0)} -E_n^{(1)} c_\alpha  \delta_{\alpha\beta}  = 0 \]
 
 
-Ersetze nun \(|\Sigma\rangle^{(0)}\) mit der Summe der Entarteten untervektoren als \(|\Sigma\rangle^{(0)} = \sum_\beta |\beta\rangle \). Der Index \(\beta\) läuft genau wie \(\alpha\) über alle entarteten Zustände
+Ersetze nun \(|n_\beta\rangle^{(0)}\) mit der Summe der Entarteten untervektoren als \(|n_\beta\rangle^{(0)} = \sum_\beta |\beta\rangle \). Der Index \(\beta\) läuft genau wie \(\alpha\) über alle entarteten Zustände
 
-\[\sum_\beta V_{\alpha\beta}-E_n^{(1)}c_\alpha = 0\]
-Das ist offensichtlich eine Sekulärgleichung im entarteten Unterraum mit einem Ausschnitt aus Störungsmatrix (in unserem Fall):
+\[\sum_\beta V_{\alpha\beta}-E_n^{(1)}c_\alpha  \delta_{\alpha\beta} = 0\]
+Das ist offensichtlich eine Sekulärgleichung im entarteten Unterraum mit einem Ausschnitt aus der Störungsmatrix (in unserem Fall):
 
 \[V_{\alpha\beta} = \begin{pmatrix}0&a\\ a&0 \end{pmatrix} \]
 
@@ -167,7 +171,13 @@ Oder als Eigenwertgleichung:
 
 \[V|\alpha\rangle ^{(0)} = E_\alpha^{(1)} |\alpha\rangle ^{(0)}  \]
 
-Nach lösen der Determinante, ist das Ergebniss:  \(E_\alpha^{(1)} = \pm a \).  Das bedeutet, dass die Lösung dieser Eigenwertgleichung im entarteten Unterraum der Störungsmatrix, uns die Energie-Eigenwerte in 1 Ordnung der Störung liefert. Die gesamte Energie (bis zur 1 Ordnung) sieht dann so aus:
+Lösen der Determinante:
+
+\[\begin{vmatrix} 0-\lambda&a\\ a& 0-\lambda  \end{vmatrix} = \lambda^2-a^2 = 0 \]
+
+\[\Rightarrow \lambda =\pm a\]
+
+ist das Ergebniss:  \(E_\alpha^{(1)} = \pm a \).  Das bedeutet, dass die Lösung dieser Eigenwertgleichung im entarteten Unterraum der Störungsmatrix, uns die Energie-Eigenwerte in 1 Ordnung der Störung liefert. Die gesamte Energie (bis zur 1 Ordnung) sieht dann so aus:
 
 \[E_n^{(ges)} = E_n^{(0)}+E_n^{(1)}\]
 
@@ -176,6 +186,21 @@ Im entarteten Unterraum dann so:
 \[E_\alpha^{(ges)} = E_\alpha^{(0)}+E_\alpha^{(1)} =E_\alpha^{(0)}\pm a \]
 
 Die Gesamtenergie ist dank der konstanten Störung nicht mehr entartet. Die Störung hebt offensichtlich (i.a. teilweise oder ganz) die Störung auf.
+
+Für die Eigenvektoren im entarteten Unterraum ergibt sich:
+
+\[|+a\rangle :\]
+
+\[\begin{pmatrix}0&a\\a&0\end{pmatrix} \begin{pmatrix}x\\y\end{pmatrix}=a\begin{pmatrix}x\\y\end{pmatrix} \rightarrow x=y\]
+
+\[\Rightarrow |+a\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}1\\1\end{pmatrix} = \frac{1}{\sqrt{2}} (|1\rangle^{(0)}+ |2\rangle^{(0)}) \]
+
+
+\[|-a\rangle :\]
+
+\[\begin{pmatrix}0&a\\a&0\end{pmatrix} \begin{pmatrix}x\\y\end{pmatrix}=-a\begin{pmatrix}x\\y\end{pmatrix} \rightarrow x=-y\]
+
+\[\Rightarrow |-a\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}1\\-1\end{pmatrix} = \frac{1}{\sqrt{2}} (|1\rangle^{(0)}- |2\rangle^{(0)})  \]
 
 
 
