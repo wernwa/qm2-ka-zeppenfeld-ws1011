@@ -221,8 +221,9 @@ Konstruiere \(g\times g\) Matrix \(V_D = P_0VP_0\)
 \end{itemize}
 
 Es folgen Beispiele
-\subsection{Linearer Stark Effekt}
-Für H-Atom
+
+\subsection{Linearer Stark Effekt für H-Atom}
+
 
 \[ H_0 = \frac{\vec p^2}{2m}-\frac{e^2}{4\pi\epsilon_0 r}, \qquad V=-ez|\vec E|\]
 
@@ -280,28 +281,29 @@ Niveauverschiebung für \(|2p,m=\pm1\rangle\)- ist quadratisch, wie im \(|1s\ran
 
 
 
-\subsubsection{Beispiel: Spin-Bahn-Wechselwirkung}
+\subsection{Beispiel: Spin-Bahn-Wechselwirkung}
 
 Wasserstoffähnliches Atom, 1 Valenzelektron außerhalb einer vollbesetzen inneren Schale
 
-\[ H_0= \frac{\vec p^2}{2m} + \underbrace{V(r)}_{\approx \frac{-e^2}{4\pi \epsilon_0 r}\qquad\text{Größe r}}\]
-\(\rightarrow\) aber immer Elektronen bei kleinem r!
+\[ H_0= \frac{\vec p^2}{2m} + \underbrace{V_C(r)}_{\approx \frac{-e^2}{4\pi \epsilon_0 r}\quad\text{für große r}}\]
+
+\(\rightarrow\) aber die inneren Elektronen liegen bei kleinem r!
 
 Entartung des Wasserstoffatoms aufgehoben, \(E_{nl}>E_{n,l-1}\) da \(\langle r \rangle_{l-1}> \langle r \rangle_l\) (höhere l-Zustände erfahren mehr Abstoßung durch die inneren Elektronen.) Valenzelektron erfährt \(\vec E\)-Feld
 
-\[ \vec E = -\frac{1}{e}\vec \nabla V_e(r)\]
+\[ \vec E = -\frac{1}{2}\vec \nabla V_C(r)\]
 
 \(\vec B\)-Feld der sich bewegenden Ladung in ihrem Ruhesystem:
 
-\[ \vec B_{eff} = -\frac{1}{c^2}\vec c\times \vec E\]
+\[ \vec B_{eff} = -\frac{1}{c^2}\vec v\times \vec E\]
 
 magnetisches Moment des Elektrons
 
 \[ \vec\mu = \frac{e \vec S}{m_e}\]
 
-\(\Rightarrow\) Wechselwirkungsterm im Hamilton-Op
+\(\Rightarrow\) Wechselwirkungsterm im Hamilton-Operator
 
-\[ -\vec \mu \vec B_{eff} = \vec \mu \frac{1}{c^2}(\vec v \times \vec E) = \frac{e\vec S}{m c^2}\left[\underbrace{ \frac{\vec p}{m}\times \frac{\vec x}{r}}_{\vec L}\frac{-1}{e}\frac{dV_e}{dr} \right]=\frac{1}{(m_ec)^2}\frac{1}{r}\frac{dV_e}{dr}\vec L \vec S\]
+\[ -\vec \mu \vec B_{eff} = \vec \mu \frac{1}{c^2}(\vec v \times \vec E) = \frac{e\vec S}{m c^2}\left[\underbrace{ \frac{\vec p}{m}\times \frac{\vec x}{r}}_{\vec L}\frac{-1}{c}\frac{dV_e}{dr} \right]=\frac{1}{(m_ec)^2}\frac{1}{r}\frac{dV_e}{dr}\vec L \vec S\]
 
 korrekter Term
 
@@ -309,28 +311,32 @@ korrekter Term
 
 Faktor \(\frac{1}{2}\) Thomas Präzession des Elektrons, folgt später aus der Dirac-Gleichung. \(H_0\) hat entartete Eigenzustände. Können gewählt werden als:
 \begin{itemize}
-\item a) E.Z. von \(\vec L^2,L_z,\vec S^2,S_z\)
-\item b) E.Z. von \(\vec L^2,\vec S^2,\vec J^2,J_z\) (\(\vec J = \vec L + \vec S\)), zu Eigenwerdten \(E^{(0)}_{nl}\), weil \(2\vec L\vec S = (\vec L + \vec S)^2-\vec L^2-\vec S^2 = \vec J^2 - \vec L^2 - \vec S^2\)
+\item[a)] Eigenzustände von \(\vec L^2,L_z,\vec S^2,S_z\)
+\item[b)] Eigenzustände von \(\vec L^2,\vec S^2,\vec J^2,J_z\) (\(\vec J = \vec L + \vec S\)), zu Eigenwerdten \(E^{(0)}_{nl}\), weil \(2\vec L\vec S = (\vec L + \vec S)^2-\vec L^2-\vec S^2 = \vec J^2 - \vec L^2 - \vec S^2\)
 \end{itemize}
 
-\(\Rightarrow\) Wahl b) günstiger \(\vec L\vec S\) EZ!
+\(\Rightarrow\) Wahl b) günstiger \(\vec L\vec S\) Eigenzustände!
 
 \[ \psi_{njlm} = R_{nl}(r)\underbrace{Y^{jm}_l (\theta,\phi)}_{\text{2 komp Spinor}}\]
 
 \[ Y^{j,m}_l = \frac{1}{\sqrt{2l+1}}\begin{pmatrix} 
-  \pm\sqrt{l\pm m+\frac{1}{2}} & Y^{m-\frac{1}{2}}(\theta,\phi) \\
-  \sqrt{l\mp m+\frac{1}{2}} & Y^{m+\frac{1}{2}}(\theta,\phi)
+  \pm\sqrt{l\pm m+\frac{1}{2}} & Y^{m-\frac{1}{2}}_l(\theta,\phi) \\
+  \sqrt{l\mp m+\frac{1}{2}} & Y^{m+\frac{1}{2}}_l(\theta,\phi)
 \end{pmatrix}
 \]
 niedrigste Energiekorrektur
 
 \[ \Delta_{njl} = \langle njlm | V_{LS} | njlm\rangle = \frac{1}{2m^2c^2}\left[ \int^\infty_0 r^2 dr R^2_{nl}\frac{1}{r}\frac{dV_e}{dr} \right] \frac{\hbar^2}{2} (j(j+1)-l(l+1)-\frac{3}{4}\]
 
-Was ist \(j(j+1-l(l+1)-\frac{3}{4}\)?
+Was ist \(j(j+1)-l(l+1)-\frac{3}{4}\)?
 
 \(j=l+\frac{1}{2}\): \((l+\frac{1}{2})(l+\frac{3}{2})-l^2-l-\frac{3}{4} = l\)
 
-\(j=l-\frac{1}{2}\): \((l-\frac{1}{2})(l+\frac{1}{2})-l^2-l-\frac{3}{4} = -(l+1)\); \([]=\langle \frac{1}{r}\frac{dV_e}{dr}\rangle_{nl}\)
+\(j=l-\frac{1}{2}\): \((l-\frac{1}{2})(l+\frac{1}{2})-l^2-l-\frac{3}{4} = -(l+1)\);
+
+Der Term in der eckigen Klammer:
+
+ \[\left[ \int^\infty_0 r^2 dr R^2_{nl}\frac{1}{r}\frac{dV_e}{dr} \right]=\langle nl| \frac{1}{r}\frac{dV_e}{dr}|nl \rangle\]
 
 \[ \Delta_{nlj} = \frac{1}{2m^2_e c^2}\langle \frac{1}{r}\frac{dV_e}{dr}\rangle_{nl}\frac{\hbar^2}{2}\begin{cases}
   l,  & j=l+\frac{1}{2}\\
@@ -371,7 +377,10 @@ keine Spin-Abhängigkeit, gleiche Korrektur für \(2p_{1/2}\), \(2p_{2/2}\); Sch
 
 Dirac-Gleichung: \(E=E_{nj}\Rightarrow 2s,2p_{1/2}\) entartet, angehoben durch Lamb-schift (\(e^-\)-Selbstenergiekorrektur in der QED) \(\delta = h\nu\); \(\nu = 1057MHz\) Feinstruktur \(\frac{13,6eV}{\hbar}\alpha^2\rightarrow 175GHz\)
 
-\underline{Nächstes Beispiel: Zeeman-Effekt}
+
+
+\subsection{Nächstes Beispiel: Zeeman-Effekt}
+
 
 H-Atom im äußeren Magnetfeld
 
