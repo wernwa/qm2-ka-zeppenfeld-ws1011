@@ -1,10 +1,5 @@
 \input{../headers/header_script.tex}
 
-%\includegraphics[width=0.75\textwidth]{thepic.png}
-%couchdb db=physik
-%couchdb id=qm2vorles04_Identische_Teilchen
-%couchdb tags=qm2
-%couchdb pdflink=http://wernwa-physik-ka.googlecode.com/svn/qm2/kap04.pdf
 
 \begin{document}
 \tableofcontents
@@ -34,7 +29,7 @@ P_{ij}&|K'\rangle ...|K\rangle|K^{(i+1)}\rangle ...|K^{(j)}\rangle ...
 
 Eigenschaften: \(P^2_{ij}=1\), \(S_n\) nichtkommutativ für \(n\geq 3\)
 \[P_{12}P_{23}|K'\rangle|K''\rangle|K'''\rangle= P_{12}|K'\rangle|K'''\rangle|K''\rangle= |K'''\rangle|K'\rangle|K''\rangle\]
-\[P_{21}P_{12}|K'\rangle|K''\rangle|K'''\rangle= P_{23}|K''\rangle|K'\rangle|K'''\rangle= |K''\rangle|K'''\rangle|K'\rangle\]
+\[P_{23}P_{12}|K'\rangle|K''\rangle|K'''\rangle= P_{23}|K''\rangle|K'\rangle|K'''\rangle= |K''\rangle|K'''\rangle|K'\rangle\]
 
 
 \(P_{ij}\) und Observablen
@@ -49,7 +44,7 @@ Was ist \(P_{12}A_1P_{12}^{-1}\)
 
 \(P_{12}A_1 P_{12}^{-1} = A_2\), \(P_{ij}A_jP_{ij}^{-1}=A_i\)
 
-Pamiltonoperator invariant unter Permutation identischer Teilchen
+Hamiltonoperator invariant unter Permutation identischer Teilchen
 
 \[H= \frac{\vec p_1^2}{2m}+ \frac{\vec p_2^2}{2m} +V(\vec x_1)+ V(\vec x_2) + V_{pair}(|\vec x_1-\vec x_2|) \]
 
@@ -67,7 +62,7 @@ Verallgemeinerung auf \(n\) Teilchen: irreduzible Darstellung  der \(S_n\). \(S_
 
 \begin{enumerate}
 \item[a)] Symmetrische Darstellung \(\pi \to 1\)
-\[|K'...K'''\rangle_+ = N\sum_{\pi\in S_n}1\cdot P_\pi |K'\rangle|K''\rangle...|K^{(n)}\rangle \]
+\[|K'...K'''\rangle_+ = \frac{1}{\sqrt{n!}}\sum_{\pi\in S_n}1\cdot P_\pi |K'\rangle|K''\rangle...|K^{(n)}\rangle \]
 Bosonen
 \item[b)] Antisymmetische Darstellung \(\pi \to \delta=\begin{cases}
   +1 & \pi \text{ gerade,}\\
