@@ -36,6 +36,7 @@ Es gibt dan noch ein Potential das die Elektronen aufeinander ausüben, das dann
 
 Weiterhin besteht der Gesamthamilton aus einer Summe separater Hamiltonoperatoren der einzelnen Teilchen weil Zeitunabhängigkeit von \(H\) angenommen wird. 
 
+
 \[H = \underbrace{H(1)+H(2)}_{H_0} + V\qquad H(i)= \frac{\vec p^2(i)}{2m_i} - \frac{Z e^2}{4\pi\epsilon_0r_i} \]
 
 
@@ -95,6 +96,29 @@ Mit den Eigenwerten des Vertauschungsoperators \(p=\pm 1\). Da wir zwei Elektron
 
 \section*{LSG b)}
 
+Zu zeigen dass die Eigenwerte von \(P_{12}= \frac{1}{2}\left( 1+\frac{4}{\hbar^2}\vec S_1\cdot \vec S_2\right) \) angewandt auf das \(|SM\rangle \) Zustand \(\pm 1\) sind. 
+
+Drücke die \(\vec S_1\cdot \vec S_2 \) durch die Operatoren \(S^2,S_1^2,S_2^2\)  mit bekanten Eigenwerten zu den \(|SM\rangle \) Zustand. 
+
+\[S^2 = (S_1+S_2)^2 = S_1^2+S_2^2+2S_1S_2\]  
+
+\[\Leftrightarrow  \vec S_1\cdot \vec S_2 = \frac{1}{2}(S^2-S_1^2-S_2^2) \]
+
+Einsetzen in den Permutationsoperator und anwenden auf den Zustand \(|SM\rangle \propto |\frac{1}{2} m_1\rangle |\frac{1}{2} m_2\rangle \):
+
+\begin{align}
+P_{12}|SM\rangle  &= \frac{1}{2}\left( 1+\frac{2}{\hbar^2} (S^2-S_1^2-S_2^2)  \right)|SM\rangle   \\
+&= (\frac{1}{2}+\frac{1}{\hbar^2} S^2- \frac{1}{\hbar^2}S_1^2-\frac{1}{\hbar^2}S_2^2) |SM\rangle   \\
+&= \frac{1}{2}|SM\rangle +\frac{1}{\hbar^2} S^2|SM\rangle - \frac{1}{\hbar^2}S_1^2|\frac{1}{2} m_1\rangle |\frac{1}{2} m_2\rangle  - \frac{1}{\hbar^2}S_2^2|\frac{1}{2} m_1\rangle|\frac{1}{2} m_2\rangle  \\
+&= \frac{1}{2}|SM\rangle + S(S+1) |SM\rangle - \frac{3}{4}|\frac{1}{2} m_1\rangle |\frac{1}{2} m_2\rangle  - \frac{3}{4}|\frac{1}{2} m_1\rangle|\frac{1}{2} m_2\rangle  \\
+&= (\frac{1}{2} + S(S+1) - \frac{3}{4}  - \frac{3}{4} ) |SM\rangle  \\
+&= (S(S+1) - 1 ) |SM\rangle 
+\end{align}
+
+D.h. wenn der Gesamtspin \(S=1\) ist, dann der Eigenwert \(+1\) und für \(S=0\) der Eigenwert \(-1\).
+
+
+\section*{LSG c)}
 
 
 
