@@ -1,0 +1,53 @@
+\input{../headers/header_script.tex}
+
+\begin{document}
+\section*{Aufgabe 33: Permutation und Spin}
+
+Ein System zweier Elektronen werde von einem spinunabhängigen Hamiltonoperator \(H\) beschrieben.
+
+\begin{enumerate}
+\item[(a)] Durch welche Eigenzustände wird das System charakterisiert? Zeigen Sie, dass diese Eigenzustände gleichzeitig Eigenzustände des Zweiervertauschungsoperators \(P_{12}\) mit den Eigenwerten \(\pm 1\) sind. Es gilt \(P_{12}|a\rangle ^{(1)}|b\rangle ^{(2)} =|b\rangle ^{(1)}|a\rangle ^{(2)} \).
+
+\item[(b)] Zeigen Sie, dass \(P_{12}\) in der Form
+
+\[P_{12}=\frac{1}{2}\left( 1+\frac{4}{\hbar^2}\vec S_1\cdot \vec S_2\right)\]
+
+durch die Spins \(\vec S_1,\vec S_2\) der zwei Elektronen ausgedrückt werden kann.
+
+\item[(c)] Wie muss die Gesamtortswellenfunktion also für die verschiedenen Eigenzustände von \(P_{12}\) durch die Wellenfunktionen der Einzelelektronen ausgedrückt werden? Berechnen Sie die Energiekorrekturen \(\Delta E\) durch ein Potential \(U(\vec x_1-\vec x_2)\) in erster Ordnung Störungstheorie.
+
+\end{enumerate}
+
+\section*{LSG a)}
+
+Stillschweigend werden hier (nehme ich an) zwei Elektronen in einem zwei Protonen Potential (beispielsweise ein Heliumatom) angenommen. Die potentielle elektrische Energie bezüglich der Kraft ergibt sich zur errinerung aus dem Wegintegral über die Kraft:
+
+\[U = \int \vec F d\vec s = \frac{1}{4\pi\epsilon_0}\frac{q_1\cdot q_2}{r}+C \qquad F=  \frac{1}{4\pi\epsilon_0}\frac{q_1\cdot q_2}{r^2} \qquad\text{und } C=0 \]
+
+Potential auf ein Elektron und \(Z\) Protonen mit der Ladung \(q_1=+Ze\)-Proton und \(q_2=-e\)-Elektron, ist:
+
+\[ U_{+e,-e} =\frac{1}{4\pi\epsilon_0}\frac{Z\cdot e \cdot (-e)}{r} = - \frac{1}{4\pi\epsilon_0}\frac{Ze^2}{r}\]
+
+Es gibt dan noch ein Potential das die Elektronen aufeinander ausüben, das dann später als Störung betrachtet wird:
+
+\[V = \frac{ e^2}{4\pi\epsilon_0 |r_1-r_2|} \]
+
+
+
+Weiterhin besteht der Gesamthamilton aus einer Summe separater Hamiltonoperatoren der einzelnen Teilchen weil Zeitunabhängigkeit von \(H\) angenommen wird. 
+
+\[H = \underbrace{H(1)+H(2)}_{H_0} + V\qquad H(i)= \frac{\vec p^2(i)}{2m_i} - \frac{Z e^2}{4\pi\epsilon_0r_i} \]
+
+
+Spinunabhängiger Hamiltonoperator, heißt (vermutlich) soviel wie dass die Ineraktion der Elektronen untereinander (Spinbahnkopplung) und andere Effekte (screening) vernachlässigt werden. Mathematisch ausgedrückt sehe das so aus:
+
+\[[H,S^2]=0,\qquad [H,S_z]=0\]
+
+Das bedeutet auch wiederum es gibt eine gemeinsame Basis zu den drei Observablen \(H,S^2\) und \(S_z\). 
+
+
+
+
+
+
+\end{document}
