@@ -122,7 +122,54 @@ D.h. für den Gesamtspin \(S=1\) ist der Eigenwert \(+1\) und für \(S=0\) der i
 
  
 
+\[H = \underbrace{H(1)+H(2)}_{H_0} + V\qquad H(i)= \frac{\vec p^2(i)}{2m_i} - \frac{Z e^2}{4\pi\epsilon_0r_i} \qquad V = \frac{ e^2}{4\pi\epsilon_0 |r_1-r_2|} \]
+
+
+\[|1\rangle: \qquad \Psi_a = \frac{1}{\sqrt{2}}  [\psi_1(\vec r_2)\psi_2(\vec r_1)  + \psi_1(\vec r_1) \psi_2(\vec r_2)] \chi_{Singulett}\]
+\[|2\rangle: \qquad \Psi_a = \frac{1}{\sqrt{2}}  [\psi_1(\vec r_2)\psi_2(\vec r_1)  - \psi_1(\vec r_1) \psi_2(\vec r_2)] \chi_{Triplett}\]
+
+
+Für die Zustände \(\pm\) der Wellenfunktion gibt es eine Entartung der Energie, d.h. es ergibt sich für beide Zustände die gleiche Energie.
+
+\[ H_0\Psi_a = E_n^{(0)}\Psi_a\]
+
+Die Entartung kann durch die Berechnung der Energieterme in erster Ordnung mit Hilfe der Störungsmatrix \(V\) (teilweise) aufgehoben werden. 
+
+\[\begin{pmatrix} \langle 1|V|1\rangle & \langle 1|V|2\rangle \\
+ \langle 2|V|1\rangle & \langle 2|V|2\rangle \\
+\end{pmatrix} 
+ \]
+
+Die gemischten Elemente der Matrix \(\langle 1|V|2\rangle,\langle 2|V|1\rangle \)  verschwinden, da die Spinzustände jeweils unterschiedlich sind, also ist die Matrix diagonalisiert und die Diagnalelemente sind die gesuchten Eigenwerte, die die Energiekorrektur in 1 Ordnung ergeben.
+
+Allgemein für ein Elektron im Grundzustand \(n_1=1\)  und das zweite Elektron im Zustand \(n_2\geq 1\).
+
+\[|1\rangle  = \frac{1}{\sqrt{2}}  [\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  + \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)] \chi \]
+
+\[|2\rangle  = \frac{1}{\sqrt{2}}  [\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  - \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)] \chi \]
+
+\begin{align}
+\langle 1|V|1\rangle &= \frac{1}{2} \int d^3 r_1 d^3r_2 |\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  + \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2  \frac{ e^2}{4\pi\epsilon_0 |r_1-r_2|} \\
+&=\frac{ e^2}{4\pi\epsilon_0 }  \frac{1}{2} \int d^3 r_1 d^3r_2 |\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  + \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2  \frac{ 1}{|r_1-r_2|} \\
+&=\frac{ e^2}{4\pi\epsilon_0 }  \frac{1}{2} \int d^3 r_1 d^3r_2 (\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  + \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2))^*\cdot\\
+&\quad \cdot (\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)  + \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2))   \frac{ 1}{|r_1-r_2|} \\
+&=\frac{ e^2}{4\pi\epsilon_0 }  \frac{1}{2} \int d^3 r_1 d^3r_2 ( |\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2+|\psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2+\\
+&\quad + \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) + \psi_{nlm}^*(\vec r_1) \psi_{100}^*(\vec r_2)\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)
+\end{align}
+
+Mit der Eigenschaft der ununterscheidbaren Teilchen \(|\psi(1,2)|^2 = |\psi(2,1)|^2 \) ist \(|\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2 =|\psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2 \). ?? Weiterhin mit der Ausnutzung des Permutationsoperators (\(P^2=1\)) gilt: \(\psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) = P_{12}^2  \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)\). Versuche bessere Umformung durch Vektorgleichung (aus wiki-Dreiecksungleichung): \( |\vec a + \vec b|^2=|a|^2+|b|^2+2\langle a|b\rangle   \)  vereinfacht sich das Matrixelement weiter zu:
+
+\begin{align}
+\langle 1|V|1\rangle &= \frac{ e^2}{4\pi\epsilon_0 } [ \int d^3 r_1 d^3r_2 ( |\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2 +\\
+&\quad + \int d^3 r_1 d^3r_2 \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) ] \\
+&= I+J
+\end{align}
+
+
+
+Einfacheitshalber betrachten wir den Grundzustand
 
 
 
 \end{document}
+ 
