@@ -131,11 +131,17 @@ D.h. für den Gesamtspin \(S=1\) ist der Eigenwert \(+1\) und für \(S=0\) der i
 
 Für die Zustände \(\pm\) der Wellenfunktion gibt es eine Entartung der Energie, d.h. es ergibt sich für beide Zustände die gleiche Energie.
 
-\[ H_0\Psi_a = E_n^{(0)}\Psi_a\]
+\[ H_0\Psi_a = (E_{n_1}^{(0)}+E_{n_2}^{(0)})\Psi_a\]
+
+Es lässt sich eine 2x2 Matrix für \(H_0\) aufstellen, wo man die Entartung besser erkennen kann:
+
+\[H_0 = \begin{pmatrix} E_{n_1}^{(0)}+E_{n_2}^{(0)} & 0 \\
+ 0 & E_{n_1}^{(0)}+E_{n_2}^{(0)} \\
+\end{pmatrix} \]
 
 Die Entartung kann durch die Berechnung der Energieterme in erster Ordnung mit Hilfe der Störungsmatrix \(V\) (teilweise) aufgehoben werden. 
 
-\[\begin{pmatrix} \langle 1|V|1\rangle & \langle 1|V|2\rangle \\
+\[V = \begin{pmatrix} \langle 1|V|1\rangle & \langle 1|V|2\rangle \\
  \langle 2|V|1\rangle & \langle 2|V|2\rangle \\
 \end{pmatrix} 
  \]
@@ -157,7 +163,7 @@ Allgemein für ein Elektron im Grundzustand \(n_1=1\)  und das zweite Elektron i
 &\quad + \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) + \psi_{nlm}^*(\vec r_1) \psi_{100}^*(\vec r_2)\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)
 \end{align}
 
-Mit der Eigenschaft der ununterscheidbaren Teilchen \(|\psi(1,2)|^2 = |\psi(2,1)|^2 \) ist \(|\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2 =|\psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2 \). ?? Weiterhin mit der Ausnutzung des Permutationsoperators (\(P^2=1\)) gilt: \(\psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) = P_{12}^2  \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)\). Versuche bessere Umformung durch Vektorgleichung (aus wiki-Dreiecksungleichung): \( |\vec a + \vec b|^2=|a|^2+|b|^2+2\langle a|b\rangle   \)  vereinfacht sich das Matrixelement weiter zu:
+Mit der Eigenschaft der ununterscheidbaren Teilchen \(|\psi(1,2)|^2 = |\psi(2,1)|^2 \) ist \(|\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2 =|\psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)|^2 \). ?? Weiterhin mit der Ausnutzung des Permutationsoperators (\(P^2=1\)) gilt: \(\psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2) = P_{12}^2  \psi_{100}^*(\vec r_1)\psi_{nlm}^*(\vec r_2) \psi_{nlm}(\vec r_1) \psi_{100}(\vec r_2)\). Versuche bessere Umformung durch Vektorgleichung (aus wiki-Dreiecksungleichung): \( |\vec a + \vec b|^2=|\vec a|^2+|\vec b|^2+2\langle \vec a|\vec b\rangle   \)  vereinfacht sich das Matrixelement weiter zu:
 
 \begin{align}
 \langle 1|V|1\rangle &= \frac{ e^2}{4\pi\epsilon_0 } [ \int d^3 r_1 d^3r_2 ( |\psi_{100}(\vec r_1)\psi_{nlm}(\vec r_2)|^2 +\\
@@ -165,9 +171,20 @@ Mit der Eigenschaft der ununterscheidbaren Teilchen \(|\psi(1,2)|^2 = |\psi(2,1)
 &= I+J
 \end{align}
 
+Alalog ergibt sich für das zweite Diagonalelement \(\langle 2|V|2\rangle =I-J\), so dass die Störungsmatrix folgende Form annimmt:
+
+\[V =  \begin{pmatrix} I+J & 0 \\
+ 0 & I-J \\
+\end{pmatrix} \]
+
+Die Entartung hebt sich komplett auf durch die Anwednung der Störungsrechnung (bis zur 1 Ordnung):
+
+\[E_{n_1,n_2,+} = E_{n_1}^{(0)}+E_{n_2}^{(0)}+I+J\]
+\[E_{n_1,n_2,-} = E_{n_1}^{(0)}+E_{n_2}^{(0)}+I-J\]
 
 
 Einfacheitshalber betrachten wir den Grundzustand
+
 
 
 
