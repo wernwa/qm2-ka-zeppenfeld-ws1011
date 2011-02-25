@@ -294,31 +294,40 @@ z.B. \(\{\gamma^i,\gamma^j\}=\beta\underbrace{\alpha_I\beta}_{-\beta\alpha_i}\al
 
 \subsection{Wahrscheinlichkeitsstrom}
 
-\[i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi\]
+\begin{equation}
+\psi^\dagger\cdot|\qquad i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi
+\label{eq:1}
+\end{equation}
 
 adjungierte Dirac Gleichung:
 
-\[-i\hbar \frac{\partial \psi^\dagger}{\partial t} = \frac{\hbar c}{i}\vec(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi\]
+\begin{equation}
+-i\hbar \frac{\partial \psi^\dagger}{\partial t} = -\frac{\hbar c}{i}(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi
+\label{eq:2}
+\end{equation}
 
-Differenz der beiden Gleichungen:
+Differenz der beiden Gleichungen \(\ref{eq:1}-\ref{eq:2}\):
 
-\[ i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) = \frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi) \]
+\[\underbrace{ i\hbar(\frac{\partial}{\partial t} \psi^\dagger)\psi+i\hbar\psi^\dagger (\frac{\partial}{\partial t} \psi)}_{\text{Produktregel} \quad = i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) } =\underbrace{\frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi)}_{\text{Produktregel} \quad = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)} \]
+
 
 \[\Rightarrow \frac{\partial}{\partial t}(\psi^\dagger\psi) = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)\]
 
-\[ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j}) \]
+\[ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j})=0 \]
 
 
 \[\rho =\psi^\dagger\psi = \sum_i|\psi_i|^2\geq 0 \]
 
 \(\rho\) ist positiv definierte Warscheinlichkeitsdichte
 
-Kovariante Form des W-Stroms
+Kovariante Form des Warhscheinlichkeits-Stroms
 
 \begin{align}
-j^\mu &= (c\psi^\dagger\psi ,c\psi^\dagger\vec\alpha\psi )\\
-&= (c\psi^\dagger\beta\gamma^0\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
-&= c\psi^\dagger \beta\gamma^\mu \psi = c\overline \psi\gamma^\mu \psi
+j^\mu &= (c\rho ,c\vec j )\\
+&= (c\underbrace{\psi^\dagger\psi}_{\equiv \rho} ,c\psi^\dagger\beta\beta\vec\alpha\psi )\\
+&= (c\psi^\dagger\underbrace{\beta\gamma^0}_{\mathbb 1}\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
+&= c\psi^\dagger \beta\gamma^\mu \psi\\
+&= c\overline \psi\gamma^\mu \psi
 \end{align}
 
 wobei \(\overline \psi = \psi^\dagger\beta=\psi^\dagger\gamma^0\) der Pauli adungierte Spinor ist.
@@ -332,42 +341,50 @@ externe \(\vec E,\vec B\) Fleder \(\vec B = \vec\nabla\times\vec A\), \(\vec E =
 
 minimale Subsittution:
 
-\[p^\mu\rightarrow p^\mu-eA^\mu \quad QM\rightarrow i\hbar\partial^\mu-eA^\mu = i\hbar(\partial^\mu+\frac{ie}{\hbar}A^\mu)=i\hbar D^\mu\]
+\[p^\mu\rightarrow p^\mu-eA^\mu \quad \xrightarrow{QM} i\hbar\partial^\mu-eA^\mu = i\hbar(\partial^\mu+\frac{ie}{\hbar}A^\mu)=i\hbar D^\mu\]
 
 Komponenten der Kovarianten Ableitung \(D^\mu\)
 
-\[i\hbar D^\mu = (i\hbar \frac{1}{c} \frac{\partial}{\partial t} - \frac{e}{c}\phi,\frac{\hbar}{i}\vec\nabla-e\vec A)\]
+\begin{align}
+i\hbar D^\mu &= (i\hbar \frac{1}{c} \frac{\partial}{\partial t} - \frac{e}{c}\phi,\frac{\hbar}{i}\vec\nabla-e\vec A)\\&=(\frac{i}{c}(c\hbar\frac{\partial}{\partial t}-e\phi),\frac{\hbar}{i}\vec\nabla-e\vec A) 
+\end{align}
 
-\[=(\frac{i}{c}(c\hbar\frac{\partial}{\partial t}-e\phi),\frac{\hbar}{i}\vec\nabla-e\vec A) \]
+Einsetzen in die Dirac-Gleichung:
 
-Ersetze in freier Dirac-Gl \(\partial \)
+\begin{equation}
+\boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\vec \alpha(\frac{\hbar}{i}\vec\nabla-e\vec A)\psi+\beta m c^2\psi+e\phi\psi}
+\label{eq:dirac-elm1}
+\end{equation}
 
+oder ersetze in freier Dirac-Gleichung \( \partial_\mu\rightarrow D_\mu \)  
 
-\[\boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\vec \alpha(\frac{\hbar}{i}\vec\nabla-e\vec A)\psi+\beta m c^2\psi+e\phi\psi}\]
+\begin{equation}
+\boxed{(i\gamma^\mu D_\mu - \frac{mc}{\hbar})\psi = 0}
+\label{eq:dirac-elm2}
+\end{equation}
 
-oder
-
-\[\boxed{(i\gamma^\mu D_\mu - \frac{mc}{\hbar})\psi = 0}\]
-
-beschreibt WW eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
+Diese Gleichung beschreibt Wechselwirkung eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
 
 Notation: \(\vec \alpha\vec p\psi = \frac{\hbar}{i}\vec\alpha\vec\nabla\psi\)
 
 mit \(A=1...4\) \([\vec\alpha\vec p\psi]_A=\sum_{j=1}^3\sum_{B=1}^4\alpha_{jAB}\frac{\hbar}{i}\nabla_i\psi_B(\vec x,t) = \left[\ \begin{pmatrix} 0&\vec\sigma\vec p\\ \vec\sigma\vec p&0\end{pmatrix}\begin{pmatrix} \begin{pmatrix} \psi_1\\\psi_2\end{pmatrix} \\ \begin{pmatrix} \psi_3\\\psi_4\end{pmatrix}  \end{pmatrix} \right]_A\)
 
 
-Nichtrel. Grenzfall: \(E=mc^2+E_S\)
+Nichtrelativistischer Grenzfall: \(E=mc^2+E_S\) mit \(E_S=\)als Schrödigner Energie.
 
 Ansatz: 
-\[\psi(\vec x,t) = e^{i\frac{mc^2}{\hbar}t}\begin{pmatrix}\phi(\vec x,t)\\\chi(\vec,t)\end{pmatrix} =  e^{i\frac{mc^2}{\hbar}t}  e^{i\frac{E_S}{\hbar}t} \begin{pmatrix}\phi_E(\vec x,t)\\\chi_E(\vec,t)\end{pmatrix}\]
+\[\psi(\vec x,t) = e^{i\frac{mc^2}{\hbar}t}\begin{pmatrix}\phi(\vec x,t)\\\chi(\vec x,t)\end{pmatrix} =  e^{i\frac{mc^2}{\hbar}t}  e^{i\frac{E_S}{\hbar}t} \begin{pmatrix}\phi_E(\vec x)\\\chi_E(\vec x)\end{pmatrix}\]
 
-\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec pi \vec \chi\\ \vec \sigma \vec pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
+Einsetzen in die Dirac-Gleichung (\ref{eq:dirac-elm1}) für Teilchen im Elektromagnetischem Feld:
+
+\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec \pi \vec \chi\\ \vec \sigma \vec \pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
 
 mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \)
 
-\[\Rightarrow \chi: 2mc^2\chi+i\hbar \dot\chi - e\phi \chi = c\vec\sigma\vec\pi\phi\]
-
 \[\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi\]
+
+\[\Rightarrow  2mc^2\chi+i\hbar \dot\chi - e\phi \chi = c\vec\sigma\vec\pi\phi\]
+
 
 \[\chi \approx \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
 
@@ -397,6 +414,8 @@ Schwaches homogenes \(B\)-Feld: \(\vec A = \frac{1}{2}\vec B\times\vec r\)
 
 
 Magnetisches Moment des Elektrons: \(\vec\mu = \frac{e}{2m}(\vec L+2\vec S)\) \(g=2\) für geladenes Dirac-Fermion
+
+
 
 \subsection{Relativistische Korrekturen}
 
