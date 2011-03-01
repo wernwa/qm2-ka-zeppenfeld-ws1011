@@ -377,28 +377,38 @@ Ansatz:
 
 Einsetzen in die Dirac-Gleichung (\ref{eq:dirac-elm1}) für Teilchen im Elektromagnetischem Feld:
 
-\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec \pi \vec \chi\\ \vec \sigma \vec \pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
+\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec \pi \vec \chi\\ \vec \sigma \vec \pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\Phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
 
-mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \)
+mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \) und \(\Phi\) als Skalares-Potential (\(\phi\))
 
-\[\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi\]
+\begin{equation} 
+\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi
+\label{eq:dirac-to-pauli-01}
+\end{equation}
 
-\[\Rightarrow  2mc^2\chi+i\hbar \dot\chi - e\phi \chi = c\vec\sigma\vec\pi\phi\]
+\begin{align}
+\Rightarrow  2mc^2\chi+i\hbar \dot\chi - e\Phi \chi &= c\vec\sigma\vec\pi\phi \\
+2mc^2\chi+\underbrace{i\hbar \frac{\partial}{\partial t}}_{=E_S}\chi - \underbrace{e\Phi}_{V} \chi &= c\vec\sigma\vec\pi\phi
+\label{eq:dirac-to-pauli-02}
+\end{align}
 
 
-\[\chi \approx \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
 
-(\(\chi = \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi\)) \(\chi\) ist kleine Komponente des Dirac Spinors. Einsetzen von \(\chi\):
+(\ref{eq:dirac-to-pauli-02}) vereinfacht ergibt:
+
+\[\chi =  \frac{1}{2mc^2+E_S-V} c\vec\sigma\vec\pi\phi \approx   \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
+
+ \(\chi\) ist eine kleine Komponente des Dirac Spinors. Einsetzen von \(\chi\) in (\ref{eq:dirac-to-pauli-01}):
 
 \[i\hbar \frac{\partial \phi}{\partial t} = \frac{c^2(\vec\sigma\vec\pi)^2}{2mc^2}\phi+V\phi\qquad (V=e\Phi)\]
 
-Berechnung von \((\vec\sigma\vec\pi)^2=-\hbar^2\underbrace{\sigma_i\sigma_j}_{\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\}}D_iD_j\) mit \([\sigma_i,\sigma_j]=i\hbar^2\epsilon_{ijk}\sigma_k \) und \( \sigma_{ij}\)
+Berechnung von \((\vec\sigma\vec\pi)^2=-\hbar^2\sigma_i\sigma_jD_iD_j\) mit \(\sigma_i\sigma_j =\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\} = i\hbar^2\epsilon_{ijk}\sigma_k+\delta_{ij}\):
 
 \[(\vec\sigma\vec\pi)^2=\vec\pi^2 -i\hbar^2\epsilon_{ijk}\sigma_k \underbrace{D_iD_j}_{\frac{1}{2}[D_i,D_j]} \]
 
 \[[D_i,D_j]=[\nabla_i-\frac{i}{\hbar}eA_i,\nabla_j-\frac{i}{\hbar}eA_j ] = -\frac{i}{\hbar}e(\underbrace{(\nabla_iA_j)}_{\vec\nabla\times\vec A}\underbrace{-(\nabla_j A_i)}_{\vec\nabla\times\vec A}\]
 
-\[\Rightarrow (\vec\sigma\vec\pi)^2 = \vec \pi^2 -\frac{1}{2}\hbar e \vec\sigma (\vec\nabla\times\vec A)2= \vec \pi^2 -2e\vec S\vec B \qquad (\vec S=\frac{\hbar}{2}\vec\sigma\]
+\[\Rightarrow (\vec\sigma\vec\pi)^2 = \vec \pi^2 -\frac{1}{2}\hbar e \vec\sigma (\vec\nabla\times\vec A)2= \vec \pi^2 -2e\vec S\vec B \qquad (\vec S=\frac{\hbar}{2}\vec\sigma)\]
 
 
 \[\rightarrow i\hbar \frac{\partial \phi}{\partial t} = \frac{\pi^2}{2m}\phi - \frac{e}{2m}2\vec S\vec B\phi + V\phi\]
@@ -419,7 +429,7 @@ Magnetisches Moment des Elektrons: \(\vec\mu = \frac{e}{2m}(\vec L+2\vec S)\) \(
 
 \subsection{Relativistische Korrekturen}
 
-Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{-E_st/\hbar}\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) \)
+Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{-E_st/\hbar}\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x) \)
 
 Dirac Gleichung ist äquivalent zu
 
