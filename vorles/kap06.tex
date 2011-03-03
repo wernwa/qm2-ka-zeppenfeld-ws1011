@@ -433,8 +433,19 @@ Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{
 
 Dirac Gleichung ist äquivalent zu
 
-\[(2mc^2+E_S-V)\chi = c\vec\sigma\vec\pi\phi\]
-\[E_S\phi = c\vec\sigma\vec\pi\chi + V\phi \]
+
+\begin{equation}
+  \label{eq:3}
+  (2mc^2+E_S-V)\chi = c\vec\sigma\vec\pi\phi
+\end{equation}
+\begin{equation}
+  \label{eq:4}
+E_S\phi = c\vec\sigma\vec\pi\chi + V\phi  
+\end{equation}
+
+
+
+\(\chi\) wird Taylor-Entwickelt:
 
 \begin{align}
 \Rightarrow \chi &= \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi \\
@@ -442,10 +453,34 @@ Dirac Gleichung ist äquivalent zu
 &\approx \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi
 \end{align}
 
+Einsetzen von \(\chi\) in (\ref{eq:4}):
+
+\begin{align}
+  \label{eq:5}
+E_S\phi &= c\vec\sigma\vec\pi \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi  + V\phi \\
+(E_S-V)\phi &= c\vec\sigma\vec\pi \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi \\
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2} (E_S-V)\vec\sigma\vec\pi\phi 
+\end{align}
+
+Als Nebenrechnung:
+
 
 \[(E_S-V)\vec\sigma\vec\pi\phi =\vec\sigma\vec\pi(E_S-V)\phi + \vec\sigma\underbrace{[E_S-V,\vec\pi]}_{[\vec\pi,V]=\frac{\hbar}{i}(\vec\nabla V)}\phi \]
 
-Einsetzen in \(E_S \phi = ...\)
+Einsetzen:
+
+
+\begin{align}
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2}\left( \vec\sigma\vec\pi(E_S-V)\phi +\vec\sigma\frac{\hbar}{i}(\vec\nabla V)\phi\right)
+\end{align}
+
+Mit dem Term \((E_S-V)\phi = \vec\sigma\vec\pi \frac{1}{2m} (1-...)\vec\sigma\vec\pi\phi\) nur bis zur nullter Ordnung Taylor entwickelt eingesetzt:
+
+\begin{align}
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2}\left( \vec\sigma\vec\pi\cdot\vec\sigma\vec\pi \frac{1}{2m} \vec\sigma\vec\pi\phi   +\vec\sigma\frac{\hbar}{i}(\vec\nabla V)\phi\right) 
+\end{align}
+
+Und schlussendlich erhalten wir die erweiterte Pauli-Gleichung:
 
 \[(E_S-V)\phi = \frac{(\vec\sigma\vec\pi)^2}{2m}\phi - \frac{\vec\sigma\vec\pi}{4m^2c^2}\left(\frac{(\vec\sigma\vec\pi)^3}{2m} +\vec\sigma \frac{\hbar}{i}(\vec\nabla V)\right)\phi \]
 
@@ -464,17 +499,17 @@ Spezialfall:
 Interpretation:
 
 \begin{itemize}
-\item  \(- \frac{p^4}{8m^3c^2}\) relativistischer Beitrag zur kin. Energie
+\item  \(- \frac{p^4}{8m^3c^2}\) relativistischer Beitrag zur kinetischen Energie
 
 \(E = \sqrt{(mc^2)^2+p^2c^2} = mc^2\sqrt{1+\frac{p^2}{(mc)^2}}= mc^2(1+\frac{1}{2}\frac{p^2}{m^2c^2}-\frac{1}{8}\frac{p^4}{m^4c^4}+...) = mc^2-\frac{p^2}{2m}-\frac{1}{8}\frac{p^4}{m^3c^2}\)
 
-\item \( \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi = \frac{1}{2m^2c^2}\frac{1}{r}\frac{dV}{dr}\vec L\vec S\phi = H_{LS} \) Korrekte Spin-Bahn Kopplung, incluive Thomas Präzessionsfaktor \(\frac{1}{2}\)
+\item \( \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi = \frac{1}{2m^2c^2}\frac{1}{r}\frac{dV}{dr}\vec L\vec S\phi = H_{LS} \) Korrekte Spin-Bahn Kopplung, incluive Thomas Präzessionsfaktor von \(\frac{1}{2}\).
 \end{itemize}
 
 
-\subsection{Dirac Gleichung und Pauli Gl incl. relativistische Korrekturen}
+\subsection{Dirac und Pauli Gleichung inclusive relativistische Korrekturen}
 
-\[i\hbar \frac{\partial \phi}{\partial t} H_\phi \phi\]
+\[i\hbar \frac{\partial \phi}{\partial t} =  H_\phi \phi\]
 
 
 mit 
@@ -483,19 +518,17 @@ mit
 
 \[H_r = -\frac{1}{8m}\left(\frac{\vec p^2}{2m}\right)^2\]
 
-\[H_{LC} = \frac{1}{2m^2c^2}\frac{1}{\gamma}\frac{dV}{d\gamma}\vec L\cdot\vec S\]
+\[H_{LS} = \frac{1}{2m^2c^2}\frac{1}{\gamma}\frac{dV}{d\gamma}\vec L\cdot\vec S\]
 
 \[\tilde H_D = \frac{\hbar^2}{4m^2c^2}((\nabla^2V)+(\vec\nabla V)\cdot\vec\nabla)\]
 
-\(\cdot\vec\nabla)\) nicht hermitesch
-
-Problem: Warhscheinlichkeits-Dichte ist
+Der Letze Term \(\cdot\vec\nabla)\) ist nicht hermitesch. Problem mit der Warhscheinlichkeits-Dichte:
 
 \begin{align}
 \rho &= \frac{j^0}{c}=\overline \psi\gamma^0psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
 &=|\phi|^2 + |\chi|^2\\
 &=|\phi|^2+|\frac{\vec\sigma\cdot\vec p}{2mc}\phi|^2\\
-&=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi
+&=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi \\
 &\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\phi}|^2
 \end{align}
 
@@ -505,25 +538,25 @@ Problem: Warhscheinlichkeits-Dichte ist
 
 Foldy-Wouthuysen Transformation. (Details: Bjorken-Drell relativ. QM)
 
+
 Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\phi}\)
 
 \begin{align}
 H&=(1+\frac{\vec p^2}{8m^2c^2})H_\phi (1-\frac{\vec p^2}{8m^2c^2}) \\
-&=H_\phi + [\frac{\vec p^2}{2m^2c^2},H_\phi]+...
+&=H_\phi + [\frac{\vec p^2}{2m^2c^2},H_\phi]+...\\
 &=H_\phi + [\frac{\vec p^2}{2m^2c^2},V]+...
 \end{align}
 
-NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} = [(\nabla^2 V)+2(\nabla,V)\nabla_i]\)
+NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} =-\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\)
 
 
-\section{Hamilton Op. für Pauli Gl mit rel. Korrekturen}
 
 \[H= \frac{\vec p^2}{2m}+V+H_r+H_{LS}+H_D\]
 
 mit Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
 
 
-\subsection{Korrekturen zum Wasserstoff spektrum}
+\subsection{Korrekturen zum Wasserstoff Spektrum}
 
 \[E^{(0)}_n = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{2a_0n^2}\]
 
@@ -534,7 +567,7 @@ Aufspaltung von \(2p_{\frac{1}{2}}\)  \(2p_{\frac{3}{2}}\)
 gleiche Energie für \(2s_{\frac{1}{2}}\)  \(2p_{\frac{1}{2}}\)
 
 
-\subsection{Ebene Wellen als Lösungen der freien Dirac Gl}
+\subsection{Ebene Wellen als Lösungen der freien Dirac Gleichung}
 
 \[\left(i\gamma^\mu\partial_\mu-\frac{mc}{\hbar}\right)\psi(x) = 0\]
 
