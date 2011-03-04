@@ -676,6 +676,7 @@ Mit \(w^\rho_{\,\,\mu}\) infinitesimal
  \[ \rightarrow  w = \begin{pmatrix}0&w_{01}&w_{02}&w_{03}\\ -w_{10}&0&w_{12}&w_{13}\\-w_{20}&-w_{21}&0&w_{23}\\ -w_{30}&-w_{31}&-w_{32}&0\end{pmatrix} \]
 
 
+
 6 reelle freie Parameter  \(\Rightarrow \) 6 Generatoren
 
 \(\vec J\) (Drehungen) 3 \(w_{ij}\)
@@ -684,39 +685,48 @@ Mit \(w^\rho_{\,\,\mu}\) infinitesimal
 
 \subsection{Kovarianz der Dirac Gleichung}
 
-inertialsystem:
-
-\begin{tabular}{cc}
+Inertialsystem:\\
+\\
+\begin{tabular}{c|c}
   IS&IS'\\
 \(x^\mu\)& \(x^{'\mu}=\Lambda^\mu_\nu x^\nu\)\\
-\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x) = 0\)
-\end{tabular}
+\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x') = 0\)
+\end{tabular}\\
+\\
 
-Zu zeigen: Es gibt zu jeder LT \(\Lambda\) eine lineare Abbildung \(S(\Lambda)\) der Spinoren: \(\psi'(x')=S(\Lambda)\psi(\Lambda^{-1}x^1)\)
+Zu zeigen: Es gibt zu jeder LT \(\Lambda\) eine lineare Abbildung \(S(\Lambda)\) der Spinoren:
+
+ \begin{align}
+\psi'(x')&=S(\Lambda)\psi(x)\\
+&=S(\Lambda)\psi(\Lambda^{-1}x')
+\end{align}
 
 Die Menge \(\{S(\Lambda)\}\) bilden Darstellung der Lorenzgruppe
 
-\[S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}\]
-
-\[\psi(x) = S(\Lambda^{-1})\psi'(x') \]
+\[\boxed{S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}}\]
 
 
+\[ (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\]
 
-\[S(\Lambda_1)  (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})S(\Lambda^{-1}) \psi'(x') = 0\]
+Einsetzen von \(\psi(x) = S(\Lambda^{-1})\psi'(x')\) und von links mit \(S(\Lambda)\) multiplizieren:
 
-\[\Leftrightarrow iS(\Lambda_1) \gamma^\mu S(\Lambda^{-1})\underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar})\psi'(x') = 0 \]
+\[S(\Lambda)  (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})S(\Lambda^{-1}) \psi'(x') = 0\]
 
-NR:
+\[\Leftrightarrow \left(iS(\Lambda) \gamma^\mu S(\Lambda^{-1})\underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar}\right)\psi'(x') = 0 \]
 
-\(x^{'\nu}=\Lambda^\nu_{\,\,\rho}x^\rho \)
+NR: \(x^{'\nu}=\Lambda^\nu_{\,\,\rho}x^\rho \) \(\frac{\partial}{\partial x^\mu} =\underbrace{\frac{\partial x^{'\nu}}{\partial x^{\mu}}}_{\Lambda^\nu_{\,\,\mu}}\frac{\partial}{\partial x^{'\nu}} \)
 
-\(\frac{\partial}{\partial x^\mu} =\underbrace{\frac{\partial x^{'\nu}}{\partial x^{\mu}}}_{\Lambda^\nu_{\,\,\mu}}\frac{\partial}{\partial x^{'\nu}} \)
 
-ist äquivalent zur Dirac Gl in IS'
+
+\[\Leftrightarrow \left(iS(\Lambda) \gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}} - \frac{mc}{\hbar}\right)\psi'(x') = 0 \]
+
+
+
+ist äquivalent zur Dirac Gleichung im IS'
 
 \[S(\Lambda)\gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu} = \gamma^\nu\]
 
-\[\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda^{-1})  }* \]
+\[\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)  }\qquad(*) \]
 
 Betrachte infinitesimalen Fall:
 
@@ -726,9 +736,9 @@ Betrachte infinitesimalen Fall:
 
 mit 4x4 Matrizen \(\sigma_{\alpha\beta} = - \sigma_{\beta\alpha} \) (6 Matrizen)
 
-\[ S(\Lambda^{-1}) = \mathbb 1 - \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
+\[ S(\Lambda^{-1}) = \mathbb 1 + \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
 
-Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
+Einsetzen in (*): Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
 
 \[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu) \]
 
@@ -736,17 +746,18 @@ Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\
 \[\Rightarrow \boxed{[\gamma^\nu,\sigma_{\alpha\beta}] = 2i(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha)  }\]
 
 
-Lösung fir \(\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]\)
+Lösung für \(\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]\)
 
 Bew: 
 
 \begin{align}
-\frac{2}{i}[\gamma^\nu,\sigma_{\alpha\beta} &= \gamma^\nu(\gamma_\alpha\gamma_\beta - \gamma_\beta\gamma_\alpha)-(\gamma_\alpha\gamma_\beta-\gamma_\beta\gamma_\alpha)\gamma^\nu]+\gamma_\alpha\gamma^\nu\gamma_\beta - \gamma_\beta\gamma^\nu\gamma_\alpha-\gamma_\alpha\gamma^\nu\gamma_\beta + \gamma_\beta\gamma^\nu\gamma_\alpha \\
+\frac{2}{i}[\gamma^\nu,\sigma_{\alpha\beta}] &= \gamma^\nu(\gamma_\alpha\gamma_\beta - \gamma_\beta\gamma_\alpha)-(\gamma_\alpha\gamma_\beta-\gamma_\beta\gamma_\alpha)\gamma^\nu \\
+&=\gamma_\alpha\gamma^\nu\gamma_\beta - \gamma_\beta\gamma^\nu\gamma_\alpha-\gamma_\alpha\gamma^\nu\gamma_\beta + \gamma_\beta\gamma^\nu\gamma_\alpha \\
 &= 2\cdot 2 g^\nu_{\,\,\alpha}\gamma_\beta - 2\cdot 2 g^\nu_{\,\,\beta}\gamma_\alpha \\
 &= \frac{2}{i}2i(g^\nu_{\,\,\alpha}\gamma_\beta - g^\nu_{\,\,\beta}\gamma_\alpha)
  \end{align}
 
-\(\Rightarrow \sigma_{\alpha\beta}\) sind Generatoren für Spinordastellung der LG
+\(\Rightarrow \sigma_{\alpha\beta}\) sind Generatoren für Spinordastellung der Lorenz-Gruppe
 
 \[S(g+\omega) = 1+\frac{1}{8}[\gamma_\nu,\gamma_\nu]\omega^{\mu\nu}\]
 
@@ -775,13 +786,13 @@ Durch eine Gleichung zusammenfassen:
 
 \[\sigma^\dagger_{\alpha\beta} = \frac{i}{2}[ \gamma^0\gamma_\alpha\gamma^0, \gamma^0\gamma_\beta\gamma^0] = \gamma^0\sigma_{\alpha\beta}\gamma^0\]
 
-wegen \(\gamma^0=\mathbb 1\)
+wegen \(\gamma^0\cdot \gamma^0=\mathbb 1\)
 
 
 \begin{align}
 \Rightarrow  S^\dagger(\Lambda) &= e^{\gamma^0 A\gamma^0}\\
 &=\sum_{n=0}^\infty \frac{1}{n!}(\underbrace{\gamma^0 A \gamma^0}_{\gamma^0 A^n \gamma^0})^n \\
-&= \gamma^0 A \gamma^0 \\
+&= \gamma^0 e^A \gamma^0 \\
 &= \gamma^0 e^{+\frac{i}{4}\sigma^\dagger_{\mu\nu}\omega^{\mu\nu}}  \gamma^0 \\
 &= \gamma^0 S(\Lambda)^{-1}\gamma^0
 \end{align}
@@ -790,7 +801,7 @@ mit \(A = \frac{i}{4}\sigma_{\alpha\beta}\omega^{\alpha\beta}\)
 
 \[\boxed{S^\dagger (\Lambda) = \gamma^0S(\Lambda^{-1})\gamma^0 }\]
 
-\(\overline\psi'(x') = (\overline\psi'(x'))^\dagger\gamma^0 = \psi^\dagger(x)\psi^0\psi^0\S^\dagger(\Lambda)\gamma^0 =\overline\psi(x)\overbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}^{S(\Lambda^{-1})}  \)
+\(\overline\psi'(x') = (\overline\psi'(x'))^\dagger\gamma^0 = \psi^\dagger(x)\psi^0\psi^0S^\dagger(\Lambda)\gamma^0 =\overline\psi(x)\overbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}^{S(\Lambda^{-1})}  \)
 
 LT von \(j^\mu c\overline\psi(x)\gamma^\mu\psi(x)\)
 
