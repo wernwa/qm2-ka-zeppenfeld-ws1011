@@ -493,7 +493,7 @@ Spezialfall:
 \[\Rightarrow E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \frac{\hbar}{i}\frac{1}{4m^2c^2}\underbrace{\sigma_i\sigma_j}_{i\epsilon_{ijk}\pi_k+\sigma_{ij}} p_ir_j\frac{1}{r}\frac{dV}{dr}\phi\]
 
 
-\[E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+\underbrace{(\vec\nabla)\cdot\vec\nabla}_{\text{nicht selbst adjungiert}}  \right)\phi\]
+\[E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+\underbrace{(\vec\nabla V)\cdot\vec\nabla}_{\text{nicht selbst adjungiert}}  \right)\phi\]
 
 
 Interpretation:
@@ -507,7 +507,6 @@ Interpretation:
 \end{itemize}
 
 
-\subsection{Dirac und Pauli Gleichung inclusive relativistische Korrekturen}
 
 \[i\hbar \frac{\partial \phi}{\partial t} =  H_\phi \phi\]
 
@@ -522,24 +521,24 @@ mit
 
 \[\tilde H_D = \frac{\hbar^2}{4m^2c^2}((\nabla^2V)+(\vec\nabla V)\cdot\vec\nabla)\]
 
-Der Letze Term \(\cdot\vec\nabla)\) ist nicht hermitesch. Problem mit der Warhscheinlichkeits-Dichte:
+Der Letze Term \((\vec\nabla V)\cdot\vec\nabla\) ist nicht hermitesch. Problem mit der Warhscheinlichkeits-Dichte:
 
 \begin{align}
-\rho &= \frac{j^0}{c}=\overline \psi\gamma^0psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
+\rho &= \frac{j^0}{c}=\overline \psi\gamma^0\psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
 &=|\phi|^2 + |\chi|^2\\
 &=|\phi|^2+|\frac{\vec\sigma\cdot\vec p}{2mc}\phi|^2\\
 &=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi \\
-&\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\phi}|^2
+&\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\varphi}|^2
 \end{align}
 
 Übergang zu 
 
-\[\phi = \Omega\phi = (1+\frac{\vec p^2}{8m^2c^2}+...)\phi\]
+\[\varphi = \Omega\phi = (1+\frac{\vec p^2}{8m^2c^2}+...)\phi\]
 
 Foldy-Wouthuysen Transformation. (Details: Bjorken-Drell relativ. QM)
 
 
-Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\phi}\)
+Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\varphi}\)
 
 \begin{align}
 H&=(1+\frac{\vec p^2}{8m^2c^2})H_\phi (1-\frac{\vec p^2}{8m^2c^2}) \\
@@ -549,11 +548,21 @@ H&=(1+\frac{\vec p^2}{8m^2c^2})H_\phi (1-\frac{\vec p^2}{8m^2c^2}) \\
 
 NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} =-\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\)
 
+\begin{align}
+H&=H_\phi -\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\\
+&=( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V) - \hbar \frac{1}{2m^2c^2}\vec L\cdot\vec S\frac{1}{r}\frac{dV}{dr} + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+(\vec\nabla V)\cdot\vec\nabla  \right)\\
+&\qquad -\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\\
+&=\frac{\vec p^2}{2m}+V - \frac{p^4}{8m^3c^2} - \hbar \frac{1}{2m^2c^2}\vec L\cdot\vec S\frac{1}{r}\frac{dV}{dr} + \underbrace{\frac{\hbar^2}{8m^2c^2}\nabla^2 V}_{\text{Darwin-Term}}
+\end{align}
+
 
 
 \[H= \frac{\vec p^2}{2m}+V+H_r+H_{LS}+H_D\]
 
-mit Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
+
+mit dem Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
+
+
 
 
 \subsection{Korrekturen zum Wasserstoff Spektrum}
