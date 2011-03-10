@@ -726,7 +726,12 @@ ist äquivalent zur Dirac Gleichung im IS'
 
 \[S(\Lambda)\gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu} = \gamma^\nu\]
 
-\[\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)  }\qquad(*) \]
+\begin{equation}
+  \label{eq:7}
+\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)  }   
+\end{equation}
+
+
 
 Betrachte infinitesimalen Fall:
 
@@ -738,7 +743,7 @@ mit 4x4 Matrizen \(\sigma_{\alpha\beta} = - \sigma_{\beta\alpha} \) (6 Matrizen)
 
 \[ S(\Lambda^{-1}) = \mathbb 1 + \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
 
-Einsetzen in (*): Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
+Einsetzen in (\ref{eq:7}): Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
 
 \[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu) \]
 
@@ -801,13 +806,20 @@ mit \(A = \frac{i}{4}\sigma_{\alpha\beta}\omega^{\alpha\beta}\)
 
 \[\boxed{S^\dagger (\Lambda) = \gamma^0S(\Lambda^{-1})\gamma^0 }\]
 
-\(\overline\psi'(x') = (\overline\psi'(x'))^\dagger\gamma^0 = \psi^\dagger(x)\psi^0\psi^0S^\dagger(\Lambda)\gamma^0 =\overline\psi(x)\overbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}^{S(\Lambda^{-1})}  \)
+\begin{align}
+\overline\psi'(x') &= (\psi'(x'))^\dagger\gamma^0 = (S(\Lambda)\psi(x))^\dagger\gamma^0 = \psi(x)^\dagger S(\Lambda)^\dagger\gamma^0 \\
+&=\psi(x)^\dagger \mathbb 1 S(\Lambda)^\dagger\gamma^0 \\
+&=\psi(x)^\dagger \gamma^0\gamma^0 S(\Lambda)^\dagger\gamma^0 \\
+&= \overline\psi(x)\underbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}_{S(\Lambda^{-1})}  \\
+\end{align}
 
-LT von \(j^\mu c\overline\psi(x)\gamma^\mu\psi(x)\)
+LT von \(j^\mu = c\overline\psi(x)\gamma^\mu\psi(x)\) mit Zuhilfenahme der Gleichung von (\ref{eq:7})
 
 \begin{align}
 j^{\mu'}(x') &= c\overline\psi'(x')\gamma^\mu\psi'(x') = c\overline\psi(x)\underbrace{S(\Lambda^{-1})\gamma^\mu S(\Lambda)}_{\Lambda^\mu_{\,\,\alpha}\gamma^\alpha}\psi(x)\\
-&=\Lambda^\mu_{\,\,\alpha}(c\overline\psi'(x')\gamma^\alpha\psi(x)) = \Lambda^\mu_{\,\,\alpha}j^\alpha(x)
+&=c\overline\psi(x)\Lambda^\mu_{\,\,\alpha}\gamma^\alpha\psi(x)\\
+&=\Lambda^\mu_{\,\,\alpha}(c\overline\psi(x)\gamma^\alpha\psi(x))\\
+&= \Lambda^\mu_{\,\,\alpha}j^\alpha(x)
 \end{align}
 
 \(\Rightarrow j^\mu(x)\) ist 4-Vektorfeld
@@ -818,7 +830,8 @@ Kontinuitätsgleichung \(\frac{1}{c}\frac{\partial(c \rho) }{\partial t} + \vec\
 
 Andere Bilineare: z.B.
 
-\[\rho(x) = \overline \psi(x)\psi(x) \rightarrow \psi'(x') = \overline \psi'(x')\psi'(x') = \overline \psi'(x')\mathcal 1 \psi'(x') = \overline \psi'(x') S(\Lambda^{-1}S(\Lambda) \psi'(x') = \overline \psi(x)\psi(x) = \rho(x) \]
+\[\rho(x) = \overline \psi(x)\psi(x)\]
+\[ \rightarrow \rho'(x')=\overline \psi'(x')\psi'(x') = \overline \psi'(x')\mathbb 1 \psi'(x') = \overline \psi'(x') S(\Lambda^{-1})S(\Lambda) \psi'(x') = \overline \psi(x)\psi(x) = \rho(x) \]
 
 \(\Rightarrow \rho(x)\) ist ein Skalares Feld
 
@@ -859,10 +872,16 @@ z.B. \(\gamma_5\gamma^2 = - i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^2 = - i\gamm
 
 \[\Rightarrow [\gamma_5,\sigma^{\mu\nu}]=0 \Rightarrow [\gamma_5,S(\Lambda)]=0\]
 
-\[\overline\psi(x)\gamma_5\psi(x) \equiv Skalar\]
+\(\overline\psi(x)\gamma_5\psi(x) \) Transformiert sich wie ein Skalar: \(\overline\psi'(x')\gamma_5\psi'(x') = \overline\psi(x)S^{-1}(\Lambda)\gamma_5 S(\Lambda)\psi(x) = \overline\psi(x)\gamma_5 \psi(x) \)
+\\
+\(\overline \psi(x) \gamma^\mu\gamma_5 \psi(x) \) Transformiert sich wie ein Vektor:
 
-
-\[\overline \psi \gamma^\mu\psi(x) \equiv Vektor \]
+\begin{align}
+\overline \psi'(x') \gamma^\mu\gamma_5 \psi'(x') &= \overline \psi(x)S(\Lambda^{-1}) \gamma^\mu\gamma_5S(\Lambda)\psi(x)\\
+&= \overline \psi(x)\underbrace{ S(\Lambda^{-1}) \gamma^\mu S(\Lambda)}_{ \Lambda^\mu_{\,\,\alpha}\gamma^\alpha } \gamma_5 \psi(x)\\
+&= \overline \psi(x)\Lambda^\mu_{\,\,\alpha}\gamma^\alpha \gamma_5 \psi(x)\\
+&=\Lambda^\mu_{\,\,\alpha}[ \overline \psi(x)\gamma^\alpha \gamma_5 \psi(x) ]
+\end{align}
 
 Pseudo-/Axial wegen \underline{Paritätstransformation} (spezielle Lorenztrasformation)
 
@@ -872,7 +891,7 @@ Pseudo-/Axial wegen \underline{Paritätstransformation} (spezielle Lorenztrasfor
 
 Transformation von Spinoren: brauchen 4x4 Matrix P
 
-\[P^{-1}\gamma P = \Lambda^\mu_{\,\,\nu}\gamma^\nu = \gamma_\nu\]
+\[P^{-1}\gamma^\nu P = \Lambda^\mu_{\,\,\nu}\gamma^\nu = \gamma_\nu\]
 
 
 Bei Spinoren:
@@ -883,22 +902,29 @@ Bei Spinoren:
 
 \[\Rightarrow P^{-1}\gamma_5 P = \gamma^0\gamma_5\gamma^0 = -\gamma^0\gamma^0\gamma_5 = -\gamma_5\]
 
-\(\Rightarrow \overline\psi(x) \gamma_5\psi(x)\) ist ungerade und Permutation.
-
+\(\Rightarrow \overline\psi(x) \gamma_5\psi(x)\) ist ungerade unter Permutation.\\
+\\
 \underline{Anwendung}: Paritätsverletzung in der schwachen Wechselwirkung. \(\Rightarrow \) z.B. \(\mu^-\)-Zerfall
 
-\[\mu^-(P.) \rightarrow \nu_\mu(P_i) + e^-(k_1) + \vec \nu_e(k_2)\]
+\[\mu^-(P) \rightarrow \nu_\mu(P_i) + e^-(k_1) + \overline \nu_e(k_2)\]
 
 
  \includegraphics[width=0.75\textwidth]{kap06_01.png}
 
 
-\[T= \frac{G_F}{\sqrt{2}}\underbrace{  \overline\psi(P_2)\gamma^\mu(1-\gamma_5)\psi(P_1)}_{J^{\text{myon}}} \underbrace{\overline\psi(k_1)\gamma_\mu(1-\gamma_5)\psi(k_2)}_{J^{\text{elektron}}}\]
+
+
+\[T= \frac{G_F}{\sqrt{2}}\underbrace{  \overline\psi(p_2)\gamma^\mu(1-\gamma_5)\psi(p_1)}_{J^{\text{myon}}} \underbrace{\overline\psi(k_1)\gamma_\mu(1-\gamma_5)\psi(k_2)}_{J^{\text{elektron}}}\]
 
 
 \(J^{\text{myon}}\cdot J^{\text{elektron}} = \text{Lorenz-Skalar?}\) \(\rightarrow \) Parität:
 
-\[T\rightarrow T' =\frac{G_F}{\sqrt{2}} \overline\psi(P_2)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma^\mu (1+\gamma_5)} P \psi(P_1)   \overline\psi(k_1)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma_\mu (1+\gamma_5)} P \psi(k_2) \neq T\]
+\begin{align}
+T\rightarrow T' &=\frac{G_F}{\sqrt{2}} \overline\psi'(p_2')\gamma^\mu(1-\gamma_5) \psi'(p_1')   \overline\psi'(k_1')\gamma^\mu(1-\gamma_5) \psi'(k_2') \\
+&=\frac{G_F}{\sqrt{2}} \overline\psi(p_2)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)P}_{\gamma^\mu (1+\gamma_5)}  \psi(p_1)   \overline\psi(k_1)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)P}_{\gamma_\mu (1+\gamma_5)} \psi(k_2) \\
+&=\frac{G_F}{\sqrt{2}} \overline\psi(p_2)\gamma^\mu (1+\gamma_5) \psi(p_1)   \overline\psi(k_1)\gamma_\mu (1+\gamma_5) \psi(k_2)\\
+ &\neq T\\
+\end{align}
 
 \(\beta\)-Zerfall: sehr ähnlich, jedoch Koeffizienten \(c_\mu,c_\lambda\) für Nukleonen
 
@@ -963,13 +989,13 @@ Lösung mit \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega(\vec p)\)
 
 \(\vec p\) in Ruhe
 
-\[E = +cm^2\qquad \omega_1 = \begin{pmatrix} 1\\ 0 \\ 0\\ 0 \end{pmatrix},\qquad \omega_2(0) = \begin{pmatrix} 0\\ 1 \\ 0\\ 0 \end{pmatrix} \]
+\[E = +mc^2\qquad \omega_1(0) = \begin{pmatrix} 1\\ 0 \\ 0\\ 0 \end{pmatrix},\qquad \omega_2(0) = \begin{pmatrix} 0\\ 1 \\ 0\\ 0 \end{pmatrix} \]
 
-\[E = -cm^2\qquad \omega_3 = \begin{pmatrix} 0\\ 0 \\ 1\\ 0 \end{pmatrix},\qquad  \omega_4(0) = \begin{pmatrix} 0\\ 0 \\ 0\\ 1 \end{pmatrix} \]
+\[E = -mc^2\qquad \omega_3(0) = \begin{pmatrix} 0\\ 0 \\ 1\\ 0 \end{pmatrix},\qquad  \omega_4(0) = \begin{pmatrix} 0\\ 0 \\ 0\\ 1 \end{pmatrix} \]
 
 Besser für Teilchenwellenfunktionen immer \(E>0\), d.h.
 
-\[p^\mu = (\frac{E}{2},\vec p) = (+\sqrt{m^2c^2+\vec p^2},\vec p)\]
+\[p^\mu = (\frac{E}{c},\vec p) = (+\sqrt{m^2c^2+\vec p^2},\vec p)\]
 
 Lsg pos. Energie \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega_i(\vec p)\) mit i=1,2
 
@@ -984,7 +1010,7 @@ Jetzt \(\omega_i(\vec p)\) durch boost von \(\omega_i(0)\) entlang der \(\vec p\
 ungestricheltes System = Ruhesystem des Teilchens
 gesticheltes System = Teilchen bewegt sich in \(\vec p \)-Richtung
 
-\(\Rightarrow \) boosst in \(-\vec p\)-Richtung im Teilchen in Bewegung zu setzen
+\(\Rightarrow \) boost in \(-\vec p\)-Richtung um Teilchen in Bewegung zu setzen
 
 \[\Rightarrow \omega_\nu(\vec p) = S(\Lambda)\omega_\nu(0) = e^{\frac{1}{2}\omega\hat p\vec\alpha}\omega_\nu(0)  \]
 
