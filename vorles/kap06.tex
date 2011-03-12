@@ -957,11 +957,11 @@ mit \( \sum_j\omega^{0j}\sigma_{0j} = \omega \vec n \frac{i}{2}\underbrace{[\bet
 Verschiebung von \(\omega^{\mu\nu}\) und \(\vec v\)
 
 
-\[\Lambda^\mu_{\,\,\nu}: \qquad \Lambda = \lim_{N \to \infty} (g+\frac{\omega}{N})^N = exp\left\{\omega\underbrace{ \begin{pmatrix} 0&+n_1&+n_2&+n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix}}_{I}  \right\}\]
+\[\Lambda^\mu_{\,\,\nu}: \qquad \Lambda = \lim_{N \to \infty} (g+\frac{\omega}{N})^N = exp\left\{\omega\underbrace{ \begin{pmatrix} 0&-n_1&-n_2&-n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix}}_{I}  \right\}\]
 
 Spezialfall \(n_1 = 1, n_2=n_3 = 0\)
 
-\[I^2 = \begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix};\qquad I^3=I;\qquad etc. \]
+\[I^2 = \begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix};\qquad I=I^3=\begin{pmatrix} 0&-1&0&0\\ -1&0&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix};\qquad etc. \]
 
 mit \( e^x = \frac{e^x}{2}+ \frac{e^x}{2} + \frac{e^{-x}}{2} - \frac{e^{-x}}{2} = \frac{e^x+e^{-x}}{2} + \frac{e^x-e^{-x}}{2} = \cosh(x)+\sinh(x)\)
 
@@ -973,6 +973,7 @@ mit \( e^x = \frac{e^x}{2}+ \frac{e^x}{2} + \frac{e^{-x}}{2} - \frac{e^{-x}}{2} 
 &=\omega^0 I^0 + I^2\left(\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k!)}+\frac{\omega^0}{(0)!}- \frac{\omega^0}{(0)!}\right)+I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
 &=\omega^0 I^0 + I^2\left(\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k}}{(2k!)}}_{cosh(\omega)}-\frac{\omega^0}{(0)!}\right)+I\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!}}_{sinh(\omega)} \\
 &=\mathbb 1 + I^2\left(\cosh(\omega)-1\right)+I\cdot \sinh(\omega) \\
+&=\begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} + \begin{pmatrix} \cosh(\omega)-1&0&0&0\\ 0&\cosh(\omega)-1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix} +\begin{pmatrix} 0&-\sinh(\omega)&0&0\\ -\sinh(\omega)&0&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix} \\
 &=  \begin{pmatrix} cosh\omega&-sinh\omega&0&0\\ -sinh\omega&cosh\omega&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} 
 \end{align}
 
