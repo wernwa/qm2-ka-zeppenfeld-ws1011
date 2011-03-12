@@ -4,21 +4,21 @@
 \begin{document}
 \tableofcontents
 \setcounter{chapter}{5}
-\chapter{Kap 6. Relativistische QM}
-%\setcounter{chapter}{6}
+\chapter{Relativistische QM}
+
 
 
 Notation: Vierer-Vektoren
 
-\[x^{\mu} = ct,x,y,z) = (x^0,x^1,x^2,x^3) = (ct,\vec r)\]
+\[x^{\mu} = (ct,x,y,z) = (x^0,x^1,x^2,x^3) = (ct,\vec r)\]
 
-invariante Lönge \(\sqrt{x^2}\)
+invariante Länge \(\sqrt{x^2}\)
 
 \[x^2=x\cdot x = x^{\mu}x_\mu = x^\mu g_{\mu \nu}x^\nu\]
 
 Einsteinsche Summenkonvention: \(\sum_{\mu=0}^3\) für jedes Paar von oberen und unteren Index
 
-Metrischer Tensor
+\underline{Metrischer Tensor}
 
 \[ g_{\mu\nu} = \begin{bmatrix}
  1 & 0 & 0 & 0\\
@@ -29,9 +29,9 @@ Metrischer Tensor
 
 \[ x_\mu = g_{\mu\nu}x^\nu = (ct,-\vec r)\]
 
-\[x^\mu = g^{\mu\nu}x_\nu = g^{\mu\nu}x^\nu = g^\nu_\nu x^\nu\] 
+\[x^\mu = g^{\mu\nu}x_\nu = g^{\mu\nu}x^\nu = g^\nu_{\,\,\nu} x^\nu\] 
 
-\[g^\nu_\nu = \delta^\nu_\nu =\begin{cases}
+\[g^\nu_{\,\,\nu} = \delta^\nu{\,\,_\nu} =\begin{cases}
   1,  & \mu = \nu\\
   0 & \text{sonst}
 \end{cases} \]
@@ -43,15 +43,15 @@ Metrischer Tensor
  0 & 0 & 0 & -1\\
 \end{bmatrix} \]
 
-Vierer-Impuls: \(p^\mu=(\frac{E}{c},\vec p)\) \(E= \sqrt{(mc^2)^2+(\vec p c)^2}\)
+\underline{Vierer-Impuls}: \(p^\mu=(\frac{E}{c},\vec p)\)  mit  \(E= \sqrt{(mc^2)^2+(\vec p c)^2}\)
 
 \[p^2 = p_\mu p^\mu = \frac{E^2}{c^2}-\vec p^2 = \frac{m^2c^4+\vec p^2 c^2}{c^2} - \vec p^2 = m^2c^2\]
 
-Vierer-Potential:  LT \(x^{'\mu} = \Lambda^{\mu}_\nu x^\nu\)
+\underline{Vierer-Potential}:  Lorenz-Transformation \(x^{'\mu} = \Lambda^{\mu}_{\,\,\nu} x^\nu\)
 
-\[A^\mu = (\frac{\phi}{c},\vec A \qquad \rightarrow  A^{'\mu}(x') = \Lambda^\mu_\nu A^\nu(x)\]
+\[A^\mu = (\frac{\phi}{c},\vec A) \qquad \rightarrow  A^{'\mu}(x') = \Lambda^\mu_{\,\,\nu} A^\nu(x)\]
 
-Strom: \(j^\mu = (c\rho,\vec j)\) in E und M
+\underline{Strom}: \(j^\mu = (c\rho,\vec j)\) in E und M
 
 Skalarprodukt für \(a^\mu,b^\mu: \qquad a\cdot b = a^\mu b_\mu = a^\mu g_{\mu\nu}b^\nu = a^0 b^0 - \vec a\cdot \vec b\)
 
@@ -59,7 +59,7 @@ Ableitung nach \(x^\nu\)
 
 \[\partial_\mu = \frac{\partial}{\partial x^\mu} = (\frac{1}{c} \frac{\partial}{\partial t},\vec \nabla )\]
 
-ist kovarianter Vektor unter Index wg: \(\partial \mu a\cdot x = \frac{\partial}{\partial x^\mu}(a_\nu x^\nu)= a_\mu\)
+ist kovarianter Vektor (Index unten) wegen: \(\partial_{\mu} a\cdot x = \frac{\partial}{\partial x^\mu}(a_\nu x^\nu)= a_\mu\)
 
 Entsprechend \(\partial^\mu = g^{\mu\nu}\partial_\nu = (\frac{1}{c}\frac{\partial}{\partial t},-\vec\nabla)\)
 
@@ -68,30 +68,37 @@ d'Alebert Operator
 
 \[\square = \partial_\mu\partial^\mu = \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \vec \nabla^2\]
 
+
+
 \subsection{QM eines freien Teilchens}
 
 \[E\rightarrow i\hbar\frac{\partial}{\partial t}, \quad \vec p = \frac{\hbar}{i}\vec \nabla\]
 
 \[ p^\mu = (\frac{E}{c},\vec p) \rightarrow (i\hbar \frac{1}{c}\frac{\partial}{\partial t},-i\hbar \vec \nabla) = i\hbar\partial^\mu\]
 
-Schrödinger Gl. für NR freies Teilchens
+Schrödinger Gl. für nicht relativistisches freies Teilchen (ohne Potential)
 
 \[E=\frac{\vec p^2}{2m} \rightarrow  i\hbar \frac{\partial }{\partial t}\psi = -\frac{\hbar^2\nabla^2}{2m}\psi(\vec x,t) \]
 
 
 Relativistischer Fall
 
+
 \begin{enumerate}
-\item[1)] \(E = \sqrt{m^2c^4+\vec p^2c^2} \rightarrow \) nichtlokalen Operator
+\item[1)] \(E = \sqrt{m^2c^4+\vec p^2c^2} \rightarrow \) nichtlokaler Operator
 \item[2)] \(\frac{E^2}{c^2} = m^2c^2 + \vec p^2 \rightarrow - \frac{\hbar^2}{c^2}\frac{\partial^2 }{\partial t^2}\psi = m^2c^2\psi -\hbar^2\vec \nabla^2\psi \)
 \end{enumerate}
 
-\[\Leftrightarrow  0 = m^2c^2\psi + \hbar^2(\frac{1}{c^2}\frac{\partial^2}{\partial t^2 - \nabla^2)\psi = m^2c^2\psi+\hbar^2 \square \psi})\]
+\[ - \frac{\hbar^2}{c^2}\frac{\partial^2 }{\partial t^2}\psi = m^2c^2\psi -\hbar^2\vec \nabla^2\psi\]
+\begin{align}
+\Leftrightarrow  0 &= m^2c^2\psi + \hbar^2\left(\frac{1}{c^2}\frac{\partial^2}{\partial t^2}  - \nabla^2\right)\psi\\
+0&= m^2c^2\psi+\hbar^2 \square \psi
+\end{align}
 
 
-Klein Gordon Gl.
+\underline{Klein Gordon} Gleichung:
 
-\[(\square + (\frac{mc}{\hbar})^2)\psi(x) = 0\]
+\[\boxed{\left(\square + \left(\frac{mc}{\hbar}\right)^2\right)\psi(x) = 0}\]
 
 Anwendbar auf skalare Teilichen (Spin 0) wie \(\pi^+,\pi^-,\pi^0,K,H\)
 
@@ -101,31 +108,47 @@ Lösungen der KG-Gl. durch ebene Wellen
 
 mit \(p\cdot x = p^\mu x_\mu = Et-\vec p\cdot \vec x\)
 
-\[\square \psi_p = (x) = \frac{\partial}{\partial x^\mu} \frac{\partial}{\partial x_\mu} \psi_p(x) = N(-\frac{i}{\hbar}p_\mu)(-\frac{i}{\hbar}p^\mu) e^{-ip\cdot x/\hbar} = -\frac{p^2}{\hbar^2}\psi_p \]
+\[\square \psi_p (x) = \frac{\partial}{\partial x^\mu} \frac{\partial}{\partial x_\mu} \psi_p(x) = N(-\frac{i}{\hbar}p_\mu)(-\frac{i}{\hbar}p^\mu) e^{-ip\cdot x/\hbar} = -\frac{p^2}{\hbar^2}\psi_p \]
 
 
-KG:
+Klein Gordon Gleichung:
 
-\[\Rightarrow (-\frac{p^2}{\hbar^2} + \frac{m^2c^2}{\hbar^2})\psi_p(x) = 0 \Leftrightarrow p^2 = m^2 c^2; \frac{E^2}{c^2}-\vec p^2\]
+\[\Rightarrow \left(-\frac{p^2}{\hbar^2} + \frac{m^2c^2}{\hbar^2}\right)\psi_p(x) = 0\]
+
+\[ \Leftrightarrow p^2 = m^2 c^2 = \frac{E^2}{c^2}-\vec p^2\]
 
 \[\rightarrow E = \pm c \sqrt{m^2c^2+\vec p^2}\]
 
+
 Lösungen mit Negativer Energie und das Energiespektrum ist nach unten nicht beschränkt. 
+
+
 
 \subsection{Wahrscheinlichkeitserhaltung}
 
-Kontin.Gl \(\frac{\partial\rho}{\partial t}+\vec \nabla\cdot \vec J = 0 \Leftrightarrow \partial_\mu j^\mu = 0\) mit \(j^\mu = (\rho c,\vec j)\). 
+Kontinuitäts-Gleichung
 
-Gibt es einen erhaltenen 4-Strom für die lösung der KG-Gleichung?
+ \[\frac{\partial\rho}{\partial t}+\vec \nabla\cdot \vec j = 0 \Leftrightarrow \partial_\mu j^\mu = 0\]
+
+mit \(j^\mu = (\rho c,\vec j)\) und \(\partial_\mu = (\frac{1}{c} \frac{\partial}{\partial t},\vec \nabla )\). 
+
+
+Gibt es einen erhaltenen 4-Strom für die lösung der Klein-Gordon-Gleichung?
 
 \[\psi^*(\square + (\frac{mc}{\hbar})^2)\psi(x) - \psi(\square + (\frac{mc}{\hbar})^2)\psi^*(x) = 0\]
+
+\[\psi^*\square\psi(x) + \psi^*(x)(\frac{mc}{\hbar})^2\psi(x) - \psi\square\psi^*(x) - \psi(x)(\frac{mc}{\hbar})^2\psi^*(x) = 0\]
+
+\[\psi^*\square\psi(x) -  \psi\square\psi^*(x) + \cancel{|\psi(x)|^2(\frac{mc}{\hbar})^2} -\cancel{|\psi(x)|^2(\frac{mc}{\hbar})^2} = 0\]
+
+mit \(\square \psi = \frac{\partial}{\partial x^\mu} \frac{\partial}{\partial x_\mu} \psi\)
 
 
 \[\psi^*(\partial_\mu\partial^\mu \psi) - \psi(\partial_\mu\partial^\mu \psi^*) = 0 \]
 
 \[\partial_\mu(\underbrace{\psi^*\partial^\mu\psi - \psi \partial^\mu \psi^*}_{\propto j^\mu}) = 0\]
 
-\[ j^\mu \propto (\psi^*\frac{i}{c}\frac{\propto}{\propto t}\psi - \psi\frac{i}{c}\frac{\propto}{\propto t}\psi^* ,-(\psi^*\vec \nabla \psi - \psi\vec \nabla\psi^*)) \]
+\[ j^\mu \propto (\psi^*\frac{i}{c}\frac{\partial}{\partial t}\psi - \psi\frac{i}{c}\frac{\partial}{\partial t}\psi^* ,-(\psi^*\vec \nabla \psi - \psi\vec \nabla\psi^*)) \]
 
 Kandidat für Wahrscheinlichkeits Strom \(\frac{2im}{\hbar}\vec j\) in Schrödinger Gl
 
@@ -135,17 +158,27 @@ Kandidat für Wahrscheinlichkeits Strom \(\frac{2im}{\hbar}\vec j\) in Schrödin
 
 Anwendung auf stationäre Lösung: \(\psi_E(x) = e^{-iEt/\hbar}\psi_E(\vec x)\)
 
-\[\frac{\partial \psi_E}{\partial t} = -\frac{iE}{\hbar}\psi_E,\frac{\partial \psi_E^*}{\partial t} = -\frac{iE}{\hbar}\psi_E^* \Rightarrow \rho = \frac{i\hbar}{2mc^2}|\psi_E(\vec x)|^2\frac{-2iE}{\hbar} = \frac{E}{mc^2}|\psi_E(x)|^2 \]
+\[\frac{\partial \psi_E}{\partial t} = -\frac{iE}{\hbar}\psi_E,\frac{\partial \psi_E^*}{\partial t} = \frac{iE}{\hbar}\psi_E^*\]
+
+\begin{align}
+\rho &=  \frac{i\hbar}{2mc^2}(\psi^*_E\frac{\partial\psi_E}{\partial t} - \psi_E\frac{\partial\psi^*_E}{\partial t}) \\
+&=  \frac{i\hbar}{2mc^2}(-\psi^*_E\frac{iE}{\hbar}\psi_E  - \psi_E \frac{iE}{\hbar}\psi_E^*) \\
+&= \frac{i\hbar}{2mc^2}|\psi_E(\vec x)|^2\frac{-2iE}{\hbar}\\
+&= \frac{E}{mc^2}|\psi_E(x)|^2
+\end{align}
+
+\[ \Rightarrow \boxed{ \rho = \frac{E}{mc^2}|\psi_E(x)|^2} \]
 
 \(\rho < 0\) für Zustände mit \(E<0\)
 
 \(\Rightarrow  \) Keine mögliche Wahrscheinlichkeitsdichte. (Ok für Zustände mit positiver Energie)
 
-Interpretation: Zustände mit \(E>0\Leftrightarrow \) z.B. \(\pi^+\) und  \(E<0\Leftrightarrow \) z.B. \(\pi^-\)(Antiteilchen zum  \(\pi^+\))
 
+\underline{Interpretation}: Zustände mit \(E>0\Leftrightarrow \) z.B. \(\pi^+\) und  \(E<0\Leftrightarrow \) z.B. \(\pi^-\)(Antiteilchen zum  \(\pi^+\))\\
+\\
 \(\rho > 0\): \(\pi^+\) dominieren
-\(\rho < 0\): \(\pi^-\) dominieren
-
+\(\rho < 0\): \(\pi^-\) dominieren\\
+\\
 \(\rho \propto\) elektromagn. Ladungsdichte
 
 \[ j^\mu = |e|\frac{i\hbar}{2mc} (\psi^*\partial^\mu\psi -\psi\partial^\mu\psi^* )\]
@@ -172,7 +205,7 @@ und Wahrscheinlichkeitsdichte \(\rho = \sum_{i=1}^N |\psi_i|^2\)
 
 Ansatz für \(\hat H\)
 
-\[\hat H = c(\alpha_x\hat p_x+\alpha_y\hat p_y) +\beta mc^2 = c\sum_{i=1}^3 \alpha_i\hat p_i+ \beta mc^2\]
+\[\hat H = c(\alpha_x\hat p_x+\alpha_y\hat p_y+\alpha_z\hat p_z) +\beta mc^2 = c\sum_{i=1}^3 \alpha_i\hat p_i+ \beta mc^2\]
 
 Ebene Wellenlösung für freie Teilchen
 
@@ -182,12 +215,18 @@ mit \(p^2 = m^2c^2\)
 
 \[\Rightarrow  E\psi(p) =[c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p)\]
 
-\[E^2\psi(p) = (m^2c^4+\vec p^2 c^2)\psi(p)\]
-\[E c(\vec\alpha\vec p + \beta mc)\psi(p) = c^2(\vec \alpha\vec p + \beta mc)^2\psi(p)\]
+\begin{align}
+E^2\psi(p) &=E\cdot [c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p)\\
+&=[c \sum_{j=1}^3 \alpha_jp_j+\beta mc^2] \cdot [c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p) \\
+&=c^2 [ \sum_{j=1}^3 \alpha_jp_j+\beta mc] \cdot [ \sum_{i=1}^3 \alpha_ip_i+\beta mc]\psi(p) \\
+&=c^2 \left( \sum_{j=1}^3 \alpha_jp_j\sum_{i=1}^3 \alpha_ip_i  +   \sum_{j=1}^3 \alpha_jp_j \beta mc  + \beta mc \sum_{i=1}^3 \alpha_ip_i+ \beta^2 m^2c^2\right)\psi(p) \\
+&= c^2\left(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2\right)\psi(p)\\
+&\stackrel{\mathrm{!}}= c^2 (m^2c^2+\vec p^2 )\psi(p)
+\end{align}
 
-\[= c^2(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2)\psi(p)\]
 
-Koeffizienfenvergleich: \(\beta^2=1\); Antikommutator: \[\{\alpha_i,\beta\}=0\]
+
+Koeffizienfenvergleich:
 \begin{itemize}
 \item  \(\boxed{\beta^2=1}\)
 \item Antikommutator: \(\boxed{\{\alpha_i,\beta\}=0}\)
@@ -199,31 +238,33 @@ Koeffizienfenvergleich: \(\beta^2=1\); Antikommutator: \[\{\alpha_i,\beta\}=0\]
 
 \begin{enumerate}
 \item[1)] \(\hat p_i,\hat H\) hermitesch \(\Rightarrow \vec\alpha,\beta\) hermitesch
-\item[2)] \(\alpha_i^2=1,\beta^2=1 \Rightarrow \) Eigenwerte von \(\alpha_i,\beta\)
+\item[2)] \(\alpha_i^2=1,\beta^2=1 \Rightarrow \) Eigenwerte von \(\alpha_i,\beta\) sind \(\pm 1\)
 \item[3)] \(\alpha_i\beta + \beta\alpha_i=0\qquad |\cdot \beta\)
 \[\Rightarrow \alpha_i=-\beta\alpha_i\beta \Rightarrow Tr[\alpha_i] = -Tr[\beta\alpha_i\beta]=-Tr[\alpha_i\beta^2]=-Tr[\alpha_i]\]
 \end{enumerate}
 
-\# - Anzahl; N - Dimension der Matrix
-
-\# EW +1 = \# EW -1
-
+(Info: \# = Anzahl; N = Dimension der Matrix)\\
+\\
+\# EW +1 = \# EW -1\\
+\\
 \(\Rightarrow N\) gerade (\(N=2,4,...\))
 
-\(N=2\Rightarrow 3\) Pauli Matrizen als Kandidaten benötigt: 4 Matrizen
+\(N=2\Rightarrow 3\) Pauli Matrizen. Als Kandidaten werden benötigt: 4x4 Matrizen
 \(\Rightarrow N\geq 4: N=4\) funktioniert
 
 \(N=4:\) Dirac Basis: \(\beta\) diagonal
 
-\[\beta=\begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}= \begin{pmatrix}\mathbb 1&0\\ 0&\mathbb 1\end{pmatrix}\]
+\[\beta=\begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix}\]
 
 \(\alpha_i\) hermitesch + \(\{\alpha_i,\beta\}=0\)
 
-\[\alpha =\begin{pmatrix}A&B\\ C&D\end{pmatrix}\qquad \begin{pmatrix}A&-B\\ C&-D\end{pmatrix} \]
+\[\alpha =\begin{pmatrix}A&B\\ C&D\end{pmatrix} \]
 
 \(A=D=0\), \(C=B^\dagger\)
 
-\[\beta\alpha = \begin{pmatrix}A&B\\ -C&-D\end{pmatrix}\]
+\[\alpha\beta = \begin{pmatrix}A&-B\\ C&-D\end{pmatrix}\qquad \beta\alpha = \begin{pmatrix}A&B\\ -C&-D\end{pmatrix}\]
+
+\[A=D=0\qquad C=B^\dagger\]
 
 \[\Rightarrow \alpha_i =\begin{pmatrix}0&\tau_i\\ \tau_i^\dagger&0\end{pmatrix} \]
 
@@ -253,31 +294,40 @@ z.B. \(\{\gamma^i,\gamma^j\}=\beta\underbrace{\alpha_I\beta}_{-\beta\alpha_i}\al
 
 \subsection{Wahrscheinlichkeitsstrom}
 
-\[i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi\]
+\begin{equation}
+\psi^\dagger\cdot|\qquad i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi
+\label{eq:1}
+\end{equation}
 
 adjungierte Dirac Gleichung:
 
-\[-i\hbar \frac{\partial \psi^\dagger}{\partial t} = \frac{\hbar c}{i}\vec(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi\]
+\begin{equation}
+-i\hbar \frac{\partial \psi^\dagger}{\partial t} = -\frac{\hbar c}{i}(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi
+\label{eq:2}
+\end{equation}
 
-Differenz der beiden Gleichungen:
+Differenz der beiden Gleichungen \(\ref{eq:1}-\ref{eq:2}\):
 
-\[ i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) = \frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi) \]
+\[\underbrace{ i\hbar(\frac{\partial}{\partial t} \psi^\dagger)\psi+i\hbar\psi^\dagger (\frac{\partial}{\partial t} \psi)}_{\text{Produktregel} \quad = i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) } =\underbrace{\frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi)}_{\text{Produktregel} \quad = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)} \]
+
 
 \[\Rightarrow \frac{\partial}{\partial t}(\psi^\dagger\psi) = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)\]
 
-\[ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j}) \]
+\[ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j})=0 \]
 
 
 \[\rho =\psi^\dagger\psi = \sum_i|\psi_i|^2\geq 0 \]
 
 \(\rho\) ist positiv definierte Warscheinlichkeitsdichte
 
-Kovariante Form des W-Stroms
+Kovariante Form des Warhscheinlichkeits-Stroms
 
 \begin{align}
-j^\mu &= (c\psi^\dagger\psi ,c\psi^\dagger\vec\alpha\psi )\\
-&= (c\psi^\dagger\beta\gamma^0\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
-&= c\psi^\dagger \beta\gamma^\mu \psi = c\overline \psi\gamma^\mu \psi
+j^\mu &= (c\rho ,c\vec j )\\
+&= (c\underbrace{\psi^\dagger\psi}_{\equiv \rho} ,c\psi^\dagger\beta\beta\vec\alpha\psi )\\
+&= (c\psi^\dagger\underbrace{\beta\gamma^0}_{\mathbb 1}\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
+&= c\psi^\dagger \beta\gamma^\mu \psi\\
+&= c\overline \psi\gamma^\mu \psi
 \end{align}
 
 wobei \(\overline \psi = \psi^\dagger\beta=\psi^\dagger\gamma^0\) der Pauli adungierte Spinor ist.
@@ -291,56 +341,74 @@ externe \(\vec E,\vec B\) Fleder \(\vec B = \vec\nabla\times\vec A\), \(\vec E =
 
 minimale Subsittution:
 
-\[p^\mu\rightarrow p^\mu-eA^\mu \quad QM\rightarrow i\hbar\partial^\mu-eA^\mu = i\hbar(\partial^\mu+\frac{ie}{\hbar}A^\mu)=i\hbar D^\mu\]
+\[p^\mu\rightarrow p^\mu-eA^\mu \quad \xrightarrow{QM} i\hbar\partial^\mu-eA^\mu = i\hbar(\partial^\mu+\frac{ie}{\hbar}A^\mu)=i\hbar D^\mu\]
 
 Komponenten der Kovarianten Ableitung \(D^\mu\)
 
-\[i\hbar D^\mu = (i\hbar \frac{1}{c} \frac{\partial}{\partial t} - \frac{e}{c}\phi,\frac{\hbar}{i}\vec\nabla-e\vec A)\]
+\begin{align}
+i\hbar D^\mu &= (i\hbar \frac{1}{c} \frac{\partial}{\partial t} - \frac{e}{c}\phi,\frac{\hbar}{i}\vec\nabla-e\vec A)\\&=(\frac{i}{c}(c\hbar\frac{\partial}{\partial t}-e\phi),\frac{\hbar}{i}\vec\nabla-e\vec A) 
+\end{align}
 
-\[=(\frac{i}{c}(c\hbar\frac{\partial}{\partial t}-e\phi),\frac{\hbar}{i}\vec\nabla-e\vec A) \]
+Einsetzen in die Dirac-Gleichung:
 
-jErsetze in freier Dirac-Gl \(\partial \)
+\begin{equation}
+\boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\vec \alpha(\frac{\hbar}{i}\vec\nabla-e\vec A)\psi+\beta m c^2\psi+e\phi\psi}
+\label{eq:dirac-elm1}
+\end{equation}
 
+oder ersetze in freier Dirac-Gleichung \( \partial_\mu\rightarrow D_\mu \)  
 
-\[\boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\vec \alpha(\frac{\hbar}{i}\vec\nabla-e\vec A)\psi+\beta m c^2\psi+e\phi\psi}\]
+\begin{equation}
+\boxed{(i\gamma^\mu D_\mu - \frac{mc}{\hbar})\psi = 0}
+\label{eq:dirac-elm2}
+\end{equation}
 
-oder
-
-\[\boxed{(i\gamma^\mu D_\mu - \frac{mc}{\hbar})\psi = 0}\]
-
-beschreibt WW eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
+Diese Gleichung beschreibt Wechselwirkung eines Elektrons der Ladung e mit dem elektromagnetischen Feld.
 
 Notation: \(\vec \alpha\vec p\psi = \frac{\hbar}{i}\vec\alpha\vec\nabla\psi\)
 
 mit \(A=1...4\) \([\vec\alpha\vec p\psi]_A=\sum_{j=1}^3\sum_{B=1}^4\alpha_{jAB}\frac{\hbar}{i}\nabla_i\psi_B(\vec x,t) = \left[\ \begin{pmatrix} 0&\vec\sigma\vec p\\ \vec\sigma\vec p&0\end{pmatrix}\begin{pmatrix} \begin{pmatrix} \psi_1\\\psi_2\end{pmatrix} \\ \begin{pmatrix} \psi_3\\\psi_4\end{pmatrix}  \end{pmatrix} \right]_A\)
 
 
-Nichtrel. Grenzfall: \(E=mc^2+E_S\)
+Nichtrelativistischer Grenzfall: \(E=mc^2+E_S\) mit \(E_S=\)als Schrödigner Energie.
 
 Ansatz: 
-\[\psi(\vec x,t) = e^{i\frac{mc^2}{\hbar}t}\begin{pmatrix}\phi(\vec x,t)\\\chi(\vec,t)\end{pmatrix} =  e^{i\frac{mc^2}{\hbar}t}  e^{i\frac{E_S}{\hbar}t} \begin{pmatrix}\phi_E(\vec x,t)\\\chi_E(\vec,t)\end{pmatrix}\]
+\[\psi(\vec x,t) = e^{i\frac{mc^2}{\hbar}t}\begin{pmatrix}\phi(\vec x,t)\\\chi(\vec x,t)\end{pmatrix} =  e^{i\frac{mc^2}{\hbar}t}  e^{i\frac{E_S}{\hbar}t} \begin{pmatrix}\phi_E(\vec x)\\\chi_E(\vec x)\end{pmatrix}\]
 
-\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec pi \vec \chi\\ \vec \sigma \vec pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
+Einsetzen in die Dirac-Gleichung (\ref{eq:dirac-elm1}) für Teilchen im Elektromagnetischem Feld:
 
-mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \)
+\[\Rightarrow i\hbar\begin{pmatrix}\dot \phi\\ \dot\chi\end{pmatrix} + mc^2\begin{pmatrix} \phi\\ \chi\end{pmatrix} = c \begin{pmatrix}\vec \sigma \vec \pi \vec \chi\\ \vec \sigma \vec \pi \phi\end{pmatrix}+mc^2\begin{pmatrix} \phi\\ -\chi\end{pmatrix}+e\Phi \begin{pmatrix} \phi\\ \chi\end{pmatrix}\]
 
-\[\Rightarrow \chi: 2mc^2\chi+i\hbar \dot\chi - e\phi \chi = c\vec\sigma\vec\pi\phi\]
+mit \(\vec\pi = \vec p -e\vec A = \frac{\hbar}{i}\vec \nabla-e\vec A= \frac{\hbar}{i}\vec{\mathcal D} \) und \(\Phi\) als Skalares-Potential (\(\phi\))
 
-\[\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi\]
+\begin{equation} 
+\Rightarrow i\hbar\dot\phi = c \vec\sigma\vec\pi\chi + e\Phi \phi
+\label{eq:dirac-to-pauli-01}
+\end{equation}
 
-\[\chi \approx \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
+\begin{align}
+\Rightarrow  2mc^2\chi+i\hbar \dot\chi - e\Phi \chi &= c\vec\sigma\vec\pi\phi \\
+2mc^2\chi+\underbrace{i\hbar \frac{\partial}{\partial t}}_{=E_S}\chi - \underbrace{e\Phi}_{V} \chi &= c\vec\sigma\vec\pi\phi
+\label{eq:dirac-to-pauli-02}
+\end{align}
 
-(\(\chi = \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi\)) \(\chi\) ist kleine Komponente des Dirac Spinors. Einsetzen von \(\chi\):
+
+
+(\ref{eq:dirac-to-pauli-02}) vereinfacht ergibt:
+
+\[\chi =  \frac{1}{2mc^2+E_S-V} c\vec\sigma\vec\pi\phi \approx   \frac{1}{2mc^2} c\vec\sigma\vec\pi\phi\approx \frac{mv}{2mc}\phi = \frac{1}{2}\frac{v}{c}\phi\]
+
+ \(\chi\) ist eine kleine Komponente des Dirac Spinors. Einsetzen von \(\chi\) in (\ref{eq:dirac-to-pauli-01}):
 
 \[i\hbar \frac{\partial \phi}{\partial t} = \frac{c^2(\vec\sigma\vec\pi)^2}{2mc^2}\phi+V\phi\qquad (V=e\Phi)\]
 
-Berechnung von \((\vec\sigma\vec\pi)^2=-\hbar^2\underbrace{\sigma_i\sigma_j}_{\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\}}D_iD_j\) mit \([\sigma_i,\sigma_j]=i\hbar^2\epsilon_{ijk}\sigma_k \) und \( \sigma_{ij}\)
+Berechnung von \((\vec\sigma\vec\pi)^2=-\hbar^2\sigma_i\sigma_jD_iD_j\) mit \(\sigma_i\sigma_j =\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\} = i\hbar^2\epsilon_{ijk}\sigma_k+\delta_{ij}\):
 
 \[(\vec\sigma\vec\pi)^2=\vec\pi^2 -i\hbar^2\epsilon_{ijk}\sigma_k \underbrace{D_iD_j}_{\frac{1}{2}[D_i,D_j]} \]
 
 \[[D_i,D_j]=[\nabla_i-\frac{i}{\hbar}eA_i,\nabla_j-\frac{i}{\hbar}eA_j ] = -\frac{i}{\hbar}e(\underbrace{(\nabla_iA_j)}_{\vec\nabla\times\vec A}\underbrace{-(\nabla_j A_i)}_{\vec\nabla\times\vec A}\]
 
-\[\Rightarrow (\vec\sigma\vec\pi)^2 = \vec \pi^2 -\frac{1}{2}\hbar e \vec\sigma (\vec\nabla\times\vec A)2= \vec \pi^2 -2e\vec S\vec B \qquad (\vec S=\frac{\hbar}{2}\vec\sigma\]
+\[\Rightarrow (\vec\sigma\vec\pi)^2 = \vec \pi^2 -\frac{1}{2}\hbar e \vec\sigma (\vec\nabla\times\vec A)2= \vec \pi^2 -2e\vec S\vec B \qquad (\vec S=\frac{\hbar}{2}\vec\sigma)\]
 
 
 \[\rightarrow i\hbar \frac{\partial \phi}{\partial t} = \frac{\pi^2}{2m}\phi - \frac{e}{2m}2\vec S\vec B\phi + V\phi\]
@@ -357,14 +425,27 @@ Schwaches homogenes \(B\)-Feld: \(\vec A = \frac{1}{2}\vec B\times\vec r\)
 
 Magnetisches Moment des Elektrons: \(\vec\mu = \frac{e}{2m}(\vec L+2\vec S)\) \(g=2\) für geladenes Dirac-Fermion
 
+
+
 \subsection{Relativistische Korrekturen}
 
-Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{-E_st/\hbar}\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) \)
+Energieeigenzustände: \(\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x,t) = e^{-E_st/\hbar}\begin{pmatrix}\phi\\\chi\end{pmatrix} (\vec x) \)
 
 Dirac Gleichung ist äquivalent zu
 
-\[(2mc^2+E_S-V)\chi = c\vec\sigma\vec\pi\phi\]
-\[E_S\phi = c\vec\sigma\vec\pi\chi + V\phi \]
+
+\begin{equation}
+  \label{eq:3}
+  (2mc^2+E_S-V)\chi = c\vec\sigma\vec\pi\phi
+\end{equation}
+\begin{equation}
+  \label{eq:4}
+E_S\phi = c\vec\sigma\vec\pi\chi + V\phi  
+\end{equation}
+
+
+
+\(\chi\) wird Taylor-Entwickelt:
 
 \begin{align}
 \Rightarrow \chi &= \frac{1}{2mc^2+E_S-V}c\vec\sigma\vec\pi\phi \\
@@ -372,10 +453,34 @@ Dirac Gleichung ist äquivalent zu
 &\approx \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi
 \end{align}
 
+Einsetzen von \(\chi\) in (\ref{eq:4}):
+
+\begin{align}
+  \label{eq:5}
+E_S\phi &= c\vec\sigma\vec\pi \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi  + V\phi \\
+(E_S-V)\phi &= c\vec\sigma\vec\pi \frac{1}{2mc} (1-\frac{E_S-V}{2mc^2} +...)\vec\sigma\vec\pi\phi \\
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2} (E_S-V)\vec\sigma\vec\pi\phi 
+\end{align}
+
+Als Nebenrechnung:
+
 
 \[(E_S-V)\vec\sigma\vec\pi\phi =\vec\sigma\vec\pi(E_S-V)\phi + \vec\sigma\underbrace{[E_S-V,\vec\pi]}_{[\vec\pi,V]=\frac{\hbar}{i}(\vec\nabla V)}\phi \]
 
-Einsetzen in \(E_S \phi = ...\)
+Einsetzen:
+
+
+\begin{align}
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2}\left( \vec\sigma\vec\pi(E_S-V)\phi +\vec\sigma\frac{\hbar}{i}(\vec\nabla V)\phi\right)
+\end{align}
+
+Mit dem Term \((E_S-V)\phi = \vec\sigma\vec\pi \frac{1}{2m} (1-...)\vec\sigma\vec\pi\phi\) nur bis zur nullter Ordnung Taylor entwickelt eingesetzt:
+
+\begin{align}
+(E_S-V)\phi &= \vec\sigma\vec\pi \frac{1}{2m}\vec\sigma\vec\pi\phi -\vec\sigma\vec\pi \frac{1}{4m^2c^2}\left( \vec\sigma\vec\pi\cdot\vec\sigma\vec\pi \frac{1}{2m} \vec\sigma\vec\pi\phi   +\vec\sigma\frac{\hbar}{i}(\vec\nabla V)\phi\right) 
+\end{align}
+
+Und schlussendlich erhalten wir die erweiterte Pauli-Gleichung:
 
 \[(E_S-V)\phi = \frac{(\vec\sigma\vec\pi)^2}{2m}\phi - \frac{\vec\sigma\vec\pi}{4m^2c^2}\left(\frac{(\vec\sigma\vec\pi)^3}{2m} +\vec\sigma \frac{\hbar}{i}(\vec\nabla V)\right)\phi \]
 
@@ -388,23 +493,22 @@ Spezialfall:
 \[\Rightarrow E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \frac{\hbar}{i}\frac{1}{4m^2c^2}\underbrace{\sigma_i\sigma_j}_{i\epsilon_{ijk}\pi_k+\sigma_{ij}} p_ir_j\frac{1}{r}\frac{dV}{dr}\phi\]
 
 
-\[E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+\underbrace{(\vec\nabla)\cdot\vec\nabla}_{\text{nicht selbst adjungiert}}  \right)\phi\]
+\[E_S\phi = ( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V)\phi - \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+\underbrace{(\vec\nabla V)\cdot\vec\nabla}_{\text{nicht selbst adjungiert}}  \right)\phi\]
 
 
 Interpretation:
 
 \begin{itemize}
-\item  \(- \frac{p^4}{8m^3c^2}\) relativistischer Beitrag zur kin. Energie
+\item  \(- \frac{p^4}{8m^3c^2}\) relativistischer Beitrag zur kinetischen Energie
 
 \(E = \sqrt{(mc^2)^2+p^2c^2} = mc^2\sqrt{1+\frac{p^2}{(mc)^2}}= mc^2(1+\frac{1}{2}\frac{p^2}{m^2c^2}-\frac{1}{8}\frac{p^4}{m^4c^4}+...) = mc^2-\frac{p^2}{2m}-\frac{1}{8}\frac{p^4}{m^3c^2}\)
 
-\item \( \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi = \frac{1}{2m^2c^2}\frac{1}{r}\frac{dV}{dr}\vec L\vec S\phi = H_{LS} \) Korrekte Spin-Bahn Kopplung, incluive Thomas Präzessionsfaktor \(\frac{1}{2}\)
+\item \( \hbar \frac{1}{4m^2c^2}\vec\sigma(\vec r\times\vec p)\frac{1}{r}\frac{dV}{dr}\phi = \frac{1}{2m^2c^2}\frac{1}{r}\frac{dV}{dr}\vec L\vec S\phi = H_{LS} \) Korrekte Spin-Bahn Kopplung, incluive Thomas Präzessionsfaktor von \(\frac{1}{2}\).
 \end{itemize}
 
 
-\subsection{Dirac Gleichung und Pauli Gl incl. relativistische Korrekturen}
 
-\[i\hbar \frac{\partial \phi}{\partial t} H_\phi \phi\]
+\[i\hbar \frac{\partial \phi}{\partial t} =  H_\phi \phi\]
 
 
 mit 
@@ -413,71 +517,92 @@ mit
 
 \[H_r = -\frac{1}{8m}\left(\frac{\vec p^2}{2m}\right)^2\]
 
-\[H_{LC} = \frac{1}{2m^2c^2}\frac{1}{\gamma}\frac{dV}{d\gamma}\vec L\cdot\vec S\]
+\[H_{LS} = \frac{1}{2m^2c^2}\frac{1}{\gamma}\frac{dV}{d\gamma}\vec L\cdot\vec S\]
 
 \[\tilde H_D = \frac{\hbar^2}{4m^2c^2}((\nabla^2V)+(\vec\nabla V)\cdot\vec\nabla)\]
 
-\(\cdot\vec\nabla)\) nicht hermitesch
-
-Problem: Warhscheinlichkeits-Dichte ist
+Der Letze Term \((\vec\nabla V)\cdot\vec\nabla\) ist nicht hermitesch. Problem mit der Warhscheinlichkeits-Dichte:
 
 \begin{align}
-\rho &= \frac{j^0}{c}=\overline \psi\gamma^0psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
+\rho &= \frac{j^0}{c}=\overline \psi\gamma^0\psi = \psi^\dagger\psi = \sum_{i=1}|\psi_i|^2\\
 &=|\phi|^2 + |\chi|^2\\
 &=|\phi|^2+|\frac{\vec\sigma\cdot\vec p}{2mc}\phi|^2\\
-&=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi
-&\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\phi}|^2
+&=|\phi|^2+\phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi \\
+&\approx |\underbrace{(1+\frac{\vec p^2}{8m^2c^2})\phi}_{\varphi}|^2
 \end{align}
 
 Übergang zu 
 
-\[\phi = \Omega\phi = (1+\frac{\vec p^2}{8m^2c^2}+...)\phi\]
+\[\varphi = \Omega\phi = (1+\frac{\vec p^2}{8m^2c^2}+...)\phi\]
 
 Foldy-Wouthuysen Transformation. (Details: Bjorken-Drell relativ. QM)
 
-Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\phi}\)
+
+Ersetze \(E_S\phi = H_\phi \phi\) durch \(E_S\phi =\Omega E_S\phi = \underbrace{\Omega H_\phi\Omega^{-1}}_{H}\underbrace{\Omega\phi}_{\varphi}\)
 
 \begin{align}
 H&=(1+\frac{\vec p^2}{8m^2c^2})H_\phi (1-\frac{\vec p^2}{8m^2c^2}) \\
-&=H_\phi + [\frac{\vec p^2}{2m^2c^2},H_\phi]+...
+&=H_\phi + [\frac{\vec p^2}{2m^2c^2},H_\phi]+...\\
 &=H_\phi + [\frac{\vec p^2}{2m^2c^2},V]+...
 \end{align}
 
-NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} = [(\nabla^2 V)+2(\nabla,V)\nabla_i]\)
+NR: \([\frac{\vec p^2}{2m^2c^2},V]=-\frac{\hbar^2}{8m^2c^2}\underbrace{[\nabla_i\nabla_i,V]}_{\nabla_i\underbrace{[\nabla_i,V]}_{(\nabla_iV)}+\underbrace{[\nabla_i,V]}_{(\nabla_iV)}\nabla_i} =-\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\)
+
+\begin{align}
+H&=H_\phi -\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\\
+&=( \frac{\vec p^2}{2m} - \frac{p^4}{8m^3c^2}+V) - \hbar \frac{1}{2m^2c^2}\vec L\cdot\vec S\frac{1}{r}\frac{dV}{dr} + \frac{\hbar^2}{4m^2c^2}\left((\nabla^2 V)+(\vec\nabla V)\cdot\vec\nabla  \right)\\
+&\qquad -\frac{\hbar^2}{8m^2c^2} ((\nabla^2 V)+2(\nabla V)\nabla_i)\\
+&=\frac{\vec p^2}{2m}+V - \frac{p^4}{8m^3c^2} - \hbar \frac{1}{2m^2c^2}\vec L\cdot\vec S\frac{1}{r}\frac{dV}{dr} + \underbrace{\frac{\hbar^2}{8m^2c^2}\nabla^2 V}_{\text{Darwin-Term}}
+\end{align}
 
 
-\section{Hamilton Op. für Pauli Gl mit rel. Korrekturen}
 
 \[H= \frac{\vec p^2}{2m}+V+H_r+H_{LS}+H_D\]
 
-mit Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
+
+mit dem Darwin-Term \(H_D=\frac{h^2}{8m^2c^2}(\nabla^2 V)\)
 
 
-\subsection{Korrekturen zum Wasserstoff spektrum}
+
+
+\subsubsection{Korrekturen zum Wasserstoff Spektrum}
+
+Spaltet man den Hamilton-Operator in \(H_0\) und den \(V\) Term auf:
+
+\[H\phi=(\underbrace{\frac{\vec p^2}{2m}+V}_{H_0}\underbrace{ - \frac{p^4}{8m^3c^2} - \hbar \frac{1}{2m^2c^2}\vec L\cdot\vec S\frac{1}{r}\frac{dV}{dr} + \frac{\hbar^2}{8m^2c^2}\nabla^2 V}_{V})\phi\]
+
+So lassen sich Energiekorrekturen (hier bis zu 1 Ordnung) berechnen:
 
 \[E^{(0)}_n = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{2a_0n^2}\]
 
 \[\Delta E^{(1)}_n = \alpha^2 E^{(0)}_n \frac{1}{n}(\frac{1}{j+\frac{1}{2}}-\frac{3}{4n}) \]
 
-Aufspaltung von \(2p_{\frac{1}{2}}\)  \(2p_{\frac{3}{2}}\)
+\textbf{Feinstruktur-Aufspaltung} für  \(2p_{\frac{1}{2}}\)  \(2p_{\frac{3}{2}}\)
 
-gleiche Energie für \(2s_{\frac{1}{2}}\)  \(2p_{\frac{1}{2}}\)
+Entartung bleibt für \(2s_{\frac{1}{2}}\)  \(2p_{\frac{1}{2}}\) (d.h. gleiche Energie)
 
 
-\subsection{Ebene Wellen als Lösungen der freien Dirac Gl}
+\subsection{Ebene Wellen als Lösungen der freien Dirac Gleichung}
+
 
 \[\left(i\gamma^\mu\partial_\mu-\frac{mc}{\hbar}\right)\psi(x) = 0\]
+\[ \Leftrightarrow  i\gamma^\mu\partial_\mu\psi(x) = \frac{mc}{\hbar}\psi(x) \]
 
-Ebene Welle als Ansatz \(\psi = e^{-px/\hbar}w(p)\) mit \(w(p)\)-Spinor im Impulsraum
+Ebene Welle als Ansatz \(\psi(x) = e^{-px/\hbar}w(p)\) mit \(w(p)\)-Spinor im Impulsraum
 
 \begin{align}
-i\gamma^\mu\frac{\partial}{\partial x^\mu}\phi(x) &= i\gamma^\mu(-\frac{ip_\mu}{\hbar})\psi(x)\\
-&=\frac{1}{\hbar}\gamma^\mu p_\mu \psi(x) = \frac{mc}{\hbar}\psi(x)
+i\gamma^\mu\frac{\partial}{\partial x^\mu}\psi(x) &= i\gamma^\mu(-\frac{ip_\mu}{\hbar})\psi(x)\\
+&=\frac{1}{\hbar}\gamma^\mu p_\mu \psi(x)  \stackrel{\mathrm{!}}= \frac{mc}{\hbar}\psi(x)
 \end{align}
 
-Notation: \(\gamma^\mu p_\mu = \cancel a\)
+Notation: \(\gamma^\mu p_\mu = \cancel p\)
 
-\[\boxed{(\cancel p - mc)w(p) = 0}\]
+
+
+\begin{equation}
+  \label{eq:6}
+  \boxed{(\cancel p - mc)w(p) = 0}
+\end{equation}
 
 \subsubsection{Spezialfall: Teilchen in Ruhe}
 
@@ -486,17 +611,30 @@ Notation: \(\gamma^\mu p_\mu = \cancel a\)
 
 \[\rightarrow \cancel p = \frac{E}{c}\gamma^0 = \frac{E}{c} \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix} \]
 
-\[\Rightarrow \begin{pmatrix}\frac{E}{c}-mc&0&0&0\\ 0&\frac{E}{c}-m &0&0\\0&0&-\frac{E}{c}-mc&0\\0&0&0&-\frac{E}{c}-mc\end{pmatrix} w(\vec p) = 0\]
+Eingesetzt in (\ref{eq:6}) ergibt
 
-4 Lösungen zu 2EW
+
+\[\Rightarrow \begin{pmatrix}\frac{E}{c}-mc&0&0&0\\ 0&\frac{E}{c}-mc &0&0\\0&0&-\frac{E}{c}-mc&0\\0&0&0&-\frac{E}{c}-mc\end{pmatrix} w(\vec p) = 0\]
+
+
+4 Lösungen zu 2 Eigenwerten:
+
 
 \(E=+mc^2\) : \(w_1(0) =  \begin{pmatrix}1\\0\\0\\0\end{pmatrix}\), \(w_2(0) =  \begin{pmatrix}0\\1\\0\\0\end{pmatrix}\), 
 
 \(E=-mc^2\): \(w_3(0) =  \begin{pmatrix}0\\0\\1\\0\end{pmatrix}\), \(w_4(0) =  \begin{pmatrix}0\\0\\0\\1\end{pmatrix}\)
 
-\(\Rightarrow \) Lösungen mit negativer Energie \(\rightarrow \) Existenz von Positronen. 
+\(\Rightarrow \) Lösungen mit negativer Energie \(\rightarrow \) Existenz von Positronen (bzw. Antiteilchen). 
 
-\subsection{Lösung für Impuls ungleich 0}
+z.B. für ein Elektron mit Spin \(\uparrow\)
+
+\[ \psi(x) = e^{-px/\hbar}w_1(0) \]
+
+z.B. für ein Positron mit Spin \(\downarrow\)
+
+\[ \psi(x) = e^{-px/\hbar}w_4(0) \]
+
+\subsubsection{Lösung für Impuls ungleich 0}
 
 \begin{enumerate}
 \item[1)] Matrixgl. \(\cancel p w = mcw\) lösen
@@ -507,31 +645,37 @@ Notation: \(\gamma^\mu p_\mu = \cancel a\)
 
 \(x' = \Lambda x\)  mit \(x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu\)
 
-Bsp: Boost in z-Richtung: \(z' = \gamma(z-vt)\), \(t' = \gamma(t-\frac{v}{c^2}z)\), \(x' = x\), \(y'=y\)
+Bsp: Boost in z-Richtung: \(z' = \gamma(z-vt)\), \(t' = \gamma(t-\frac{v}{c^2}z)\), \(x' = x\), \(y'=y\) mit \(\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\)
 
-LT erhält relativ. Länge
+Lorenztranformation erhält relative Länge:
 
-\[x'x' = g_{\mu\nu}x^{'\mu}x^{'\nu} = \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma = x\cdot c = x^\rho x^\sigma g_{\sigma\rho}\]
+\[x'\cdot x' = g_{\mu\nu}x^{'\mu}x^{'\nu} = \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma = x\cdot x = x^\rho x^\sigma g_{\sigma\rho}\]
 
-Def. Eigenschaft einer LT
+Def. Eigenschaft einer Lorenztransformation
 
 \[\Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma}  \]
 
 oder \((\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}\)
 
-\(\Rightarrow det\Lambda = \pm 1\) (verallgemeinerung von orthogonalen Transf)
+\(\Rightarrow det\Lambda = \pm 1\) (Verallgemeinerung von orthogonalen Transformation)
 
-\subsubsection{infinitesimale LT}
+\subsubsection{Infinitesimale Lorenztransformation}
 
 Mit \(w^\rho_{\,\,\mu}\) infinitesimal
+
 \[\Lambda^\rho_{\,\,\mu} = g^\rho_{\,\,\mu}+w^\rho_{\,\,\mu} \]
 
 \begin{align}
-\Lambda^{\,\,\rho}_{\mu}\Lambda^\mu_{\,\,\sigma}  &= (g_\mu^{\,\,\rho}+w_\mu^{\,\,\rho})(g^\mu_{\,\,\sigma}+w^\mu_{\,\,\rho} \\
-g^\rho_{\,\,\sigma} &= g^\rho_{\,\,\sigma}+\underbrace{w_\sigma^{\,\,\rho}+w^\rho_{\,\,\sigma}}_{=0}+...
+\Lambda^{\,\,\rho}_{\mu}\Lambda^\mu_{\,\,\sigma}  &= (g_\mu^{\,\,\rho}+w_\mu^{\,\,\rho})(g^\mu_{\,\,\sigma}+w^\mu_{\,\,\rho}) \\
+&= g^\rho_{\,\,\sigma}+\underbrace{w_\sigma^{\,\,\rho}+w^\rho_{\,\,\sigma}}_{=0}+... \\
+& \stackrel{\mathrm{!}}= g^\rho_{\,\,\sigma}
 \end{align}
+\\
+\(\rightarrow w_{\sigma\rho}+w_{\rho\sigma}=0\)\\
+\\
+ \[ \rightarrow  w = \begin{pmatrix}0&w_{01}&w_{02}&w_{03}\\ -w_{10}&0&w_{12}&w_{13}\\-w_{20}&-w_{21}&0&w_{23}\\ -w_{30}&-w_{31}&-w_{32}&0\end{pmatrix} \]
 
-\(\rightarrow w_{\sigma\rho}+w_{\rho\sigma}=0\), \( \begin{pmatrix}0&w_{01}&w_{02}&w_{03}\\ -w_{01}&0&w_{12}&w_{13}\\ &&0&w_{23}\\ 0&0&0&0\\ \end{pmatrix} \)
+
 
 6 reelle freie Parameter  \(\Rightarrow \) 6 Generatoren
 
@@ -541,39 +685,53 @@ g^\rho_{\,\,\sigma} &= g^\rho_{\,\,\sigma}+\underbrace{w_\sigma^{\,\,\rho}+w^\rh
 
 \subsection{Kovarianz der Dirac Gleichung}
 
-inertialsystem:
-
-\begin{tabular}{cc}
+Inertialsystem:\\
+\\
+\begin{tabular}{c|c}
   IS&IS'\\
 \(x^\mu\)& \(x^{'\mu}=\Lambda^\mu_\nu x^\nu\)\\
-\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x) = 0\)
-\end{tabular}
+\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x') = 0\)
+\end{tabular}\\
+\\
 
-Zu zeigen: Es gibt zu jeder LT \(\Lambda\) eine lineare Abbildung \(S(\Lambda)\) der Spinoren: \(\psi'(x')=S(\Lambda)\psi(\Lambda^{-1}x^1)\)
+Zu zeigen: Es gibt zu jeder LT \(\Lambda\) eine lineare Abbildung \(S(\Lambda)\) der Spinoren:
+
+ \begin{align}
+\psi'(x')&=S(\Lambda)\psi(x)\\
+&=S(\Lambda)\psi(\Lambda^{-1}x')
+\end{align}
 
 Die Menge \(\{S(\Lambda)\}\) bilden Darstellung der Lorenzgruppe
 
-\[S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}\]
-
-\[\psi(x) = S(\Lambda^{-1})\psi'(x') \]
+\[\boxed{S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}}\]
 
 
+\[ (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\]
 
-\[S(\Lambda_1)  (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})S(\Lambda^{-1}) \psi'(x') = 0\]
+Einsetzen von \(\psi(x) = S(\Lambda^{-1})\psi'(x')\) und von links mit \(S(\Lambda)\) multiplizieren:
 
-\[\Leftrightarrow iS(\Lambda_1) \gamma^\mu S(\Lambda^{-1})\underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar})\psi'(x') = 0 \]
+\[S(\Lambda)  (i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})S(\Lambda^{-1}) \psi'(x') = 0\]
 
-NR:
+\[\Leftrightarrow \left(iS(\Lambda) \gamma^\mu S(\Lambda^{-1})\underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar}\right)\psi'(x') = 0 \]
 
-\(x^{'\nu}=\Lambda^\nu_{\,\,\rho}x^\rho \)
+NR: \(x^{'\nu}=\Lambda^\nu_{\,\,\rho}x^\rho \) \(\frac{\partial}{\partial x^\mu} =\underbrace{\frac{\partial x^{'\nu}}{\partial x^{\mu}}}_{\Lambda^\nu_{\,\,\mu}}\frac{\partial}{\partial x^{'\nu}} \)
 
-\(\frac{\partial}{\partial x^\mu} =\underbrace{\frac{\partial x^{'\nu}}{\partial x^{\mu}}}_{\Lambda^\nu_{\,\,\mu}}\frac{\partial}{\partial x^{'\nu}} \)
 
-ist äquivalent zur Dirac Gl in IS'
+
+\[\Leftrightarrow \left(iS(\Lambda) \gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}} - \frac{mc}{\hbar}\right)\psi'(x') = 0 \]
+
+
+
+ist äquivalent zur Dirac Gleichung im IS'
 
 \[S(\Lambda)\gamma^\mu S(\Lambda^{-1})\Lambda^\nu_{\,\,\mu} = \gamma^\nu\]
 
-\[\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda^{-1})  }* \]
+\begin{equation}
+  \label{eq:7}
+\Leftrightarrow \boxed{ \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)  }   
+\end{equation}
+
+
 
 Betrachte infinitesimalen Fall:
 
@@ -583,9 +741,9 @@ Betrachte infinitesimalen Fall:
 
 mit 4x4 Matrizen \(\sigma_{\alpha\beta} = - \sigma_{\beta\alpha} \) (6 Matrizen)
 
-\[ S(\Lambda^{-1}) = \mathbb 1 - \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
+\[ S(\Lambda^{-1}) = \mathbb 1 + \frac{i}{4} \sigma_{\alpha\beta}w^{\alpha\beta}  \]
 
-Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
+Einsetzen in (\ref{eq:7}): Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\alpha\beta} = -\omega^{\beta\alpha}\)
 
 \[\underbrace{\omega^\nu_{\,\,\mu}\gamma^{\mu}}_{\omega^{\alpha\beta}\frac{1}{2}(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha) } = -  \frac{i}{4}\omega^{\alpha\beta}(\gamma^\nu\sigma_{\alpha\beta}-\sigma_{\alpha\beta}\alpha^\nu) \]
 
@@ -593,17 +751,18 @@ Einsetzen in *: Term linear in \( \omega^{\mu\nu}  \) gilt für alle \(\omega^{\
 \[\Rightarrow \boxed{[\gamma^\nu,\sigma_{\alpha\beta}] = 2i(g^{\nu}_{\,\,\alpha}\gamma_\beta -g^{\nu}_{\,\,\beta}\gamma_\alpha)  }\]
 
 
-Lösung fir \(\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]\)
+Lösung für \(\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]\)
 
 Bew: 
 
 \begin{align}
-\frac{2}{i}[\gamma^\nu,\sigma_{\alpha\beta} &= \gamma^\nu(\gamma_\alpha\gamma_\beta - \gamma_\beta\gamma_\alpha)-(\gamma_\alpha\gamma_\beta-\gamma_\beta\gamma_\alpha)\gamma^\nu]+\gamma_\alpha\gamma^\nu\gamma_\beta - \gamma_\beta\gamma^\nu\gamma_\alpha-\gamma_\alpha\gamma^\nu\gamma_\beta + \gamma_\beta\gamma^\nu\gamma_\alpha \\
+\frac{2}{i}[\gamma^\nu,\sigma_{\alpha\beta}] &= \gamma^\nu(\gamma_\alpha\gamma_\beta - \gamma_\beta\gamma_\alpha)-(\gamma_\alpha\gamma_\beta-\gamma_\beta\gamma_\alpha)\gamma^\nu \\
+&=\gamma_\alpha\gamma^\nu\gamma_\beta - \gamma_\beta\gamma^\nu\gamma_\alpha-\gamma_\alpha\gamma^\nu\gamma_\beta + \gamma_\beta\gamma^\nu\gamma_\alpha \\
 &= 2\cdot 2 g^\nu_{\,\,\alpha}\gamma_\beta - 2\cdot 2 g^\nu_{\,\,\beta}\gamma_\alpha \\
 &= \frac{2}{i}2i(g^\nu_{\,\,\alpha}\gamma_\beta - g^\nu_{\,\,\beta}\gamma_\alpha)
  \end{align}
 
-\(\Rightarrow \sigma_{\alpha\beta}\) sind Generatoren für Spinordastellung der LG
+\(\Rightarrow \sigma_{\alpha\beta}\) sind Generatoren für Spinordastellung der Lorenz-Gruppe
 
 \[S(g+\omega) = 1+\frac{1}{8}[\gamma_\nu,\gamma_\nu]\omega^{\mu\nu}\]
 
@@ -632,13 +791,13 @@ Durch eine Gleichung zusammenfassen:
 
 \[\sigma^\dagger_{\alpha\beta} = \frac{i}{2}[ \gamma^0\gamma_\alpha\gamma^0, \gamma^0\gamma_\beta\gamma^0] = \gamma^0\sigma_{\alpha\beta}\gamma^0\]
 
-wegen \(\gamma^0=\mathbb 1\)
+wegen \(\gamma^0\cdot \gamma^0=\mathbb 1\)
 
 
 \begin{align}
 \Rightarrow  S^\dagger(\Lambda) &= e^{\gamma^0 A\gamma^0}\\
 &=\sum_{n=0}^\infty \frac{1}{n!}(\underbrace{\gamma^0 A \gamma^0}_{\gamma^0 A^n \gamma^0})^n \\
-&= \gamma^0 A \gamma^0 \\
+&= \gamma^0 e^A \gamma^0 \\
 &= \gamma^0 e^{+\frac{i}{4}\sigma^\dagger_{\mu\nu}\omega^{\mu\nu}}  \gamma^0 \\
 &= \gamma^0 S(\Lambda)^{-1}\gamma^0
 \end{align}
@@ -647,13 +806,20 @@ mit \(A = \frac{i}{4}\sigma_{\alpha\beta}\omega^{\alpha\beta}\)
 
 \[\boxed{S^\dagger (\Lambda) = \gamma^0S(\Lambda^{-1})\gamma^0 }\]
 
-\(\overline\psi'(x') = (\overline\psi'(x'))^\dagger\gamma^0 = \psi^\dagger(x)\psi^0\psi^0\S^\dagger(\Lambda)\gamma^0 =\overline\psi(x)\overbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}^{S(\Lambda^{-1})}  \)
+\begin{align}
+\overline\psi'(x') &= (\psi'(x'))^\dagger\gamma^0 = (S(\Lambda)\psi(x))^\dagger\gamma^0 = \psi(x)^\dagger S(\Lambda)^\dagger\gamma^0 \\
+&=\psi(x)^\dagger \mathbb 1 S(\Lambda)^\dagger\gamma^0 \\
+&=\psi(x)^\dagger \gamma^0\gamma^0 S(\Lambda)^\dagger\gamma^0 \\
+&= \overline\psi(x)\underbrace{\gamma^0S^\dagger(\Lambda)\gamma^0}_{S(\Lambda^{-1})}  \\
+\end{align}
 
-LT von \(j^\mu c\overline\psi(x)\gamma^\mu\psi(x)\)
+LT von \(j^\mu = c\overline\psi(x)\gamma^\mu\psi(x)\) mit Zuhilfenahme der Gleichung von (\ref{eq:7})
 
 \begin{align}
 j^{\mu'}(x') &= c\overline\psi'(x')\gamma^\mu\psi'(x') = c\overline\psi(x)\underbrace{S(\Lambda^{-1})\gamma^\mu S(\Lambda)}_{\Lambda^\mu_{\,\,\alpha}\gamma^\alpha}\psi(x)\\
-&=\Lambda^\mu_{\,\,\alpha}(c\overline\psi'(x')\gamma^\alpha\psi(x)) = \Lambda^\mu_{\,\,\alpha}j^\alpha(x)
+&=c\overline\psi(x)\Lambda^\mu_{\,\,\alpha}\gamma^\alpha\psi(x)\\
+&=\Lambda^\mu_{\,\,\alpha}(c\overline\psi(x)\gamma^\alpha\psi(x))\\
+&= \Lambda^\mu_{\,\,\alpha}j^\alpha(x)
 \end{align}
 
 \(\Rightarrow j^\mu(x)\) ist 4-Vektorfeld
@@ -664,7 +830,8 @@ Kontinuitätsgleichung \(\frac{1}{c}\frac{\partial(c \rho) }{\partial t} + \vec\
 
 Andere Bilineare: z.B.
 
-\[\rho(x) = \overline \psi(x)\psi(x) \rightarrow \psi'(x') = \overline \psi'(x')\psi'(x') = \overline \psi'(x')\mathcal 1 \psi'(x') = \overline \psi'(x') S(\Lambda^{-1}S(\Lambda) \psi'(x') = \overline \psi(x)\psi(x) = \rho(x) \]
+\[\rho(x) = \overline \psi(x)\psi(x)\]
+\[ \rightarrow \rho'(x')=\overline \psi'(x')\psi'(x') = \overline \psi'(x')\mathbb 1 \psi'(x') = \overline \psi'(x') S(\Lambda^{-1})S(\Lambda) \psi'(x') = \overline \psi(x)\psi(x) = \rho(x) \]
 
 \(\Rightarrow \rho(x)\) ist ein Skalares Feld
 
@@ -705,10 +872,16 @@ z.B. \(\gamma_5\gamma^2 = - i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^2 = - i\gamm
 
 \[\Rightarrow [\gamma_5,\sigma^{\mu\nu}]=0 \Rightarrow [\gamma_5,S(\Lambda)]=0\]
 
-\[\overline\psi(x)\gamma_5\psi(x) \equiv Skalar\]
+\(\overline\psi(x)\gamma_5\psi(x) \) Transformiert sich wie ein Skalar: \(\overline\psi'(x')\gamma_5\psi'(x') = \overline\psi(x)S^{-1}(\Lambda)\gamma_5 S(\Lambda)\psi(x) = \overline\psi(x)\gamma_5 \psi(x) \)
+\\
+\(\overline \psi(x) \gamma^\mu\gamma_5 \psi(x) \) Transformiert sich wie ein Vektor:
 
-
-\[\overline \psi \gamma^\mu\psi(x) \equiv Vektor \]
+\begin{align}
+\overline \psi'(x') \gamma^\mu\gamma_5 \psi'(x') &= \overline \psi(x)S(\Lambda^{-1}) \gamma^\mu\gamma_5S(\Lambda)\psi(x)\\
+&= \overline \psi(x)\underbrace{ S(\Lambda^{-1}) \gamma^\mu S(\Lambda)}_{ \Lambda^\mu_{\,\,\alpha}\gamma^\alpha } \gamma_5 \psi(x)\\
+&= \overline \psi(x)\Lambda^\mu_{\,\,\alpha}\gamma^\alpha \gamma_5 \psi(x)\\
+&=\Lambda^\mu_{\,\,\alpha}[ \overline \psi(x)\gamma^\alpha \gamma_5 \psi(x) ]
+\end{align}
 
 Pseudo-/Axial wegen \underline{Paritätstransformation} (spezielle Lorenztrasformation)
 
@@ -718,7 +891,7 @@ Pseudo-/Axial wegen \underline{Paritätstransformation} (spezielle Lorenztrasfor
 
 Transformation von Spinoren: brauchen 4x4 Matrix P
 
-\[P^{-1}\gamma P = \Lambda^\mu_{\,\,\nu}\gamma^\nu = \gamma_\nu\]
+\[P^{-1}\gamma^\nu P = \Lambda^\mu_{\,\,\nu}\gamma^\nu = \gamma_\nu\]
 
 
 Bei Spinoren:
@@ -729,29 +902,38 @@ Bei Spinoren:
 
 \[\Rightarrow P^{-1}\gamma_5 P = \gamma^0\gamma_5\gamma^0 = -\gamma^0\gamma^0\gamma_5 = -\gamma_5\]
 
-\(\Rightarrow \overline\psi(x) \gamma_5\psi(x)\) ist ungerade und Permutation.
-
+\(\Rightarrow \overline\psi(x) \gamma_5\psi(x)\) ist ungerade unter Permutation.\\
+\\
 \underline{Anwendung}: Paritätsverletzung in der schwachen Wechselwirkung. \(\Rightarrow \) z.B. \(\mu^-\)-Zerfall
 
-\[\mu^-(P.) \rightarrow \nu_\mu(P_i) + e^-(k_1) + \vec \nu_e(k_2)\]
+\[\mu^-(P) \rightarrow \nu_\mu(P_i) + e^-(k_1) + \overline \nu_e(k_2)\]
 
 
  \includegraphics[width=0.75\textwidth]{kap06_01.png}
 
 
-\[T= \frac{G_F}{\sqrt{2}}\underbrace{  \overline\psi(P_2)\gamma^\mu(1-\gamma_5)\psi(P_1)}_{J^{\text{myon}}} \underbrace{\overline\psi(k_1)\gamma_\mu(1-\gamma_5)\psi(k_2)}_{J^{\text{elektron}}}\]
+
+
+\[T= \frac{G_F}{\sqrt{2}}\underbrace{  \overline\psi(p_2)\gamma^\mu(1-\gamma_5)\psi(p_1)}_{J^{\text{myon}}} \underbrace{\overline\psi(k_1)\gamma_\mu(1-\gamma_5)\psi(k_2)}_{J^{\text{elektron}}}\]
 
 
 \(J^{\text{myon}}\cdot J^{\text{elektron}} = \text{Lorenz-Skalar?}\) \(\rightarrow \) Parität:
 
-\[T\rightarrow T' =\frac{G_F}{\sqrt{2}} \overline\psi(P_2)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma^\mu (1+\gamma_5)} P \psi(P_1)   \overline\psi(k_1)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)}_{\gamma_\mu (1+\gamma_5)} P \psi(k_2) \neq T\]
+\begin{align}
+T\rightarrow T' &=\frac{G_F}{\sqrt{2}} \overline\psi'(p_2')\gamma^\mu(1-\gamma_5) \psi'(p_1')   \overline\psi'(k_1')\gamma^\mu(1-\gamma_5) \psi'(k_2') \\
+&=\frac{G_F}{\sqrt{2}} \overline\psi(p_2)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)P}_{\gamma^\mu (1+\gamma_5)}  \psi(p_1)   \overline\psi(k_1)\underbrace{P^{-1}\gamma^\mu(1-\gamma_5)P}_{\gamma_\mu (1+\gamma_5)} \psi(k_2) \\
+&=\frac{G_F}{\sqrt{2}} \overline\psi(p_2)\gamma^\mu (1+\gamma_5) \psi(p_1)   \overline\psi(k_1)\gamma_\mu (1+\gamma_5) \psi(k_2)\\
+ &\neq T\\
+\end{align}
 
 \(\beta\)-Zerfall: sehr ähnlich, jedoch Koeffizienten \(c_\mu,c_\lambda\) für Nukleonen
 
 
-\section{Bedeutung der omega Parameter}
+\section{Die Bedeutung der omega Parameter}
 
-\[S(\Lambda) = e^{-\frac{1}{4}(\omega^{12}\sigma_{12}+\omega^{22}\sigma_{21})}= e^{-\frac{i}{2}\omega^{12}\sigma_{12}}\]
+
+
+\[S(\Lambda) = e^{-\frac{i}{4}(\omega^{12}\sigma_{12}+\omega^{21}\sigma_{21})}= e^{-\frac{i}{2}\omega^{12}\sigma_{12}}\]
 
 \[\frac{1}{2}\sigma_{12} = \frac{1}{2}\frac{i}{2}[\gamma_1,\gamma_2] = \frac{i}{4}\underbrace{\left[ \begin{pmatrix} 0&-\sigma_1\\   \sigma_1&0 \end{pmatrix}, \begin{pmatrix} 0&-\sigma_2\\   \sigma_2&0 \end{pmatrix} \right]}_{=  \begin{pmatrix} -[\sigma_1,\sigma_2]&0\\  0&- [\sigma_1,\sigma_2] \end{pmatrix}  } =  \begin{pmatrix} \frac{\sigma_3}{2}&0\\0& \frac{\sigma_3}{2} \end{pmatrix} = \frac{S_z}{\hbar} \]
 
@@ -760,13 +942,13 @@ mit \(\gamma_5 = \begin{pmatrix} 0&1\\   1&0 \end{pmatrix} \) allgemeiner:
 
 \[\frac{1}{2}\sum_k = \frac{S_k}{\hbar} = \frac{1}{4} \epsilon^{ijk}\sigma_{ij} = \frac{1}{2} \gamma_5\alpha_k\]
 
-\(\omega_1\) und \(\omega_3\) sind EZ von \(S_z\) zu \(+\frac{\hbar}{2}\); \(\omega_2\) und \(\omega_4\) sind EZ von \(S_z\) zu \(-\frac{\hbar}{2}\);
-
-Jetzt boost in Bezugssystem mit Geschwindigkeit \(\vec v\)
-
+\(\omega_1\) und \(\omega_3\) sind EZ von \(S_z\) zu \(+\frac{\hbar}{2}\); \(\omega_2\) und \(\omega_4\) sind EZ von \(S_z\) zu \(-\frac{\hbar}{2}\);\\
+\\
+Jetzt boost in Bezugssystem mit Geschwindigkeit \(\vec v\)\\
+\\
 Dazu
 
-\[\omega^{\mu\nu}   =\begin{pmatrix} 0&+n_1&+n_2&+n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix}\vec n^2 = 1 \]
+\[\omega^{\mu\nu}   =\omega\cdot\begin{pmatrix} 0&+n_1&+n_2&+n_3\\  -n_1&0&0&0\\   -n_2&0&0&0\\  -n_3&0&0&0 \end{pmatrix},\qquad \vec n^2 = 1 \]
 
 \[ S(\Lambda) = e^{-\frac{i}{4}\omega^{\mu\nu}\sigma_{\mu\nu}}  = e^{-\frac{i}{2}\sum_j\omega^{0j}\sigma_{0j}} = e^{-\frac{1}{2}\omega \vec n\vec \alpha}  \]
 
@@ -781,7 +963,18 @@ Spezialfall \(n_1 = 1, n_2=n_3 = 0\)
 
 \[I^2 = \begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix};\qquad I^3=I;\qquad etc. \]
 
-\[\Lambda = e^{\omega I} = cosh(I\omega) + sinh(I\omega) =  \begin{pmatrix} cosh\omega&-sinh\omega&0&0\\ -sinh\omega&cosh\omega&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} \]
+mit \( e^x = \frac{e^x}{2}+ \frac{e^x}{2} + \frac{e^{-x}}{2} - \frac{e^{-x}}{2} = \frac{e^x+e^{-x}}{2} + \frac{e^x-e^{-x}}{2} = \cosh(x)+\sinh(x)\)
+
+\begin{align}
+\Lambda &= e^{\omega I} = \cosh(I\omega) + \sinh(I\omega) \\
+&=\sum^{\infty}_{k=0}\frac{(\omega I)^{2k}}{(2k!)}+\sum^{\infty}_{k=0}\frac{(\omega I)^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + \sum^{\infty}_{k=1}\frac{(\omega I)^{2k}}{(2k!)}+\sum^{\infty}_{k=0}\frac{(\omega I)^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k!)}+ I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\left(\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k!)}+\frac{\omega^0}{(0)!}- \frac{\omega^0}{(0)!}\right)+I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\left(\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k}}{(2k!)}}_{cosh(\omega)}-\frac{\omega^0}{(0)!}\right)+I\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!}}_{sinh(\omega)} \\
+&=\mathbb 1 + I^2\left(\cosh(\omega)-1\right)+I\cdot \sinh(\omega) \\
+&=  \begin{pmatrix} cosh\omega&-sinh\omega&0&0\\ -sinh\omega&cosh\omega&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} 
+\end{align}
 
 vergleiche \(x^{'\nu} = \Lambda^\nu_{\,\,\mu}x^\mu\)
 
@@ -809,13 +1002,13 @@ Lösung mit \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega(\vec p)\)
 
 \(\vec p\) in Ruhe
 
-\[E = +cm^2\qquad \omega_1 = \begin{pmatrix} 1\\ 0 \\ 0\\ 0 \end{pmatrix},\qquad \omega_2(0) = \begin{pmatrix} 0\\ 1 \\ 0\\ 0 \end{pmatrix} \]
+\[E = +mc^2\qquad \omega_1(0) = \begin{pmatrix} 1\\ 0 \\ 0\\ 0 \end{pmatrix},\qquad \omega_2(0) = \begin{pmatrix} 0\\ 1 \\ 0\\ 0 \end{pmatrix} \]
 
-\[E = -cm^2\qquad \omega_3 = \begin{pmatrix} 0\\ 0 \\ 1\\ 0 \end{pmatrix},\qquad  \omega_4(0) = \begin{pmatrix} 0\\ 0 \\ 0\\ 1 \end{pmatrix} \]
+\[E = -mc^2\qquad \omega_3(0) = \begin{pmatrix} 0\\ 0 \\ 1\\ 0 \end{pmatrix},\qquad  \omega_4(0) = \begin{pmatrix} 0\\ 0 \\ 0\\ 1 \end{pmatrix} \]
 
 Besser für Teilchenwellenfunktionen immer \(E>0\), d.h.
 
-\[p^\mu = (\frac{E}{2},\vec p) = (+\sqrt{m^2c^2+\vec p^2},\vec p)\]
+\[p^\mu = (\frac{E}{c},\vec p) = (+\sqrt{m^2c^2+\vec p^2},\vec p)\]
 
 Lsg pos. Energie \(\psi(x) = e^{-i\frac{px}{\hbar}}\omega_i(\vec p)\) mit i=1,2
 
@@ -830,7 +1023,7 @@ Jetzt \(\omega_i(\vec p)\) durch boost von \(\omega_i(0)\) entlang der \(\vec p\
 ungestricheltes System = Ruhesystem des Teilchens
 gesticheltes System = Teilchen bewegt sich in \(\vec p \)-Richtung
 
-\(\Rightarrow \) boosst in \(-\vec p\)-Richtung im Teilchen in Bewegung zu setzen
+\(\Rightarrow \) boost in \(-\vec p\)-Richtung um Teilchen in Bewegung zu setzen
 
 \[\Rightarrow \omega_\nu(\vec p) = S(\Lambda)\omega_\nu(0) = e^{\frac{1}{2}\omega\hat p\vec\alpha}\omega_\nu(0)  \]
 
