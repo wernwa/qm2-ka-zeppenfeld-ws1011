@@ -6,9 +6,23 @@
 \setcounter{chapter}{6}
 \chapter{Quantisierung des Strahlungsfeldes}
 
+Wiederholung (siehe  http://de.wikipedia.org/wiki/Maxwell-Gleichungen) :\\
+\\
+\begin{tabular}{llp{7cm}}
+  \textbf{Name}&\textbf{SI}&\textbf{Physikalischer Bedeutung}\\
+\\
+Gaußsches Gesetz & \( \vec \nabla\cdot\vec E = \frac{\rho}{\epsilon_0}  \)& Elektrische Feldlinien divergieren voneinander unter Anwesenheit elektrischer Ladung, die Ladung ist Quelle des elektrischen Feldes.\\
+\\
+Gaußsches Gesetz für Magnetfelder & \( \vec \nabla\cdot\vec B = 0  \) &Magnetische Feldlinien divergieren nicht, das magnetische Feld ist quellenfrei; es gibt keine magnetischen Monopole.\\
+\\
+Induktionsgesetz von Faraday& \(\vec\nabla\times\vec E = - \frac{\partial \vec B}{\partial t} \)&Änderungen der magnetischen Flussdichte führt zu einem elektrischen Wirbelfeld.\\
+\\
+Erweitertes ampèresches Gesetz& \( \vec\nabla\times\vec B = \mu_0\vec j + \mu_0\epsilon_0 \frac{\partial \vec E}{\partial t}  \)&Elektrische Ströme – einschließlich des Verschiebungsstroms – führen zu einem magnetischen Wirbelfeld.
+\end{tabular}\\
+\\
 Potentiale:
 
-\[\vec B = \vec v \times \vec A\]
+\[\vec B = \vec \nabla \times \vec A\]
 
 \[\vec E = -\vec \nabla \phi - \frac{\partial \vec A}{\partial t}\]
 
@@ -18,7 +32,7 @@ Maxwell \(\Rightarrow \)
 
 \begin{align}
 \vec \nabla \vec E &= - \vec \nabla^2\phi - \frac{\partial}{\partial t}\vec \nabla\cdot\vec A\\
-&= \underbrace{(\frac{1}{c^2}\frac{\partial}{\partial t} - \nabla^2)}_{\square}\phi - \frac{\partial}{\partial t}(\nabla\cdot\vec A + \frac{1}{c^2}\frac{\partial\phi}{\partial t}) = \frac{\rho}{\epsilon_0}
+&= \underbrace{(\frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2)}_{\square}\phi - \frac{\partial}{\partial t}(\nabla\cdot\vec A + \frac{1}{c^2}\frac{\partial\phi}{\partial t}) = \frac{\rho}{\epsilon_0}
 \end{align}
 
 \[\vec \nabla\times\vec B = \mu_0\vec j + \frac{1}{c^2}\frac{\partial\vec E}{\partial t} \Leftrightarrow  \]
@@ -35,7 +49,7 @@ Zunächst betrachte freier Fall \(\rho =0,\vec j = 0\Rightarrow \phi=0 \)
 
 \[\Rightarrow  \boxed{\square \vec A = 0} \]
 
-vergleiche Klein-Gorddon-Gleichung
+vergleiche Klein-Gorddon-Gleichung \( \left(\square +\left(\frac{mc}{\hbar}\right)^2\right)\psi = 0 \)
 
 Lösung: ebene Wellen
 
@@ -45,13 +59,13 @@ Lösung: ebene Wellen
 \[\square \vec A = 0 \Leftrightarrow  -\frac{\omega^2}{c^2}+\vec k^2 = 0\Leftrightarrow \omega = c|\vec k| \]
 
 
-Eichbed: \(\nabla\vec A = 0 \Leftrightarrow i\vec k\vec A_0 = 0 \Rightarrow \vec A_0 \bot \vec k \Rightarrow  \) transversale Wellen
+Eichbedingung: \(\nabla\vec A = 0 \Leftrightarrow i\vec k\vec A_0 = 0 \Rightarrow \vec A_0 \bot \vec k \Rightarrow  \) transversale Wellen
 
 Klassische Energie des Strahlungsfeldes
 
-\[H_{rad} = \frac{1}{2}\int (\epsilon_0\vec E ^2 + \frac{1}{\mu_0}\vec B^2)d^2\vec x\]
+\[H_{rad} = \frac{1}{2}\int (\epsilon_0\vec E ^2 + \frac{1}{\mu_0}\vec B^2)d^3\vec x\]
 
-in endlichen Kasten mit periodischen Randbedingungen
+in einem endlichen Kasten mit periodischen Randbedingungen
 
 Forderung:
 
@@ -61,7 +75,7 @@ usw.
 
 Lösungen sind
 
-\[\vec A(\vec x,t) = \vec f_{r,\vec k}(\vec x)e^{-i\omega t} = (\frac{1}{\sqrt{V}}\vec \epsilon_r(k) e^{i\vec k\vec x} )e^{i\omega t} \]
+\[\vec A(\vec x,t) = \vec f_{r,\vec k}(\vec x)e^{-i\omega t} = \underbrace{\frac{1}{\sqrt{V}}\vec \epsilon_r(k) e^{i\vec k\vec x} }_{\vec f_{r,\vec k}(\vec x) }e^{-i\omega t} \]
 \[\vec k = \frac{2\pi}{L}(n_1,n_2,n_3)\neq 0\qquad n_i\in \mathbb Z\]
 
 
@@ -75,11 +89,11 @@ Wähle \(\vec \epsilon_r(\vec k)\) so dass \(\vec \epsilon_1, \vec \epsilon_2,\v
 
 \(\vec A(\vec x,t)\) darstellbar als Fourierreihe
 
-\[\vec A(\vec x,t) = \sum_{r,\vec k}\sqrt{ \frac{\hbar}{2\epsilon_0 V\omega_k}}\left[ a_r(\vec k) e^{i(\vec k\vec x-\omega t} + a_r^*(\vec k) e^{-i(\vec k\vec x-\omega t}   \right]\vec \epsilon_r(\vec k)  \]
+\[\vec A(\vec x,t) = \sum_{r,\vec k}\sqrt{ \frac{\hbar}{2\epsilon_0 V\omega_k}}\left[ a_r(\vec k) e^{i(\vec k\vec x-\omega t)} + a_r^*(\vec k) e^{-i(\vec k\vec x-\omega t)}   \right]\vec \epsilon_r(\vec k)  \]
 
-\(\sqrt{ \frac{\hbar}{2\epsilon_0 V\omega_k}}\) Faktor damit \(a_r(\vec k)\) dimensionslos sind. Einheiten: \([\vec A] = [\vec E\cdot\text{Zeit}] 0 \frac{N}{c}s\)
+\(\sqrt{ \frac{\hbar}{2\epsilon_0 V\omega_k}}\) Faktor damit \(a_r(\vec k)\) dimensionslos sind. Einheiten: \([\vec A] = [\vec E\cdot t] = \frac{N}{C}s\)
 
-\[[\frac{\hbar}{\epsilon_0 V\omega}] = \frac{Nms}{(\frac{C^2}{Nm^2}m^3 \frac{1}{s}} = \frac{N^2s^2}{C^2}\qquad \checkmark\]
+\[[\frac{\hbar}{\epsilon_0 V\omega}] = \frac{Nms}{\frac{C^2}{Nm^2}m^3 \frac{1}{s}} = \frac{N^2s^2}{C^2}\qquad \checkmark\]
 
 
 \[\vec A(\vec x,t ) = \sum_{r,\vec k} \sqrt{ \frac{\hbar}{2\epsilon_0 \omega_k}} \left[\vec f_{r,\vec k}(\vec x) a_r(\vec k,t)  + \vec f_{r,-\vec k}(\vec x)  a_r^*(\vec k,t)   \right] \]
@@ -111,7 +125,7 @@ mit \(\delta_r=\pm 1\)
 Einsetzen in \(H_{rad}\)
 
 \begin{align}
-H_{rad} &= \frac{\epsilon_0}{2}\sum_{r,\vec k}\{ (a_r(\vec k,t) -delta_r a^*_rr(-\vec k,t))(\delta_r a_r(-\vec k,t)-a^*_r(\vec k,t))(-\omega^2_k)\\
+H_{rad} &= \frac{\epsilon_0}{2}\sum_{r,\vec k}\{ (a_r(\vec k,t) -\delta_r a^*_rr(-\vec k,t))(\delta_r a_r(-\vec k,t)-a^*_r(\vec k,t))(-\omega^2_k)\\
 &+(a_r(\vec k,t)+\delta_r a_r(-\vec k,t) + a^*_r(\vec k,t) )\underbrace{(c\vec k)^2}_{\omega^2_k}    \}  \\
 &=\epsilon_0 \sum_{r,\vec k} \frac{\hbar}{2\epsilon_0\omega_k} \omega_k^2 (a_r(\vec k,t)a^*_rr(\vec k,t)+a^*_rr(+\vec k,t)a^*_rr(+\vec k,t))\\
 &= \sum_{r,\vec k} \hbar\omega_k \frac{1}{2}(a_r(\vec k)a^*_r(\vec k) + a^*_r(\vec k)a_r(\vec k))
@@ -123,19 +137,19 @@ vergleiche mit Harmonischen Oszillator \(H = \hbar\omega \frac{1}{2}(a^\dagger a
 
 \subsection{Spektrum des quantisierten Strahlungsfeldes}
 
-Für jeden Mode \(\vec k, r\)
-
-1 Phonton \(E= \hbar\omega_k\)
-2 Phonton \(E= 2\hbar\omega_k\)
-\(n(\vec k,r)\) Phonton \(E= \hbar\omega_k n(\vec k,r)\)
-
+Für jeden Mode \(\vec k, r\)\\
+\\
+1 Phonton \(E= \hbar\omega_k\)\\
+2 Phonton \(E= 2\hbar\omega_k\)\\
+\(n(\vec k,r)\) Phonton \(E= \hbar\omega_k n(\vec k,r)\)\\
+\\
 
 Quantisierungsbedingung für das Strahlungsfeld, \(a_r(\vec k) , a^\dagger_r(\vec k)\) als Auf und Absteigeoperatoren:
 
 \[[a_r(\vec k), \vec a^\dagger_s(\vec k')] = \delta_{rs}\delta_{\vec k,\vec k'}\]
 \[[a_r(\vec k), \vec a_s(\vec k')] = 0\]
 
-\[H_{rad} = \sum_{r,\vec k} \hbar\omega_k(a_r^\dagger (\underbrace{\vec k)a_r(\vec k)}_{N_r(\vec k)} +\frac{1}{2})\]
+\[H_{rad} = \sum_{r,\vec k} \hbar\omega_k(\underbrace{a_r^\dagger (\vec k)a_r(\vec k)}_{N_r(\vec k)} +\frac{1}{2})\]
 
 Grundzustand : \(|0\rangle \) mit \(a_r(\vec k) |0\rangle  = 0\) hat Energie
 
