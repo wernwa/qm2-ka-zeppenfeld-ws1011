@@ -323,7 +323,7 @@ Differenz der beiden Gleichungen \(\ref{eq:1}-\ref{eq:2}\):
 Kovariante Form des Warhscheinlichkeits-Stroms
 
 \begin{align}
-j^\mu &= (c\rho ,c\vec j )\\
+j^\mu &= (c\rho ,\vec j )\\
 &= (c\underbrace{\psi^\dagger\psi}_{\equiv \rho} ,c\psi^\dagger\beta\beta\vec\alpha\psi )\\
 &= (c\psi^\dagger\underbrace{\beta\gamma^0}_{\mathbb 1}\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
 &= c\psi^\dagger \beta\gamma^\mu \psi\\
@@ -968,10 +968,10 @@ mit \( e^x = \frac{e^x}{2}+ \frac{e^x}{2} + \frac{e^{-x}}{2} - \frac{e^{-x}}{2} 
 \begin{align}
 \Lambda &= e^{\omega I} = \cosh(I\omega) + \sinh(I\omega) \\
 &=\sum^{\infty}_{k=0}\frac{(\omega I)^{2k}}{(2k!)}+\sum^{\infty}_{k=0}\frac{(\omega I)^{2k+1}}{(2k+1)!} \\
-&=\omega^0 I^0 + \sum^{\infty}_{k=1}\frac{(\omega I)^{2k}}{(2k!)}+\sum^{\infty}_{k=0}\frac{(\omega I)^{2k+1}}{(2k+1)!} \\
-&=\omega^0 I^0 + I^2\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k!)}+ I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
-&=\omega^0 I^0 + I^2\left(\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k!)}+\frac{\omega^0}{(0)!}- \frac{\omega^0}{(0)!}\right)+I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
-&=\omega^0 I^0 + I^2\left(\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k}}{(2k!)}}_{cosh(\omega)}-\frac{\omega^0}{(0)!}\right)+I\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!}}_{sinh(\omega)} \\
+&=\omega^0 I^0 + \sum^{\infty}_{k=1}\frac{(\omega I)^{2k}}{(2k)!}+\sum^{\infty}_{k=0}\frac{(\omega I)^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k)!}+ I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\left(\sum^{\infty}_{k=1}\frac{\omega^{2k}}{(2k)!}+\frac{\omega^0}{(0)!}- \frac{\omega^0}{(0)!}\right)+I\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!} \\
+&=\omega^0 I^0 + I^2\left(\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k}}{(2k)!}}_{cosh(\omega)}-\frac{\omega^0}{(0)!}\right)+I\underbrace{\sum^{\infty}_{k=0}\frac{\omega^{2k+1}}{(2k+1)!}}_{sinh(\omega)} \\
 &=\mathbb 1 + I^2\left(\cosh(\omega)-1\right)+I\cdot \sinh(\omega) \\
 &=\begin{pmatrix} 1&0&0&0\\ 0&1&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} + \begin{pmatrix} \cosh(\omega)-1&0&0&0\\ 0&\cosh(\omega)-1&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix} +\begin{pmatrix} 0&-\sinh(\omega)&0&0\\ -\sinh(\omega)&0&0&0 \\ 0&0&0&0\\ 0&0&0&0 \end{pmatrix} \\
 &=  \begin{pmatrix} cosh\omega&-sinh\omega&0&0\\ -sinh\omega&cosh\omega&0&0 \\ 0&0&1&0\\ 0&0&0&1 \end{pmatrix} 
@@ -980,13 +980,13 @@ mit \( e^x = \frac{e^x}{2}+ \frac{e^x}{2} + \frac{e^{-x}}{2} - \frac{e^{-x}}{2} 
 vergleiche \(x^{'\nu} = \Lambda^\nu_{\,\,\mu}x^\mu\)
 
 
-\[x^{0'} = cosh\omega(x^0-tanh\omega x') = \gamma(ct-\frac{v}{2}x)\]
+\[x^{0'} = cosh(\omega)(x^0-tanh(\omega) x^{1}) = \gamma(ct-\frac{v}{c^2}x)\]
 
-\[x^{''} = cosh\omega(x'-tanh\omega x^0) = \gamma(x-\frac{v}{2}ct)\]
+\[x^{1'} = cosh(\omega)(x^{1}-tanh(\omega) x^0) = \gamma(x-\frac{v}{c}ct)\]
 
 \[\Rightarrow tanh \omega = \frac{v}{c} = \frac{|\vec p|^2}{E}\]
 
-\[cosh\omega =\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} = \frac{E}{m^2} \]
+\[cosh\omega =\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} = \frac{E}{mc^2} \]
 
 
 \(\Rightarrow \) Allgemeiner Fall \(\vec n = \hat v\); \(tanh\omega = \frac{v}{c}\)
@@ -1055,30 +1055,30 @@ mit \(p_\pm = p_x\pm ip_y\)
 
 
 \includegraphics[width=0.75\textwidth]{kap06_02.png}
-
-Grundzustand:
-
+\\
+Grundzustand:\\
+\\
  \(E>0\) unbesetzt
 
-\(E<0\) alle besetzt \(\Rightarrow \) Pauli Prinzip verbietet Übergänge von \(E>0 \rightarrow E<0 \)
-
-Elektron: Zustand mit \(E>mc^2\) , Ladung \(-|e|\), Spin \(S_z\)
-
-Loch: es fehlt Elektron mit \(E<0\)
-
-Gegenüber Grundzustandd: Energieerhöhung um \(-E = +\sqrt{m^2c^4+(\vec pc)^2}\)
-
+\(E<0\) alle besetzt \(\Rightarrow \) Pauli Prinzip verbietet Übergänge von \(E>0 \rightarrow E<0 \)\\
+\\
+Elektron: Zustand mit \(E>mc^2\) , Ladung \(-|e|\), Spin \(S_z\)\\
+\\
+Loch: es fehlt Elektron mit \(E<0\)\\
+\\
+Gegenüber Grundzustand: Energieerhöhung um \(-E = +\sqrt{m^2c^4+(\vec pc)^2}\)\\
+\\
 Ladung \(+|e|\)
-Spin \(-S_z\)
-
+Spin \(-S_z\)\\
+\\
 \(\rightarrow \)\underline{Positronen mit positiver Ladung} \(E>0\)
 
-Lösungen der Dirac Gl: \(E=p^0 = +\sqrt{m^2c^4+(\vec pc^2)}\)
+Lösungen der Dirac Gl: \(E=cp^0 = +\sqrt{m^2c^4+(\vec pc^2)}\)\\
+\\
+positive Energie: \(\psi(x) = e^{-ipx/\hbar}w_r(\vec p)\) mit \(r=1,2\)
 
-pos. Energie: \(\psi(x) = e^{-ipx/\hbar}w_r(\vec p)\) mit \(r=1,2\)
-
-neg. Energie: \(\psi(x) = e^{+ipx/\hbar}w_r(\vec p)\) mit \(r=3,4\)
-
+negative Energie: \(\psi(x) = e^{+ipx/\hbar}w_r(\vec p)\) mit \(r=3,4\)\\
+\\
 Die \(w_r(\vec p)\) erfüllen
 
 \[(\cancel p - mc)w_r(\vec p) = 0 \qquad\text{für } r=1,2\]
@@ -1089,12 +1089,13 @@ Die \(w_r(\vec p)\) erfüllen
 \underline{u und v Spinoren}
 
 
-Ruhesystem des \(e^{\pm}\). \(\overline p^\mu = (mc,\vec 0)\) 4 Impuls 
-
-\(\overline S^\mu = (0,\vec S)(\vec s^2=1\)  \(\vec S\) Quant. achse
-
-
-Boost in IS in dem \(p^0 = +\sqrt{(mc^2)^2+(\vec p c)^2}\quad:\quad \Lambda^\mu_{\,\,\nu} \)
+Ruhesystem des \(e^{\pm}\):\\
+\\
+ \(\overline p^\mu = (mc,\vec 0)\) 4 Impuls \\
+\\
+\(\overline S^\mu = (0,\vec S)\qquad |\vec S|^2=1 \qquad \vec S\) Spinquantisierungs-Achse\\
+\\
+Boost in IS in dem \(p^0 = +\sqrt{(mc^2)^2+(\vec p c)^2} \)
 
 \[p^\mu = \Lambda^\mu_{\,\,\nu}\overline p^\nu, \qquad s^\nu =\Lambda^\mu_{\,\,\nu}\overline s^\nu \]
 
@@ -1115,13 +1116,15 @@ Positron:
 \[w_3(\vec p) = v(p,-s)\]
 \[w_4(\vec p) = v(p,+s)\]
 
+
+
 Normierung der \(u,v\) \(\epsilon,\epsilon' = \pm 1\)
 
 \[\overline u(p,\epsilon s) u(p,\epsilon' s)\quad ^{L.I.}= \overline u(\overline p,\epsilon\overline s)  u(\overline p,\epsilon'\overline s) = w^+_{r(\epsilon)}(\vec 0)\gamma^0w_{r'(\epsilon')}(0) = \delta_{\epsilon\epsilon'}\]
 
 \[\overline u(p,\epsilon s) v(p,\epsilon' s) = 0\]
 
-\[\overline v(p,\epsilon s) v(p,\epsilon' s) =-\delta_{\epsilon'\epsilon}\qquad \text{wegen} \gamma^0 = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix} \]
+\[\overline v(p,\epsilon s) v(p,\epsilon' s) =-\delta_{\epsilon'\epsilon}\qquad \text{wegen } \gamma^0 = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix} \]
 
 \underline{Vollständigkeit}
 
@@ -1172,19 +1175,19 @@ Beweis: z.Z: \(\Lambda^2_{\pm}=\Lambda_\mp,\quad \Lambda_+\Lambda_- = 0,\quad \L
 
 Dirac Gl. sollte auch für Positronen als Teilchen , Elektronen als Antiteilchen existieren. (mit Spinor \(\psi_C\))
 
-\[(i\hbar \cancel \partial\underbrace{+e\cancel A}_{-q_e+\cancel A}-mc)\psi_C(x) = 0\]
+\[(i\hbar \cancel \partial\underbrace{+e\cancel A}_{-q_e\cancel A}-mc)\psi_C(x) = 0\]
 
-(e<0 = Ladungsvorzeichen \(e^-)\)
+(\(e< 0\) = Ladungsvorzeichen \(e^-)\)
 
 Ges. Beziehung zur Dirac Gl. für \(e^-\)
 
-\[ i\hbar\cancel \partial - e\cancel A - mc)\psi(x) = 0 \]
+\[ (i\hbar\cancel \partial - e\cancel A - mc)\psi(x) = 0 \]
 
 \[\Rightarrow [-(i\hbar\partial_\mu+eA_\mu)\gamma^{*\mu} - mc]\psi^*(x) = 0\qquad |\cdot C\gamma^0\]
 
 Transformation mit Matrix \(C\gamma^0\)
 
-\[\Rightarrow  [(i\hbar\partial_\mu+eA_\mu)(-C\gamma^0\gamma^{*\mu}((\gamma^0)^{-1} - mc]C\gamma^0\psi^*(x) = 0  \]
+\[\Rightarrow  [(i\hbar\partial_\mu+eA_\mu)(-C\gamma^0\gamma^{*\mu}(\gamma^0)^{-1}) - mc]C\gamma^0\psi^*(x) = 0  \]
 
 
 gesucht \(C\) mit \( C\gamma^0\gamma^{*\mu} (C\gamma^0)^{-1} = -\gamma^\mu\) !
