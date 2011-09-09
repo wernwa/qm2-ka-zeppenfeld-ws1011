@@ -120,8 +120,7 @@ Der \(H_0\) Operator hat nun 2 Zustände zu einem Energiewert \(\hbar\omega\cdot
 
 \[H_0 = \hbar\omega \begin{pmatrix}2&0&0\\ 0&2&0\\ 0&0&6\\ \end{pmatrix}, \qquad V = \begin{pmatrix}0&a&b\\ a&0&0\\ b&0&0\\ \end{pmatrix} \]
 
-und \(V(t) = const = V\), Aus unerfindlichen Gründen geht \(\alpha\) in a und \(\beta\) in b über. Der wahre Grund ist, dass \(\alpha,\beta\) sich besser als Indizies für die Herleitung im Entarteten Unterraum eignen. Nein, der noch wahrere Grund ist, dass ich die Indizies so gewählt habe und erst zum Schluss bemerkte, dass es mit den Konstanten in der Matrix kollidiert.
-
+und \(V(t) = const = V\), \(\alpha\) in a und \(\beta\) in b über (\(\alpha,\beta\) eignen sich etwas besser als Indizies für die Herleitung im Entarteten Unterraum).
 
 Die Energie \(E_n = E_2 = 2\hbar\omega\) ist zweifach entartet, dazu gehören die zwei Zustände im nicht entarteten Fall \(|1\rangle^{(0)} \)  \(|2\rangle^{(0)} \). Als Eigenwert Gleichung so Ausgedrückt:
 
@@ -141,25 +140,24 @@ Wobei die Koeffizienten \(c_\alpha =  ^{(0)} \langle \alpha |n_\alpha\rangle^{(0
 
 Nun benötigen wir aus der Störungsrechnung die Gleichung mit der ersten Potenz \(\lambda^1\)
 
-\[(H_0-E_n^{(0)})|n_\alpha\rangle ^{(1)} = (E_n^{(1)}-V)|n_\alpha\rangle^{(0)}\]
+\[(H_0-E_\alpha^{(0)})|n_\alpha\rangle ^{(1)} = (E_\alpha^{(1)}-V)|n_\alpha\rangle^{(0)}\]
 
-Multipliziert diese Gleichung mit \(^{(0)}\langle \alpha|\) sieht man:
+Multipliziert diese Gleichung mit \(^{(0)}\langle \alpha|\) und wählt ein anderen Index \(\ket{n_\alpha}\to\ket{n_\beta}\)
 
 \begin{align}
-^{(0)}\langle \alpha|(H_0-E_n^{(0)})|n_\alpha\rangle ^{(1)} &= ^{(0)}\langle \alpha|(E_n^{(1)}-V)|n_\alpha\rangle^{(0)}\\
-^{(0)}\langle \alpha|\underbrace{(E_0^{(0)}-E_n^{(0)})}_{=0}|n_\alpha\rangle ^{(1)} &=^{(0)}\langle \alpha| (E_n^{(1)}-V)|n_\alpha\rangle^{(0)}
+^{(0)}\langle \alpha|(H_0-E_\alpha^{(0)})|n_\beta\rangle ^{(1)} &= ^{(0)}\langle \alpha|(E_\alpha^{(1)}-V)|n_\beta\rangle^{(0)}\\
+^{(0)}\langle \alpha|\underbrace{(E_\alpha^{(0)}-E_\alpha^{(0)})}_{=0}|n_\beta\rangle ^{(1)} &=^{(0)}\langle \alpha| (E_\alpha^{(1)}-V)|n_\beta\rangle^{(0)}
 \end{align}
+mit \(|n_\beta \rangle^{(0)} = \sum_\beta c_\beta |\beta\rangle ^{(0)} \) und \(\langle \alpha|n_\beta\rangle = c_\beta\delta_{\alpha\beta}\) folgt
 
-mit \(|n_\beta \rangle^{(0)} = \sum_\beta c_\beta |\beta\rangle ^{(0)} \) und \(\langle \alpha|n_\beta\rangle = c_\beta\delta_{\alpha\beta}\)
-
-\[\Rightarrow  ^{(0)} \langle \alpha|V-E_n^{(1)}|n_\beta\rangle^{(0)} = 0 \]
-\[  ^{(0)} \langle \alpha|V|n_\alpha\rangle^{(0)} -E_n^{(1)} \langle \alpha|n_\beta\rangle^{(0)}  = 0 \]
-\[  ^{(0)} \langle \alpha|V|n_\alpha\rangle^{(0)} -E_n^{(1)} c_\alpha  \delta_{\alpha\beta}  = 0 \]
+\[\Rightarrow  ^{(0)} \langle \alpha|V-E_\beta^{(1)}|n_\beta\rangle^{(0)} = 0 \]
+\[  ^{(0)} \langle \alpha|V|n_\beta\rangle^{(0)} -E_\beta^{(1)} \langle \alpha|n_\beta\rangle^{(0)}  = 0 \]
+\[  ^{(0)} \langle \alpha|V|n_\beta\rangle^{(0)} -E_\beta^{(1)} c_\alpha  \delta_{\alpha\beta}  = 0 \]
 
 
 Ersetze nun \(|n_\beta\rangle^{(0)}\) mit der Summe der Entarteten untervektoren als \(|n_\beta\rangle^{(0)} = \sum_\beta |\beta\rangle \). Der Index \(\beta\) läuft genau wie \(\alpha\) über alle entarteten Zustände
 
-\[\sum_\beta V_{\alpha\beta}-E_n^{(1)}c_\alpha  \delta_{\alpha\beta} = 0\]
+\[\sum_\beta V_{\alpha\beta}-E_\beta^{(1)}c_\alpha  \delta_{\alpha\beta} = 0\]
 Das ist offensichtlich eine Sekulärgleichung im entarteten Unterraum mit einem Ausschnitt aus der Störungsmatrix (in unserem Fall):
 
 \[V_{\alpha\beta} = \begin{pmatrix}0&a\\ a&0 \end{pmatrix} \]
@@ -167,7 +165,7 @@ Das ist offensichtlich eine Sekulärgleichung im entarteten Unterraum mit einem 
 Oder als Eigenwertgleichung:
 
 
-\[V|\alpha\rangle ^{(0)} = E_n^{(1)}c_\alpha|\alpha\rangle ^{(0)}  \]
+\[V|\alpha\rangle ^{(0)} = E_\alpha^{(1)}c_\alpha|\alpha\rangle ^{(0)}  \]
 
 \[V|\alpha\rangle ^{(0)} = E_\alpha^{(1)} |\alpha\rangle ^{(0)}  \]
 
@@ -185,7 +183,7 @@ Im entarteten Unterraum dann so:
 
 \[E_\alpha^{(ges)} = E_\alpha^{(0)}+E_\alpha^{(1)} =E_\alpha^{(0)}\pm a \]
 
-Die Gesamtenergie ist dank der konstanten Störung nicht mehr entartet. Die Störung hebt offensichtlich (i.a. teilweise oder ganz) die Störung auf.
+Die Gesamtenergie ist dank der konstanten Störung nicht mehr entartet. Die Störung hebt offensichtlich (i.a. teilweise oder ganz) die Entartung auf.
 
 Für die Eigenvektoren im entarteten Unterraum ergibt sich:
 
