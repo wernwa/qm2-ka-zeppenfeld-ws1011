@@ -53,19 +53,19 @@ Da die Grundzustandsenergie per Definition der kleinste Energiezustand ist, d.h 
 
 \subsection*{LSG b)}
 
-Für die Berechnung der Wahrscheinlichkeiten ist es leichter/zweckmäßig das Sytem im Wechselwirkungsbild zu betrachten, da dort die Statische Komponente \(H_0\) keine rolle spielt:
+Für die Berechnung der Wahrscheinlichkeiten ist es leichter/zweckmäßig das Sytem im Wechselwirkungsbild zu betrachten, da dort die statische Komponente \(H_0\) keine rolle spielt:
 
-\[i\hbar \frac{\partial}{\partial}|\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I\]
+\[i\hbar \frac{\partial}{\partial t}|\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I\]
 
 Dies lässt sich weiter umformen zu:
 
-\[ i\hbar \frac{\partial}{\partial} U_I(t,t_0) = V_I U(t,t_0)  \]
+\[ i\hbar \frac{\partial}{\partial t} U_I(t,t_0) = V_I U(t,t_0)  \]
 
-mit \(U_I\) als einen unitären Zeitentwicklungsoperator \(|\alpha,t_0;t\rangle_I = U_I(t,t_0) |\alpha,t_0;t\rangle_I \) der den \(t_0\)-Zustand zu einen beliebigen \(t\) Zeitzustand 'transformiert'. Integration der obigen gleichung über die Zeit ergibt eine rekursive formel:
+mit \(U_I\) als einen unitären Zeitentwicklungsoperator \(|\alpha,t_0;t\rangle_I = U_I(t,t_0) |\alpha,t_0;t\rangle_S \) der den \(t_0\)-Zustand zu einen beliebigen \(t\) Zeitzustand 'transformiert'. Integration der obigen Gleichung über die Zeit ergibt eine rekursive Formel:
 
 \[U_I^{(n)}(t,t_0) = 1-\frac{i}{\hbar}\int_{t_0}^t V_IU_I^{(n-1)}(t,t_0)dt\]
 
-Der unitäre Zeitentwicklungsoperator \(U_I\) soll den Zustand nicht verändert wenn keine Zeitdifferenz vorhanden ist, sprich \(U_I(t_0,t_0)=1\). Zeitabhängige Störung 0.Ordnung ist demnach:
+Der unitäre Zeitentwicklungsoperator \(U_I\) soll den Zustand nicht verändern wenn keine Zeitdifferenz vorhanden ist, sprich \(U_I(t_0,t_0)=1\). Zeitabhängige Störung 0.Ordnung ist demnach:
 
 \[U_I^{(0)}(t,t_0)=1\]
 
